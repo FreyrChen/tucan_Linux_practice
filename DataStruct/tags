@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUFFSIZE	list.c	16;"	d	file:
+CreateList	list.c	/^my_link CreateList( my_link start )$/;"	f
+MAX	list.c	15;"	d	file:
+PrintList	list.c	/^void PrintList( my_link head )$/;"	f
+list	list.c	/^struct list$/;"	s	file:
+main	list.c	/^void main( void )$/;"	f
+my_link	list.c	/^typedef node	*my_link;$/;"	t	file:
+name	list.c	/^	char name[MAX];$/;"	m	struct:list	file:
+next	list.c	/^	struct list* next;$/;"	m	struct:list	typeref:struct:list::list	file:
+node	list.c	/^typedef struct list node;$/;"	t	typeref:struct:list	file:
+number	list.c	/^	int number;$/;"	m	struct:list	file:
