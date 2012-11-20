@@ -4,3 +4,28 @@ Do some changes, use git to commit the moddify.
 
 Do some change again.
 
+touch readme
+git add readme
+git status
+git commit -m 'first commit'
+
+
+// merge local and server's repo, 
+// local default branch is master
+git push origin master 
+
+cantu
+
+
+// refresh file
+vim readme
+git commit -a
+git push origin master
+
+
+
+//view status and info
+git-status
+git-diff
+git-whatchchanged
+

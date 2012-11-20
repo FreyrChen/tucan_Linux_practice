@@ -1,0 +1,12 @@
+this project is based on the stanford university's open course:
+CS142 Web Applications(2012).
+
+this is project 1, use Css control web's html elements.
+
+at p1a.css stil have some problems as below:
+1. in every row in the table, seems can not use <div class="xxx"> tag 
+   to mark a apart to define style.
+2. there is misunderstanding in css's box model, such as margin, padding.
+	so i can't gvie every row a white bottom line.
+3. each cell in the table, have a margin(8px) before items contain in.
+
