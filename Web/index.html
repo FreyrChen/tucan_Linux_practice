@@ -1,38 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE htmal PUBULIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns=http://www.w3.org/1999/xhtml" xml;lang="en" lang="en">
-	<head>
-		<!-- add css file to control the web style-->
-		<link rel="stylesheet" type="text/css" href="my_style.css"/> 
-		<script src="my-script.js"> </script>
-		<title>Hello, world edit by tusion@163.com</title>
-	</head>
-	<body>
-		<p class="quto">Hello world 2!</p>
-	<h1>Introduction</h1>
-	<p>
-	There are serval good reasons for taking 
-	<i>CS142: Web Application</i>:
-	</p>
-	<ul>
-	<li>
-	You will learn a variety of interesting concepts.
-	</li>
-	<li>
-	it may inspaire you to change the way software is developed.
-	</li>
-	<li>
-	It will give you the tool to become fabulously wealthy.
-	</li>
-	</ul>
-	<script type="text/javascript">
-	document.write("Hello, World!");
-	</script>
-	
-	<form>
-	<input type="button" value="Click me!" onclick="displaymessage">
-	</form>
+<html xmlns="http:/www.w3.org/1999/xthml" xml:lang="en" lang="en">
+<head>
+<title> tusion study website</title>
+<!-- add css file to control the web style -->
+<link rel="stylesheet" type="text/css" href="index_style.css"/>
+<script type="text/javascript">
+	/**** detect user's web browser version ***/
+	function detect_browser()
+	{
+		var browser=navigator.appName
+		var b_version=navigator.appVersion
+		var version=parseFloat(b_version)
 
-	</body>
+		alert("Browser name:"+browser+"\nBrowser version:"+version)
+		//document.write("<br />")
+		//document.write("Browser version:"+version)
+	}
+
+	/*** ***************************************/
+	function getCookie(c_name)
+	{
+		if( document.cookie.length > 0)
+		{
+			c_start = document.cookie.indexOf( c_name+"=" )
+			if( c_start!= -1 )
+			{
+				c_start = c_start + c_name.length + 1
+				c_end = document.cookie.indexOf(";", c_start)
+
+
+	/*** set cookie to store user's info ****/
+	function setCookie( c_name, value, expiredays )
+	{
+		var exdate = new Date()
+		exdate.setDate( exdate.getDate()+expirdays)
+		document.cookie=c_name+"=" + escape(value)
+</script>
+</head>
+
+<body>
+	<h1>tusion study website</h1>
+	<p>there are some study files to be record.</p>
+	
+	<h2>CS142:Web application</h2>
+	<ul>
+		<li><a href="./CS142_Web_Application/Project1/p1.html" 
+				target="_blank">
+			project1:HTML and CSS</a></li>
+		<li>project2:JavaScript</li>
+	</ul>
+
+	<form>
+		<input type="button" value="Detect Browser" 
+			onclick="detect_browser()">
+	</form>
+</body>
 </html>
