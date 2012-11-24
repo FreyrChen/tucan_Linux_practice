@@ -4,12 +4,50 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http:/www.w3.org/1999/xthml" xml:lang="en" lang="en">
 <head>
-<!--
-<link rel="stylesheet" type="text/css" href="p1a.css"/>
-<link rel="stylesheet" type="text/css" href="p1b.css"/>
--->
-
-<link rel="stylesheet" type="text/css" id="css"/>
+<style type="text/css">
+	table{						/* define table's back ground */
+		/*	width: 100%; */
+		white-space: nowrap;
+		text-decoration: none;
+		font-family: Tahoma;
+		font-size: 13px;
+		margin: 8px;
+		border-style: solid;
+		border-width: 10px;
+		border-color: #d0d0ff;
+		padding: 20px;
+		/*
+		background: #d0d0ff;
+		padding: 10px;
+		*/
+	}
+	
+	.table-data th{
+		font-size: 13px;
+	   	background-color: #ffffff; 
+		text-align:  left; /* center */
+	}
+	
+	.table-data td{				/* draw the sperate white line between rows */
+	
+		text-align: left;	   /* text cell in table is align left */
+	   	background-color: #ffffff; 
+	}
+	
+	/*.table-data tr .selected{ */
+	.selected td{
+		background-color: red;
+	}
+	.total td{
+		/* visibility: hidden; */
+		font-weight: bold;
+		margin: 10px;
+		border-style: solid;
+		border-width: 2px 0px 0px 0px;	
+		padding-top: 2px;
+	}
+</style>	
+	
 <script language="javascript">
 	function change_css(file_name)
 	{
@@ -27,7 +65,7 @@
 <body>
 <table cellspacing="0"; class="table-data">
 	<tr>
-		<div class="test">
+		<div class="">
 		<th>Item</th>
 		<th>Manufacturer</th>
 		<th>Size</th>
@@ -37,18 +75,16 @@
 		</div>
 	</tr>
 
-	<tr class="item1">
+	<tr class="">
 		<td>Corn Flakes</td>
 		<td>Kellog's</td>
-		<div class="number">
 		<td>18 oz</td>
 		<td>2.50</td>
 		<td>1</td>
 		<td>2.50</td>
-		</div>
 	</tr>
 
-	<tr class="item2">
+	<tr class="">
 		<td>Solid White Tuna</td>
 		<td>Starkist</td>
 		<td>5 oz</td>
@@ -57,7 +93,7 @@
 		<td>5.58</td>
 	</tr>
 
-	<tr class="item3">
+	<tr class="">
 		<td>Cream of Mushroom Soup</td>
 		<td>Campnell's</td>
 		<td>10.75 oz</td>
@@ -65,7 +101,7 @@
 		<td>2</td>
 		<td>2.00</td>
 	</tr>
-	<tr class="item4">
+	<tr class="">
 		<td>2% Lowfat milk</td>
 		<td>Safeway</td>
 		<td>0.5 gal</td>
@@ -73,7 +109,7 @@
 		<td>1</td>
 		<td>1.99</td>
 	</tr>
-	<tr class="item5">
+	<tr class="">
 		<td>Extra-Wide Egg Noodles</td>
 		<td>Gold Grain</td>
 		<td>12 oz</td>
@@ -81,7 +117,7 @@
 		<td>3</td>
 		<td>2.61</td>
 	</tr>
-	<tr class="item6">
+	<tr class="total">
 		<td>Total</td>
 		<td>&nbsp</td>
 		<td>&nbsp</td>
@@ -91,32 +127,19 @@
 	</tr>
 
 </table>
+
 <!-- add script to dynamic change the row'sbackground color -->
 <script language="javascript">
-	var rows=document.getElementsByTagName('tr');
-	for( var i=0; i<rows.length; i++ )
-	{
-		rows[i].onmouseover=function()
-		{
-				this.clasName += 'slected';
-		}
-		rows[i].onmouseout=function()
-		{
-			this.className = this.className.replace('slected','');
-		}
+var rows=document.getElementsByTagName('tr');
+for( var i=0; i<rows.length; i++ ){
+	rows[i].onmouseover=function(){
+		this.className += 'selected';
 	}
+	rows[i].onmouseout=function(){
+		this.className = this.className.replace('selected','');
+	}
+}
 </script>
-<a href="p1a.css">css file(p1a.css)</a>
-<a href="p1b.css">css file(p1b.css)</a>
-<a href="p1_change.html">table to select version(p1_change.html)</a>
-<form>
-	<input type="button" value="change style: p1a.css" 
-		onClick="change_css(1)">
-</form>
-<form>
-	<input type="button" value="chage style: p1b.css" 
-		onClick="change_css(2)">
-</form>
 <br/>
 </body>
 </html>

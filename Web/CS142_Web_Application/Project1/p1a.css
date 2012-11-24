@@ -70,3 +70,11 @@ table{						/* define table's back ground */
 	background: #dfe1e7;
 	padding: 1px;
 }
+a{
+	font-size: 13px;
+	padding-top: 20px;		/* padding: 2px 8px; */
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;		
+	text-align:  left; /* center */
+}
