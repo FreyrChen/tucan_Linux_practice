@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http:/www.w3.org/1999/xthml" xml:lang="en" lang="en">
+<head>
+<!--
+<link rel="stylesheet" type="text/css" href="p1a.css"/>
+<link rel="stylesheet" type="text/css" href="p1b.css"/>
+-->
+
+<link rel="stylesheet" type="text/css" id="css"/>
+<script language="javascript">
+	function change_css(file_name)
+	{
+		var css=document.getElementById("css");
+		if(file_name==1)
+			css.setAttribute("href","p1a.css");
+		if(file_name==2)
+			css.setAttribute("href","p1b.css");
+	}
+</script>		
+
+<title> CS142 Project1,Problem1 </title>
+</head>
+
+<body>
+<table cellspacing="0"; class="table-data">
+	<tr>
+		<div class="test">
+		<th>Item</th>
+		<th>Manufacturer</th>
+		<th>Size</th>
+		<th>Unit Price</th>
+		<th>Quantity</th>
+		<th>Total Price</th>
+		</div>
+	</tr>
+
+	<tr class="item1">
+		<td>Corn Flakes</td>
+		<td>Kellog's</td>
+		<div class="number">
+		<td>18 oz</td>
+		<td>2.50</td>
+		<td>1</td>
+		<td>2.50</td>
+		</div>
+	</tr>
+
+	<tr class="item2">
+		<td>Solid White Tuna</td>
+		<td>Starkist</td>
+		<td>5 oz</td>
+		<td>2.79</td>
+		<td>2</td>
+		<td>5.58</td>
+	</tr>
+
+	<tr class="item3">
+		<td>Cream of Mushroom Soup</td>
+		<td>Campnell's</td>
+		<td>10.75 oz</td>
+		<td>1.00</td>
+		<td>2</td>
+		<td>2.00</td>
+	</tr>
+	<tr class="item4">
+		<td>2% Lowfat milk</td>
+		<td>Safeway</td>
+		<td>0.5 gal</td>
+		<td>1.99</td>
+		<td>1</td>
+		<td>1.99</td>
+	</tr>
+	<tr class="item5">
+		<td>Extra-Wide Egg Noodles</td>
+		<td>Gold Grain</td>
+		<td>12 oz</td>
+		<td>0.87</td>
+		<td>3</td>
+		<td>2.61</td>
+	</tr>
+	<tr class="item6">
+		<td>Total</td>
+		<td>&nbsp</td>
+		<td>&nbsp</td>
+		<td>&nbsp</td>
+		<td>9</td>
+		<td>14.68</td>
+	</tr>
+
+</table>
+<!-- add script to dynamic change the row'sbackground color -->
+<script language="javascript">
+	var rows=document.getElementsByTagName('tr');
+	for( var i=0; i<rows.length; i++ )
+	{
+		rows[i].onmouseover=function()
+		{
+				this.clasName += 'slected';
+		}
+		rows[i].onmouseout=function()
+		{
+			this.className = this.className.replace('slected','');
+		}
+	}
+</script>
+<a href="p1a.css">css file(p1a.css)</a>
+<a href="p1b.css">css file(p1b.css)</a>
+<a href="p1_change.html">table to select version(p1_change.html)</a>
+<form>
+	<input type="button" value="change style: p1a.css" 
+		onClick="change_css(1)">
+</form>
+<form>
+	<input type="button" value="chage style: p1b.css" 
+		onClick="change_css(2)">
+</form>
+<br/>
+</body>
+</html>

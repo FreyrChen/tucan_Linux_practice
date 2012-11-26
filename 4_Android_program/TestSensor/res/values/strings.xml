@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TestSensorActivity!</string>
+    <string name="app_name">TestSensor Ver1</string>
+    <string name="TestAllSensors">View All Sensors</string>
+    <string name="BackButton">Back</string>
+    <string name="OpenWIFI">OpenWIFI</string>
+    <string name="ConnectServer">ConnectServer</string>
+    <string name="DisconnectServer">DisconnectServer</string>
+    <string name="UploadData">UploadData</string>
+    <string name="ServerIP">192.168.1.2</string>
+    <string name="StartRecord">StartRecord</string>
+    <string name="StopRecord">StopRecord</string>
+    <string name="Gyro">【角速度】     null</string>
+    <string name="Light">【 亮 度 】         null</string>
+    <string name="Tem">【 温 度 】           null</string>
+</resources>

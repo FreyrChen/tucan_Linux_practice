@@ -1,0 +1,12 @@
+
+2012/11/23   tusion@163.com
+
+this is project based on the stanford Web appliction open course.
+
+p1.html 		--------------project 1 main wb file
+p1_chang.html 	--------------project 1 with p1b.css, and use javascript to relise a 
+							  fution, when user put mouse on the talbe row, the 
+							  back ground coclor should change.
+p1a.css			--------------web's style file
+p1b.css			--------------another style file
+

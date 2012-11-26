@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:padding="10px"
+	    android:background="#808080"
+	    >
+
+    
+	<TextView  
+	    android:id="@+id/topinfo"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Sensor output :"
+	    android:textSize="18sp"
+	     android:background="#00FF0000"
+	    android:textColor="#FFCC00" 
+	    
+    />
+
+	<TextView  
+	    android:id="@+id/Acce"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="加速度"
+	    android:layout_below="@+id/topinfo"
+	    android:textColor="#00FF00" 
+	    android:background="#000000"
+    />
+	<TextView  
+	    android:id="@+id/Gyro"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/Gyro"
+	    android:layout_below="@+id/Acce"
+	    android:textColor="#00FF00" 
+	    android:background="#404040"
+    />
+	<TextView  
+	    android:id="@+id/zViewO"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="zViewO"
+	    android:layout_below="@+id/Gyro"
+	    android:textColor="#00FF00" 
+	    android:background="#000000"
+    />  
+    
+    <TextView  
+	    android:id="@+id/xViewO_raw"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="xViewO_raw"
+	    android:layout_below="@+id/zViewO"
+	    android:textColor="#00FF00" 
+	    android:background="#404040"
+    />
+	<TextView  
+	    android:id="@+id/Light"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/Light"
+	    android:layout_below="@+id/xViewO_raw"
+	    android:textColor="#00FF00" 
+	    android:background="#000000"
+    />
+	<TextView  
+	    android:id="@+id/Temperature"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/Tem"
+	    android:layout_below="@+id/Light"
+	    android:textColor="#00FF00" 
+	    android:background="#404040"
+    />  
+    
+    <Button 
+	 	android:id="@+id/TestAllSensors"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:textSize="18sp"
+	 	android:text="@string/TestAllSensors"
+	    android:layout_below="@+id/Temperature"
+	    android:layout_marginTop="30dp"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_centerHorizontal="true"
+ 	/>
+ 	
+ 	<TextView  
+	    android:id="@+id/Servertext"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:textColor="#FFFFFF" 
+	    android:text="Server IP:"
+	    android:textSize="18sp"
+	    android:layout_below="@+id/TestAllSensors"
+	    android:layout_marginTop="20dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+    /> 
+  	<EditText	
+			android:id="@+id/ServerIP"
+		 	android:layout_width="fill_parent"
+		 	android:layout_height="wrap_content"
+			android:background="@android:drawable/editbox_background"
+			android:text="@string/ServerIP"
+		    android:layout_below="@+id/TestAllSensors"
+			android:layout_alignParentRight="true"
+			android:layout_toRightOf="@+id/Servertext"
+			android:layout_marginTop="15dp"
+			android:enabled="false"
+ 	/>
+ 	
+  	<ToggleButton 
+  			android:id="@+id/ServerConnection"	
+  			android:textOn="@string/DisconnectServer"
+  			android:textOff="@string/ConnectServer"
+		 	android:layout_width="140dp"
+		 	android:layout_height="wrap_content"
+		    android:layout_below="@+id/ServerIP"
+		    android:layout_alignParentLeft="true"
+		    android:layout_marginTop="5dp"
+		    android:layout_marginLeft="10dp"
+ 	/>
+ 	<Button 
+		 	android:id="@+id/UploadData"
+		 	android:layout_width="wrap_content"
+		 	android:layout_height="wrap_content"
+		 	android:text="@string/UploadData"
+			android:layout_alignParentRight="true"
+			android:layout_alignTop="@+id/ServerConnection"
+ 	/>
+ 	
+ 	 <ToggleButton 
+  			android:id="@+id/SDRecord"	
+  			android:textOn="@string/StopRecord"
+  			android:textOff="@string/StartRecord"
+		 	android:layout_width="140dp"
+		 	android:layout_height="wrap_content"
+		    android:layout_below="@+id/ServerConnection"
+		    android:layout_marginTop="20dp"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_centerHorizontal="true"
+ 	/>
+ 	
+ 	
+      
+</RelativeLayout>

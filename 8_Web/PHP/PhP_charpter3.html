@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http:/www.w3.org/1999/xthml" xml:lang="en" lang="en">
+<head>
+<title> tusion study website</title>
+<!-- add css file to control the web style -->
+<link rel="stylesheet" type="text/css" href="index_style.css"/>
+<script type="text/javascript">
+	/**** detect user's web browser version ***/
+	function detect_browser()
+	{
+		var browser=navigator.appName
+		var b_version=navigator.appVersion
+		var version=parseFloat(b_version)
+
+		alert("Browser name:"+browser+"\nBrowser version:"+version)
+		//document.write("<br />")
+		//document.write("Browser version:"+version)
+	}
+
+	/*** ***************************************/
+	function getCookie(c_name)
+	{
+		if( document.cookie.length > 0)
+		{
+			c_start = document.cookie.indexOf( c_name+"=" )
+			if( c_start!= -1 )
+			{
+				c_start = c_start + c_name.length + 1
+				c_end = document.cookie.indexOf(";", c_start)
+
+
+	/*** set cookie to store user's info ****/
+	function setCookie( c_name, value, expiredays )
+	{
+		var exdate = new Date()
+		exdate.setDate( exdate.getDate()+expirdays)
+		document.cookie=c_name+"=" + escape(value)
+</script>
+</head>
+
+<body>
+	<h1>PHP  study </h1>
+	<p>there are some study files to be record.</p>
+	<?php 
+		echo" this is from PHP script";
+	?>
+	<br />
+	<p> is there something to be show? </p>
+	<form>
+		<input type="button" value="Detect Browser" 
+			onclick="detect_browser()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, WIFIActivity!</string>
+    <string name="app_name">WIFI</string>
+    <string name="startwifibutton">启动WIFI</string>
+    <string name="stopwifibutton">关闭WIFI</string>
+    <string name="checkwifibutton">检查WIFI</string>
+</resources>

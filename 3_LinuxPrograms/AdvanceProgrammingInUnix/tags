@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+About	location.cpp	/^/;"	f
+BUFFSIZE	3fileOP.c	13;"	d	file:
+CreateNewThread	11thread.c	/^int CreateNewThread( void )$/;"	f
+CreateThreadAndExit	11thread.c	/^int CreateThreadAndExit( void )$/;"	f
+DEBUG_FIEL_MODE	3fileOP.c	16;"	d	file:
+DEBUG_READ_FILE	3fileOP.c	17;"	d	file:
+Drawpoint	location.cpp	/^/;"	f
+FileKindDetect	3fileOP.c	/^void FileKindDetect( char *file_name )$/;"	f
+FileModeDetect	3fileOP.c	/^void FileModeDetect( int filefd )$/;"	f
+GetDir	3fileOP.c	/^char * GetDir( void )$/;"	f
+GetProcessEnv	7process.c	/^int GetProcessEnv( void )$/;"	f
+InitInstance	location.cpp	/^/;"	f
+MAXGETBUF	7process.c	7;"	d	file:
+MakeDir	3fileOP.c	/^char* MakeDir( char* path_name, char* dir_name )$/;"	f
+Measure_times	3fileOP.c	/^static void Measure_times( clock_t start,clock_t end, struct tms *tmsstart, struct tms *tmsend )$/;"	f	file:
+MyRegisterClass	location.cpp	/^/;"	f
+PrintInfo	11thread.c	/^void PrintInfo( void )$/;"	f
+PrintThreadId	11thread.c	/^void PrintThreadId( const char *s )$/;"	f
+THREAD_NOT_CREATE	11thread.c	10;"	d	file:
+ThreadFunction	11thread.c	/^void * ThreadFunction( void *arg )$/;"	f
+WndProc	location.cpp	/^/;"	f
+_tWinMain	location.cpp	/^/;"	f
+a	11_excise11-3.c	/^	int a,b,c,d;$/;"	m	struct:foo	file:
+b	11_excise11-3.c	/^	int a,b,c,d;$/;"	m	struct:foo	file:
+c	11_excise11-3.c	/^	int a,b,c,d;$/;"	m	struct:foo	file:
+d	11_excise11-3.c	/^	int a,b,c,d;$/;"	m	struct:foo	file:
+draw_coordinate_axis	location.cpp	/^/;"	f
+foo	11_excise11-3.c	/^struct foo$/;"	s	file:
+main	11_excise11-3.c	/^int main( void )$/;"	f
+main	11thread.c	/^void main( int argc, char *argv[] )$/;"	f
+main	3fileOP.c	/^void main( int argc, char *argv[])$/;"	f
+main	7process.c	/^int main( int argc, char *argv[] )$/;"	f
+main	ls.c	/^int main ( int argc, char *argv[])$/;"	f
+main	myperror.c	/^int main( int argc, char*argv[] )$/;"	f
+ntid	11thread.c	/^pthread_t ntid;$/;"	v
+printfoo	11_excise11-3.c	/^void printfoo( const char *s, const struct foo *fp)$/;"	f
+thread_fn1	11_excise11-3.c	/^void *thread_fn1( void *arg )$/;"	f
+thread_fn2	11_excise11-3.c	/^void *thread_fn2( void *arg )$/;"	f

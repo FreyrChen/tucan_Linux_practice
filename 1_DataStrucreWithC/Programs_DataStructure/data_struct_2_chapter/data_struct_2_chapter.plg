@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: data_struct_2_chapter - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP17.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/data_struct_2_chapter.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\tusion\C program practice\data_struct_2_chapter\main.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP17.tmp" 
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(56) : error C2059: syntax error : '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(56) : error C2143: syntax error : missing ';' before '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(56) : error C2143: syntax error : missing ';' before '}'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(57) : error C2059: syntax error : '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(57) : error C2143: syntax error : missing ';' before '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(57) : error C2143: syntax error : missing ';' before '}'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(58) : error C2059: syntax error : ']'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(59) : error C2059: syntax error : ']'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(60) : error C2664: 'ListDelete_Sq' : cannot convert parameter 1 from 'SqList *' to 'SqList &'
+        A reference that is not to 'const' cannot be bound to a non-lvalue
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(71) : error C2065: 'malloc' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(73) : error C2065: 'exit' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2065: 'List' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2065: 'La' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2146: syntax error : missing ')' before identifier 'Lb'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2182: 'Union' : illegal use of type 'void'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2078: too many initializers
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(85) : error C2059: syntax error : ')'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(86) : error C2143: syntax error : missing ';' before '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(86) : error C2447: missing function header (old-style formal list?)
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(104) : error C2146: syntax error : missing ')' before identifier 'La'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(104) : error C2182: 'MergeList' : illegal use of type 'void'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(104) : error C2059: syntax error : ')'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(105) : error C2143: syntax error : missing ';' before '{'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(105) : error C2447: missing function header (old-style formal list?)
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(147) : error C2082: redefinition of formal parameter 'i'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(151) : error C2065: 'ListLength_Sq' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(152) : error C2143: syntax error : missing ')' before 'return'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(155) : error C2065: 'realloc' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(156) : error C2440: '=' : cannot convert from 'int *' to 'unsigned int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(159) : error C2440: '=' : cannot convert from 'unsigned int' to 'int *'
+        Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(162) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(163) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(164) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(164) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(164) : error C2106: '=' : left operand must be l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(165) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(176) : error C2082: redefinition of formal parameter 'e'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(181) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(182) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(183) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(185) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(185) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(185) : error C2106: '=' : left operand must be l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(200) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(201) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(202) : error C2105: '++' needs l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(202) : error C2146: syntax error : missing ')' before identifier 'i'
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(216) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(217) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(219) : error C2065: 'pc' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(219) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(221) : error C2065: 'pa_past' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(221) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(222) : error C2065: 'pb_past' : undeclared identifier
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(222) : error C2440: '=' : cannot convert from 'int *' to 'int'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(225) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(225) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(225) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(225) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(225) : error C2106: '=' : left operand must be l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(226) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(226) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(226) : error C2106: '=' : left operand must be l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(229) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(229) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(229) : error C2106: '=' : left operand must be l-value
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(230) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(230) : error C2100: illegal indirection
+d:\tusion\c program practice\data_struct_2_chapter\main.cpp(230) : error C2106: '=' : left operand must be l-value
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+main.obj - 69 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

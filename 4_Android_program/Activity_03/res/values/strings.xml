@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Activity_03!</string>
+    <string name="app_name">First calculator  By TuCan</string>
+    <string name="app_name2">Calculate result  By TuCan</string>
+    <string name="symbol">乘以</string>
+    <string name="calculate">计算</string>
+</resources>
