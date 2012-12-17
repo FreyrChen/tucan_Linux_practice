@@ -29,3 +29,7 @@ git-status
 git-diff
 git-whatchchanged
 
+
+
+if use GCC compiler, user commender as:
+	gcc -g -Wall source.c -o target.o
