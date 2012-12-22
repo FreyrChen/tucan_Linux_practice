@@ -4,10 +4,16 @@ Do some changes, use git to commit the moddify.
 
 Do some change again.
 
-touch readme
-git add readme
-git status
-git commit -m 'first commit'
+1.edit new file: touch readme
+2.git add readme
+  git add . //add all sub-folders, but exclude empty folder.
+  git add -i //interactive add files
+3.git status
+4.git commit -m 'first commit'
+  git conmit -a //commit all files whitch is modtied and delete or add.
+5.git log -p -2 //-p show every version diff, -2 show the last 2 times.
+  fit log --graph // graphcily show the branch
+6.git tag 1.0 //use current master branch to commit a tag version
 
 
 // merge local and server's repo, 

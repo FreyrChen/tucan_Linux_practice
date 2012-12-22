@@ -1,0 +1,8 @@
+INDEX VERSION 1.126+/home/tusion/code/4_Android_program/.metadata/.plugins/org.eclipse.jdt.core
+2625885330.index
+856569526.index
+3908630858.index
+3248298345.index
+2797386043.index
+4234753113.index
+1437470609.index

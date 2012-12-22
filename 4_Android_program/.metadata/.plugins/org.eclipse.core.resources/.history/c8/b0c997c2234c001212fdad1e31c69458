@@ -1,0 +1,50 @@
+package com.example.airsync;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+/* calss TextView must import reference widget.TextView */
+import android.widget.TextView;
+/* 探测设备的分辨率时需要*/
+import android.util.DisplayMetrics;
+
+
+public class Main extends Activity {
+	/*用于给用户显示这个程序运行前需要的必要硬件连接 */
+	TextView tvTopinfo = null;
+	TextView tvMetrics = null;
+	
+	/*用于提示用户设备的分辨率*/
+	DisplayMetrics dm = new DisplayMetrics();
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		tvTopinfo = (TextView) findViewById(R.id.MainTextView1);
+		tvMetrics = (TextView) findViewById(R.id.MainTextView2);
+		
+		String test_str = "test lalalall";
+		tvTopinfo.setText(test_str);
+		
+		getWindowManager().getDefaultDisplay().getMetrics(dm); 
+		
+		/*提示用户设备的分辨率,为现实照片做准备*/
+		String metrics_str ="这个设备的分辨率为： "+ dm.widthPixels +
+							" * " + dm.heightPixels;
+		tvMetrics.setText( metrics_str );
+		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
+	
+
+
+}
