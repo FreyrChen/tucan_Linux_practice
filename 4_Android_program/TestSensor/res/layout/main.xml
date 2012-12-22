@@ -13,7 +13,7 @@
 	    android:layout_height="wrap_content" 
 	    android:text="Sensor output :"
 	    android:textSize="18sp"
-	     android:background="#00FF0000"
+	    android:background="#00FF0000"
 	    android:textColor="#FFCC00" 
 	    
     />
