@@ -16,11 +16,21 @@
    	 
    	   <!-- 建立一个Gallery，最好是能全屏的 --> 
 	  <Gallery  
-	  android:id="@+id/my_gallery"
-	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
-	  android:layout_x="12px"
-	  android:layout_y="106px"  
+		  android:id="@+id/my_gallery"
+		  android:layout_below="@+id/show_picture_text"
+		  android:layout_width="fill_parent"
+		  android:layout_height="wrap_content"
 	  /> 
+	  
+	  <!-- 建立一个ImageView，最好是能全屏的 --> 
+	  <!-- android:src="@drawable/photo6" -->
+	 <ImageView
+	    android:id="@+id/mImageView"
+	    android:layout_below="@+id/my_gallery"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+	 />
 
+
+	  
 </RelativeLayout>

@@ -11,4 +11,9 @@
 <fullyQualifiedTypeName name="com.example.airsync.R.string"/>
 <fullyQualifiedTypeName name="com.example.airsync.R.id"/>
 <fullyQualifiedTypeName name="android.widget.Gallery"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.lang.Number"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

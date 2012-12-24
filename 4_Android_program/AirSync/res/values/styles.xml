@@ -29,5 +29,10 @@
     <item name="android:fromAlpha">0.0</item>
     <item name="android:toAlpha">0.0</item>
   </style>
+  
+  <declare-styleable name="Gallery">
+    <attr name="android:galleryItemBackground" />
+  </declare-styleable> 
 
 </resources>
+

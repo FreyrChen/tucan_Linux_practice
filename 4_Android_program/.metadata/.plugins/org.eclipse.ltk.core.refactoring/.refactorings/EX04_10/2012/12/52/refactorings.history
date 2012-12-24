@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;drawable-xhdpi&apos;&#x0A;- Original project: &apos;EX04_10&apos;&#x0A;- Destination element: &apos;drawable-xhdpi&apos;&#x0A;- Original elements:&#x0A;     photo1.png&#x0A;     photo3.png&#x0A;     photo4.png&#x0A;     photo6.png&#x0A;     photo5.png&#x0A;     photo2.png" description="Copy files" element1="res/drawable/photo1.png" element2="res/drawable/photo3.png" element3="res/drawable/photo4.png" element4="res/drawable/photo6.png" element5="res/drawable/photo5.png" element6="res/drawable/photo2.png" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1356351049379" target="/AirSync/res/drawable-xhdpi" units="0" version="1.0"/>
+</session>
