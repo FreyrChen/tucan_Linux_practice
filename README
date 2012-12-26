@@ -9,7 +9,7 @@ Do some change again.
   git add . //add all sub-folders, but exclude empty folder.
   git add -i //interactive add files
 3.git status
-4.git commit -m 'first commit'
+4.git commit -a -m 'first commit'
   git conmit -a //commit all files whitch is modtied and delete or add.
 5.git log -p -2 //-p show every version diff, -2 show the last 2 times.
   fit log --graph // graphcily show the branch
