@@ -4,9 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.airsync.Main.PictureButtonListener;
-
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -23,29 +20,38 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.airsync.SDCard;
 
 public class ShowPicture extends Activity 
 {
 	private TextView tvShowPicture;
 	private String file_path="/mnt/extsd/TestPhoto/photo6.png";
+	private String SD_available;
+	private List<String> pic_list =new ArrayList<String>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		/*载入主界面的各个控件格式*/
+		/* 载入主界面的各个控件格式*/
 		setContentView(R.layout.activity_showpicture);
 		
 		/*第一行的字，显示信息用*/
 		tvShowPicture = (TextView) findViewById(R.id.show_picture_text);
 		tvShowPicture.setText("好吧，我饿了，就做到这里了");
 		
+
+		
 		/* 建立一个gallery显示内存里的照片*/
 		/* 建立一个gallery显示SD卡里的照片*/
+		SDCard sd_card = new SDCard();
+		pic_list = sd_card.GetSDPicture();
+		SD_available = sd_card.ShowSize() ;
+		SD_available = "SD卡剩下容量为" + SD_available + "MB";
+		tvShowPicture.setText(SD_available);
 		Gallery gallery = (Gallery)findViewById( R.id.my_gallery);
+		gallery.setAdapter( new ImageAdapter( this, pic_list ));
 		//gallery.setAdapter( new ImageAdapter( this));
-		gallery.setAdapter( new ImageAdapter( this, GetSDPicture()));
 		//gallery.setOnItemClickListener( new GalleryClickListener())
 		//gallery.setOnItemClickListener(   new  PictureClickListener() );
 
@@ -59,56 +65,17 @@ public class ShowPicture extends Activity
 			mImageView.setImageBitmap(bm);
 		}
 		*/
-	
+	}
 		
 
 		
-	}
-
-	
-	/*将SD卡指定文件夹的照片路径存在一个List中，好让相册控件显示
-	 * 这个照片目录是从aircard穿过来的照片存储的地方
-	 * 现在实验的时候我放在：/mnt/extsd/TestPhoto
-	 */
-	private List<String> GetSDPicture()
-	{
-		List<String> it=new ArrayList<String>();
-		/*这里存放的照片不要太大，不然内存不够存放*/
-		//File file_path = new File("/mnt/extsd/TestPhoto/");
-		File file_path = new File("/mnt/sdcard/Pictures/Screenshots/");
-		File[] files = file_path.listFiles();
-		
-		for( int i=0; i<files.length; i++ )
-		{
-			File file = files[i];
-			if( getImageFile( file.getPath()))
-				it.add( file.getPath());
-		}
-		return it;
-	}
-	
-	/*判断取道的图片文件的文件名是不是支持的类型 */
-	private boolean getImageFile( String Name )
-	{
-		boolean re;
-		/*去的扩展名*/
-		String end = Name.substring( Name.lastIndexOf(".")+1,
-									 Name.length()).toLowerCase();
-		if( end.equals("jpg") || end.equals("gif") || end.equals("png") ||
-				end.equals("bmp") || end.equals("jpeg") )
-		{
-			re = true;
-		}
-		else
-		{
-			re = false;
-		}
-		return re;
-	}
-
 }
 
-class PictureClickListener implements OnItemClickListener{
+	
+
+
+class PictureClickListener implements OnItemClickListener
+{
 
 	private String picture_tag = "picture_tag";
 	
@@ -127,25 +94,6 @@ class PictureClickListener implements OnItemClickListener{
 
 class ImageAdapter extends BaseAdapter
 {
-	int mGalleryItemBackground;
-	private Context mContext;
-	private List<String> lis;
-	
-	/*构建一个Iteger array，去的预先需要加载的Drawable文件夹内的图片ID */
-	/*
-	private Integer[] myImageIds = 
-		{ 
-				R.drawable.photo1,
-				R.drawable.photo2, 
-				R.drawable.photo3, 
-				R.drawable.photo4, 
-				R.drawable.photo5, 
-				R.drawable.photo6, 
-		};
-	private String file_name="/mnt/extsd/TestPhoto/DSCF0359.JPG";
-	private Bitmap bm = BitmapFactory.decodeFile( file_name );
-	*/
-	
 	public ImageAdapter( Context c , List<String> li)
 	{
 		mContext = c;
@@ -210,7 +158,23 @@ class GalleryClickListener implements OnClickListener{
 	}
 }
 */
-
+	int mGalleryItemBackground;
+	private Context mContext;
+	private List<String> lis;
+	
+	/*构建一个Iteger array，去的预先需要加载的Drawable文件夹内的图片ID */
+	/*
+	private Integer[] myImageIds = 
+		{ 
+				R.drawable.photo1,
+				R.drawable.photo2, 
+				R.drawable.photo3, 
+				R.drawable.photo4, 
+				R.drawable.photo5, 
+				R.drawable.photo6, 
+		};
+	private String file_name="/mnt/extsd/TestPhoto/DSCF0359.JPG";
+	private Bitmap bm = BitmapFactory.decodeFile( file_name );
+	*/
 
 }
-

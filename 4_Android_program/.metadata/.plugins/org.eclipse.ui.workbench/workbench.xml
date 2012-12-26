@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="12" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1430" x="8" y="93">
+<window height="768" maximized="true" width="1426" x="0" y="24">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.DeviceView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
@@ -21,10 +21,10 @@
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="40" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -43,13 +43,79 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FirstJavaSample.java" partName="FirstJavaSample.java" path="/home/tusion/code/4_Android_program/FirstJavaSample/src/FirstJavaSample.java" title="FirstJavaSample.java" tooltip="FirstJavaSample/src/FirstJavaSample.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FirstJavaSample/src/FirstJavaSample.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1523" selectionTopPixel="351"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ShowPicture.java" partName="ShowPicture.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/ShowPicture.java" title="ShowPicture.java" tooltip="AirSync/src/com/example/airsync/ShowPicture.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/ShowPicture.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1759" selectionTopPixel="1088"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDCard.java" partName="SDCard.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/SDCard.java" title="SDCard.java" tooltip="AirSync/src/com/example/airsync/SDCard.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/SDCard.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1719" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestSensorActivity.java" partName="TestSensorActivity.java" path="/home/tusion/code/4_Android_program/TestSensor/src/TestSensor/tusion/TestSensorActivity.java" title="TestSensorActivity.java" tooltip="TestSensor/src/TestSensor/tusion/TestSensorActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4455" selectionTopPixel="2074"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDRecord.java" partName="SDRecord.java" path="/home/tusion/code/4_Android_program/TestSensor/src/TestSensor/tusion/SDRecord.java" title="SDRecord.java" tooltip="TestSensor/src/TestSensor/tusion/SDRecord.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TestSensor/src/TestSensor/tusion/SDRecord.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="178" selectionOffset="30" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EX10_13.java" partName="EX10_13.java" path="/home/tusion/Downloads/Google.Android.SDK/CH10/EX10_13/src/irdc/ex10_13/EX10_13.java" title="EX10_13.java" tooltip="EX10_13/src/irdc/ex10_13/EX10_13.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/EX10_13/src/irdc/ex10_13/EX10_13.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="695" selectionTopPixel="449"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MySurfaceView.java" partName="MySurfaceView.java" path="/home/tusion/Downloads/Google.Android.SDK/CH10/EX10_13/src/irdc/ex10_13/MySurfaceView.java" title="MySurfaceView.java" tooltip="EX10_13/src/irdc/ex10_13/MySurfaceView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/EX10_13/src/irdc/ex10_13/MySurfaceView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1707" selectionTopPixel="2441"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PhotoHandler.java" partName="PhotoHandler.java" path="/home/tusion/Downloads/Google.Android.SDK/CH10/EX10_13/src/irdc/ex10_13/PhotoHandler.java" title="PhotoHandler.java" tooltip="EX10_13/src/irdc/ex10_13/PhotoHandler.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/EX10_13/src/irdc/ex10_13/PhotoHandler.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="617" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/Main.java" title="Main.java" tooltip="AirSync/src/com/example/airsync/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2146" selectionTopPixel="899"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ManagerTest.java" partName="ManagerTest.java" path="/home/tusion/code/9_JavaApp/CoreJava/project1/src/ManagerTest.java" title="ManagerTest.java" tooltip="ManagerTest/src/ManagerTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ManagerTest/src/ManagerTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="906" selectionTopPixel="385"/>
+</editor>
+<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="AirSync Manifest" path="/home/tusion/code/4_Android_program/AirSync/AndroidManifest.xml" title="AirSync Manifest" tooltip="AirSync/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="proguard-project.txt" partName="proguard-project.txt" path="/home/tusion/code/4_Android_program/AirSync/proguard-project.txt" title="proguard-project.txt" tooltip="AirSync/proguard-project.txt" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/proguard-project.txt"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" partName="project.properties" path="/home/tusion/code/4_Android_program/AirSync/project.properties" title="project.properties" tooltip="AirSync/project.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/project.properties"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" partName="activity_main.xml" path="/home/tusion/code/4_Android_program/AirSync/res/layout/activity_main.xml" title="activity_main.xml" tooltip="AirSync/res/layout/activity_main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/res/layout/activity_main.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="/home/tusion/code/4_Android_program/AirSync/res/values/strings.xml" title="strings.xml" tooltip="AirSync/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/res/values/strings.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" partName="styles.xml" path="/home/tusion/code/4_Android_program/AirSync/res/values/styles.xml" title="styles.xml" tooltip="AirSync/res/values/styles.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/res/values/styles.xml"/>
 </editor>
 </editors>
 <views>
@@ -87,6 +153,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="365" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -132,14 +199,14 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
-<viewState/>
-</view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
 <viewState/>
 </view>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
+<viewState/>
+</view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="com.android.ide.eclipse.editors.manifest.ManifestEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
 <descriptor class="com.android.ide.eclipse.ddms.Perspective" id="com.android.ide.eclipse.ddms.Perspective" label="DDMS"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -193,7 +260,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="logcat" ratio="0.5538847" ratioLeft="442" ratioRight="356" relationship="4" relative="devices">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<info folder="true" part="logcat" ratio="0.5538847" ratioLeft="442" ratioRight="356" relationship="4" relative="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
@@ -280,12 +347,12 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -311,7 +378,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.1693492" ratioLeft="242" ratioRight="1187" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.6917293" ratioLeft="552" ratioRight="246" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -396,32 +463,22 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@176526d" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@176526d" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7490637" ratioLeft="600" ratioRight="201" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7490637" ratioLeft="600" ratioRight="201" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.cdt.debug.ui.executablesView" label="Executables"/>
@@ -429,44 +486,34 @@
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@269752" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
-<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@269752" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.45" ratioLeft="270" ratioRight="330" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ModuleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -478,95 +525,169 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/FirstJavaSample/src/FirstJavaSample.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/ShowPicture.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/SDCard.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TestSensor/src/TestSensor/tusion/SDRecord.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/EX10_13/src/irdc/ex10_13/MySurfaceView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ManagerTest/src/ManagerTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/AirSync/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/AirSync/proguard-project.txt"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/AirSync/project.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/AirSync/res/layout/activity_main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/AirSync/res/values/strings.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/AirSync/res/values/styles.xml"/>
 </editors>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="149" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1364" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="214" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1202" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1608" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1364" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="353" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1202" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1583" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1167" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="298" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1066" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1626" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="465" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1066" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1746" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="520" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="604" y="0"/>
+<item historyLabel="Main.java" index="4">
+<position info="not_deleted" x="1979" y="6"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="995" y="0"/>
+<item historyLabel="MySurfaceView.java" index="5">
+<position info="not_deleted" x="1707" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="863" y="0"/>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="4455" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="995" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1191" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="988" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1094" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="992" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1326" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="731" y="0"/>
+<item historyLabel="Main.java" index="4">
+<position info="not_deleted" x="1979" y="6"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="728" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1094" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1002" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1326" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1066" y="0"/>
+<item historyLabel="SDRecord.java" index="3">
+<position info="not_deleted" x="30" y="178"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1079" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="191" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1583" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1202" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="467" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="192" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="201" y="4"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1202" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1295" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="218" y="0"/>
 </item>
-<item historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1286" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1202" y="0"/>
 </item>
-<item active="true" historyLabel="FirstJavaSample.java" index="0">
-<position info="not_deleted" x="1580" y="0"/>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1257" y="33"/>
 </item>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="738" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1257" y="33"/>
+</item>
+<item historyLabel="Main.java" index="4">
+<position info="not_deleted" x="2146" y="0"/>
+</item>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2036" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1561" y="0"/>
+</item>
+<item historyLabel="ManagerTest.java" index="6">
+<position info="not_deleted" x="906" y="0"/>
+</item>
+<item historyLabel="Main.java" index="4">
+<position info="not_deleted" x="2146" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1561" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1455" y="0"/>
+</item>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1719" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1246" y="0"/>
+</item>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1719" y="0"/>
+</item>
+<item historyLabel="ShowPicture.java" index="0">
+<position info="not_deleted" x="1759" y="0"/>
+</item>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="1719" y="0"/>
+</item>
+<item historyLabel="Main.java" index="4">
+<position info="not_deleted" x="2146" y="0"/>
+</item>
+<item historyLabel="AirSync Manifest" index="7"/>
+<item historyLabel="proguard-project.txt" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="project.properties" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="activity_main.xml" index="10"/>
+<item historyLabel="strings.xml" index="11"/>
+<item historyLabel="styles.xml" index="12"/>
+<item historyLabel="project.properties" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="AirSync Manifest" index="7"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -575,15 +696,37 @@
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FirstJavaSample.java" tooltip="FirstJavaSample/src/FirstJavaSample.java">
-<persistable path="/FirstJavaSample/src/FirstJavaSample.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" tooltip="AirSync/res/values/styles.xml">
+<persistable path="/AirSync/res/values/styles.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EX10_13.java" tooltip="EX10_13/src/irdc/ex10_13/EX10_13.java">
-<persistable path="/EX10_13/src/irdc/ex10_13/EX10_13.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="AirSync/res/values/strings.xml">
+<persistable path="/AirSync/res/values/strings.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="AirSync/res/layout/activity_main.xml">
+<persistable path="/AirSync/res/layout/activity_main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="ic_launcher-web.png" tooltip="AirSync/ic_launcher-web.png">
+<persistable path="/AirSync/ic_launcher-web.png"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="AirSync/project.properties">
+<persistable path="/AirSync/project.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="proguard-project.txt" tooltip="AirSync/proguard-project.txt">
+<persistable path="/AirSync/proguard-project.txt"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="AirSync/AndroidManifest.xml">
+<persistable path="/AirSync/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ManagerTest.java" tooltip="ManagerTest/src/ManagerTest.java">
+<persistable path="/ManagerTest/src/ManagerTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="AirSync/src/com/example/airsync/Main.java">
+<persistable path="/AirSync/src/com/example/airsync/Main.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PhotoHandler.java" tooltip="EX10_13/src/irdc/ex10_13/PhotoHandler.java">
 <persistable path="/EX10_13/src/irdc/ex10_13/PhotoHandler.java"/>
@@ -591,38 +734,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MySurfaceView.java" tooltip="EX10_13/src/irdc/ex10_13/MySurfaceView.java">
 <persistable path="/EX10_13/src/irdc/ex10_13/MySurfaceView.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="EX10_13/project.properties">
-<persistable path="/EX10_13/project.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_showpicture.xml" tooltip="AirSync/res/layout/activity_showpicture.xml">
-<persistable path="/AirSync/res/layout/activity_showpicture.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="AirSync/project.properties">
-<persistable path="/AirSync/project.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ShowPicture.java" tooltip="AirSync/src/com/example/airsync/ShowPicture.java">
-<persistable path="/AirSync/src/com/example/airsync/ShowPicture.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="AirSync/res/values/strings.xml">
-<persistable path="/AirSync/res/values/strings.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestAllSensorsActivity.java" tooltip="TestSensor/src/TestSensor/tusion/TestAllSensorsActivity.java">
-<persistable path="/TestSensor/src/TestSensor/tusion/TestAllSensorsActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EX10_13.java" tooltip="EX10_13/src/irdc/ex10_13/EX10_13.java">
+<persistable path="/EX10_13/src/irdc/ex10_13/EX10_13.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDRecord.java" tooltip="TestSensor/src/TestSensor/tusion/SDRecord.java">
 <persistable path="/TestSensor/src/TestSensor/tusion/SDRecord.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="AirSync/src/com/example/airsync/Main.java">
-<persistable path="/AirSync/src/com/example/airsync/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestSensorActivity.java" tooltip="TestSensor/src/TestSensor/tusion/TestSensorActivity.java">
+<persistable path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="styles.xml" tooltip="AirSync/res/values/styles.xml">
-<persistable path="/AirSync/res/values/styles.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="TestSensor/res/values/strings.xml">
-<persistable path="/TestSensor/res/values/strings.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="AirSync/AndroidManifest.xml">
-<persistable path="/AirSync/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDCard.java" tooltip="AirSync/src/com/example/airsync/SDCard.java">
+<persistable path="/AirSync/src/com/example/airsync/SDCard.java"/>
 </file>
 </mruList>
 </workbench>

@@ -13,8 +13,13 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="getPhotos" key="selection"/>
+		<item value="Intent" key="selection"/>
 		<list key="findhistory">
+			<item value="intent"/>
+			<item value="creatSDFile"/>
+			<item value="SDRecord"/>
+			<item value="Toast"/>
+			<item value="myImageIds"/>
 			<item value="getPhotos"/>
 			<item value="path"/>
 		</list>
