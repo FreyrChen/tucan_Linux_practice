@@ -1,6 +1,12 @@
 package com.example.airsync;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +35,7 @@ public class ShowPicture extends Activity
 	private String file_path="/mnt/extsd/TestPhoto/photo6.png";
 	private String SD_available;
 	private List<String> pic_list =new ArrayList<String>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -40,10 +47,7 @@ public class ShowPicture extends Activity
 		tvShowPicture = (TextView) findViewById(R.id.show_picture_text);
 		tvShowPicture.setText("好吧，我饿了，就做到这里了");
 		
-
-		
 		/* 建立一个gallery显示内存里的照片*/
-		/* 建立一个gallery显示SD卡里的照片*/
 		SDCard sd_card = new SDCard();
 		pic_list = sd_card.GetSDPicture();
 		SD_available = sd_card.ShowSize() ;
@@ -56,7 +60,6 @@ public class ShowPicture extends Activity
 		//gallery.setOnItemClickListener(   new  PictureClickListener() );
 
 		/* 建立一个ImageView显示SD卡里的照片*/	
-		/*
 		ImageView mImageView = (ImageView)findViewById(R.id.mImageView);
 		File file = new File( file_path );
 		if(file.exists() )
@@ -64,7 +67,7 @@ public class ShowPicture extends Activity
 			Bitmap bm = BitmapFactory.decodeFile( file_path );
 			mImageView.setImageBitmap(bm);
 		}
-		*/
+		
 	}
 		
 
@@ -127,12 +130,15 @@ class ImageAdapter extends BaseAdapter
 		// TODO Auto-generated method stub
 		ImageView i = new ImageView( mContext );
 		
-		//设置图片给image对象
-		//i.setImageResource( myImageIds[position]);//决定图片文件的位置:内存		
-		//i.setImageBitmap(bm);						//决定图片文件的位置:sd卡
+		//现实sd卡中的图片
+		//Bitmap bm = BitmapFactory.decodeFile( lis.get(position).toString() );
+		//i.setImageBitmap(bm);//决定图片文件的位置:sd卡
 		
-		Bitmap bm = BitmapFactory.decodeFile( lis.get(position).toString() );
-		i.setImageBitmap(bm);//决定图片文件的位置:sd卡
+		//现实网址中的图片
+		NetConnection net_connection = new NetConnection();
+		i.setImageBitmap( net_connection.getURLToBitmap(pic_url));
+		
+		//i.setImageResource( myImageIds[position]);//决定图片文件的位置:内存	
 		
 		//设置图片的高和宽
 		i.setScaleType( ImageView.ScaleType.FIT_XY );
@@ -145,36 +151,15 @@ class ImageAdapter extends BaseAdapter
 		return i;
 	}
 	
-		
 
-/*为按钮创建监听器*/
-/*
-class GalleryClickListener implements OnClickListener{
-
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
-}
-*/
 	int mGalleryItemBackground;
 	private Context mContext;
 	private List<String> lis;
 	
-	/*构建一个Iteger array，去的预先需要加载的Drawable文件夹内的图片ID */
-	/*
-	private Integer[] myImageIds = 
-		{ 
-				R.drawable.photo1,
-				R.drawable.photo2, 
-				R.drawable.photo3, 
-				R.drawable.photo4, 
-				R.drawable.photo5, 
-				R.drawable.photo6, 
-		};
-	private String file_name="/mnt/extsd/TestPhoto/DSCF0359.JPG";
-	private Bitmap bm = BitmapFactory.decodeFile( file_name );
-	*/
-
+	private String pic_url = "http://www.baidu.com/img/baidu_sylogo1.gif";
 }
+
+
+
+
+
