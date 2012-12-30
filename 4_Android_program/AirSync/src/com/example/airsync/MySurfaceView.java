@@ -136,12 +136,13 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
         if(position!=0)
         {
           position--;
+          /*预先在bmp数组中缓存了5张照片*/
           /* 重组Bitmap内容 */
           bmp[4]=bmp[3];
           bmp[3]=bmp[2];
           bmp[2]=bmp[1];
           bmp[1]=bmp[0];
-          /* 启动Thread后台读取 */
+          /* 启动Thread后台读取左边的照片 bmp[0]= getBitmap(position-2); */
           Thread thread = new Thread(new loadBitmap(1));
           thread.start();
           drawPoint1=0;
@@ -149,18 +150,19 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
           drawPoint3=0;
           doDraw();
         }
-      }/* 守左拉 */
+      }
       else
-      {
+      {		/* 向左拉 */
         if(position!=photos.size()-1)
         {
           position++;
+          /*预先在bmp数组中缓存了5张照片*/
           /* 重组Bitmap内容 */
           bmp[0]=bmp[1];
           bmp[1]=bmp[2];
           bmp[2]=bmp[3];
           bmp[3]=bmp[4];
-          /* 启动Thread后台读取 */
+          /* 启动Thread后台读取右边的照片 bmp[4]= getBitmap(position+2); */
           Thread thread = new Thread(new loadBitmap(2));
           thread.start();
           drawPoint1=0;
@@ -188,11 +190,10 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     {
     	canvas = mSurfaceHolder.lockCanvas(null);
         synchronized (mSurfaceHolder)
- {
+        {
 				Paint p = new Paint();
 				/* 上白色底色 */
-				canvas.drawColor(mContext.getResources().getColor(
-						R.drawable.white));
+				canvas.drawColor(mContext.getResources().getColor(R.drawable.white));
 				/* 画左边的照片 */
 				if (drawPoint1 != 0 && bmp[1] != null) {
 					canvas.drawBitmap(bmp[1], drawPoint1,
@@ -201,7 +202,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 				/* 画中间的照片 */
         if(drawPoint1==0&&drawPoint2==0&&drawPoint3==0)
           canvas.drawBitmap(bmp[2],0,height/2-bmp[2].getHeight()/2,p);
-      }
+       }
     }
     finally
     {
@@ -270,7 +271,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     	photos.add("http://www.baidu.com/img/baidu_sylogo1.gif");
     	photos.add("http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201212271200fffff.jpg");
-    	photos.add("http://i.weather.com.cn/i/product/pic/m/sevp_nsmc_wxcl_asc_e99_achn_lno_py_20121227140000000.jpg");
+    	//photos.add("http://i.weather.com.cn/i/product/pic/m/sevp_nsmc_wxcl_asc_e99_achn_lno_py_20121227140000000.jpg");
     	photos.add("http://imgsrc.baidu.com/forum/pic/item/7318deaa8992a8730ff4778e.jpg");
     	
       /* 初始Bitmap物件 */

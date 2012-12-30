@@ -1,38 +1,17 @@
 package com.example.airsync;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-/* 建立一个gallery显示SD卡里的照片*/
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.example.airsync.SDCard;
 
 
 public class ShowPicture extends Activity 
@@ -75,8 +54,8 @@ public class ShowPicture extends Activity
 		mLayout01 = ( LinearLayout )findViewById( R.id.myLinearLayout1 );
 		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams
 			(
-				LinearLayout.LayoutParams.FILL_PARENT,
-				LinearLayout.LayoutParams.FILL_PARENT
+				LayoutParams.FILL_PARENT,
+				LayoutParams.FILL_PARENT
 			);
 		mMySurfaceView01 = new MySurfaceView( ShowPicture.this, width, height);
 		
@@ -103,7 +82,7 @@ public class ShowPicture extends Activity
 		}
 		else
 		{
-		return super.onTouchEvent(event);
+			return super.onTouchEvent(event);
 		}
 	}
 	
