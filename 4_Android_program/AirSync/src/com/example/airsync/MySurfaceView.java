@@ -13,9 +13,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.util.Xml;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 {
@@ -31,6 +33,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
   private float drawPoint2=0f;
   private float drawPoint3=0f;
   private ProgressDialog dialog;
+  private String Tag = "MySurface";
   private String path="http://picasaweb.google.com/data/feed/base/all?alt=rss&kind=photo&access=public&filter=1&q=%E7%BE%8E%E5%A5%B3&hl=zh_TW";
  // private String path="http://192.168.1.1";
   private List<String> photos=new ArrayList<String>();
@@ -269,11 +272,24 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
     	/* 取得相片信息 */
 //      photos=MySurfaceView.this.getPhotoList();
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    	photos.add("http://www.baidu.com/img/baidu_sylogo1.gif");
-    	photos.add("http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201212271200fffff.jpg");
+    	//photos.add("http://www.baidu.com/img/baidu_sylogo1.gif");
+    	//photos.add("http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201212271200fffff.jpg");
     	//photos.add("http://i.weather.com.cn/i/product/pic/m/sevp_nsmc_wxcl_asc_e99_achn_lno_py_20121227140000000.jpg");
-    	photos.add("http://imgsrc.baidu.com/forum/pic/item/7318deaa8992a8730ff4778e.jpg");
-    	
+    	//photos.add("http://imgsrc.baidu.com/forum/pic/item/7318deaa8992a8730ff4778e.jpg");
+    	String ImageWeb = "http://www.huxiu.com";
+    	//String ImageWeb = "http://image.baidu.com/i?tn=list&word=liulan#%E6%91%84%E5%BD%B1|%E5%85%A8%E9%83%A8|0";
+    	NetConnection mNet = new NetConnection();
+	    try 
+	    {
+			photos = mNet.HttpPraseImage(ImageWeb);
+		} 
+	    catch (Exception e) 
+	    {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Log.e(Tag, "Error in network call",e);
+		}
+	    	
       /* 初始Bitmap物件 */
       bmp[2]=MySurfaceView.this.getBitmap(position);
       bmp[3]=MySurfaceView.this.getBitmap(position+1);

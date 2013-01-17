@@ -6,7 +6,9 @@ import java.util.List;
 import org.xml.sax.Attributes; 
 import org.xml.sax.SAXException; 
 import org.xml.sax.helpers.DefaultHandler; 
-
+/*
+ * 将xml文件中的照片信息解析出来
+ */
 public class PhotoHandler extends DefaultHandler
 {
   private List<String> list;

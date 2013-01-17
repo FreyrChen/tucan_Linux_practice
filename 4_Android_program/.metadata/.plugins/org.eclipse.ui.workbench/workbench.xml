@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="30" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="722" x="729" y="155">
+<window height="768" maximized="true" width="722" x="382" y="222">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.android.ide.eclipse.ddms.views.DeviceView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
@@ -33,7 +33,7 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="96" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -45,17 +45,112 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivityMain.java" partName="ActivityMain.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/ActivityMain.java" title="ActivityMain.java" tooltip="AirSync/src/com/example/airsync/ActivityMain.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/ActivityMain.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="21" selectionOffset="1200" selectionTopPixel="96"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivitySurface.java" partName="ActivitySurface.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/ActivitySurface.java" title="ActivitySurface.java" tooltip="AirSync/src/com/example/airsync/ActivitySurface.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/ActivitySurface.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3273" selectionTopPixel="113"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MySurfaceView.java" partName="MySurfaceView.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/MySurfaceView.java" title="MySurfaceView.java" tooltip="AirSync/src/com/example/airsync/MySurfaceView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/MySurfaceView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7335" selectionTopPixel="4051"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ActivityImageSwitcher.java" partName="ActivityImageSwitcher.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/ActivityImageSwitcher.java" title="ActivityImageSwitcher.java" tooltip="AirSync/src/com/example/airsync/ActivityImageSwitcher.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/ActivityImageSwitcher.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1952" selectionTopPixel="399"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="/home/tusion/code/4_Android_program/AirSync/res/values/strings.xml" title="strings.xml" tooltip="AirSync/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/res/values/strings.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetConnection.java" partName="NetConnection.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/NetConnection.java" title="NetConnection.java" tooltip="AirSync/src/com/example/airsync/NetConnection.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/NetConnection.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4622" selectionTopPixel="2946"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gallery1.java" partName="Gallery1.java" path="/home/tusion/Documents/android app mars/ImageBrowse/src/android/apps/Gallery1.java" title="Gallery1.java" tooltip="ImageBrowse/src/android/apps/Gallery1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ImageBrowse/src/android/apps/Gallery1.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1535" selectionTopPixel="630"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetImagesFromSDCard.java" partName="GetImagesFromSDCard.java" path="/home/tusion/Documents/android app mars/ImageBrowse/src/android/apps/GetImagesFromSDCard.java" title="GetImagesFromSDCard.java" tooltip="ImageBrowse/src/android/apps/GetImagesFromSDCard.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ImageBrowse/src/android/apps/GetImagesFromSDCard.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2337" selectionTopPixel="2840"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageGridView.java" partName="ImageGridView.java" path="/home/tusion/Documents/android app mars/JoyImageView/src/com/worldchip/apk/ImageGridView.java" title="ImageGridView.java" tooltip="JoyImageView/src/com/worldchip/apk/ImageGridView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JoyImageView/src/com/worldchip/apk/ImageGridView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1417" selectionTopPixel="243"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="JoyImageView Manifest" path="/home/tusion/Documents/android app mars/JoyImageView/AndroidManifest.xml" title="JoyImageView Manifest" tooltip="JoyImageView/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JoyImageView/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="ImageBrowse Manifest" path="/home/tusion/Documents/android app mars/ImageBrowse/AndroidManifest.xml" title="ImageBrowse Manifest" tooltip="ImageBrowse/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ImageBrowse/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="AirSync Manifest" path="/home/tusion/code/4_Android_program/AirSync/AndroidManifest.xml" title="AirSync Manifest" tooltip="AirSync/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDCard.java" partName="SDCard.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/SDCard.java" title="SDCard.java" tooltip="AirSync/src/com/example/airsync/SDCard.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/SDCard.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2697" selectionTopPixel="1401"/>
+</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AirServer.java" partName="AirServer.java" path="/home/tusion/code/9_JavaApp/AirServer/src/AirServer.java" title="AirServer.java" tooltip="AirServer/src/AirServer.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirServer/src/AirServer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="912" selectionOffset="764" selectionTopPixel="663"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1290" selectionOffset="386" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/tusion/code/4_Android_program/AirSync/src/com/example/airsync/Main.java" title="Main.java" tooltip="AirSync/src/com/example/airsync/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AirSync/src/com/example/airsync/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3338" selectionTopPixel="1804"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestSensorActivity.java" partName="TestSensorActivity.java" path="/home/tusion/code/4_Android_program/TestSensor/src/TestSensor/tusion/TestSensorActivity.java" title="TestSensorActivity.java" tooltip="TestSensor/src/TestSensor/tusion/TestSensorActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13101" selectionTopPixel="4829"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TimerTest.java" partName="TimerTest.java" path="/home/tusion/code/9_JavaApp/TimerTest/src/TimerTest.java" title="TimerTest.java" tooltip="TimerTest/src/TimerTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TimerTest/src/TimerTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="557" selectionTopPixel="1"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PicSelectActivity.java" partName="PicSelectActivity.java" path="/home/tusion/code/4_Android_program/PictureTest/src/com/example/picturetest/PicSelectActivity.java" title="PicSelectActivity.java" tooltip="PictureTest/src/com/example/picturetest/PicSelectActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PictureTest/src/com/example/picturetest/PicSelectActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="773" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="PhotoIntentActivity Manifest" path="/home/tusion/Documents/android app mars/PhotoIntentActivity/AndroidManifest.xml" title="PhotoIntentActivity Manifest" tooltip="PhotoIntentActivity/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PhotoIntentActivity/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlbumStorageDirFactory.java" partName="AlbumStorageDirFactory.java" path="/home/tusion/Documents/android app mars/PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java" title="AlbumStorageDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseAlbumDirFactory.java" partName="BaseAlbumDirFactory.java" path="/home/tusion/Documents/android app mars/PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java" title="BaseAlbumDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FroyoAlbumDirFactory.java" partName="FroyoAlbumDirFactory.java" path="/home/tusion/Documents/android app mars/PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java" title="FroyoAlbumDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PhotoIntentActivity.java" partName="PhotoIntentActivity.java" path="/home/tusion/Documents/android app mars/PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java" title="PhotoIntentActivity.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1506" selectionTopPixel="5057"/>
 </editor>
 </editors>
 <views>
@@ -94,9 +189,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="481" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="309" org.eclipse.ui.ide.severityAndDescriptionField="680"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -321,7 +413,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.1693492" ratioLeft="242" ratioRight="1187" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.5576441" ratioLeft="445" ratioRight="353" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.7268171" ratioLeft="580" ratioRight="218" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -472,158 +564,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirServer/src/AirServer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/NetConnection.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/SDCard.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/ActivityMain.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/ActivitySurface.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AirSync/src/com/example/airsync/MySurfaceView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/AirSync/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/ImageBrowse/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TimerTest/src/TimerTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PictureTest/src/com/example/picturetest/PicSelectActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/PhotoIntentActivity/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/JoyImageView/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java"/>
 </editors>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="ActivitySurface.java" index="4">
+<position info="not_deleted" x="3273" y="0"/>
+</item>
+<item historyLabel="MySurfaceView.java" index="5">
+<position info="not_deleted" x="7344" y="0"/>
+</item>
+<item historyLabel="ActivityMain.java" index="3">
+<position info="not_deleted" x="1200" y="21"/>
+</item>
+<item historyLabel="MySurfaceView.java" index="5">
+<position info="not_deleted" x="7335" y="0"/>
+</item>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4313" y="0"/>
+</item>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4717" y="0"/>
+</item>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="12412" y="28"/>
+</item>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4717" y="0"/>
+</item>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="12412" y="28"/>
+</item>
+<item historyLabel="NetConnection.java" index="0">
 <position/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="13101" y="0"/>
+</item>
+<item historyLabel="NetConnection.java" index="0">
 <position/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4859" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4698" y="10"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2665" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4698" y="10"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2665" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="13101" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4971" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2665" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4948" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2665" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="2274" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2541" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4628" y="44"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2541" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2541" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4628" y="44"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="807" y="420"/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4788" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="13101" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="1228" y="445"/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4788" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="13101" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="1228" y="445"/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4788" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4622" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="1442" y="10"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2545" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="TestSensorActivity.java" index="2">
+<position info="not_deleted" x="13101" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="1442" y="10"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2545" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4622" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="385" y="375"/>
+<item historyLabel="SDCard.java" index="1">
+<position info="not_deleted" x="2697" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
+<item historyLabel="NetConnection.java" index="0">
+<position info="not_deleted" x="4622" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="385" y="375"/>
+<item historyLabel="AirSync Manifest" index="6"/>
+<item historyLabel="ImageBrowse Manifest" index="7"/>
+<item historyLabel="TimerTest.java" index="8">
+<position info="not_deleted" x="557" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="PicSelectActivity.java" index="9">
+<position info="not_deleted" x="773" y="0"/>
 </item>
-<item historyLabel="AirServer.java" index="0">
-<position info="not_deleted" x="764" y="912"/>
+<item historyLabel="PhotoIntentActivity Manifest" index="10"/>
+<item historyLabel="JoyImageView Manifest" index="11"/>
+<item historyLabel="ImageBrowse Manifest" index="7"/>
+<item historyLabel="AlbumStorageDirFactory.java" index="12">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="BaseAlbumDirFactory.java" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position/>
+<item historyLabel="FroyoAlbumDirFactory.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4403" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4983" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="5257" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="3944" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="1032" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="3247" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4231" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4130" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4261" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="1159" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4319" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="3820" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="4236" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="3933" y="0"/>
-</item>
-<item active="true" historyLabel="Main.java" index="1">
-<position info="not_deleted" x="3435" y="0"/>
+<item active="true" historyLabel="PhotoIntentActivity.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -631,13 +727,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -646,55 +735,54 @@
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="android-support-v4.jar" tooltip="AirSync/libs/android-support-v4.jar">
-<persistable path="/AirSync/libs/android-support-v4.jar"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PhotoIntentActivity.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java">
+<persistable path="/PhotoIntentActivity/src/com/example/android/photobyintent/PhotoIntentActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="AirSync/src/com/example/airsync/Main.java">
-<persistable path="/AirSync/src/com/example/airsync/Main.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FroyoAlbumDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java">
+<persistable path="/PhotoIntentActivity/src/com/example/android/photobyintent/FroyoAlbumDirFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseAlbumDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java">
+<persistable path="/PhotoIntentActivity/src/com/example/android/photobyintent/BaseAlbumDirFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AlbumStorageDirFactory.java" tooltip="PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java">
+<persistable path="/PhotoIntentActivity/src/com/example/android/photobyintent/AlbumStorageDirFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="PhotoIntentActivity/AndroidManifest.xml">
+<persistable path="/PhotoIntentActivity/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PicSelectActivity.java" tooltip="PictureTest/src/com/example/picturetest/PicSelectActivity.java">
+<persistable path="/PictureTest/src/com/example/picturetest/PicSelectActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TimerTest.java" tooltip="TimerTest/src/TimerTest.java">
+<persistable path="/TimerTest/src/TimerTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestSensorActivity.java" tooltip="TestSensor/src/TestSensor/tusion/TestSensorActivity.java">
+<persistable path="/TestSensor/src/TestSensor/tusion/TestSensorActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDRecord.java" tooltip="TestSensor/src/TestSensor/tusion/SDRecord.java">
+<persistable path="/TestSensor/src/TestSensor/tusion/SDRecord.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AirServer.java" tooltip="AirServer/src/AirServer.java">
 <persistable path="/AirServer/src/AirServer.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="AirSync/res/values/strings.xml">
-<persistable path="/AirSync/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDCard.java" tooltip="AirSync/src/com/example/airsync/SDCard.java">
+<persistable path="/AirSync/src/com/example/airsync/SDCard.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="AirSync/AndroidManifest.xml">
 <persistable path="/AirSync/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="AirSync/res/layout/activity_main.xml">
-<persistable path="/AirSync/res/layout/activity_main.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="ImageBrowse/AndroidManifest.xml">
+<persistable path="/ImageBrowse/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ManagerTest.java" tooltip="ManagerTest/src/ManagerTest.java">
-<persistable path="/ManagerTest/src/ManagerTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="JoyImageView/AndroidManifest.xml">
+<persistable path="/JoyImageView/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Image Switcher/AndroidManifest.xml">
-<persistable path="/Image Switcher/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="main.xml" tooltip="Image Switcher/res/layout/main.xml">
-<persistable path="/Image Switcher/res/layout/main.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EX04_10.java" tooltip="EX04_10/src/irdc/EX04_10/EX04_10.java">
-<persistable path="/EX04_10/src/irdc/EX04_10/EX04_10.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MySurfaceView.java" tooltip="EX10_13/src/irdc/ex10_13/MySurfaceView.java">
-<persistable path="/EX10_13/src/irdc/ex10_13/MySurfaceView.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EX10_13.java" tooltip="EX10_13/src/irdc/ex10_13/EX10_13.java">
-<persistable path="/EX10_13/src/irdc/ex10_13/EX10_13.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GetImagesFromSDCard.java" tooltip="ImageBrowse/src/android/apps/GetImagesFromSDCard.java">
-<persistable path="/ImageBrowse/src/android/apps/GetImagesFromSDCard.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MySurfaceView.java" tooltip="AirSync/src/com/example/airsync/MySurfaceView.java">
-<persistable path="/AirSync/src/com/example/airsync/MySurfaceView.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetConnection.java" tooltip="AirSync/src/com/example/airsync/NetConnection.java">
-<persistable path="/AirSync/src/com/example/airsync/NetConnection.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageGridView.java" tooltip="JoyImageView/src/com/worldchip/apk/ImageGridView.java">
+<persistable path="/JoyImageView/src/com/worldchip/apk/ImageGridView.java"/>
 </file>
 </mruList>
 </workbench>

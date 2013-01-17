@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=TestSensor,AirCard,AirSync,EX10_13,FirstJavaSample,ManagerTest,TimerTest,DreamerView,HSVDemo,Image Switcher,ImageBrowse,JoyImageView,PictureTest,AirServer
+task-tag-projects-already-scanned=TestSensor,AirCard,AirSync,EX10_13,FirstJavaSample,ManagerTest,TimerTest,DreamerView,HSVDemo,Image Switcher,ImageBrowse,JoyImageView,PictureTest,AirServer,AirReceiver,ImageGridActivity,PhotoIntentActivity

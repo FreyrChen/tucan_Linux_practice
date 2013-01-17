@@ -7,11 +7,11 @@
     <string name="nothing"> 这里还什么都没写，等下一步再说~</string>
     <string name="start_info">启动提示：首先您需要打开WIFI，其次您的AirCard与android设备必须在同一个局域网内</string>
     <string name="show_picture">自动显示照片</string>
-    <string name="http_connect">连接网页</string>
+    <string name="http_connect">解析网页</string>
     <string name="ShowPictureLable">ShowPicture</string>
     <string name="alert_title">请确认：</string>
     <string name="alert_message">AirCard启动WIFI信号发送出来了，而且平板电脑的WIFI确实连接到了aircard？</string>
     <string name="alert_ok">连好了</string>
     <string name="alert_exit">哦，我忘了</string>
-
+	<string name="image_switcher">Image Switcher</string>
 </resources>
