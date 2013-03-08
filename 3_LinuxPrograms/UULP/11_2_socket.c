@@ -11,9 +11,10 @@
 #include <time.h>
 #include <strings.h>
 #include <string.h>
+#include <time.h> 	//ctime();
 
 #define NAME_LEN 256
-#define PORTNUM 13000
+#define PORTNUM 15000
 
 
 void oops( char *string1, char *string2 );
@@ -26,11 +27,11 @@ int main( int args, char* argv[] )
 	char hostname[NAME_LEN];
 	struct hostent *host_tent;
 	FILE * socket_fp;
-	char *ctime;
+	//char *ctime;
 	time_t now_time;
 
 	//1.Build a socket
-	socket_fd = socket( AF_INET, SOCK_STREAM, 0 );
+	socket_fd = socket( PF_INET, SOCK_STREAM, 0 );
 	if( socket_fd == -1 )
 		oops("can not build a socket","socket" );
 	
@@ -39,13 +40,14 @@ int main( int args, char* argv[] )
 	gethostname( hostname, NAME_LEN );
 	host_tent = gethostbyname( hostname );
 //	printf(" addr is %s \n", host_tent->h_addr );
-	strncpy( &ip_addr.sin_addr, host_tent->h_addr, host_tent->h_length );
+//	strncpy( &ip_addr.sin_addr, host_tent->h_addr, host_tent->h_length );
+	bcopy( host_tent->h_addr, &ip_addr.sin_addr, host_tent->h_length );
 	ip_addr.sin_port = htons( PORTNUM );
 	ip_addr.sin_family = AF_INET;
 	
 	if( bind( socket_fd, (struct sockaddr * )&ip_addr,
 		sizeof( ip_addr )) != 0 )
-		oops("can not bind", "bind" );
+		//oops("can not bind", "bind" );
 
 	//3.keep listen to the port
 	if( listen( socket_fd, 1 ) !=0 )
@@ -57,14 +59,16 @@ int main( int args, char* argv[] )
 		socket_id = accept( socket_fd, NULL, NULL );
 		printf("Wow, I have got you, can i help you?\n");
 		if( socket_id == -1 )
-			oops("accpt","");
+			oops("server accept error","accept");
+
 		socket_fp = fdopen( socket_id, "w" );
 		if( socket_fp = NULL )
 			oops("socket file is not exsit", "fdopen");
-		now_time = time(NULL );
-
+		
+		now_time = time( NULL );
 		fprintf( socket_fp, "The time here is ..");
-	//	fprintf( socket_fp, "%s", ctime( &now_time ) );
+		fprintf( socket_fp, "%s", ctime( &now_time ) );
+		
 		fclose( socket_fp );
 	
 	}

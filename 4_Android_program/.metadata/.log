@@ -2129,3 +2129,20 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.ec
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2013-01-05 22:42:53.676
 !MESSAGE Failed to load properties file for project 'LoginActivity'
+!SESSION 2013-03-04 13:01:23.073 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-03-04 13:01:29.379
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-03-04 13:03:20.371
+!MESSAGE parseSdkContent failed
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ide.eclipse.adt.AdtPlugin$7.run(AdtPlugin.java:1446)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
