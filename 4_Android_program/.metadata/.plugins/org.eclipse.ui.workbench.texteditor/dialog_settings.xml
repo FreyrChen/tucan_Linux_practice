@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
-		<item value="64" key="DIALOG_Y_ORIGIN"/>
-		<item value="863" key="DIALOG_X_ORIGIN"/>
+		<item value="127" key="DIALOG_Y_ORIGIN"/>
+		<item value="712" key="DIALOG_X_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="SDCard" key="selection"/>
+		<item value="SERVER_URL" key="selection"/>
 		<list key="findhistory">
+			<item value="SERVER_URL"/>
+			<item value="generate"/>
+			<item value="didGenerateFingerprintCode"/>
+			<item value="LanIP"/>
 			<item value="SDCard"/>
 			<item value="readHttpStream"/>
 			<item value="setImageResource"/>
 			<item value="ActivityShowPicture "/>
-			<item value="&quot;Net&quot;"/>
-			<item value="Tag"/>
-			<item value="requestWindowFeature"/>
-			<item value="GetSDPicture"/>
 		</list>
 		<list key="replacehistory">
+			<item value="LanScanner"/>
 			<item value="ActivitySurface"/>
 			<item value="Tag"/>
 		</list>

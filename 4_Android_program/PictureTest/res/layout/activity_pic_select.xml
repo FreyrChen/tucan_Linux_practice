@@ -20,7 +20,6 @@
         android:layout_height = "wrap_content" 
         android:gravity="center"
         android:padding="5dp"
-        android:textStyle="intalic"
         android:text="@string/show_intro"
         />
     

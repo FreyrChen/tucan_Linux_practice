@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1356300964151_1" label="android_workspace" name="android_workspace">
-<item elementID="=AirSync" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=AirCard" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=TestSensor" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=EX10_13" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1355841652823_0" label="Window Working Set" name="Aggregate for window 1355841652820"/>
 </workingSetManager>
