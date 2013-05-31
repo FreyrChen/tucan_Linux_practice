@@ -1,0 +1,45 @@
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
+
+
+public class VoiceRecorder {
+	
+	private final int FREQUENCY = 11025;
+	private final int CHANNEL = AudioFormat.CHANNEL_IN_MONO;
+	private final int ENCODING = AudioFormat.ENCODING_PCM_16BIT;	
+	
+	private short audioData[];
+	private int bufferSize;	
+	private int secondsToRecord;
+	private volatile boolean continuous;
+	
+	// create the audio buffer
+	// get the minimum buffer size
+	int minBufferSize = AudioRecord.getMinBufferSize(FREQUENCY, CHANNEL, ENCODING);
+	
+	// and the actual buffer size for the audio to record
+	// frequency * seconds to record.
+	bufferSize = Math.max(minBufferSize, this.FREQUENCY * this.secondsToRecord);
+				
+	audioData = new short[bufferSize];
+				
+	// start recorder
+	mRecordInstance = new AudioRecord(
+						MediaRecorder.AudioSource.MIC,
+						FREQUENCY, CHANNEL, 
+						ENCODING, minBufferSize);
+	
+	mRecordInstance.startRecording();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+}

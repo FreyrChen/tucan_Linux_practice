@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SDRecord.java&apos; to &apos;cc.omusic.musicidentify.MainActivity.java&apos;&#x0A;- Original project: &apos;TestSensor&apos;&#x0A;- Destination element: &apos;cc.omusic.musicidentify.MainActivity.java&apos;&#x0A;- Original element: &apos;TestSensor.tusion.SDRecord.java&apos;" description="Copy compilation unit" destination="=MusicIdentify/src&lt;cc.omusic.musicidentify{MainActivity.java" element1="/src&lt;TestSensor.tusion{SDRecord.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1369900007647" units="1" version="1.0"/>
+</session>

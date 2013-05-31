@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10px"
+    android:background="#808080"
+    tools:context=".MainActivity" >
+    
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/hello_world" />
+   
+    
+     <ToggleButton 
+  			android:id="@+id/start_button"	
+  			android:textOn="@string/start"
+  			android:textOff="@string/stop"
+		 	android:layout_width="140dp"
+		 	android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_marginTop="5dp"
+		    android:layout_marginLeft="10dp"
+		    android:layout_below="@+id/info_text"
+ 	/>
+    
+    <Button 
+	 	android:id="@+id/stop_button"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:textSize="18sp"
+	 	android:text="@string/stop"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignTop="@+id/start_button"
+ 	/>
+    
+    <Button 
+	 	android:id="@+id/query_button"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:textSize="18sp"
+	 	android:text="@string/query"
+	    android:layout_marginTop="30dp"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_centerHorizontal="true"
+ 	/>
+
+    <Button 
+	 	android:id="@+id/play_button"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:textSize="18sp"
+	 	android:text="@string/play"
+	    android:layout_marginTop="30dp"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_centerHorizontal="true"
+	    android:layout_below="@+id/start_button"
+ 	/>
+    
+    <Button 
+	 	android:id="@+id/delete_button"
+	 	android:layout_width="wrap_content"
+	 	android:layout_height="wrap_content"
+	 	android:textSize="18sp"
+	 	android:text="@string/delete"
+	    android:layout_marginTop="30dp"
+	    android:layout_gravity="center_horizontal"
+	    android:layout_centerHorizontal="true"
+ 	/>
+    
+
+    
+
+    
+
+</RelativeLayout>
