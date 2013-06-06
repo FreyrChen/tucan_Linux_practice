@@ -2,7 +2,6 @@ package cc.omusic.musicidentify;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Date;
@@ -10,51 +9,55 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import android.os.Environment;
+import android.util.Log;
 
 
 public class SDRecord {
-
 	
-	
-	
-	//private String SDPath = Environment.getExternalStorageDirectory() +"/OmusicRecordVoice/";
-	
-	
-	public static  boolean  checkSD(  ){
-		boolean sdExit;
-		//check SD card is  insert?
-		sdExit = Environment.getExternalStorageState().equals(
-					android.os.Environment.MEDIA_MOUNTED );
-		//if( sdExit )
-			//SDPath = Environment.getExternalStorageDirectory() +"/OmusicRecordVoice/";
-			
-		return sdExit;
+	//Contractor
+	public SDRecord( ){
+		sdCardExit = Environment.getExternalStorageState().equals(
+				android.os.Environment.MEDIA_MOUNTED );	
 	}
 	
-	
+	//check sd card is onmount
+	public boolean  checkSD( ){
+		//check SD card is  insert?
+		return  Environment.getExternalStorageState().equals(
+					android.os.Environment.MEDIA_MOUNTED );	
+	}
+	//if( sdExit )
+	//SDPath = Environment.getExternalStorageDirectory() +"/OmusicRecordVoice/";	
 	
 	//create directory in SD card
-	 public static File createSDDir(  String DirName){
+	 public File createSDDir(  String DirName){
 		 String SDPath = null;
 		 File dir = null;
 		 
+		 if( !this.sdCardExit ){
+			 return null;
+		 }
 		 SDPath = Environment.getExternalStorageDirectory()+"";
 		 dir = new File(  SDPath + File.separator + DirName);
+		 //Log.i("sd","dir = "+dir.getPath());
 		 if(!dir.exists()){
 			 try{
-				 // mkdirs() 表示，如果需要，会先创建上层目录.
+				 //如果需要，会先创建上层目录.
 				 dir.mkdirs();
+				// Log.i("sd","create dir  "+dir.getPath());
 			 }
 			 catch(Exception e){
 				 e.printStackTrace();
 			 }
 		 }
-		 
-		 return dir;
+		 return dir;	 
 	 }
 	 
 	 //create files in SD card
-	 public File createSDFile(String  FilePath) throws IOException{
+	 public  File createSDFile(String  FilePath) {
+		 if( ! this.sdCardExit )
+			 return null;
+		 
 		 File file = new File( FilePath );
 		 if(!file.exists()){
 			 try{
@@ -68,46 +71,76 @@ public class SDRecord {
 		 return file;
 	 }
 	 
+	 //write data to sd card.
 	 public File WriteToSDCard( String FilePath, String FileName, InputStream data){
 		 File file = null;
 		 OutputStream output = null;
 		 String SDPath = null;
 		 //String FilePath = null;
-		 if( checkSD() )
-		 {
+		 if( ! this.sdCardExit )
+			 return null;
+		 
+		 try{
+			 createSDDir(FilePath);
+			 file = createSDFile( FilePath + FileName);
+			 output = new FileOutputStream( file);
+			 
+			 byte buffer[]= new byte[4*1024];
+			 while((data.read(buffer) != -1)){
+				 output.write(buffer);
+			 }
+			 output.flush(); 
+		 }
+		 catch(Exception e){
+			 e.printStackTrace();
+		 }
+		 finally{
 			 try{
-				 createSDDir(FilePath);
-				 file = createSDFile( FilePath + FileName);
-				 output = new FileOutputStream( file);
-				 
-				 byte buffer[]= new byte[4*1024];
-				 while((data.read(buffer) != -1)){
-					 output.write(buffer);
-				 }
-				 output.flush(); 
+				 output.close();
 			 }
 			 catch(Exception e){
 				 e.printStackTrace();
 			 }
-			 finally{
-				 try{
-					 output.close();
-				 }
-				 catch(Exception e){
-					 e.printStackTrace();
-				 }
-			 }
 		 }
-		return file;
+		 return file;
 	 }
 	 
+	 
+	 
+	 public String getMIMEType( File f)
+		{
+			String end = f.getName().substring( f.getName().lastIndexOf(".") + 1,
+						f.getName().length()).toLowerCase();
+			String type = "";
+			if( end.equals("mp3") || end.equals("aac") || end.equals("amr")
+					|| end.equals("mpeg") || end.equals("wav") ){
+				type = "audio";
+			}
+			else if( end.equals("jpg") || end.equals("gif")||
+					end.equals("png") || end.equals("jpeg") ) {
+				type = "image";
+			}
+			else{
+				type = "";
+			}
+			type += "/*";
+			return type;
+		}
+		
+
+	 
+	 
+	 
+	 
 	//获取实时时间
-	public static String GetTimeNow() {
+	public String GetTimeNow() {
 		SimpleDateFormat    formatter    =   new    SimpleDateFormat    ("yyyyMMdd_HHmmss_SS");
     	Date    curDate    =   new    Date(System.currentTimeMillis());//获取当前时间       
     	String TimerStr    =    formatter.format(curDate);   
     	return TimerStr;
 		
 	}
+	
+	private  boolean sdCardExit = false;
 
 }

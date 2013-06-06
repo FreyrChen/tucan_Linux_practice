@@ -1,0 +1,137 @@
+package cc.omusic.musicidentify;
+
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.AudioTrack;
+import android.media.MediaRecorder;
+import android.util.Log;
+
+public class AudioFingerprinter implements Runnable{
+
+	private final int FREQUENCY = 11025;
+	private final int CHANNEL = AudioFormat.CHANNEL_IN_MONO;
+	private final int ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+
+	private static short audioData[];
+	private static int bufferSize;	
+	private static int secondsToRecord = 20;
+	AudioRecord mRecordInstance = null;
+	
+	private AudioFingerprinterListener listener;
+	private volatile boolean continuous;
+	private volatile boolean isRecording = false;
+	private Thread thread;
+	
+	//private final String SERVER_URL="";
+
+	public interface AudioFingerprinterListener{
+		
+		//public startListening();
+	}
+	
+	public AudioFingerprinter( AudioFingerprinterListener listner ){
+		this.listener = listener;
+	}
+
+	public void fingerprint( int seconds, boolean continuous  ){
+		if( this.isRecording )
+			return;
+		this.continuous = continuous;
+		// record at leaste 30 seconds to generate fingerprint
+		this.secondsToRecord = Math.max( Math.min(seconds, 30), 10);
+		
+		thread = new Thread( this );
+		thread.start();
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		int samplesIn = 0;
+		this.isRecording = true;
+		
+		try 
+		{			
+			// create the audio buffer
+			// get the minimum buffer size
+			int minBufferSize = AudioRecord.getMinBufferSize(FREQUENCY, CHANNEL, ENCODING);
+			// start recorder
+			mRecordInstance = new AudioRecord(	MediaRecorder.AudioSource.MIC,
+												FREQUENCY, CHANNEL, 
+												ENCODING, minBufferSize);
+			
+			// and the actual buffer size for the audio to recorder
+			// frequency * seconds to record.
+			bufferSize = Math.max(minBufferSize, this.FREQUENCY * this.secondsToRecord);	
+			audioData = new short[bufferSize];
+			
+			mRecordInstance.startRecording();
+			while( isRecording ){
+				// fill audio buffer with mic data.
+				samplesIn = 0;
+				do 
+				{					
+					samplesIn += mRecordInstance.read(audioData, samplesIn, bufferSize - samplesIn);
+					if(mRecordInstance.getRecordingState() == AudioRecord.RECORDSTATE_STOPPED)
+						break;
+				} 
+				while (samplesIn < bufferSize);	
+				
+			}
+		}catch( Exception e ){
+			e.printStackTrace();
+		}
+		
+		
+		
+
+		
+		FileOutputStream fos = null ;
+		String file_prefix = SDRecord.GetTimeNow();
+		try{
+			File RecordMusicDir = SDRecord.createSDDir( "omusic" );
+			//File file = new File( file_prefix +".wav" );
+			File RecordMusicFile = File.createTempFile( file_prefix, ".wmv", RecordMusicDir);
+			if( RecordMusicFile.exists())
+				RecordMusicFile.delete();
+			fos = new FileOutputStream( RecordMusicFile );
+		} catch( Exception e){
+			e.printStackTrace();
+		}
+		
+		DataOutputStream dos = new DataOutputStream(
+				new BufferedOutputStream( fos ));
+		for( int i=0; i<samplesIn; i++ ){
+			try {
+				dos.writeShort(audioData[i]);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		mRecordInstance.stop();
+
+		
+	
+	}
+
+	public void stop(){
+		this.continuous = false;
+		if( mRecordInstance != null )
+			mRecordInstance.stop();
+	}
+	
+
+
+
+
+}

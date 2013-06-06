@@ -1,14 +1,22 @@
 package cc.omusic.musicidentify;
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
 
+import android.media.AudioFormat;
+import android.media.AudioRecord;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -32,6 +40,7 @@ import cc.omusic.musicidentify.SDRecord;
 
 
 
+
 public class MainActivity extends Activity {
 	
 	private ToggleButton startButton;
@@ -43,15 +52,20 @@ public class MainActivity extends Activity {
 	private ArrayList<String> recordFiles;
 	private ArrayAdapter<String> adapter;
 	
-	private File RecordMusicFile;
+	//private File RecordMusicFile;
 	private File RecordMusicDir;
 	private File SelectedFile;
-	private MediaRecorder mMediaRecorder;
+//	private MediaRecorder mMediaRecorder;
 	private boolean isStopRecord;
-	private boolean sdCardExit;
+	private SDRecord SDRecorder;
+
 	
+	private Handler handler = new Handler();
+	private int  count = 0;
 	
+	private MusicRecorder musicRecorder = null;
 	
+	private final String TAG = "Main";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,105 +76,112 @@ public class MainActivity extends Activity {
 		queryButton = (Button) findViewById( R.id.query_button);
 		playButton = (Button) findViewById( R.id.play_button);
 		deleteButton = (Button) findViewById( R.id.delete_button);
+		
 		infoText = (TextView) findViewById( R.id.info_text);
 		musicList = (ListView) findViewById( R.id.music_List);
 		
-		if( SDRecord.checkSD() ){
-			RecordMusicDir = SDRecord.createSDDir( "omusic" );
-			//RecordMusicDir = Environment.getExternalStorageDirectory();
-			
-			sdCardExit = true;
-		}
-			
-		else
-			sdCardExit = false;
-		
-		//list all  .amr files
+		SDRecorder = new SDRecord();
+		RecordMusicDir = SDRecorder.createSDDir( "omusic" );
+		//list all  media (.amr) files
 		getRecordFiles();
-		
-		adapter = new ArrayAdapter<String>(this,
-				R.layout.my_simple_list_item, recordFiles );
+		// use a ArrarAdapter to contain a ListView
+		adapter = new ArrayAdapter<String>(this, R.layout.my_simple_list_item, recordFiles );
 		musicList.setAdapter(adapter);
 		
+		//set every button's click event
 		startButton.setOnCheckedChangeListener( new startButtonListener()); 
 		playButton.setOnClickListener( new playButtonListener() );
 		deleteButton.setOnClickListener( new deleteButtonListener() );
 		musicList.setOnItemClickListener(new musicListClickListener());
+		queryButton.setOnClickListener(new queryButtonListener());
 		
+		//initial audio recorder
+		musicRecorder =  new MusicRecorder(5);
+		musicRecorder.creatRecorder();
 	}
-
-
+	
+	Runnable runnable = new Runnable(){
+		public void run(){
+			count++;
+			infoText.setText("record time: " + count + "s");
+			handler.postDelayed(this, 1000);
+		}
+	};
 	
 	
-
+	
+	//query a wav file in sd card
+	//input a stream -> short[] audio data -> String fingerprint -> query server 
+	class queryButtonListener implements OnClickListener{
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			infoText.setText("want to query? it's not ready.");
+			
+			
+			
+			//Codegen codegen = new Codegen();
+			//String fingerprint = codege.generate( audioData, read_size );	
+		}
+	}
+	
+	
+	
 	//start record button
-	class startButtonListener implements OnCheckedChangeListener{
+	public class startButtonListener implements OnCheckedChangeListener{
 		public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 			// TODO Auto-generated method stub
 			// press to start record
 			if(isChecked){ 
-				try{
-					if( !sdCardExit ){
-						Toast.makeText(MainActivity.this, "please check SD card", Toast.LENGTH_SHORT).show();
-						infoText.setText("SD card is not insert.");
-						return;
-					}
-					else{
-						
-						Toast.makeText(MainActivity.this, "Start to record voice.", Toast.LENGTH_LONG).show(); 
-						
-						String file_prefix = SDRecord.GetTimeNow();
-						RecordMusicFile = File.createTempFile( file_prefix, ".amr", RecordMusicDir);
-						mMediaRecorder = new MediaRecorder();
-						
-						mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-						mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-						mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
-						mMediaRecorder.setOutputFile(RecordMusicFile.getAbsolutePath());
-						mMediaRecorder.prepare();
-						mMediaRecorder.start();
-						
-						queryButton.setEnabled(false);
-						playButton.setEnabled(false);
-						deleteButton.setEnabled(false);
-						isStopRecord = false;
-						
-						infoText.setText("recording ...");
-					}
+	
+				if( !SDRecorder.checkSD() ){
+					Toast.makeText(MainActivity.this, "please check SD card", Toast.LENGTH_SHORT).show();
+					infoText.setText("SD card is not insert.");
+					return;
 				}
-				catch( IOException e){
-					e.printStackTrace();
+				else{
+					Toast.makeText(MainActivity.this, "Start to record voice.", Toast.LENGTH_LONG).show(); 
+					queryButton.setEnabled(false);
+					playButton.setEnabled(false);
+					deleteButton.setEnabled(false);
+					isStopRecord = false;
+					
+					musicRecorder.startRecorder();
+					
+					//Display info
+					infoText.setText("recording ...");
+					//start timer after 1 second, count record time
+					handler.postDelayed(runnable, 1000);
+					
 				}
 			}
 			//press to stop record
-			else{
-				mMediaRecorder.stop();
-				mMediaRecorder.release();
-				mMediaRecorder = null;
-				adapter.add(RecordMusicFile.getName());
-				SelectedFile = RecordMusicFile;
+			else{			
+				//adapter.add(RecordMusicFile.getName());
+				//SelectedFile = RecordMusicFile;
+				//infoText.setText("new music ..."+ RecordMusicFile.getName());
+				musicRecorder.stopRecorder();
 				
 				Toast.makeText(MainActivity.this, 
 					"record voice stopped.", Toast.LENGTH_SHORT).show();
+				Log.i(TAG,"press to stop");
 				queryButton.setEnabled(true);
 				playButton.setEnabled(true);
 				deleteButton.setEnabled(true);
-				infoText.setText("recorder stopped. file:" + RecordMusicFile.getName());
-
-				isStopRecord = true;
+				//infoText.setText("recorder stopped. file:" + RecordMusicFile.getName());
+				Log.i(TAG,"in close process");
+				adapter.add(musicRecorder.getRecordMusicWavFileStr());
 				
-				/*
-				//debug for play recent record
-				SelectedFile = new File( RecordMusicDir.getAbsolutePath()
-									+ File.separator +  RecordMusicFile.getName() );
-				infoText.setText("recent to play file " + SelectedFile.getName());
-				*/
+				isStopRecord = true;
+				//stop timer and reverse count
+				handler.removeCallbacks(runnable);
+				count =  0;				
 			}
 		}
 	}
 	
 	//select a music file from list
-	public class musicListClickListener implements OnItemClickListener{
+	class musicListClickListener implements OnItemClickListener{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
@@ -170,55 +191,58 @@ public class MainActivity extends Activity {
 			queryButton.setEnabled(true);
 			
 			SelectedFile = new File( RecordMusicDir.getAbsolutePath()
-						+ File.separator 
-						+ ( (CheckedTextView) arg1).getText());
+									+ File.separator 
+									+ ( (CheckedTextView) arg1).getText());
 			infoText.setText("you choose: "
 							+ RecordMusicDir.getAbsolutePath()
 							+ File.separator 
-							+ ( (CheckedTextView) arg1).getText());
-						//+( (CheckedTextView) arg1).getText());
-			
+							+ ( (CheckedTextView) arg1).getText());	
 		}
 		
 	}
 	
 	//play a music that selected
-	public class playButtonListener implements OnClickListener{
+	class playButtonListener implements OnClickListener{
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			
-			//SelectedFile = RecordMusicFile;
 			if( SelectedFile != null && SelectedFile.exists() ){
 				//openFile( SelectedFile );
 				Intent intent = new Intent();
 				intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
 				intent.setAction( android.content.Intent.ACTION_VIEW);
-				String type = getMIMEType( SelectedFile );
+				String type = SDRecorder.getMIMEType( SelectedFile );
 				intent.setDataAndType(Uri.fromFile( SelectedFile ), type);
 				startActivity( intent );	
 			}
+		
+			
+			
 		}
 		
 	}
+
 	
 	//delete the selected music file
-	public class deleteButtonListener implements OnClickListener{
+	class deleteButtonListener implements OnClickListener{
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			if( SelectedFile != null){
 				//remove file name from adapter
+				Log.d("tusion","success remove file name"+SelectedFile.getName());
 				adapter.remove(SelectedFile.getName());
-				Log.e("tusion","success remow file name");
 				//delete file data in sd card
 				if( SelectedFile.exists() )
 					SelectedFile.delete();
-				infoText.setText("delete complete.");		
+				infoText.setText("success delete. ");		
 			}
 		}
 		
 	}
+	
+
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -226,34 +250,10 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
-	
-	
 
-	private String getMIMEType( File f)
-	{
-		String end = f.getName().substring( f.getName().lastIndexOf(".") + 1,
-					f.getName().length()).toLowerCase();
-		String type = "";
-		if( end.equals("mp3") || end.equals("aac") || end.equals("amr")
-				|| end.equals("mpeg") || end.equals("mp4") ){
-			type = "audio";
-		}
-		else if( end.equals("jpg") || end.equals("gif")||
-				end.equals("png") || end.equals("jpeg") ) {
-			type = "image";
-		}
-		else{
-			type = "";
-		}
-		type += "/*";
-		return type;
-	}
-	
-	
-	
 	private void getRecordFiles( ){
 		recordFiles = new ArrayList<String>();
-		 if( sdCardExit ){
+		 if( SDRecorder.checkSD() ){
 			 File files[] = RecordMusicDir.listFiles();
 			 if(files != null ){
 				 //Log.d("tusion"," get files!");
@@ -263,20 +263,33 @@ public class MainActivity extends Activity {
 						 //read all .amr files
 						 String file_str = files[i].getName().substring(
 								 	files[i].getName().indexOf("."));
-						 //Log.d("file_str", file_str);
-						 if( file_str.toLowerCase().equals(".amr"))
+						 //if( file_str.toLowerCase().equals(".wav"))
 							 recordFiles.add( files[i].getName());
 					 }
 				 }
-			 }
-			 
-			 
-		 }
-		 
+			 } 
+		 } 
 	 }
+    
+	/*
+	@Override  
+    protected void onDestroy() {  
+		musicRecorder.stopRecorder();  
+        super.onDestroy();  
+    }  
+	*/
+
+	
+}
 	
 
-}
+	
+
+		
+	
+
+	
+
 
 
 		

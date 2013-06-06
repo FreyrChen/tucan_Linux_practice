@@ -27,9 +27,13 @@
 package edu.gvsu.masl.echoprint;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Hashtable;
 
 import org.apache.http.HttpEntity;
@@ -66,11 +70,14 @@ public class AudioFingerprinter implements Runnable
 	public final static String SONGS_KEY = "songs";
 	public final static String ARTIST_NAME_KEY = "artist_name";
 	
+	
+	
 	//private final String SERVER_URL = "<your server address here>/query?fp_code=";
 	//private final String SERVER_URL = "http://developer.echonest.com/api/v4/song/identify?api_key=AV6AWC8NL7IJPZ5QO&code=";
-	private final String SERVER_URL = "http://developer.echonest.com/api/v4/song/identify?api_key=J4XWDUE9WJATUMXXS&code=";
+	//private final String SERVER_URL = "http://developer.echonest.com/api/v4/song/identify?api_key=J4XWDUE9WJATUMXXS&code=";
 	//private final String SERVER_URL = "http://223.202.52.148/query?fp_code=";
-	
+	private final String SERVER_URL = "http://music.api.omusic.cc/api/innerapi/testfingerprint2.0.php?fp_code=";
+	//http://music.api.omusic.cc/api/innerapi/testfingerprint2.0.php?fp_code=AV6AWC8NL7IJPZ5QO&code=eJzNV1mOHTkMu5Ity1qOI0v2_Y8wrBogL3hAnI8gmPlhd7sWyxRJVbfWiNsFpt_gtAv0vm4w9AaTb-DjAn90oswbbLlAn3QDyRuY3iD8Ar9pA40b3NmQukGcC_ym-zJvcGdj1QX-p-ed_Qb3855xgT_qPl_hzpVe4cpVK7vAH3EVcYFG6wZ_kY1-g1wX-I2ulC_QOt3gzsb9vGY3iH2DPS_wF53ycP1r-CM25Ab_VW48I-vXcPiXQDy3bC2t6ZOC5igTMqa1d2pxl7022xijXKf3dRbFXF1jhrZV3RpZpakVTVWV3rnc3JJm7YryfdrM3WMs6qkWFG07s2gOGzmIasytxtzGdDZ8E-yqMbTTbIOzfOaizT9B6Rzfax8wb1W19WSFbMktyj3osArG75hU1JJRJRWWhp04KEomWbgbMUn4TmNDdZ1RQZyhtvfxY7rirLWxhY51ZqlsZI0IaKo5RosYZzOvEAkq0zOXsRrhhtmnevcsaQO-0XZ8W4uVG4Qok57obmiJc--N1_oAuVl8rX0gyqol3LbHQD-YT87uy2dbq2yo1yiNvoQcTTyBg67TcmwfYpx8JKn2ke7sKFHYi6NAHM-0PbDLNJhVUvTJuECrtx2FJFYrsbTVZnPHKUbP7nvkWZAKS5SaTTSE8bF2as33FvUcbUlq87X7QQPUt240birpRG065KSraZrtTqcKix943_e19oGWOM_CqVAQiFmVyyj36H06Oi7oKg5zSknOyUzx4a6MOJq2oQmGdnfg6LFCw6fBXrqYC3QNykopiCMUT56S7TRJOtJbWlBOcBTvLXMeeKkmrRjRIRso7r36PvteFWjN36tfbz5hqO0HvG_-WvsA9PUcYgUhgM52iIqRFxmt_PQO7wlk10iFxkg63igWJgLDAXPiQRdvHdKhA-mpTJn7nE50NprkwbXa2jHZ9xqbTsCtYzkax0geYYVBIKgFz7SKLRw7_XhuGHAmLZG1cEpGdMxYTkYTnDHRgtcEpuKx9dFw2uCdOREwCmPo2fQ8Id2Gi0DE0iU2uiYMPU_NcBvgNXGgH9AGmvK19oGFfxlg5xhZ-PqYh0Egp_RENsHP1ZgmtqDYj28gesHCUfaufW10Oynp2WMNi0MYvAdo7iyVfce2wvv6Xk-GoeKDQ5NajkzHwZCsxcVr6pToHRu-n26eaMEhJUIUoU7CrygDG2I72AxZCiM5igBfC2X_BBNT9nvtA6MPMoGnEv7UAdadjzXUgQptdqhWQT9iUtvWIAT0MYFlqBbmgqHVyDZHNtYjnBQ0B6MIugvEGQxR1fFDpSqh9uwIXgwcsFM-wgMRgcrZeBBIXETgPt1AGiOIx0bMUDtS0d-rYtjo69kF3vp739JHMs-zE2ai96rwGvIBdFC_1z7giEJZiuEUaEAD41Gn-2MIlF8zG6I48Xfx01lMMPg0rIFKOLwaJK6ODDkYd94Z4yJyIyHoTOoKf2OQYIYabLzQXpwDtPT1bIDPc0H5MpzGHtAIBCMnRhuBUaXoLgZepSK0CWJ_b56-HlmNAblMfNJawdjP1YCl6X1VR7A1iCL-3QPZ0uOzUSCgdMGMZ2-DK-E7-8C779faB_4Bx0T9fg
 	private final int FREQUENCY = 11025;
 	private final int CHANNEL = AudioFormat.CHANNEL_IN_MONO;
 	private final int ENCODING = AudioFormat.ENCODING_PCM_16BIT;	
@@ -85,6 +92,9 @@ public class AudioFingerprinter implements Runnable
 	private volatile boolean continuous;
 	
 	private AudioFingerprinterListener listener;
+	
+	private String JsonStr="";
+	private String SearchTime;
 	
 	/**
 	 * Constructor for the class
@@ -132,8 +142,8 @@ public class AudioFingerprinter implements Runnable
 //-------test for debug the json
 		
 		// cap to 30 seconds max, 10 seconds min.
-		//this.secondsToRecord = Math.max(Math.min(seconds, 30), 10);
-		this.secondsToRecord = Math.max(Math.min(seconds, 1), 2);
+		this.secondsToRecord = Math.max(Math.min(seconds, 30), 10);
+		//this.secondsToRecord = Math.max(Math.min(seconds, 1), 2);
 		
 		// start the recording thread
 		thread = new Thread(this);
@@ -206,108 +216,161 @@ public class AudioFingerprinter implements Runnable
 					time = System.currentTimeMillis();
 					Codegen codegen = new Codegen();
 	    			String code = codegen.generate(audioData, samplesIn);
+	    			SearchTime= "Codegen created in: " + (System.currentTimeMillis() - time) + " millis.\n";
 	    			Log.d("Fingerprinter", "Codegen created in: " + (System.currentTimeMillis() - time) + " millis");
 	    			
-	    			if(code.length() == 0)
-	    			{
-	    				// no code?
-	    				// not enough audio data?
-						continue;
-	    			}
-	    			
 	    			didGenerateFingerprintCode(code);
-	    			
+	   //======================================================================== 			
 	    			// fetch data from echonest
 	    			time = System.currentTimeMillis();
-	   //+++++++++ for debug 			
-					//String urlstr = SERVER_URL + code +"&version=4.12";
+
 	    			
-	    			//String urlstr = SERVER_URL + code;
-					
-	    			String urlstr="http://developer.echonest.com/api/v4/song/identify?api_key=AV6AWC8NL7IJPZ5QO&code=eJzNV1mOHTkMu5Ity1qOI0v2_Y8wrBogL3hAnI8gmPlhd7sWyxRJVbfWiNsFpt_gtAv0vm4w9AaTb-DjAn90oswbbLlAn3QDyRuY3iD8Ar9pA40b3NmQukGcC_ym-zJvcGdj1QX-p-ed_Qb3855xgT_qPl_hzpVe4cpVK7vAH3EVcYFG6wZ_kY1-g1wX-I2ulC_QOt3gzsb9vGY3iH2DPS_wF53ycP1r-CM25Ab_VW48I-vXcPiXQDy3bC2t6ZOC5igTMqa1d2pxl7022xijXKf3dRbFXF1jhrZV3RpZpakVTVWV3rnc3JJm7YryfdrM3WMs6qkWFG07s2gOGzmIasytxtzGdDZ8E-yqMbTTbIOzfOaizT9B6Rzfax8wb1W19WSFbMktyj3osArG75hU1JJRJRWWhp04KEomWbgbMUn4TmNDdZ1RQZyhtvfxY7rirLWxhY51ZqlsZI0IaKo5RosYZzOvEAkq0zOXsRrhhtmnevcsaQO-0XZ8W4uVG4Qok57obmiJc--N1_oAuVl8rX0gyqol3LbHQD-YT87uy2dbq2yo1yiNvoQcTTyBg67TcmwfYpx8JKn2ke7sKFHYi6NAHM-0PbDLNJhVUvTJuECrtx2FJFYrsbTVZnPHKUbP7nvkWZAKS5SaTTSE8bF2as33FvUcbUlq87X7QQPUt240birpRG065KSraZrtTqcKix943_e19oGWOM_CqVAQiFmVyyj36H06Oi7oKg5zSknOyUzx4a6MOJq2oQmGdnfg6LFCw6fBXrqYC3QNykopiCMUT56S7TRJOtJbWlBOcBTvLXMeeKkmrRjRIRso7r36PvteFWjN36tfbz5hqO0HvG_-WvsA9PUcYgUhgM52iIqRFxmt_PQO7wlk10iFxkg63igWJgLDAXPiQRdvHdKhA-mpTJn7nE50NprkwbXa2jHZ9xqbTsCtYzkax0geYYVBIKgFz7SKLRw7_XhuGHAmLZG1cEpGdMxYTkYTnDHRgtcEpuKx9dFw2uCdOREwCmPo2fQ8Id2Gi0DE0iU2uiYMPU_NcBvgNXGgH9AGmvK19oGFfxlg5xhZ-PqYh0Egp_RENsHP1ZgmtqDYj28gesHCUfaufW10Oynp2WMNi0MYvAdo7iyVfce2wvv6Xk-GoeKDQ5NajkzHwZCsxcVr6pToHRu-n26eaMEhJUIUoU7CrygDG2I72AxZCiM5igBfC2X_BBNT9nvtA6MPMoGnEv7UAdadjzXUgQptdqhWQT9iUtvWIAT0MYFlqBbmgqHVyDZHNtYjnBQ0B6MIugvEGQxR1fFDpSqh9uwIXgwcsFM-wgMRgcrZeBBIXETgPt1AGiOIx0bMUDtS0d-rYtjo69kF3vp739JHMs-zE2ai96rwGvIBdFC_1z7giEJZiuEUaEAD41Gn-2MIlF8zG6I48Xfx01lMMPg0rIFKOLwaJK6ODDkYd94Z4yJyIyHoTOoKf2OQYIYabLzQXpwDtPT1bIDPc0H5MpzGHtAIBCMnRhuBUaXoLgZepSK0CWJ_b56-HlmNAblMfNJawdjP1YCl6X1VR7A1iCL-3QPZ0uOzUSCgdMGMZ2-DK-E7-8C779faB_4Bx0T9fg==&version=4.12";
-					
+	    /*			
+	    			String urlstr = SERVER_URL + code;
+	    			//String urlstr="http://developer.echonest.com/api/v4/song/identify?api_key=AV6AWC8NL7IJPZ5QO&code=eJzNV1mOHTkMu5Ity1qOI0v2_Y8wrBogL3hAnI8gmPlhd7sWyxRJVbfWiNsFpt_gtAv0vm4w9AaTb-DjAn90oswbbLlAn3QDyRuY3iD8Ar9pA40b3NmQukGcC_ym-zJvcGdj1QX-p-ed_Qb3855xgT_qPl_hzpVe4cpVK7vAH3EVcYFG6wZ_kY1-g1wX-I2ulC_QOt3gzsb9vGY3iH2DPS_wF53ycP1r-CM25Ab_VW48I-vXcPiXQDy3bC2t6ZOC5igTMqa1d2pxl7022xijXKf3dRbFXF1jhrZV3RpZpakVTVWV3rnc3JJm7YryfdrM3WMs6qkWFG07s2gOGzmIasytxtzGdDZ8E-yqMbTTbIOzfOaizT9B6Rzfax8wb1W19WSFbMktyj3osArG75hU1JJRJRWWhp04KEomWbgbMUn4TmNDdZ1RQZyhtvfxY7rirLWxhY51ZqlsZI0IaKo5RosYZzOvEAkq0zOXsRrhhtmnevcsaQO-0XZ8W4uVG4Qok57obmiJc--N1_oAuVl8rX0gyqol3LbHQD-YT87uy2dbq2yo1yiNvoQcTTyBg67TcmwfYpx8JKn2ke7sKFHYi6NAHM-0PbDLNJhVUvTJuECrtx2FJFYrsbTVZnPHKUbP7nvkWZAKS5SaTTSE8bF2as33FvUcbUlq87X7QQPUt240birpRG065KSraZrtTqcKix943_e19oGWOM_CqVAQiFmVyyj36H06Oi7oKg5zSknOyUzx4a6MOJq2oQmGdnfg6LFCw6fBXrqYC3QNykopiCMUT56S7TRJOtJbWlBOcBTvLXMeeKkmrRjRIRso7r36PvteFWjN36tfbz5hqO0HvG_-WvsA9PUcYgUhgM52iIqRFxmt_PQO7wlk10iFxkg63igWJgLDAXPiQRdvHdKhA-mpTJn7nE50NprkwbXa2jHZ9xqbTsCtYzkax0geYYVBIKgFz7SKLRw7_XhuGHAmLZG1cEpGdMxYTkYTnDHRgtcEpuKx9dFw2uCdOREwCmPo2fQ8Id2Gi0DE0iU2uiYMPU_NcBvgNXGgH9AGmvK19oGFfxlg5xhZ-PqYh0Egp_RENsHP1ZgmtqDYj28gesHCUfaufW10Oynp2WMNi0MYvAdo7iyVfce2wvv6Xk-GoeKDQ5NajkzHwZCsxcVr6pToHRu-n26eaMEhJUIUoU7CrygDG2I72AxZCiM5igBfC2X_BBNT9nvtA6MPMoGnEv7UAdadjzXUgQptdqhWQT9iUtvWIAT0MYFlqBbmgqHVyDZHNtYjnBQ0B6MIugvEGQxR1fFDpSqh9uwIXgwcsFM-wgMRgcrZeBBIXETgPt1AGiOIx0bMUDtS0d-rYtjo69kF3vp739JHMs-zE2ai96rwGvIBdFC_1z7giEJZiuEUaEAD41Gn-2MIlF8zG6I48Xfx01lMMPg0rIFKOLwaJK6ODDkYd94Z4yJyIyHoTOoKf2OQYIYabLzQXpwDtPT1bIDPc0H5MpzGHtAIBCMnRhuBUaXoLgZepSK0CWJ_b56-HlmNAblMfNJawdjP1YCl6X1VR7A1iCL-3QPZ0uOzUSCgdMGMZ2-DK-E7-8C779faB_4Bx0T9fg==&version=4.12";
 	    			Log.d("tusion", urlstr );
-					
-					HttpClient client = new DefaultHttpClient();
-	    			HttpGet get = new HttpGet(urlstr);
+	    			Log.d("1", "String: " + (System.currentTimeMillis() - time) + " millis");
+			
 	    			
+	    				//String httpUrl = "http://192.168.1.110:8080/httpget.jsp";  
+	    	        //获得的数据  
+	    				// String resultData = "";  
+	    	        URL url = null;  
+	    	        try 
+	    	        {  
+	    	            //构造一个URL对象  
+	    	            url = new URL(urlstr);   
+	    	        }  
+	    	        catch (MalformedURLException e)  
+	    	        {  
+	    	            Log.e("URL", "MalformedURLException");  
+	    	        }  
+	    	        if (url != null)  
+	    	        {  
+	    	                // 使用HttpURLConnection打开连接  
+	    	                HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();  
+	    	               Log.d("2-1", "open connection: " + (System.currentTimeMillis() - time) + " millis");
+	    	    			
+	    	                //因为这个是post请求,设立需要设置为true  
+	    	                urlConn.setDoOutput(true);  
+	    	                urlConn.setDoInput(true);  
+	    	                // 设置以POST方式  
+	    	                urlConn.setRequestMethod("POST");  
+	    	                // Post 请求不能使用缓存  
+	    	                urlConn.setUseCaches(false);  
+	    	                urlConn.setInstanceFollowRedirects(true);  
+	    	                // 配置本次连接的Content-type，配置为application/x-www-form-urlencoded的  
+	    	                urlConn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");  
+	    	                // 连接，从postUrl.openConnection()至此的配置必须要在connect之前完成，  
+	    	                // 要注意的是connection.getOutputStream会隐含的进行connect。  
+	    	                urlConn.connect();  
+	    	                Log.d("2-2", "open connection: " + (System.currentTimeMillis() - time) + " millis");
+	    	    	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
+	    	                InputStream instream =  urlConn.getInputStream();
+	    	                
+	    	                Log.d("3", "wait input stream: " + (System.currentTimeMillis() - time) + " millis");
+		    	            JsonStr= convertStreamToString(instream);
+		    	            Log.d("4", "convert to string: " + (System.currentTimeMillis() - time) + " millis");
+			    	        SearchTime += "Search time: " + (System.currentTimeMillis() - time) + " millis";
+			     			Log.d("Fingerprinter", "Results fetched in: " + (System.currentTimeMillis() - time) + " millis");
+			     			Log.d("result", JsonStr);
+			 
+			     			didFindMatchForCode(JsonStr, SearchTime);
+			     			
+		    	            // now you have the string representation of the HTML request
+		    	            instream.close();
+
+		    	            Log.d("5", "close: " + (System.currentTimeMillis() - time) + " millis");
+	    	                
+
+	    	        }
+	    	*/        
+	//--------------------------------------
+	 
+	    			
+	    			
+	    			
+					//String urlstr = SERVER_URL + code +"&version=4.12";
+	    			String urlstr = SERVER_URL + code;
+	    			//String urlstr="http://developer.echonest.com/api/v4/song/identify?api_key=AV6AWC8NL7IJPZ5QO&code=eJzNV1mOHTkMu5Ity1qOI0v2_Y8wrBogL3hAnI8gmPlhd7sWyxRJVbfWiNsFpt_gtAv0vm4w9AaTb-DjAn90oswbbLlAn3QDyRuY3iD8Ar9pA40b3NmQukGcC_ym-zJvcGdj1QX-p-ed_Qb3855xgT_qPl_hzpVe4cpVK7vAH3EVcYFG6wZ_kY1-g1wX-I2ulC_QOt3gzsb9vGY3iH2DPS_wF53ycP1r-CM25Ab_VW48I-vXcPiXQDy3bC2t6ZOC5igTMqa1d2pxl7022xijXKf3dRbFXF1jhrZV3RpZpakVTVWV3rnc3JJm7YryfdrM3WMs6qkWFG07s2gOGzmIasytxtzGdDZ8E-yqMbTTbIOzfOaizT9B6Rzfax8wb1W19WSFbMktyj3osArG75hU1JJRJRWWhp04KEomWbgbMUn4TmNDdZ1RQZyhtvfxY7rirLWxhY51ZqlsZI0IaKo5RosYZzOvEAkq0zOXsRrhhtmnevcsaQO-0XZ8W4uVG4Qok57obmiJc--N1_oAuVl8rX0gyqol3LbHQD-YT87uy2dbq2yo1yiNvoQcTTyBg67TcmwfYpx8JKn2ke7sKFHYi6NAHM-0PbDLNJhVUvTJuECrtx2FJFYrsbTVZnPHKUbP7nvkWZAKS5SaTTSE8bF2as33FvUcbUlq87X7QQPUt240birpRG065KSraZrtTqcKix943_e19oGWOM_CqVAQiFmVyyj36H06Oi7oKg5zSknOyUzx4a6MOJq2oQmGdnfg6LFCw6fBXrqYC3QNykopiCMUT56S7TRJOtJbWlBOcBTvLXMeeKkmrRjRIRso7r36PvteFWjN36tfbz5hqO0HvG_-WvsA9PUcYgUhgM52iIqRFxmt_PQO7wlk10iFxkg63igWJgLDAXPiQRdvHdKhA-mpTJn7nE50NprkwbXa2jHZ9xqbTsCtYzkax0geYYVBIKgFz7SKLRw7_XhuGHAmLZG1cEpGdMxYTkYTnDHRgtcEpuKx9dFw2uCdOREwCmPo2fQ8Id2Gi0DE0iU2uiYMPU_NcBvgNXGgH9AGmvK19oGFfxlg5xhZ-PqYh0Egp_RENsHP1ZgmtqDYj28gesHCUfaufW10Oynp2WMNi0MYvAdo7iyVfce2wvv6Xk-GoeKDQ5NajkzHwZCsxcVr6pToHRu-n26eaMEhJUIUoU7CrygDG2I72AxZCiM5igBfC2X_BBNT9nvtA6MPMoGnEv7UAdadjzXUgQptdqhWQT9iUtvWIAT0MYFlqBbmgqHVyDZHNtYjnBQ0B6MIugvEGQxR1fFDpSqh9uwIXgwcsFM-wgMRgcrZeBBIXETgPt1AGiOIx0bMUDtS0d-rYtjo69kF3vp739JHMs-zE2ai96rwGvIBdFC_1z7giEJZiuEUaEAD41Gn-2MIlF8zG6I48Xfx01lMMPg0rIFKOLwaJK6ODDkYd94Z4yJyIyHoTOoKf2OQYIYabLzQXpwDtPT1bIDPc0H5MpzGHtAIBCMnRhuBUaXoLgZepSK0CWJ_b56-HlmNAblMfNJawdjP1YCl6X1VR7A1iCL-3QPZ0uOzUSCgdMGMZ2-DK-E7-8C779faB_4Bx0T9fg==&version=4.12";
+	    			Log.d("tusion", urlstr );
+	    			Log.d("1", "String: " + (System.currentTimeMillis() - time) + " millis");
+					
+	    			HttpClient client = new DefaultHttpClient();
+	    			HttpGet get = new HttpGet(urlstr);
+	    			Log.d("2-1", "new httpget " + (System.currentTimeMillis() - time) + " millis");
+		    	        
 	    			// get response
 	    			HttpResponse response = client.execute(get);                
 	    			// Examine the response status
 	    	        Log.d("Fingerprinter",response.getStatusLine().toString());
-	
+	    	        Log.d("2-2", "http response " + (System.currentTimeMillis() - time) + " millis");
+	    	        
 	    	        // Get hold of the response entity
 	    	        HttpEntity entity = response.getEntity();
 	    	        // If the response does not enclose an entity, there is no need
 	    	        // to worry about connection release
-	
-	    	        String result = "";
+	    	        Log.d("2-3", "http entity " + (System.currentTimeMillis() - time) + " millis");
+	    	        
 	    	        if (entity != null) 
 	    	        {
 	    	            // A Simple JSON Response Read
 	    	            InputStream instream = entity.getContent();
-	    	            result= convertStreamToString(instream);
+	    	            Log.d("3", "stream: " + (System.currentTimeMillis() - time) + " millis");
+	    	            JsonStr= convertStreamToString(instream);
+	    	            Log.d("4", "convert to string: " + (System.currentTimeMillis() - time) + " millis");
+		    	        SearchTime += "Search time: " + (System.currentTimeMillis() - time) + " millis";
+		     			Log.d("Fingerprinter", "Results fetched in: " + (System.currentTimeMillis() - time) + " millis");
+		     			Log.d("result", JsonStr);
+		 
+		     			didFindMatchForCode(JsonStr, SearchTime);
+		     			
 	    	            // now you have the string representation of the HTML request
 	    	            instream.close();
+	    	            
+	    	            Log.d("5", "close: " + (System.currentTimeMillis() - time) + " millis");
 	    	        }
-	     			Log.d("Fingerprinter", "Results fetched in: " + (System.currentTimeMillis() - time) + " millis");
-	    			
-	     			Log.d("result", result);
-	     			
+	    	       
+
+	     	/*		
+	     			//======================================================================== 			
 	    			// parse JSON
-		    		JSONObject jobj = new JSONObject(result);
-	
+		    		JSONObject jobj = new JSONObject(JsonStr);
+		    		
 					JSONObject jresp  = jobj.getJSONObject( "response" );
 					JSONArray jsonarray = jresp.getJSONArray("songs");
 	
 					Hashtable<String, String> match = new Hashtable<String, String>();
 					//match.put(SCORE_KEY, jobj.getDouble(SCORE_KEY) + "");
-					//match.put(TRACK_ID_KEY, jobj.getString(TRACK_ID_KEY));
-					
 					JSONObject jmes = null;
-					
 					Log.d("1","ok");
 					for( int i = 0; i< jsonarray.length(); i++){
 						JSONObject c = jsonarray.getJSONObject(i);
 						//String title  = c.getString("title");
 						//String artist = c.getString("artist_name");
 						match.put(TITLE_KEY, c.getString(TITLE_KEY));
-				//		match.put(ARTIST_NAME_KEY, c.getString(ARTIST_NAME_KEY));
-						//match.put(SCORE_KEY, c.getDouble(SCORE_KEY) + "");
-						//match.put(TRACK_ID_KEY, c.getDouble("id") + "");
-				
-						
 						jmes = c.getJSONObject("message");	
-						/*		
-	    				if(metadata.has(SCORE_KEY)) match.put(META_SCORE_KEY, metadata.getDouble(SCORE_KEY) + "");
-	    				if(metadata.has(TITLE_KEY)) match.put(TITLE_KEY, metadata.getString(TITLE_KEY));
-	    				if(metadata.has(ARTIST_KEY)) match.put(ARTIST_KEY, metadata.getString(ARTIST_KEY));
-	    				if(metadata.has(ALBUM_KEY)) match.put(ALBUM_KEY, metadata.getString(ALBUM_KEY));
-		    			*/	
-		    		}	
-					Log.d("2","ok");
+		    		}
 					if( jmes.has("OK")){
 						Log.d("tusion", "success get message from echoprint server ");
-						didFindMatchForCode(match, code);
+						//didFindMatchForCode(match, code);
 					}
 					else{
 			    		didNotFindMatchForCode(code);	
 					}
-					Log.d("3","ok");
 					//didFailWithException(new Exception("Unknown error"));
-	
 		    		firstRun = false;
 		    		didFinishListeningPass();
+		    	*/	
 			}
 			catch(Exception e)
 			{
 				e.printStackTrace();
 				Log.e("json process", e.getLocalizedMessage());
-				
 				didFailWithException(e);
 			}
 		}
-			while (this.continuous);
+		while (this.continuous);
 		}
 		catch (Exception e) 
 		{
@@ -473,8 +536,8 @@ public class AudioFingerprinter implements Runnable
 			listener.didGenerateFingerprintCode(code);
 	}
 	
-	private void didFindMatchForCode(final Hashtable<String, String> table, final String code)
-	{
+	//private void didFindMatchForCode(final Hashtable<String, String> table, final String code)
+	private void   didFindMatchForCode( final String JsonStr, final String SearchTime) {
 		if(listener == null)
 			return;
 			
@@ -485,12 +548,14 @@ public class AudioFingerprinter implements Runnable
 			{		
 				public void run() 
 				{
-					listener.didFindMatchForCode(table, code);
+					//listener.didFindMatchForCode(table, code);
+					listener.didFindMatchForCode(JsonStr, SearchTime);
 				}
 			});
 		}
 		else
-			listener.didFindMatchForCode(table, code);
+			//listener.didFindMatchForCode(table, code);
+			listener.didFindMatchForCode(JsonStr, SearchTime);
 	}
 	
 	private void didNotFindMatchForCode(final String code)
@@ -572,7 +637,8 @@ public class AudioFingerprinter implements Runnable
 		 * @param table a hashtable with the metadata returned from the server
 		 * @param code the submited fingerprint code
 		 */
-		public void didFindMatchForCode(Hashtable<String, String> table, String code);
+		//public void didFindMatchForCode(Hashtable<String, String> table, String code);
+		public void didFindMatchForCode(String JsonStr, String code);
 		
 		/**
 		 * Called if the server DOES NOT find a match for the submitted fingerprint code

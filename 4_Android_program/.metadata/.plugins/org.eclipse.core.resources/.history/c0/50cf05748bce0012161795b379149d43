@@ -1,0 +1,11 @@
+package cc.omusic.musicidentify;
+
+public class Fingerprint {
+	
+	//Constractor
+	public Fingerprint(){
+		;
+	}
+	
+	
+}

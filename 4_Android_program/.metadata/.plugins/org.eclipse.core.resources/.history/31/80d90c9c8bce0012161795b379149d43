@@ -1,0 +1,19 @@
+package cc.omusic.musicidentify;
+
+public class Fingerprint {
+	
+	//Constractor
+	public Fingerprint(){
+		;
+	}
+	
+	
+	
+	 Codegen FPgenerater = new Codegen();
+	 String fingerprint = FPgenerater.generate( audioData, read_size );
+	 
+	//Codegen codegen = new Codegen();
+	//String fingerprint = codege.generate( audioData, read_size );	
+
+	//
+}
