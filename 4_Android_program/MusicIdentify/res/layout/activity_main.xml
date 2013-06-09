@@ -5,16 +5,27 @@
     android:background="#000000"
     tools:context=".MainActivity" >
     
+    <ToggleButton 
+		android:id="@+id/auto_record_button"	
+		android:textOn="@string/stop"
+		android:textOff="@string/auto_start"
+		android:textSize="20dp"
+	 	android:layout_width="match_parent"
+	 	android:layout_height="80dp"
+	    android:layout_marginTop="5dp"
+	    android:layout_centerHorizontal="true"
+ 	/>
  
      <ToggleButton 
-		android:id="@+id/start_button"	
+		android:id="@+id/manual_record_button"	
 		android:textOn="@string/stop"
-		android:textOff="@string/start"
+		android:textOff="@string/manual_start"
 	 	android:layout_width="120dp"
 	 	android:layout_height="50dp"
 	    android:layout_alignParentLeft="true"
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="10dp"
+	    android:layout_below="@+id/auto_record_button"
  	/>
     
     <Button 
@@ -25,6 +36,7 @@
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="10dp"
 	    android:layout_alignParentRight="true"
+	     android:layout_below="@+id/auto_record_button"
  	/>
 
     <Button 
@@ -35,7 +47,7 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="10dp"
-	    android:layout_below="@+id/start_button"
+	    android:layout_below="@+id/manual_record_button"
  	/>
     
 

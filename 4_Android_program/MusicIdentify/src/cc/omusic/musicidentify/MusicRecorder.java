@@ -1,5 +1,7 @@
 package cc.omusic.musicidentify;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +13,7 @@ import java.text.SimpleDateFormat;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.os.Handler;
 import android.util.Log;
 
 public class MusicRecorder {
@@ -21,21 +24,22 @@ public class MusicRecorder {
 	private final int ENCODING = AudioFormat.ENCODING_PCM_16BIT;
 	//audio recorder buffers
 	private int minBufferSize;
-	private static short audioData[];
 	private static byte  audioByte[];
 	private static int bufferSize;	
 	private int read_size = 0;
+	//Muti-thread sync between main thread and recorder thread.
 	private volatile boolean  isRecording = false;
 	
 	private static int secondsToRecord = 20;
 	AudioRecord mRecordInstance = null;
 	private String fingerprint = "";
 	
+	private long fingerprint_time=0;
+	private long query_time=0;
+	
 	private final String TAG = "MusicRecorder";
 	
 	private long record_time;
-	private long fingerprint_time;
-	private long query_time;
 	private SDRecord SDRecorder;
 	
 	private File RecordMusicRawFile = null;
@@ -44,8 +48,20 @@ public class MusicRecorder {
 	private String file_prefix="";
 	
 	byte[] header = new byte[44];
+	int offset = 36;
+	
+	private String jsonstr = "";
+
+
+	private Handler RecorderHandler = null;
+	
+	short music_data[] = null;
 	
 	
+	public void setHandler(Handler handler) {
+		this.RecorderHandler = handler;
+	}
+
 	public MusicRecorder(  ){
 		this.secondsToRecord = 20;
 		SDRecorder = new SDRecord();
@@ -68,23 +84,80 @@ public class MusicRecorder {
 											FREQUENCY, CHANNEL, 
 											ENCODING, minBufferSize);
 	}
+	
+	
 
 	//start to record music
-	public void startRecorder(){
-		Log.d(TAG,"start audio recorder");
+	public void startAutoRecorder(){
+		Log.d(TAG,"start auto audio recorder");
 		try 
 		{			
+			mRecordInstance.startRecording();
+			isRecording = true;
 
-			Log.d(TAG,"start audio recorder");
+			//start audio record thread to write data to sd file.
+			new Thread( new AutolAudioRecorderThread()).start();
+			Log.d(TAG,"start a thread for auto audio recorder");
+			
+		}catch( Exception e ){
+			e.printStackTrace();
+		}
+	}
+	
+
+	//start to record music
+	public void startManualRecorder(){
+		Log.d(TAG,"start manual audio recorder");
+		try 
+		{			
 			mRecordInstance.startRecording();
 			isRecording = true;
 			
 			//start audio record thread to write data to sd file.
-			new Thread( new AudioRecorderThread()).start();
-			Log.d(TAG,"start a thread for audio recorder");
+			new Thread( new ManualAudioRecorderThread()).start();
+			Log.d(TAG,"start a thread for manual audio recorder");
 			
 		}catch( Exception e ){
 			e.printStackTrace();
+		}
+	}
+	
+	// new thread for auto
+	class AutolAudioRecorderThread implements Runnable{
+		@Override
+		public void run() {	
+			//automatic stop record process in 20 seconds. dependent this.secondsToRecord ;
+			genFingerprintQueryServer query = new genFingerprintQueryServer();
+			fingerprint = query.generateMusicFp( recordAudioToShortArray() );
+			RecorderHandler.sendEmptyMessage(0);
+			jsonstr = query.getJSONStr(fingerprint);
+			fingerprint_time = query.getFingerprintTime();
+			query_time = query.getQueryTime();
+			RecorderHandler.sendEmptyMessage(1);
+		}
+	}
+	
+	
+	// new thread for manual
+	class ManualAudioRecorderThread implements Runnable{
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			//manual stop record process
+			genFingerprintQueryServer query = new genFingerprintQueryServer();
+			
+			recordAudioToRawFile();
+			Log.d(TAG,"ready to wav file, RecordMusicRawFile: " + RecordMusicRawFile.getPath());
+			copyRawToWaveFile( RecordMusicRawFile.getPath() );
+			
+			//tell main activity new wav file is record.
+			RecorderHandler.sendEmptyMessage(2 ); 
+			
+			fingerprint = query.generateMusicFp( 
+							readWavFileToShortArray( RecordMusicWavFile ) );
+			jsonstr = query.getJSONStr(fingerprint);
+			//tell main activity get query server's respoense.
+			RecorderHandler.sendEmptyMessage( 3); 
 		}
 	}
 	
@@ -95,38 +168,44 @@ public class MusicRecorder {
 			isRecording = false;
 			Log.d(TAG,"mRecordInstance.stop();");
 			mRecordInstance.stop();
-			//Log.d(TAG,"mRecordInstance.release();");
-			//mRecordInstance.release();
-			//mRecordInstance = null;
-			Log.d(TAG,"complete stop audio recorder");
-			
-			
+			Log.d(TAG,"complete stop audio recorder");		
 		}
 	}
 	
-	// new thread 
-	class AudioRecorderThread implements Runnable{
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			
-			fingerprint = "";
-			
-			//recordMusic();
-			
-			//generateMusicFp();
-		
-			recordAudioToRawFile();
-			Log.d(TAG,"ready to wav file, RecordMusicRawFile: " + RecordMusicRawFile.getPath());
-			copyRawToWaveFile( RecordMusicRawFile.getPath() );
-			
+	
+	public String getQueryResult(){
+		return jsonstr;
+	}
+	
+	public File getRecordMusicWavFile(){
+		return RecordMusicWavFile;
+	}
+	
+	public int getWavFileTime( File f ){
+		int wav_time = 0;
+		String end = f.getName().substring( f.getName().lastIndexOf(".") + 1,
+				f.getName().length()).toLowerCase();
+		String type = "";
+		if( end.equals("wav") ){
+			wav_time =(int) ( (f.length() - this.offset) / this.FREQUENCY / 2 );
 		}
-			
+		
+		return wav_time;
 		
 	}
 	
-	public void recordMusic(){
-		
+	public long getQueryTime(){
+		return 	query_time;
+	}
+	
+	public long getFingerprintTime(){
+		return 	fingerprint_time;
+	}
+
+	
+	// continuos record 20 seconds to short data array
+	public short [] recordAudioToShortArray(){
+		short audioData[];
 		// buffer size for the audio recorder: frequency * seconds to record.
 		bufferSize = Math.max(minBufferSize, this.FREQUENCY * secondsToRecord);	
 		//data buffer for music fingerprint input data
@@ -141,38 +220,16 @@ public class MusicRecorder {
 				read_size += mRecordInstance.read(audioData, read_size, bufferSize - read_size);
 				if(mRecordInstance.getRecordingState() == AudioRecord.RECORDSTATE_STOPPED)
 					break;
-				Log.d(TAG,"read_size: " + read_size);
+				//Log.d(TAG,"read_size: " + read_size);
 			} 
 			while (read_size < bufferSize && isRecording );	
 			isRecording = false;
 		}
 		record_time = System.currentTimeMillis() - record_time;
-		Log.d(TAG,"music record time: " + record_time + "ms" );	
+		Log.i(TAG,"music record time: " + record_time + "ms" );
+		return audioData;	
 		
 	}
-	
-	public String generateMusicFp(){
-		fingerprint_time = System.currentTimeMillis();
-		
-		//audioData.length == read_size
-		if( audioData.length != 0 ) {
-			//need to modify the codegen lib
-			String fingerprint = "";
-			fingerprint_time = System.currentTimeMillis() - fingerprint_time;
-			Log.d(TAG,"fingerprint generate time: " + fingerprint_time + "ms" );
-			return fingerprint;
-
-		}
-		else{
-			Log.e(TAG,"fingerprint generate  error, audio data is not invaled" );
-			return null;
-		}
-			
-
-	}
-
-	
-
 	
 	//store record audio to ***.raw file
 	public  void recordAudioToRawFile(){	
@@ -271,6 +328,9 @@ public class MusicRecorder {
         int channels = 1;  
         long byteRate = 16 * FREQUENCY * channels / 8;  
         byte[] data = new byte[minBufferSize];  
+        long rawfile2wav_time = 0;
+        
+        rawfile2wav_time = System.currentTimeMillis();
         
 		if( RecordMusicDir != null )
 		{
@@ -278,6 +338,7 @@ public class MusicRecorder {
 			RecordMusicWavFile = new File(RecordMusicDir, file_prefix+".wav");
 			if( RecordMusicWavFile.exists())
 				RecordMusicWavFile.delete();
+			Log.d(TAG,"wav file:" + RecordMusicWavFile.getPath());
 		}
         
         
@@ -300,6 +361,8 @@ public class MusicRecorder {
         } catch (IOException e) {  
             e.printStackTrace();  
         }  
+        rawfile2wav_time =  System.currentTimeMillis()- rawfile2wav_time ;
+        Log.i(TAG,"copy raw file to wav file time: " + rawfile2wav_time + "ms" );
     }  
   
     //store wav file, 44 char header + ***.raw
@@ -368,9 +431,106 @@ public class MusicRecorder {
 	   	return TimerStr;
 			
 	}
+
+	//strill have problem, should test !!!!!!!!!!!!
+	public short[] readWavFileToShortArray( File WavFile ) {
+		
+		FileInputStream fin = null;
+		//FileOutputStream fout = null;
+		DataInputStream din = null;
+		long audioLen = 0;
+		//short music_data[] = null;
+
+		Log.i(TAG, "readWavFileToStream input file: " + WavFile.getPath() );
+		if( WavFile.isFile() && WavFile.exists() ){
+			try {
+				fin  = new FileInputStream( WavFile );
+				audioLen = WavFile.length() - offset;
+			    //Log.i(TAG, "audioLen: " + audioLen );
+			    //Log.i(TAG,"read_size:" + read_size);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			din = new DataInputStream(
+					new BufferedInputStream( fin) 
+							//new FileInputStream( filename ) )
+					);
+			//short length 16bits, Byte length 8bits
+		    try {
+				//audioLen = fin.getChannel().size() /  2 ;
+			   // Log.i(TAG, "audioLen" + audioLen );
+				music_data = new short[(int) audioLen];
+				
+				//skip wav file's header
+				din.skipBytes(offset);
+				
+				for(int i=0; i<music_data.length; i++ ){
+					music_data[i] = din.readShort();
+				} 
+		    }catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    
+			try {
+				if( din != null ){
+					din.close();
+					din = null;
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return music_data;
+		}
+		else{
+			Log.e( TAG, "input file is not validate");
+			return null;		
+		}
 	
-	public String getRecordMusicWavFileStr(){
-		return RecordMusicWavFile.getName();
+	/*	
+		//short length 16bits, Byte length 8bitsv
+	    try {
+	    	//long head = din.readL();	//string "RIFF"
+	    	byte temp[] = new byte[4];
+	    		din.read(temp, 4, 4);
+	    	audioLen = 0;
+	    	audioLen += temp[0];
+	    	audioLen += temp[1] << 8;
+	    	audioLen += temp[2] << 16;
+	    	audioLen += temp[3] << 24;
+		    Log.i(TAG, "audioLen: " + audioLen );
+		    Log.i(TAG,"read_size:" + read_size);
+
+			music_data = new short[(int) audioLen];
+			
+			//skip wav file's header
+			din.skipBytes(offset - 8);
+			for(int i=0; i<audioLen && (din.available() != 0); i++ ){
+				music_data[i] = din.readShort();
+			} 
+			din.close();
+			
+	    }catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	*/	
+			
+	}
+	
+	
+	public boolean checkMusicdata( File raw_file, short music_data[] ){
+		
+		for( int i=0; i<music_data.length; i++ ){
+			//raw_file.
+		}
+		
+		return false;
 	}
 
 }

@@ -1,0 +1,26 @@
+
+public class StreamTest {
+	
+	private short audio_data [];
+
+	public StreamTest() {
+		// TODO Auto-generated constructor stub
+		audio_data = new short[1024];
+		for( int i=0; i<audio_data.length; i++)
+			audio_data[i] = (short) i;
+		System.out.print("initial audio_data:");
+		for( int i=0; i<10; i++)
+			System.out.print("audio_data[%d]=%d", i, audio_data[i]);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+
+}

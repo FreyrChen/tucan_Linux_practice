@@ -1,0 +1,5 @@
+package cc.omusic.musicidentify;
+
+public class Codegen {
+	native String codegen( float data[], int numSamples );
+}

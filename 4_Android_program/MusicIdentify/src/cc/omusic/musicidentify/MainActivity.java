@@ -1,25 +1,14 @@
 package cc.omusic.musicidentify;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 
-
-import android.media.AudioFormat;
-import android.media.AudioRecord;
-import android.media.MediaPlayer;
-import android.media.MediaRecorder;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -30,20 +19,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-
-import cc.omusic.musicidentify.SDRecord;
 
 
 
 
 public class MainActivity extends Activity {
 	
-	private ToggleButton startButton;
+	private ToggleButton startAutoButton;
+	private ToggleButton startManualButton;
 	private Button queryButton;
 	private Button playButton;
 	private Button deleteButton;
@@ -61,6 +49,42 @@ public class MainActivity extends Activity {
 
 	
 	private Handler handler = new Handler();
+	
+	private Handler myHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+			//auto record process
+			if(msg.what == 0){
+				// complete record 20s automatic stop recorder
+				isStopRecord = true;
+				//stop timer and reverse count
+				handler.removeCallbacks(runnable);
+				count =  0;
+				infoText.setText("generate finger print and query on server");
+			}else if( msg.what == 1){
+				
+				infoText.setText( "[f-time]:" + musicRecorder.getFingerprintTime() + "ms;   "
+					    + "[q-time]:" + musicRecorder.getQueryTime() + "ms"
+						+ "\n" + musicRecorder.getQueryResult());
+				startAutoButton.setChecked(false);
+			} 
+			//manual record process
+			else if( msg.what == 2){
+				//manual stop recorder,wait creat new wav file
+				adapter.add(musicRecorder.getRecordMusicWavFile().getName());
+				SelectedFile = musicRecorder.getRecordMusicWavFile();
+				infoText.setText("new wav file:"+
+									musicRecorder.getRecordMusicWavFile().getName());
+			}else if( msg.what == 3){
+				//get query server's respoense.
+				infoText.setText( musicRecorder.getQueryResult());	
+			}
+			
+		}
+		
+	};
 	private int  count = 0;
 	
 	private MusicRecorder musicRecorder = null;
@@ -72,7 +96,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		startButton = (ToggleButton) findViewById( R.id.start_button);
+		startAutoButton = (ToggleButton) findViewById( R.id.auto_record_button);
+		startManualButton = (ToggleButton) findViewById( R.id.manual_record_button);
 		queryButton = (Button) findViewById( R.id.query_button);
 		playButton = (Button) findViewById( R.id.play_button);
 		deleteButton = (Button) findViewById( R.id.delete_button);
@@ -89,15 +114,18 @@ public class MainActivity extends Activity {
 		musicList.setAdapter(adapter);
 		
 		//set every button's click event
-		startButton.setOnCheckedChangeListener( new startButtonListener()); 
+		startAutoButton.setOnCheckedChangeListener( new startAutoButtonListener()); 
+		startManualButton.setOnCheckedChangeListener( new startManualButtonListener()); 
 		playButton.setOnClickListener( new playButtonListener() );
 		deleteButton.setOnClickListener( new deleteButtonListener() );
 		musicList.setOnItemClickListener(new musicListClickListener());
 		queryButton.setOnClickListener(new queryButtonListener());
 		
 		//initial audio recorder
-		musicRecorder =  new MusicRecorder(5);
+		musicRecorder =  new MusicRecorder();
 		musicRecorder.creatRecorder();
+		//wait recording thread stop to send  a message.
+		musicRecorder.setHandler(myHandler);
 	}
 	
 	Runnable runnable = new Runnable(){
@@ -116,19 +144,81 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
-			infoText.setText("want to query? it's not ready.");
+			//infoText.setText("want to query? it's not ready.");
+			infoText.setText("query ...");
+			if( SelectedFile.isFile() && SelectedFile.exists() ){
+				genFingerprintQueryServer query = new genFingerprintQueryServer();
+				//infoText.setText("query ...\n server:" + query.getServerUrl());
+				String fingerprint = query.generateMusicFp( 
+										musicRecorder.readWavFileToShortArray(
+												SelectedFile) );
+				String jsonstr = query.getJSONStr(fingerprint);
+				infoText.setText( "[f-time]:" + query.getFingerprintTime() + "ms;   "
+								    + "[q-time]:" + query.getQueryTime() + "ms"
+									+ "\n" + jsonstr);
+			}
+			else{
+				infoText.setText("Error! SelectedFile: " + SelectedFile.toString());
+				Log.e(TAG, "Error! SelectedFile: " + SelectedFile.toString());
+			}
 			
-			
-			
-			//Codegen codegen = new Codegen();
-			//String fingerprint = codege.generate( audioData, read_size );	
 		}
 	}
 	
 	
+	// automatic record 20s,  gernerate fingerprint, query server. 
+	public class startAutoButtonListener implements OnCheckedChangeListener{
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView,
+				boolean isChecked) {
+			// TODO Auto-generated method stub
+			if(isChecked){ 
+				/*
+				if( !SDRecorder.checkSD() ){
+					Toast.makeText(MainActivity.this, "please check SD card", Toast.LENGTH_SHORT).show();
+					infoText.setText("SD card is not insert.");
+					return;
+				}
+				*/
+				Toast.makeText(MainActivity.this, "Start to recognise music.", Toast.LENGTH_LONG).show(); 
+				queryButton.setEnabled(false);
+				playButton.setEnabled(false);
+				deleteButton.setEnabled(false);
+				startManualButton.setEnabled(false);
+				
+				isStopRecord = false;
+				
+				musicRecorder.startAutoRecorder();
+				
+				//Display info
+				infoText.setText("recording ...");
+				//start timer after 1 second, count record time
+				handler.postDelayed(runnable, 1000);
+				
+			}
+			//press to stop record
+			else{	
+
+				musicRecorder.stopRecorder();
+				
+				Toast.makeText(MainActivity.this, 
+					"record voice stopped.", Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"press to stop");
+				queryButton.setEnabled(true);
+				playButton.setEnabled(true);
+				deleteButton.setEnabled(true);
+				startManualButton.setEnabled(true);
+				Log.d(TAG,"in close process");		
+			}
+		}
+		
+	}
 	
-	//start record button
-	public class startButtonListener implements OnCheckedChangeListener{
+	
+	
+	
+	//start manual record button
+	public class startManualButtonListener implements OnCheckedChangeListener{
 		public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
 			// TODO Auto-generated method stub
 			// press to start record
@@ -144,33 +234,34 @@ public class MainActivity extends Activity {
 					queryButton.setEnabled(false);
 					playButton.setEnabled(false);
 					deleteButton.setEnabled(false);
+					startAutoButton.setEnabled(false);
 					isStopRecord = false;
 					
-					musicRecorder.startRecorder();
+					musicRecorder.startManualRecorder();
 					
 					//Display info
 					infoText.setText("recording ...");
 					//start timer after 1 second, count record time
 					handler.postDelayed(runnable, 1000);
 					
+					//while( musicRecorder.getQueryStatus() == false )
+					//	; //wait record and query
+					
 				}
 			}
 			//press to stop record
-			else{			
-				//adapter.add(RecordMusicFile.getName());
-				//SelectedFile = RecordMusicFile;
-				//infoText.setText("new music ..."+ RecordMusicFile.getName());
+			else{	
+
 				musicRecorder.stopRecorder();
 				
 				Toast.makeText(MainActivity.this, 
 					"record voice stopped.", Toast.LENGTH_SHORT).show();
-				Log.i(TAG,"press to stop");
+				Log.d(TAG,"press to stop");
 				queryButton.setEnabled(true);
 				playButton.setEnabled(true);
 				deleteButton.setEnabled(true);
-				//infoText.setText("recorder stopped. file:" + RecordMusicFile.getName());
-				Log.i(TAG,"in close process");
-				adapter.add(musicRecorder.getRecordMusicWavFileStr());
+				startAutoButton.setEnabled(true);
+				Log.d(TAG,"in close process");
 				
 				isStopRecord = true;
 				//stop timer and reverse count
@@ -193,10 +284,8 @@ public class MainActivity extends Activity {
 			SelectedFile = new File( RecordMusicDir.getAbsolutePath()
 									+ File.separator 
 									+ ( (CheckedTextView) arg1).getText());
-			infoText.setText("you choose: "
-							+ RecordMusicDir.getAbsolutePath()
-							+ File.separator 
-							+ ( (CheckedTextView) arg1).getText());	
+			infoText.setText("music time: " + musicRecorder.getWavFileTime(SelectedFile)
+							+ "\n" + ( (CheckedTextView) arg1).getText() );
 		}
 		
 	}
@@ -268,16 +357,9 @@ public class MainActivity extends Activity {
 					 }
 				 }
 			 } 
-		 } 
+		 }
 	 }
     
-	/*
-	@Override  
-    protected void onDestroy() {  
-		musicRecorder.stopRecorder();  
-        super.onDestroy();  
-    }  
-	*/
 
 	
 }

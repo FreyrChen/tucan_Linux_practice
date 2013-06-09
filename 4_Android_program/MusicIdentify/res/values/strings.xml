@@ -9,6 +9,8 @@
     <string name="play">play</string>
     <string name="query">query</string>
     <string name="delete">delete</string>
+    <string name="manual_start">Manual start</string>
+    <string name="auto_start">Auto start</string>
 
     
 </resources>

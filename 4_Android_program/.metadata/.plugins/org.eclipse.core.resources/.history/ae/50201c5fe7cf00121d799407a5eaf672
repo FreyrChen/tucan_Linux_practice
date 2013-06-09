@@ -1,0 +1,20 @@
+
+public class StreamTest {
+	
+	private short audio_data [];
+
+	public StreamTest() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+
+}
