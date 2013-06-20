@@ -1,0 +1,18 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+
+sucess num: 1
+1, 2331456.mp3,start at 10 s, last time, 22s
+  {"retcode":"0000","retval":"\u5339\u914d\u6210\u529f","content":{"songid":"2331456","songname":"Un Ave Maria","albumid":"197889","albumname":"Un Regard 9 Live","singerid":"4636","singername":"Lara Fabian"}}
+
+sucess num: 2
+2, 1924782.mp3,start at 10 s, last time, 21s
+  {"retcode":"0000","retval":"\u5339\u914d\u6210\u529f","content":{"songid":"1924782","songname":"\u4f60\u548c\u592a\u9633\u4e00\u540c\u5347\u8d77","albumid":"163870","albumname":"\u82e6\u82e6\u7684\u601d\u5ff5","singerid":"11106","singername":"\u817e\u683c\u5c14"}}
+
+sucess num: 2
+3, 2043480.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 2
+4, 349201.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+

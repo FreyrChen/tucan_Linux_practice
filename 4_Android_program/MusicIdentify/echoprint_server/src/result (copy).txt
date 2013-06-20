@@ -1,0 +1,9 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+
+1, 2331456.mp3,start at 10 s, last time, 21s{"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+2, 1924782.mp3,start at 10 s, last time, 21s{"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+3, 2043480.mp3,start at 10 s, last time, 21s{"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+finished test 3songs 

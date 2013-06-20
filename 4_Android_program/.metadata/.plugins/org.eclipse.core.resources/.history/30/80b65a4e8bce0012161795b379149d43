@@ -1,8 +1,0 @@
-package cc.omusic.musicidentify;
-
-public class Fingerprint {
-
-	public Fingerprint(){
-		;
-	}
-}

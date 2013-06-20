@@ -1,0 +1,2 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+

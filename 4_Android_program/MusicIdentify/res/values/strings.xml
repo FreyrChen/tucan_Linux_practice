@@ -11,6 +11,7 @@
     <string name="delete">delete</string>
     <string name="manual_start">Manual start</string>
     <string name="auto_start">Auto start</string>
+    <string name="test">test</string>
 
     
 </resources>

@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity" >
+    
+    <ProgressBar
+    	android:id="@+id/auto_progress"
+		style="?android:attr/progressBarStyleHorizontal"
+    	android:layout_width="fill_parent"
+	 	android:layout_height="wrap_content"
+	 	android:visibility="gone"
+    />
+        
+    <ToggleButton 
+		android:id="@+id/auto_record_button"	
+		android:textOn="@string/stop"
+		android:textOff="@string/auto_start"
+		android:textSize="20sp"
+	 	android:layout_width="match_parent"
+	 	android:layout_height="80dp"
+	    android:layout_marginTop="5dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/auto_progress"
+ 	/>
+ 
+     <ToggleButton 
+		android:id="@+id/manual_record_button"	
+		android:textOn="@string/stop"
+		android:textOff="@string/manual_start"
+	 	android:layout_width="120dp"
+	 	android:layout_height="50dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_below="@+id/auto_record_button"
+ 	/>
+    
+    <Button 
+	 	android:id="@+id/query_button"
+	 	android:layout_width="120dp"
+	 	android:layout_height="50dp"
+	 	android:text="@string/query"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentRight="true"
+	     android:layout_below="@+id/auto_record_button"
+ 	/>
+
+    <Button 
+	 	android:id="@+id/play_button"
+		android:text="@string/play"
+	 	android:layout_width="120dp"
+	 	android:layout_height="50dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_below="@+id/manual_record_button"
+ 	/>
+    
+
+    <Button 
+	 	android:id="@+id/delete_button"
+	 	android:layout_width="120dp"
+	 	android:layout_height="50dp"
+	 	android:text="@string/delete"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_below="@+id/query_button"
+ 	/>
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:text="@string/init_text"
+        android:background="#00FF0000"
+	    android:textColor="#FFCC00" 
+	    android:layout_below="@+id/delete_button"
+    />
+    
+	<ListView
+        android:id="@+id/music_List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#00FF0000"
+	    android:textColor="#FF0000" 
+	    android:layout_below="@+id/info_text"
+    />
+	
+    
+
+</RelativeLayout>
