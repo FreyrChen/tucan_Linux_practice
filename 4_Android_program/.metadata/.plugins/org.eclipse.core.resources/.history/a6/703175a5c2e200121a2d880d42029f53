@@ -1,0 +1,79 @@
+
+#include <android/log.h>
+#include <string.h>
+
+//#include "cc_omusic_fingerprintjni_FingerprintWraper.h"
+#include "./fingerprint_ver_1/fingerprint.h"
+#include <jni.h>
+#define  LOG_TAG    "fingerprint_jni"
+#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+
+
+// this string is gernerate from head file, as last step use javah oo.omusic.***.Fingerprrint
+//jstring Java_cc_omusic_fingerprintver1lib_FingerprintVer1_fingerprint
+//(JNIEnv *env, jobject thiz, jfloatArray pcmData, jint numSamples)
+jstring Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
+(JNIEnv *env, jobject thiz, jfloatArray pcmData, jint numSamples)
+//( JNIEnv* env, jobject thiz )
+{
+	LOGD("begin into AndroidFingerprint () \n");
+
+    // get the contents of the java array as native floats
+	//float *data = (float *)env->GetFloatArrayElements(pcmData, 0);
+	float *data = (float *)((*env)->GetFloatArrayElements(env, pcmData, 0));
+	
+
+	LOGD("start fingerprint sub funtion in  jni lib\n");
+
+	//fp_size == 424
+    //unsigned char * buffer =  malloc(fp_getsize(fooid));
+	unsigned char * fp =  malloc( 424 );
+	int result= fingerprint ( data, (unsigned int)numSamples, fp);
+/*
+	jbyteArray bytes = (*env)->NewByteArray(env,424);
+	(*env)->SetByteArrayRegion( bytes, 0, 424, (jbyte*)fp );
+	jstring encoding = (*env)->NewStringUTF(env,"utf-8");
+	//jclass strClass = (*env)->FindClass(env,"Ljava/lang");
+*/
+	LOGD("complete fingerprint sub funtion in  jni lib\n");
+	// LOGE("result=%d",result);
+    if (result < 0)
+       {
+    		LOGE("Failed to calculate fingerprint\n");
+       }
+       else
+       {
+           int i;
+           for (i = 0; i < 424; i++)
+           {
+        	   /*
+               if (!(i % 32))
+               {
+                   printf("\n");
+               }
+               printf("%02x ", (int) fp[i]);
+               */
+               LOGE("%02x ", (int) fp[i]);
+           }
+
+           LOGE("\n");
+       }
+	
+
+    // release the native array as we're done with them
+	//env->ReleaseFloatArrayElements(pcmData, data, 0); 
+	(*env)->ReleaseFloatArrayElements(env, pcmData, data, 0);
+    
+
+	//	return env->NewStringUTF((const char *)fp);
+	//unsigned char fp_2[20]="from jni";
+	//return (*env)->NewStringUTF(env, (const char *)fp_2);
+
+    // return the fingerprint string
+	//return  (*env)->NewStringUTF(env,(int*)fp);
+	return  (*env)->NewString(env,fp);
+
+   //return (*env)->NewStringUTF(env, "test a comment");
+}

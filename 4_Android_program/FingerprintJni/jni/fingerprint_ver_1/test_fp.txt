@@ -1,0 +1,19 @@
+--- File Info ---
+Sample rate:	44100
+Channels: 	2
+
+
+00 00 0f 4c 00 00 18 07 00 11 01 52 01 cc 30 81 40 ce 00 02 02 cc 87 3f 3f cc e3 7f 63 40 c3 fb 
+3a ec b7 ff 3f c1 c7 ff fb c9 e0 9b 6d e8 c3 77 04 ec ff fb cc d2 3e 73 c9 0c cf ff ff f5 3c fe 
+cf f0 fd ce 3e cc c7 d3 ef fe 73 cf bb 3c f3 8f 73 b8 fd ff ff 0f fe ff 3f f6 f2 6f 3f 23 ff 4e 
+17 f0 c3 ef 1b 9a 3e bd 73 c0 3f ff cf f1 fb ff ec 17 ff f3 bf 4b eb 87 32 f8 4b 7c 81 d1 fe 24 
+3f f0 b3 0f fe c0 bd 9b 0c af ff 1f cf e0 3e 3b e7 df fb cc 3d 3b c3 7f 2a aa 30 ff f0 eb fe ff 
+cc 4f be e0 ef 35 2c 3f b0 0f 77 ff 3f f2 be 86 37 e2 b3 51 31 d7 30 0a bf 73 f9 ef 3e b0 fe ff 
+ff fc 7f b2 10 38 f4 de b8 34 db fd 34 41 b0 ff b3 d0 fb d7 bf b4 fb ff 7f df 3f 13 bd 8f 8f 3f 
+ff b3 2f ab c4 ea 53 15 c8 d9 33 f1 f3 f0 ff 35 3e 01 f2 ff ff f0 7c df df d4 e3 2c c3 d0 a3 dd 
+12 e5 94 d8 f5 c3 05 ff fc a0 3c 3b c8 10 d2 8f b4 00 73 7c 83 ff 15 87 33 c2 02 c3 71 c0 3e ff 
+77 b0 ed 3f 52 34 78 3a 57 c0 a9 2c f0 ee f9 03 73 39 69 1b 34 ff 1a 35 dc 0e 7c ff 3f ff e8 2b 
+9f e0 80 3e 30 d2 b2 33 eb ff d2 1a f3 fa 40 4a fc fc 0a 46 f4 f9 00 bb fe e0 2f 8e ff d8 ff 09 
+8d ab 39 83 de b3 ff ff f3 bd 9b f6 66 fd b5 d7 7d 6f be fd f5 bf 3b f4 d7 6d 70 cf 0d 6f d7 5d 
+b5 d3 5d 6f d7 5d 74 d3 5d 2f db 5e 2f d1 6c 30 d3 46 75 bf 30 cb d6 f4 34 45 1d 4b bd 06 59 2f 
+59 51 45 03 f5 71 66 40 

@@ -1,0 +1,8 @@
+/home/tusion/code/4_Android_program/FingerprintVer1Lib/obj/local/armeabi/objs/fingerprint//fingerprint_ver_1/common.o: \
+ /home/tusion/code/4_Android_program/FingerprintVer1Lib/jni//fingerprint_ver_1/common.c \
+ /home/tusion/code/4_Android_program/FingerprintVer1Lib/jni//fingerprint_ver_1/common.h \
+ /home/tusion/code/4_Android_program/FingerprintVer1Lib/jni//fingerprint_ver_1/fooid.h
+
+/home/tusion/code/4_Android_program/FingerprintVer1Lib/jni//fingerprint_ver_1/common.h:
+
+/home/tusion/code/4_Android_program/FingerprintVer1Lib/jni//fingerprint_ver_1/fooid.h:

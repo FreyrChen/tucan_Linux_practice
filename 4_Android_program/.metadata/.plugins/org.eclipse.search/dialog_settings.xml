@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="DialogBounds_SearchDialog">
+		<item value="586" key="DIALOG_WIDTH"/>
+		<item value="42" key="DIALOG_Y_ORIGIN"/>
+		<item value="516" key="DIALOG_HEIGHT"/>
+		<item value="220" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
 			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
@@ -11,5 +18,8 @@
 			<item value="org.eclipse.cdt.ui.pdomSearchPage"/>
 			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
 		</list>
+	</section>
+	<section name="SearchDialog.ScopePart">
+		<item value="0" key="scope"/>
 	</section>
 </section>

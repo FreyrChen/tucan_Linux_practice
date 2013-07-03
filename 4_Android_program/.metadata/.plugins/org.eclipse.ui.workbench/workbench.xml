@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="8" version="2.0">
 <workbenchAdvisor/>
 <window height="744" maximized="true" width="718" x="302" y="24">
 <fastViewData fastViewLocation="1024">
@@ -21,66 +21,38 @@
 <coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="96" y="30"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.make.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="UserSeparator" itemType="typeSeparator"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
-<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="30"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="316" y="30"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1355841652820" focus="true" label="Workspace - Java">
+<page aggregateWorkingSetId="Aggregate for window 1355841652820" focus="true" label="Workspace - Debug">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="/home/tusion/code/4_Android_program/MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java" title="MainActivity.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7012" selectionTopPixel="2785"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MusicRecorder.java" partName="MusicRecorder.java" path="/home/tusion/code/4_Android_program/MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java" title="MusicRecorder.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="111" selectionOffset="3061" selectionTopPixel="1802"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="genFingerprintQueryServer.java" partName="genFingerprintQueryServer.java" path="/home/tusion/code/4_Android_program/MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java" title="genFingerprintQueryServer.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1999" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StreamTest.java" partName="StreamTest.java" path="/home/tusion/code/4_Android_program/StreamTest/src/StreamTest.java" title="StreamTest.java" tooltip="StreamTest/src/StreamTest.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/StreamTest/src/StreamTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDRecord.java" partName="SDRecord.java" path="/home/tusion/code/4_Android_program/MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java" title="SDRecord.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress">
 <viewState/>
-</view>
-<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
-<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=EchoprintTestActivity/\/home\/tusion\/code\/4_Android_program\/EchoprintLib\/bin\/echoprintlib.jar&lt;edu.gvsu.masl.echoprint(AudioFingerprinter.class[AudioFingerprinter" link_editors="0" mv_vertical_scroll="328" orientation="3" qualified_names="0" ratio="350" selection="=EchoprintTestActivity/\/home\/tusion\/code\/4_Android_program\/EchoprintLib\/bin\/echoprintlib.jar&lt;edu.gvsu.masl.echoprint(AudioFingerprinter.class[AudioFingerprinter" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName=""/>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
 <viewState/>
@@ -127,8 +99,15 @@
 <view id="com.android.ide.eclipse.ddms.views.FileExplorerView" partName="File Explorer">
 <viewState/>
 </view>
+<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" partName="Network Statistics">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="481" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="309" org.eclipse.ui.ide.severityAndDescriptionField="710"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -136,9 +115,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
-</view>
-<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" partName="Network Statistics">
-<viewState/>
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
@@ -183,7 +159,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.debug.ui.VariableView" activePerspective="org.eclipse.debug.ui.DebugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
 <descriptor class="com.android.ide.eclipse.ddms.Perspective" id="com.android.ide.eclipse.ddms.Perspective" label="DDMS"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -214,52 +190,65 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.DeviceView"/>
-<view id="com.android.ide.eclipse.ddms.views.ThreadView"/>
-<view id="com.android.ide.eclipse.ddms.views.HeapView"/>
-<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView"/>
-<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView"/>
-<view id="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
-<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView"/>
-<fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="logcat" orientation="256" selectedTabId="com.android.ide.eclipse.ddms.views.LogCatView" style="0">
+<fastViews>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="ddms-detail" orientation="256" selectedTabId="com.android.ide.eclipse.ddms.views.FileExplorerView" style="0">
+<fastViews>
+<view id="com.android.ide.eclipse.ddms.views.ThreadView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.HeapView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.FileExplorerView" ratio="0.2992126"/>
+<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="devices">
+<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
 <page content="com.android.ide.eclipse.ddms.views.DeviceView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@c4d0f3" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="devices">&#x0A;<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@c4d0f3" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="devices">
+<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="logcat" ratio="0.45597485" ratioLeft="290" ratioRight="346" relationship="4" relative="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="logcat" ratio="0.7169811" ratioLeft="456" ratioRight="180" relationship="4" relative="devices">
+<folder appearance="2" expanded="0">
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
-<part id="1"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.299581" ratioLeft="429" ratioRight="1003" relationship="2" relative="devices"/>
-<info folder="true" part="ddms-detail" ratio="0.4995015" ratioLeft="501" ratioRight="502" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.HeapView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads"/>
-<page content="com.android.ide.eclipse.ddms.views.HeapView" label="Heap"/>
-<page content="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="Allocation Tracker"/>
-<page content="com.android.ide.eclipse.ddms.views.NetworkStatsView" label="Network Statistics"/>
-<page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="File Explorer"/>
-<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control"/>
+<info folder="true" part="ddms-detail" ratio="0.4995015" ratioLeft="501" ratioRight="502" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="com.android.ide.eclipse.ddms.views.ThreadView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.HeapView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.NetworkStatsView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="LabelNotFound"/>
 <page content="com.android.ide.eclipse.ddms.views.ThreadView:*" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -325,7 +314,6 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="com.android.ide.eclipse.ddms.views.LogCatView" style="0">
 <fastViews>
@@ -343,13 +331,12 @@
 <info folder="true" part="left">
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -360,7 +347,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.2142152" ratioLeft="217" ratioRight="796" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.36130306" ratioLeft="366" ratioRight="647" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.5927673" ratioLeft="377" ratioRight="259" relationship="4" relative="org.eclipse.ui.editorss">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -441,22 +428,32 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@176526d" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@176526d" ratio="0.75" ratioLeft="1074" ratioRight="358" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.61814344" ratioLeft="586" ratioRight="362" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.61814344" ratioLeft="586" ratioRight="362" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.cdt.debug.ui.executablesView" label="Executables"/>
@@ -464,34 +461,44 @@
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@269752" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@269752" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.45" ratioLeft="270" ratioRight="330" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.66369826" ratioLeft="1267" ratioRight="642" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.66369826" ratioLeft="1267" ratioRight="642" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.ExpressionView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="716" ratioRight="716" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ModuleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
@@ -502,171 +509,17 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=MusicIdentify/\/home\/tusion\/android_app_dev\/adt-bundle-linux-x86\/sdk\/platforms\/android-10\/android.jar&lt;android.media(AudioRecord.class"/>
-</editors>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="5612" y="18"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="2864" y="14"/>
-</item>
-<item historyLabel="SDRecord.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="2864" y="14"/>
-</item>
-<item historyLabel="SDRecord.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="2864" y="14"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="8352" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1110" y="15"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="6533" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="6704" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="7406" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="genFingerprintQueryServer.java" index="2">
-<position info="not_deleted" x="770" y="10"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="6525" y="0"/>
-</item>
-<item historyLabel="genFingerprintQueryServer.java" index="3">
-<position info="not_deleted" x="1999" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2274" y="17"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2274" y="17"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="3692" y="81"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="5634" y="0"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="3733" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2274" y="17"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2488" y="24"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="3737" y="15"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="9259" y="12"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="4604" y="12"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="5619" y="12"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="4604" y="12"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="4604" y="12"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="8309" y="0"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2682" y="19"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2644" y="414"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="6498" y="0"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2337" y="300"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2370" y="14"/>
-</item>
-<item historyLabel="AudioRecord.class" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2370" y="14"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="2488" y="24"/>
-</item>
-<item historyLabel="MusicRecorder.java" index="4">
-<position info="not_deleted" x="3061" y="111"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="7767" y="14"/>
-</item>
-<item active="true" historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4061" y="14"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+<trimItem IMemento.internal.id="devices"/>
+<trimItem IMemento.internal.id="ddms-detail"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -676,54 +529,52 @@
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
 <trimItem IMemento.internal.id="bottom"/>
+<trimItem IMemento.internal.id="logcat"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="AudioRecord.class" tooltip="android.media.AudioRecord">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=MusicIdentify/\/home\/tusion\/android_app_dev\/adt-bundle-linux-x86\/sdk\/platforms\/android-10\/android.jar&lt;android.media(AudioRecord.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fooid.h" tooltip="FingerprintJni/jni/fingerprint_ver_1/fooid.h">
+<persistable path="/FingerprintJni/jni/fingerprint_ver_1/fooid.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SDRecord.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java">
-<persistable path="/MusicIdentify/src/cc/omusic/musicidentify/SDRecord.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fingerprint.h" tooltip="FingerprintJni/jni/fingerprint_ver_1/fingerprint.h">
+<persistable path="/FingerprintJni/jni/fingerprint_ver_1/fingerprint.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StreamTest.java" tooltip="StreamTest/src/StreamTest.java">
-<persistable path="/StreamTest/src/StreamTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="common.h" tooltip="FingerprintJni/jni/fingerprint_ver_1/common.h">
+<persistable path="/FingerprintJni/jni/fingerprint_ver_1/common.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="genFingerprintQueryServer.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java">
-<persistable path="/MusicIdentify/src/cc/omusic/musicidentify/genFingerprintQueryServer.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="FingerprintJni/AndroidManifest.xml">
+<persistable path="/FingerprintJni/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MusicServer.java" tooltip="MusicServer/src/MusicServer.java">
-<persistable path="/MusicServer/src/MusicServer.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fingerprint.c" tooltip="FingerprintJni/jni/fingerprint_ver_1/fingerprint.c">
+<persistable path="/FingerprintJni/jni/fingerprint_ver_1/fingerprint.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MusicRecorder.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java">
-<persistable path="/MusicIdentify/src/cc/omusic/musicidentify/MusicRecorder.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="FingerprintVer1Demo/AndroidManifest.xml">
+<persistable path="/FingerprintVer1Demo/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="MusicIdentify/res/values/strings.xml">
-<persistable path="/MusicIdentify/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="ic_launcher-web.png" tooltip="FingerprintVer1Demo/ic_launcher-web.png">
+<persistable path="/FingerprintVer1Demo/ic_launcher-web.png"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="MusicIdentify/res/layout/activity_main.xml">
-<persistable path="/MusicIdentify/res/layout/activity_main.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="lint.xml" tooltip="FingerprintVer1Demo/lint.xml">
+<persistable path="/FingerprintVer1Demo/lint.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java">
-<persistable path="/MusicIdentify/src/cc/omusic/musicidentify/MainActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="proguard-project.txt" tooltip="FingerprintVer1Demo/proguard-project.txt">
+<persistable path="/FingerprintVer1Demo/proguard-project.txt"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ToggleButton.class" tooltip="android.widget.ToggleButton">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=MusicIdentify/\/home\/tusion\/android_app_dev\/adt-bundle-linux-x86\/sdk\/platforms\/android-10\/android.jar&lt;android.widget(ToggleButton.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="project.properties" tooltip="FingerprintVer1Demo/project.properties">
+<persistable path="/FingerprintVer1Demo/project.properties"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="MusicIdentify/AndroidManifest.xml">
-<persistable path="/MusicIdentify/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="R.java" tooltip="FingerprintVer1Demo/gen/cc/omusic/fingerprintver1lib/R.java">
+<persistable path="/FingerprintVer1Demo/gen/cc/omusic/fingerprintver1lib/R.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServerQuery.java" tooltip="MusicIdentify/src/cc/omusic/musicidentify/ServerQuery.java">
-<persistable path="/MusicIdentify/src/cc/omusic/musicidentify/ServerQuery.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cc_omusic_fingerprintjni_FingerprintWraper.h" tooltip="FingerprintJni/jni/cc_omusic_fingerprintjni_FingerprintWraper.h">
+<persistable path="/FingerprintJni/jni/cc_omusic_fingerprintjni_FingerprintWraper.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Fingerprint.java" tooltip="FingerprintLib/src/cc/omusic/musicidentify/Fingerprint.java">
-<persistable path="/FingerprintLib/src/cc/omusic/musicidentify/Fingerprint.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="FingerprintVer1Demo/src/cc/omusic/fingerprintver1lib/MainActivity.java">
+<persistable path="/FingerprintVer1Demo/src/cc/omusic/fingerprintver1lib/MainActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="EchoprintLib/AndroidManifest.xml">
-<persistable path="/EchoprintLib/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AudioFingerprinter.java" tooltip="EchoprintLib/src/edu/gvsu/masl/echoprint/AudioFingerprinter.java">
-<persistable path="/EchoprintLib/src/edu/gvsu/masl/echoprint/AudioFingerprinter.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="AndroidFingerprint.c" tooltip="FingerprintVer1Lib/jni/AndroidFingerprint.c">
+<persistable path="/FingerprintVer1Lib/jni/AndroidFingerprint.c"/>
 </file>
 </mruList>
 </workbench>
