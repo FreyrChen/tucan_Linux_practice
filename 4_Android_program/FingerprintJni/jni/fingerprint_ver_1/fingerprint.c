@@ -9,8 +9,8 @@
 #define SAMPLERRATE 44100
 #define CHANNELS 	2 		//should consider nano, reduce time cost.
 // in resample sub array 44100*2/2048 =43
-// so SUB_SECONDS max is 40
-#define SUB_SECONDS  10
+// so SUB_SECONDS max is 20
+#define SUB_SECONDS  1
 
 //pcm array is input wav file's data 441000Hz
 //num_samples is number of sample data pcm array

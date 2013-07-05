@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
-		<item value="307" key="DIALOG_Y_ORIGIN"/>
+		<item value="503" key="DIALOG_Y_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
-		<item value="618" key="DIALOG_X_ORIGIN"/>
+		<item value="507" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,16 +13,16 @@
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="getShortSamples" key="selection"/>
+		<item value="validBits" key="selection"/>
 		<list key="findhistory">
+			<item value="validBits"/>
+			<item value="numSamples"/>
+			<item value="bytesPerSample"/>
 			<item value="getShortSamples"/>
 			<item value="autoProgressBar"/>
 			<item value="Log.e"/>
 			<item value="getRecordFiles"/>
 			<item value="png"/>
-			<item value="jpeg"/>
-			<item value="timer_runnable"/>
-			<item value="runnable"/>
 		</list>
 		<list key="replacehistory">
 			<item value="timer_runnable"/>
@@ -34,5 +34,9 @@
 			<item value="ActivitySurface"/>
 			<item value="Tag"/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="244" key="DIALOG_Y_ORIGIN"/>
+		<item value="236" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

@@ -21,7 +21,7 @@
 
 
 //for NDK debug
-#define ANDROID_DEBUG
+//#define ANDROID_DEBUG
 #ifdef ANDROID_DEBUG
 
 #include <android/log.h>

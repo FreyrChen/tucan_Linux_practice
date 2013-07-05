@@ -1,0 +1,155 @@
+package cc.omusic.fingerprintver1lib;
+
+import java.io.File;
+import java.io.IOException;
+
+import cc.omusic.fingerprintjni.FingerprintWraper;
+import cc.omusic.fingerprintjni.WavFile;
+import cc.omusic.fingerprintjni.WavFileException;
+import cc.omusic.fingerprintjni.WavReader;
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity {
+
+	//private File RecordMusicFile;
+	private TextView infoText;
+	private String TAG = "main";
+	private long fingerprint_time=0;
+	
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		infoText = (TextView) findViewById( R.id.info_text);
+		/*
+		SDRecorder = new SDRecord();
+		RecordMusicDir = SDRecorder.createSDDir( "omusic" );
+		testFile = new File(RecordMusicDir.getAbsolutePath()
+							+ File.separator 
+							+ "test.wav");
+		
+
+		fingerprint_time = System.currentTimeMillis();
+		
+		// Create a buffer of len frames
+		int data_len = 44100*2*100;		//21.168Mb
+		int[] data = new int[data_len];
+		try {
+			// Open the wav file specified as the first argument
+			WavFile wavFile = WavFile.openWavFile( testFile );
+			// Display information about the wav file
+			wavFile.display();
+			// Get the number of audio channels in the wav file
+			int numChannels = wavFile.getNumChannels();
+
+			// Read frames into buffer
+			int	framesRead = wavFile.readFrames(data, data_len/numChannels);
+		
+			Log.e(TAG, "framesRead=" + framesRead);
+			// Close the wavFile
+			wavFile.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (WavFileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		short buffer[] = new short[data_len];
+		for( int i=0; i<data_len; i++ )
+		{
+			buffer[i] = (short)data[i];
+		}
+		data = null; //free memory
+		
+		Log.i(TAG,"array generate time: " + fingerprint_time + "ms" );
+		fingerprint_time = System.currentTimeMillis() - fingerprint_time;
+		Log.i(TAG,"array generate time: " + fingerprint_time + "ms" );
+		 */
+		
+		String text = "";
+		infoText.setText( text);
+
+		Log.d(TAG,"ready to generate fingerprint");
+		//Log.d(TAG,"audioData length: " + data.length );
+		//audioData.length == read_size;
+	
+/*	
+		fingerprint_time = System.currentTimeMillis();
+		FingerprintWraper fp = new FingerprintWraper();
+		//String fingerprint = fp.stringFromJNI();
+		byte []fp_byte = new byte[424];
+		fp_byte = fp.generate();	
+		fingerprint_time = System.currentTimeMillis() - fingerprint_time;
+		Log.i(TAG,"fingerprint generate time: " + fingerprint_time + "ms" );
+
+		if( fp_byte == null ){
+			infoText.setText( "fingerprint is null ");
+		}else{
+			infoText.setText("fingerprint : \n" + byteArrayToHexString( fp_byte ) );
+			Log.e(TAG,"fp_str: " + byteArrayToHexString(fp_byte));
+		}	
+*/
+
+		String file_path = "/storage/sdcard0/omusic/test.wav";
+		try {
+			// Open the wav file specified as the first argument
+			WavFile wavFile = WavFile.openWavFile( new File(file_path) );
+			// Display information about the wav file
+			wavFile.display();
+			// Get the number of audio channels in the wav file
+			int numChannels = wavFile.getNumChannels();
+			int sampleRate = wavFile.getSampleRate();
+			int data_len = 44100*2*100;		//21.168Mb
+			int[] data = new int[data_len];
+			// Read frames into buffer
+			int	framesRead = wavFile.readFrames(data, data_len/numChannels);
+		
+			Log.e(TAG, "framesRead=" + framesRead);
+			// Close the wavFile
+			wavFile.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (WavFileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+
+	}
+
+
+	
+	
+	public String byteArrayToHexString( byte[] array)
+	{
+		StringBuilder sb =new StringBuilder();
+		for( byte b: array ){
+			sb.append(String.format("%02x", b & 0xff));
+		}
+		return sb.toString();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
+	
+	
+	
+	
+	
+	
+}

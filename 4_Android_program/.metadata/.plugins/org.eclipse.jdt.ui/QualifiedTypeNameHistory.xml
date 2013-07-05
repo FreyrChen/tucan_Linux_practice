@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.example.airsync.R.id"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.net.Inet4Address"/>
 <fullyQualifiedTypeName name="java.net.UnknownHostException"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -19,7 +17,6 @@
 <fullyQualifiedTypeName name="android.media.MediaRecorder.OutputFormat"/>
 <fullyQualifiedTypeName name="android.media.MediaRecorder.AudioSource"/>
 <fullyQualifiedTypeName name="android.media.MediaRecorder.AudioEncoder"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -29,7 +26,6 @@
 <fullyQualifiedTypeName name="android.widget.AdapterView.OnItemClickListener"/>
 <fullyQualifiedTypeName name="android.widget.CheckedTextView"/>
 <fullyQualifiedTypeName name="android.media.AudioTrack"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.BufferedOutputStream"/>
 <fullyQualifiedTypeName name="android.os.SystemClock"/>
 <fullyQualifiedTypeName name="cc.omusic.musicidentify.AudioFingerprinter.AudioFingerprinterListener"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="java.net.InetAddress"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="cc.omusic.fingerprintjni.FingerprintWraper"/>
+<fullyQualifiedTypeName name="cc.omusic.fingerprintjni.WavFile"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="cc.omusic.fingerprintjni.WavFileException"/>
 </qualifiedTypeNameHistroy>
