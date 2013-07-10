@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	
 	//private File RecordMusicFile;
 	private TextView infoText;
 	private String TAG = "main";
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		infoText = (TextView) findViewById( R.id.info_text);
+		
 		
 		String text = "";
 		infoText.setText( text);
@@ -46,8 +48,7 @@ public class MainActivity extends Activity {
 		}	
 	
 	}
-
-
+	
 	
 	
 	public String byteArrayToHexString( byte[] array)

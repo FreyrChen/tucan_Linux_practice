@@ -26,6 +26,8 @@ public class FingerprintWraper {
 	
 	
 	
+	
+	
 	public native byte[] fingerprint( WavReader in_object, int sampleRate, int numChannels);
 
 	
@@ -57,6 +59,7 @@ public class FingerprintWraper {
 							wav_object.getChannels()   );
 	}
 
+	
 	
 	/*
 	public byte[] generate(int sampleRate, int numChannels)

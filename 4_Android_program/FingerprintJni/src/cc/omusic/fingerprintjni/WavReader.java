@@ -63,8 +63,8 @@ public class WavReader {
 		try {
 			//framesRead = wavFile.readFrames(buffer, offset, numSamples);
 			framesRead = wavFile.readFrames(buffer, numSamples/numChannels);
-			Log.d(TAG,"framesRead= " + framesRead +", buffer length= " + buffer.length
-						+ " remain= " + wavFile.getFramesRemaining());
+			//Log.d(TAG,"framesRead= " + framesRead +", buffer length= " + buffer.length
+			//			+ " remain= " + wavFile.getFramesRemaining());
 			//offset += framesRead;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

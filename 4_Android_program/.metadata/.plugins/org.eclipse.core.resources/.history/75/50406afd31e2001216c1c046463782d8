@@ -1,5 +1,0 @@
-//#include "sndfile.h"
-
-
-__declspec(dllexport)
-unsigned char * fingerprint( float pcm[], unsigned int num_samples );

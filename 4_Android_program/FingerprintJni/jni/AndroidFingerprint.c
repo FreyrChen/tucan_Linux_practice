@@ -44,11 +44,12 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 	//initial t_fooid struct, reasample wav file to 8000hz.
     t_fooid * fooid = fp_init(sampleRate, numChannels);
 
-    //short * pcm = malloc(sizeof(short) * numChannels* sampleRate);
+
 	int len = (int)(numChannels * sampleRate ); // every chip is 1s
 
 	jshortArray pcmjArray = (*env)->NewShortArray( env, len  );
 	short *pcm = NULL;
+	//short * pcm = malloc(sizeof(short) * len);
 	LOGD("len= %d \n", len);
 
    //while (1)
@@ -62,8 +63,8 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 
         if (frames_read != 0)
         {
-        	pcm =(short *)((*env)->GetShortArrayElements(env, pcmjArray, 0));
-        	//(*env)->SetShortArrayRegion( env,pcmjArray, 0, len, (jbyte*)pcm );
+        	pcm =(short *)((*env)->GetShortArrayElements(env, pcmjArray, NULL));
+        	//(*env)->SetShortArrayRegion( env,(jshort * ) pcm, 0, len, pcmjArray );
         	//LOGD("get pcm form pcmjArray");
 
     		//1/100 seconds
