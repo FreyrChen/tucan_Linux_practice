@@ -27,14 +27,15 @@ import android.util.Log;
  * @author mzechner */
 public class AudioTools {
 	
+	static String Tag = "AudioTools";
 	static 
 	{	
         try{
 			//shared lib called libfingerprint-jin.so
-        	Log.i("lib","try to load library: music-decoder");
+        	Log.i(Tag,"try to load library: music-decoder");
         	System.loadLibrary("music-decoder");
 		}catch( UnsatisfiedLinkError use ){
-			Log.e("lib", "could not load native library music-decoder");
+			Log.e(Tag, "could not load native library music-decoder");
 		}
     }
 	

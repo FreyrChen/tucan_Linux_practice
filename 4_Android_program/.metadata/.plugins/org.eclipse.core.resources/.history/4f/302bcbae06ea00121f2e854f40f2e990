@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+    
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/hello_world" />
+    
+    
+   <ProgressBar
+    	android:id="@+id/auto_progress"
+		style="?android:attr/progressBarStyleHorizontal"
+    	android:layout_width="fill_parent"
+	 	android:layout_height="wrap_content"
+	 	android:visibility="gone"
+    />
+        
+    <ToggleButton 
+		android:id="@+id/auto_record_button"	
+		android:textOn="@string/stop"
+		android:textOff="@string/auto_start"
+		android:textSize="20sp"
+	 	android:layout_width="120dp"
+	 	android:layout_height="80dp"
+	     android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/auto_progress"
+ 	/>
+    <Button 
+	 	android:id="@+id/test_button"
+	 	android:textSize="20sp"
+	 	android:layout_width="120dp"
+	 	android:layout_height="80dp"
+	 	android:text="@string/test"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentRight="true"
+	     android:layout_below="@+id/auto_progress"
+ 	/>
+
+</RelativeLayout>

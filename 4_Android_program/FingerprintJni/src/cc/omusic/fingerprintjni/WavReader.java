@@ -17,14 +17,14 @@ public class WavReader {
 	int buffer[] = null;
 	int framesRead = 0;
 	
-	public WavReader(){
+	public WavReader( File wav_file ){
 		//inital wav file
 		if( isWavInit == false ){
 			//String file_path = "/storage/sdcard0/omusic/test.wav";
-			String file_path = "/storage/sdcard0/omusic/13819.wav";
+			//String file_path = "/storage/sdcard0/omusic/13819.wav";
 			try {
 				// Open the wav file specified as the first argument
-					wavFile = WavFile.openWavFile( new File(file_path) );
+					wavFile = WavFile.openWavFile( wav_file );
 					Log.d(TAG,"initial WavReader class.");
 					
 			} catch (IOException e) {

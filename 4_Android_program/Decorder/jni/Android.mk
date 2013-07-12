@@ -10,9 +10,9 @@ LOCAL_CPPFLAGS := $(LOCAL_C_INCLUDES:%=-I%) -O2 -Wall -D__ANDROID__ -DFIXED_POIN
 LOCAL_LDLIBS := -lm
 LOCAL_ARM_MODE  := arm
  
-LOCAL_SRC_FILES := com.badlogic.gdx.audio.analysis.AudioTools.cpp\
-	com.badlogic.gdx.audio.io.Mpg123Decoder.cpp\
-	com.badlogic.gdx.audio.io.VorbisDecoder.cpp\
+LOCAL_SRC_FILES := cc_omusic_decorder_AudioTools.cpp\
+	cc_omusic_decorder_Mpg123Decoder.cpp\
+	cc_omusic_decorder_VorbisDecoder.cpp\
 	libmpg123/compat.c\
 	libmpg123/dct64.c\
 	libmpg123/equalizer.c\

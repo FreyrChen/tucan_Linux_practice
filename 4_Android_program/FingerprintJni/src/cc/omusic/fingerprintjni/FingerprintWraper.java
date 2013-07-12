@@ -1,4 +1,6 @@
 package cc.omusic.fingerprintjni;
+import java.io.File;
+
 import android.util.Log;
 
 
@@ -50,10 +52,10 @@ public class FingerprintWraper {
     }
 	
 	
-	public byte[] generate( )
+	public byte[] generate( File music )
 	{
 		//Construct a wav reader to jni lib.
-		WavReader wav_object = new WavReader();
+		WavReader wav_object = new WavReader( music );
 		return fingerprint( wav_object,
 						    wav_object.getSampleRate(),
 							wav_object.getChannels()   );

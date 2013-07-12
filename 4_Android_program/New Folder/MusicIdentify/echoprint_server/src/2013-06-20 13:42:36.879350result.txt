@@ -1,0 +1,122 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+
+sucess num: 0
+1, 2331456.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+2, 1924782.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+3, 2043480.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+4, 349201.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+5, 1464651.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+6, 764645.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+7, 2084337.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+8, 372801.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+9, 362867.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+10, 1655924.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+11, 2263672.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+12, 1747745.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+13, 362937.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+14, 2089946.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+15, 1678090.mp3,start at 10 s, last time, 23s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+16, 785267.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+17, 1586736.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+18, 2072337.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+19, 744557.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+20, 2043100.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+21, 2043285.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+22, 1655926.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+23, 290236.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+24, 362874.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+25, 295033.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+26, 349651.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+27, 1099008.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+28, 2089937.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+29, 2569431.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 0
+30, 350219.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+

@@ -1,0 +1,31 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+
+1, 2331456.mp3,start at 10 s, last time, 22s
+  {"retcode":"0000","retval":"\u5339\u914d\u6210\u529f","content":{"songid":"2331456","songname":"Un Ave Maria","albumid":"197889","albumname":"Un Regard 9 Live","singerid":"4636","singername":"Lara Fabian"}}
+
+2, 1924782.mp3,start at 10 s, last time, 22s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 1
+3, 2043480.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 1
+4, 349201.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 1
+5, 1464651.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 1
+6, 764645.mp3,start at 10 s, last time, 21s
+  {"retcode":"0000","retval":"\u5339\u914d\u6210\u529f","content":{"songid":"764645","songname":"Fade 2 Black - Souljah","albumid":"59805","albumname":"INCredible Sound of Drum'n'Bass","singerid":"9537","singername":"Goldie"}}
+
+7, 2084337.mp3,start at 10 s, last time, 21s
+  {"retcode":"0000","retval":"\u5339\u914d\u6210\u529f","content":{"songid":"2084337","songname":"\u6709\u4eba\u5728\u80cc\u540e\u62cd\u6253\u6211\u7684\u80a9\u8180","albumid":"177220","albumname":"\u4eba\u4eba\u90fd\u6709\u4e2a\u5c0f\u677f\u51f3,\u6211\u7684\u4e0d\u5e26\u5165\u4e8c\u5341\u4e00\u4e16\u7eaa","singerid":"11640","singername":"\u80e1\u5417\u4e2a"}}
+
+8, 372801.mp3,start at 10 s, last time, 21s
+  {"retcode":"0002","retval":"\u6ca1\u6709\u5339\u914d\u7684\u6b4c\u66f2"}
+
+sucess num: 3

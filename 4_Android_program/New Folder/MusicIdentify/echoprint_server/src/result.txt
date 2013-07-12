@@ -1,0 +1,3 @@
+get dir: /home/tusion/music_fp/test_files,  total mp3 num: 540
+
+sucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/nsucess num: 0/n

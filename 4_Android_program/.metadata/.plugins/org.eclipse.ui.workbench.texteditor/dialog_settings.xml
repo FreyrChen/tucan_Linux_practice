@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="toShort" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="openFile"/>
+			<item value="musicListClickListener"/>
+			<item value="file"/>
 			<item value="toShort"/>
 			<item value="validBits"/>
 			<item value="numSamples"/>
 			<item value="bytesPerSample"/>
 			<item value="getShortSamples"/>
-			<item value="autoProgressBar"/>
-			<item value="Log.e"/>
-			<item value="getRecordFiles"/>
 		</list>
 		<list key="replacehistory">
+			<item value="file"/>
 			<item value="timer_runnable"/>
 			<item value="Log.d"/>
 			<item value="read_size"/>
@@ -32,7 +33,6 @@
 			<item value=""/>
 			<item value="LanScanner"/>
 			<item value="ActivitySurface"/>
-			<item value="Tag"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

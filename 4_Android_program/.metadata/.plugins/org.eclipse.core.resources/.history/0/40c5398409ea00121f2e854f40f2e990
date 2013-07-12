@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity" >
+
+    
+   <ProgressBar
+    	android:id="@+id/progress_bar"
+		style="?android:attr/progressBarStyleHorizontal"
+    	android:layout_width="fill_parent"
+	 	android:layout_height="wrap_content"
+	 	android:visibility="gone"
+    />
+        
+    <Button 
+		android:id="@+id/play_button"	
+		android:textSize="20sp"
+	 	android:layout_width="120dp"
+	 	android:layout_height="80dp"
+	     android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/progress_bar"
+ 	/>
+    <Button 
+	 	android:id="@+id/test_button"
+	 	android:textSize="20sp"
+	 	android:layout_width="120dp"
+	 	android:layout_height="80dp"
+	 	android:text="@string/calculate_fp"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_alignParentRight="true"
+	     android:layout_below="@+id/progress_bar"
+ 	/>
+
+    
+      <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:text="@string/init_text"
+        android:background="#00FF0000"
+	    android:textColor="#FFCC00" 
+	    android:layout_below="@+id/play_button"
+    />
+    
+	<ListView
+        android:id="@+id/music_List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#00FF0000"
+	    android:textColor="#FF0000" 
+	    android:layout_below="@+id/info_text"
+    />
+</RelativeLayout>
