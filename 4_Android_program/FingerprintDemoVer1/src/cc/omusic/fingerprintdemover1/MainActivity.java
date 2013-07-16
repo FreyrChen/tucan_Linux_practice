@@ -3,9 +3,6 @@ package cc.omusic.fingerprintdemover1;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
-import cc.omusic.fingerprintjni.FingerprintWraper;
-import cc.omusic.decorder.*;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -23,6 +20,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+import cc.omusic.fingerprintjni.FingerprintWraper;
+import cc.omusic.decorder.Decoder;
+import cc.omusic.decorder.Mpg123Decoder;
+import cc.omusic.decorder.VorbisDecoder;
+import cc.omusic.decorder.WavDecoder;
 
 public class MainActivity extends Activity {
 
@@ -55,6 +57,7 @@ public class MainActivity extends Activity {
 		infoText = (TextView) findViewById( R.id.info_text);
 		musicList = (ListView) findViewById( R.id.music_List);
 		
+		SelectedFile = null;
 		SDRecorder = new SDRecord();
 		RecordMusicDir = SDRecorder.createSDDir( "omusic" );
 		//list all  media (.amr) files
@@ -66,26 +69,20 @@ public class MainActivity extends Activity {
 		testButton.setOnClickListener( new testButtonListener() );
 		playButton.setOnClickListener( new playButtonListener() );
 		musicList.setOnItemClickListener(new musicListClickListener());
-		
-		
 	
 	}
 
-	
-	
-	
 	public class playButtonListener  implements OnClickListener{
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Log.d(TAG,"play a music");
 			try 
-			{			
+			{
 				//start audio record thread to write data to sd file.
 				//new Thread( new AutoTestThread()).start();
-				
 				playMusicFile( SelectedFile );
-				
+
 			}catch( Exception e ){
 				e.printStackTrace();
 			}
@@ -94,17 +91,21 @@ public class MainActivity extends Activity {
 	}
 	
 
-	public boolean playMusicFile( File mp3file ){
-		if( mp3file == null && !mp3file.exists())
+	public boolean playMusicFile( File musicfile ){
+		if( musicfile == null )
+			return false;
+		if( !musicfile.exists())
 			return false;
 		Intent intent = new Intent();
 		intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.setAction( android.content.Intent.ACTION_VIEW);
-		String type = SDRecorder.getMIMEType( mp3file );
-		intent.setDataAndType(Uri.fromFile( mp3file ), type);
+		String type = SDRecorder.getMIMEType( musicfile );
+		intent.setDataAndType(Uri.fromFile( musicfile ), type);
 		startActivity( intent );	
 		return true;
 	}
+	
+	
 	
 
 	
@@ -113,116 +114,79 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Log.d(TAG,"start test");
-			//calculateFP();	
-			String music_end = SelectedFile.getName().substring( SelectedFile.getName().lastIndexOf(".") + 1,
-					SelectedFile.getName().length()).toLowerCase();
-			if( music_end.equals("mp3"))
-				playMp3File( SelectedFile );
-			else if( music_end.equals("ogg") )
-				playOggFile(SelectedFile);
-			else if( music_end.equals("wav"))
-			{
-				playWavFile(SelectedFile);
-				calculateFP();
+			if( SelectedFile == null ){
+				infoText.setText( "please select a corect music file ");
 			}
-
-			else
-			{
-				Log.e(TAG,"music file is not mp3/ogg/wav, can not support!");
-			}
-			
+			else{
+				//read_music( SelectedFile );
+				calculateFP( SelectedFile );
+					
+			}	
+		}
 		
-		}
 	}
 	
-	public boolean playMp3File( File mp3file ){
-		if( mp3file == null && !mp3file.exists())
-			return false;
-		String file_end = mp3file.getName().substring( mp3file.getName().lastIndexOf(".") + 1,
-				     mp3file.getName().length()).toLowerCase();
-		if( file_end.equals("mp3") )
-		{
-			Log.d(TAG, "select music file:" + mp3file.getAbsolutePath());
-			Mpg123Decoder mp3 = new Mpg123Decoder( mp3file );
-			Log.d( TAG, "channels:" + mp3.getChannels() );
-			Log.d( TAG, "rate:" + mp3.getRate() );
-			Log.d( TAG, "length:" + mp3.getLength() );
-			mp3.dispose();
-			return true;
-		}
-		else
-		{
-			Log.e( TAG, "select music file is not a mp3 format");
-			return false;
-		}
-	}
 	
-	public boolean playOggFile( File Oggfile ){
-		if( Oggfile == null && !(Oggfile.exists()))
-			return false;
-		String file_end = Oggfile.getName().substring( Oggfile.getName().lastIndexOf(".") + 1,
-				Oggfile.getName().length()).toLowerCase();
-		if( file_end.equals("ogg") )
-		{
-			Log.d(TAG, "select music file:" + Oggfile.getAbsolutePath());
-			VorbisDecoder oog_music = new VorbisDecoder( Oggfile );
-			Log.d( TAG, "channels:" + oog_music.getChannels() );
-			Log.d( TAG, "rate:" + oog_music.getRate() );
-			Log.d( TAG, "length:" + oog_music.getLength() );
-			oog_music.dispose();
-			return true;
-		}
-		else
-		{
-			Log.e( TAG, "select music file is not a ogg format");
-			return false;
-		}
-	}
-	
-	public boolean playWavFile( File Wavfile ){
-		if( Wavfile == null && !(Wavfile.exists()))
-			return false;
-		String file_end = Wavfile.getName().substring( Wavfile.getName().lastIndexOf(".") + 1,
-				Wavfile.getName().length()).toLowerCase();
-		if( file_end.equals("wav") )
-		{
-			Log.d(TAG, "select music file:" + Wavfile.getAbsolutePath());
-			WavDecoder wav_music = new WavDecoder( Wavfile );
-			Log.d( TAG, "channels:" + wav_music.getChannels() );
-			Log.d( TAG, "rate:" + wav_music.getRate() );
-			Log.d( TAG, "length:" + wav_music.getLength() );
-			wav_music.dispose();
-			return true;
-		}
-		else
-		{
-			Log.e( TAG, "select music file is not a wav format");
-			return false;
-		}
-	}
-	
-	public void calculateFP( ){
+	public void calculateFP(  File music_file){
 		Log.d(TAG,"ready to generate fingerprint");
 		fingerprint_time = System.currentTimeMillis();
 		FingerprintWraper fp = new FingerprintWraper();
 
-		String music_file_path = SelectedFile.getAbsolutePath();
+		String music_file_path = music_file.getAbsolutePath();
 		infoText.setText( "calculate music file's fingerprint:" + music_file_path);
 		Log.d(TAG, "calculate music file's fingerprint:" + music_file_path);
 		byte []fp_byte = new byte[424];
-		fp_byte = fp.generate(  SelectedFile  );	
+		fp_byte = fp.generate(  music_file  );	
 		fingerprint_time = System.currentTimeMillis() - fingerprint_time;
 		Log.i(TAG,"fingerprint generate time: " + fingerprint_time + "ms" );
-
+		
 		if( fp_byte == null ){
 			infoText.setText( "fingerprint is null ");
 		}else{
-			infoText.setText("fingerprint : \n"
+			infoText.setText("file name: "+  music_file.getName()
+							+ " \nfingerprint : \n"
 							+ "cost time:"+ fingerprint_time + "ms \n"
 							+ "fingerprint: \n" + byteArrayToHexString( fp_byte ) );
-			Log.e(TAG,"fp_str: " + byteArrayToHexString(fp_byte));
+			Log.d(TAG, "file name: " + music_file.getName());
+			Log.d(TAG,"fp_str: " + byteArrayToHexString(fp_byte));
+			
+			Log.d(TAG, "fp_version: " + byteArray2ToShort(fp_byte,0 ) );
+			Log.d(TAG, "fp_length: " + byteArray4ToInt(fp_byte, 2));
+			Log.d(TAG, "fp_avg_fit: " + byteArray2ToShort(fp_byte,6 ));
+			Log.d(TAG, "fp_avg_dom: " + byteArray2ToShort(fp_byte,8 ) );
+			
+			
 		}	
 	}
+	
+
+	private  int byteArray4ToInt(byte[] byteValue, int index){   
+        if(byteValue.length   <   4)   
+           return   0;   
+        int   intValue =   0;
+        intValue   =   byteValue[index+ 0]; 
+		Log.i(TAG, intValue + "" );
+        intValue   =   (intValue   <<  8)   +   byteValue[index+1];   
+        Log.i(TAG, intValue + "" );
+        intValue   =   (intValue   <<  8)   +   byteValue[index+2]; 
+        Log.i(TAG, intValue + "" );
+        intValue   =   (intValue   <<  8)   +   byteValue[index+3]; 
+        Log.i(TAG, intValue + "" );
+        return   intValue;   
+	}   
+	
+	
+	private  int byteArray2ToShort(byte[] byteValue, int index){   
+        if(byteValue.length   <  2)   
+                return   0;   
+        short   shortValue   =   0;    
+        shortValue   =   byteValue[index+ 0];   
+        shortValue   =   (short) ( (shortValue << 8) + byteValue[index+1] );   
+ 
+        return   shortValue;   
+	} 
+	
+	
 	
 	//select a music file from list
 	class musicListClickListener implements OnItemClickListener{
@@ -245,6 +209,8 @@ public class MainActivity extends Activity {
 	
 	//play a music that selected
 
+	
+	
 	
 	public String byteArrayToHexString( byte[] array)
 	{

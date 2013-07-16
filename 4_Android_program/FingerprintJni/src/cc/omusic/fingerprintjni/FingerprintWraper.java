@@ -1,6 +1,8 @@
 package cc.omusic.fingerprintjni;
 import java.io.File;
 
+import cc.omusic.decorder.*;
+
 import android.util.Log;
 
 
@@ -8,6 +10,7 @@ import android.util.Log;
 public class FingerprintWraper {
 	
 	String TAG = "FingerprintWraper";
+	Decoder decoder = null;
 
 	/**
 	 * Invoke the fingerprint native library and generate the fingerprint code.<br>
@@ -27,10 +30,7 @@ public class FingerprintWraper {
 	 */
 	
 	
-	
-	
-	
-	public native byte[] fingerprint( WavReader in_object, int sampleRate, int numChannels);
+	public native byte[] fingerprint( Decoder in_object, int sampleRate, int numChannels);
 
 	
     /* this is used to load the 'hello-jni' library on application
@@ -43,7 +43,7 @@ public class FingerprintWraper {
 	{	
         try{
 			//shared lib called libfingerprint-jin.so
-        	Log.i("lib","try to load library");
+        	Log.i("lib","try to load library : AndroidFingerprint ");
         	//System.loadLibrary("fingerprint-jin");
         	System.loadLibrary("AndroidFingerprint");
 		}catch( UnsatisfiedLinkError use ){
@@ -52,13 +52,60 @@ public class FingerprintWraper {
     }
 	
 	
-	public byte[] generate( File music )
+	
+	public byte[] generate( File music_file )
 	{
+		if( music_file != null && music_file.exists()){
+
+			Log.d(TAG, "select music file:" + music_file.getAbsolutePath());
+			String music_end = music_file.getName().substring( music_file.getName().lastIndexOf(".") + 1,
+					music_file.getName().length()).toLowerCase();
+			if( music_end.equals("mp3")){
+				decoder = new Mpg123Decoder( music_file );
+				Log.d( TAG, "music file is mp3, initial a Mpg123Decoder class");
+			}
+			else if( music_end.equals("ogg") ){
+				decoder = new VorbisDecoder( music_file );
+				Log.d( TAG, "music file is ogg, initial a VorbisDecoder class");
+			}
+			else if( music_end.equals("wav")){
+				decoder = new WavDecoder( music_file );
+				Log.d( TAG, "music file is wav, initial a WavDecoder class");
+			}
+			else
+			{
+				Log.e(TAG,"music file is not mp3/ogg/wav, can not support!");
+			}
+			
+			Log.d( TAG, "channels:" + decoder.getChannels() );
+			Log.d( TAG, "rate:" + decoder.getRate() );
+			Log.d( TAG, "length:" + decoder.getLength() );
+			
+
+			byte[] fingerprint = fingerprint( decoder, decoder.getRate(), decoder.getChannels());
+			decoder.dispose();
+			Log.d( TAG, "dispose Decoder class");
+			
+			return fingerprint;
+			
+		}else{
+			Log.e(TAG,"select file is invalid");
+			return null;
+		}
+
+		
+		
+		
+		
+/*		
 		//Construct a wav reader to jni lib.
 		WavReader wav_object = new WavReader( music );
 		return fingerprint( wav_object,
 						    wav_object.getSampleRate(),
 							wav_object.getChannels()   );
+		
+*/	
+		
 	}
 
 	

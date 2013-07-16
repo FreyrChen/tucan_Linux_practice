@@ -3,36 +3,36 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
 		<item value="449" key="DIALOG_Y_ORIGIN"/>
-		<item value="1374" key="DIALOG_X_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="1374" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="samples_read" key="selection"/>
 		<list key="findhistory">
+			<item value="frames_read"/>
+			<item value="getWavMethod"/>
+			<item value="wavClass"/>
+			<item value="wavReaderObj"/>
+			<item value="DecoderObj"/>
 			<item value="openFile"/>
 			<item value="musicListClickListener"/>
 			<item value="file"/>
-			<item value="toShort"/>
-			<item value="validBits"/>
-			<item value="numSamples"/>
-			<item value="bytesPerSample"/>
-			<item value="getShortSamples"/>
 		</list>
 		<list key="replacehistory">
+			<item value="samples_read"/>
+			<item value="getPcmSamplesMethod"/>
+			<item value="PcmDecodeClass"/>
+			<item value="DecoderObj"/>
 			<item value="file"/>
 			<item value="timer_runnable"/>
 			<item value="Log.d"/>
 			<item value="read_size"/>
-			<item value="SelectedFile"/>
-			<item value=""/>
-			<item value="LanScanner"/>
-			<item value="ActivitySurface"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

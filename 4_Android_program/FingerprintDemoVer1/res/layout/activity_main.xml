@@ -30,7 +30,7 @@
 	 	android:textSize="20sp"
 	 	android:layout_width="120dp"
 	 	android:layout_height="80dp"
-	 	android:text="@string/calculate_fp"
+	 	android:text="@string/test"
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="10dp"
 	    android:layout_alignParentRight="true"

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "./fingerprint_ver_1/fooid.h"
 #include <jni.h>
-#define  LOG_TAG    "And..F.p.c"
+#define  LOG_TAG    "AndroidFingerprint"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
@@ -18,60 +18,63 @@ jobject GetInstance( JNIEnv *env, jclass obj_class);
 // this string is gernerate from head file, as last step use javah oo.omusic.***.Fingerprrint
 jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 //JNIEXPORT jbyteArray JNICALL Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
-(JNIEnv *env, jobject thiz, jobject wavReaderObj, jint sampleRate, jint numChannels)
+(JNIEnv *env, jobject thiz, jobject DecoderObj, jint sampleRate, jint numChannels)
 
 {	// jnit directly use in there
 
-	//jobject wavObj;
-	jclass  wavClass = 0;
-	jmethodID getWavMethod = 0;
+	jclass  PcmDecodeClass = 0;
+	jmethodID getPcmSamplesMethod = 0;
 
 	int result= -1;
     int centiseconds = 0;
-    int frames_read = 0;
+    int samples_read = 0;
 
 	LOGD("sampleRate= %d, numChannels= %d \n", sampleRate, numChannels);
 	/**
 	 * native call java method, reference <core java V2> charpter 12
 	 */
-	//jniClass  = (*env)->FindClass( env, "Lcc/omusic/fingerprintjni/WavReader;");
-	//jniObj    = GetInstance( env, jniClass );
-	wavClass  = (*env)->GetObjectClass( env, wavReaderObj );
-	getWavMethod = (*env)->GetMethodID( env, wavClass, "getWavData", "([S)I");
-	//wavObj    = (*env)->NewObject( env, wavClass, jniMethod);
+	PcmDecodeClass  = (*env)->GetObjectClass( env, DecoderObj );
+	/** //public  int getWavData( short[] data) */
+	//getPcmSamplesMethod = (*env)->GetMethodID( env, PcmDecodeClass, "getWavData", "([S)I");
+	/** int readSamples (short[] samples, int offset, int numSamples); */
+	getPcmSamplesMethod = (*env)->GetMethodID( env, PcmDecodeClass, "readSamples", "([SII)I");
 
 
 	//initial t_fooid struct, reasample wav file to 8000hz.
     t_fooid * fooid = fp_init(sampleRate, numChannels);
 
 
-	int len = (int)(numChannels * sampleRate ); // every chip is 1s
+	int len = (int)(numChannels * sampleRate *1 ); // every chip is 1s
 
 	jshortArray pcmjArray = (*env)->NewShortArray( env, len  );
 	short *pcm = NULL;
-	//short * pcm = malloc(sizeof(short) * len);
 	LOGD("len= %d \n", len);
 
-   //while (1)
-    //for( int i=0; i<10; i++)
 	do
     {
+		/**
+		 * calls int readSamples (short[] samples, int offset, int numSamples);
+		 * samples =  pcmjArray[] to store samples
+		 * offset = 0
+		 * numSamples = len = (numChannels * sampleRate );
+		 */
     	//return the number of  items read, every loop read 1s data from wav file
-    	frames_read = (*env)->CallIntMethod( env, wavReaderObj, getWavMethod, pcmjArray);
-    	//LOGD("Get pcmjArray, frames_read=%d, pcmjArray length=%d " ,
-    	//		frames_read, (*env)->GetArrayLength( env, pcmjArray) );
+    	samples_read = (*env)->CallIntMethod( env, DecoderObj, getPcmSamplesMethod, pcmjArray, 0, len);
+    	//LOGD("Get pcmjArray, samples_read=%d, pcmjArray length=%d " ,
+    	//		samples_read, (*env)->GetArrayLength( env, pcmjArray) );
 
-        if (frames_read != 0)
+        if (samples_read != 0)
         {
         	pcm =(short *)((*env)->GetShortArrayElements(env, pcmjArray, NULL));
         	//(*env)->SetShortArrayRegion( env,(jshort * ) pcm, 0, len, pcmjArray );
         	//LOGD("get pcm form pcmjArray");
 
     		//1/100 seconds
-            centiseconds += 100 * numChannels* sampleRate/ (frames_read* numChannels);
-    		LOGD("centiseconds:%d, frames_read:%d \n", centiseconds, frames_read );
+            //centiseconds += 100 * numChannels* sampleRate/ (samples_read* numChannels);
+        	centiseconds += (100 * samples_read) / (numChannels* sampleRate );
+    		LOGD("centiseconds:%d, samples_read:%d \n", centiseconds, samples_read );
 
-            result = fp_feed_short(fooid, pcm, frames_read * numChannels);
+            result = fp_feed_short(fooid, pcm, samples_read);
 
             if (result < 0)
             {
@@ -82,44 +85,17 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
         }
         else
         {
-        	LOGE("frames_read = %d, error!\n",frames_read);
+        	LOGE("samples_read = %d, error!\n",samples_read);
         	break;
         }
 
     }while( centiseconds < 10000); //get the head 100s music data
 
     (*env)->ReleaseShortArrayElements(env, pcmjArray, pcm, 0);
-    /*
-     do{
-    	//return the number of  items read, every loop read 1s data from wav file
-		(*env)->CallIntMethod( env, wavReaderObj, getWavMethod, pcmjArray);
-		short *pcm =(short *)((*env)->GetShortArrayElements(env, pcmjArray, 0));
-		result= fingerprint ( pcm, sampleRate, numChannels, fp);
-		(*env)->ReleaseShortArrayElements(env, pcmjArray, pcm, 0);
-	}while( result < 1 );
-     */
-
 
 	//fp_size == 424
 	unsigned char * fp =  malloc(fp_getsize(fooid));
-
-
-    //fp_size == 424
 	result = fp_calculate(fooid, centiseconds, fp);
-	/*
-	if (result < 0)
-	{
-		LOGE("Failed to calculate fingerprint\n");
-	}
-	else
-	{
-		for ( int i = 0; i < fp_getsize(fooid); i++)
-		{
-			LOGD("%02x ", (int) fp[i]);
-		}
-     }
-	*/
-
 
 	jbyte *by = (jbyte*)fp;
 	jbyteArray jarray =  (*env)->NewByteArray(env,424);
@@ -141,13 +117,4 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
     return jarray;
 }
 
-
-/*
-jobject GetInstance( JNIEnv *env, jclass obj_class)
-{
-	jmethodID construction_id = (*env)-> GetMethodID( env, obj_class,"<init>", "()V");
-
-	return (*env)-> GetMethodID( env, obj_class, construction_id );
-}
-*/
 

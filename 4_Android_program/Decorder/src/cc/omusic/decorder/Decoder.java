@@ -1,5 +1,8 @@
 
 package cc.omusic.decorder;
+import java.io.File;
+
+import android.util.Log;
 import cc.omusic.decorder.AudioTools;
 //import com.badlogic.gdx.utils.Disposable;
 
@@ -15,6 +18,9 @@ public interface Disposable {
 }
 */
 public abstract class Decoder {
+
+	String TAG = "Decoeder";
+	
 	/** Reads in samples.capacity() samples in 16-bit signed PCM short format from the decoder. Returns the actual number read in.
 	 * If this number is smaller than the capacity of the buffer then the end of stream has been reached.
 	 * 
