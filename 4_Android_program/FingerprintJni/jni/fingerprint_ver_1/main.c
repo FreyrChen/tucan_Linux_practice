@@ -40,7 +40,7 @@ int main(int argc, char ** argv)
 
 		//1/100 seconds
         centiseconds += 100 * sfinfo->channels * sfinfo->samplerate / items_read;
-		printf("centiseconds:%d, items_read:%d \n", centiseconds, items_read ); 
+		printf("centiseconds=%d, items_read=%d \n", centiseconds, items_read ); 
 		
         int result = fp_feed_short(fooid, data, items_read);
 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;libmpg123&apos; to &apos;fingerprint_ver_1&apos;&#x0A;- Original project: &apos;Decorder&apos;&#x0A;- Destination element: &apos;fingerprint_ver_1&apos;&#x0A;- Original element: &apos;libmpg123&apos;" description="Copy folder" element1="jni/libmpg123" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1374048588059" target="/FingerprintJni/jni/fingerprint_ver_1" units="0" version="1.0"/>
+</session>

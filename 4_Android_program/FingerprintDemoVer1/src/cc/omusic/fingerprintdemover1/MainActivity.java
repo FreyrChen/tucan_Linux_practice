@@ -105,8 +105,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	
-	
 
 	
 	public class testButtonListener implements OnClickListener{
@@ -125,6 +123,8 @@ public class MainActivity extends Activity {
 		}
 		
 	}
+	
+	
 	
 	
 	public void calculateFP(  File music_file){
@@ -155,7 +155,17 @@ public class MainActivity extends Activity {
 			Log.d(TAG, "fp_avg_fit: " + byteArray2ToShort(fp_byte,6 ));
 			Log.d(TAG, "fp_avg_dom: " + byteArray2ToShort(fp_byte,8 ) );
 			
+			byte[] fp_fit = new byte[348];
+			for( int i=10; i<358; i++ ){
+				fp_fit[i-10] = fp_byte[i];
+			}
+			Log.d(TAG, "fp_fit:" + byteArrayToHexString( fp_fit));
 			
+			byte[] fp_dom = new byte[66];
+			for( int i =358; i<424; i++){
+				fp_dom[i-358] = fp_byte[i];
+			}
+			Log.d(TAG, "fp_dom:" + byteArrayToHexString( fp_dom));
 		}	
 	}
 	
@@ -164,14 +174,10 @@ public class MainActivity extends Activity {
         if(byteValue.length   <   4)   
            return   0;   
         int   intValue =   0;
-        intValue   =   byteValue[index+ 0]; 
-		Log.i(TAG, intValue + "" );
-        intValue   =   (intValue   <<  8)   +   byteValue[index+1];   
-        Log.i(TAG, intValue + "" );
-        intValue   =   (intValue   <<  8)   +   byteValue[index+2]; 
-        Log.i(TAG, intValue + "" );
-        intValue   =   (intValue   <<  8)   +   byteValue[index+3]; 
-        Log.i(TAG, intValue + "" );
+        intValue   =   byteValue[index+ 3]; 
+        intValue   =   (intValue   <<  8)   +   byteValue[index+2];   
+        intValue   =   (intValue   <<  8)   +   byteValue[index+1]; 
+        intValue   =   (intValue   <<  8)   +   byteValue[index+0]; 
         return   intValue;   
 	}   
 	
@@ -180,8 +186,8 @@ public class MainActivity extends Activity {
         if(byteValue.length   <  2)   
                 return   0;   
         short   shortValue   =   0;    
-        shortValue   =   byteValue[index+ 0];   
-        shortValue   =   (short) ( (shortValue << 8) + byteValue[index+1] );   
+        shortValue   =   byteValue[index+ 1];   
+        shortValue   =   (short) ( (shortValue << 8) + byteValue[index+0] );   
  
         return   shortValue;   
 	} 

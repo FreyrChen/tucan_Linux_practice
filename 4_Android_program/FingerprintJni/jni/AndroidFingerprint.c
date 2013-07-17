@@ -50,32 +50,26 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 	short *pcm = NULL;
 	LOGD("len= %d \n", len);
 
+
 	do
     {
 		/**
-		 * calls int readSamples (short[] samples, int offset, int numSamples);
+		 * return the number of  items read, every loop read 1s data from wav file
+		 * int readSamples (short[] samples, int offset, int numSamples);
 		 * samples =  pcmjArray[] to store samples
 		 * offset = 0
 		 * numSamples = len = (numChannels * sampleRate );
 		 */
-    	//return the number of  items read, every loop read 1s data from wav file
     	samples_read = (*env)->CallIntMethod( env, DecoderObj, getPcmSamplesMethod, pcmjArray, 0, len);
-    	//LOGD("Get pcmjArray, samples_read=%d, pcmjArray length=%d " ,
-    	//		samples_read, (*env)->GetArrayLength( env, pcmjArray) );
-
+    	//samples_read, (*env)->GetArrayLength( env, pcmjArray) );
         if (samples_read != 0)
         {
         	pcm =(short *)((*env)->GetShortArrayElements(env, pcmjArray, NULL));
-        	//(*env)->SetShortArrayRegion( env,(jshort * ) pcm, 0, len, pcmjArray );
-        	//LOGD("get pcm form pcmjArray");
-
     		//1/100 seconds
-            //centiseconds += 100 * numChannels* sampleRate/ (samples_read* numChannels);
         	centiseconds += (100 * samples_read) / (numChannels* sampleRate );
-    		LOGD("centiseconds:%d, samples_read:%d \n", centiseconds, samples_read );
+    		//LOGD("centiseconds:%d, samples_read:%d \n", centiseconds, samples_read );
 
             result = fp_feed_short(fooid, pcm, samples_read);
-
             if (result < 0)
             {
             	LOGE("fp_feed_short()Error!\n");
@@ -91,8 +85,6 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 
     }while( centiseconds < 10000); //get the head 100s music data
 
-    (*env)->ReleaseShortArrayElements(env, pcmjArray, pcm, 0);
-
 	//fp_size == 424
 	unsigned char * fp =  malloc(fp_getsize(fooid));
 	result = fp_calculate(fooid, centiseconds, fp);
@@ -101,19 +93,11 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 	jbyteArray jarray =  (*env)->NewByteArray(env,424);
 	(*env)->SetByteArrayRegion( env,jarray, 0, 424, (jbyte*)fp );
 
-
+	(*env)->ReleaseShortArrayElements(env, pcmjArray, pcm, 0);
 	free(fp);
 	fp_free(fooid);
-	LOGD("complete !!!\n");
-	/*
-	LOGD("begin into AndroidFingerprint () \n");
-    // get the contents of the java array as native floats
-	short *data = (short *)((*env)->GetShortArrayElements(env, pcmData, 0));
-	LOGD("start fingerprint sub funtion in  jni lib\n");
+	//LOGD("complete !!!\n");
 
-    // release the native array as we're done with them
-	(*env)->ReleaseShortArrayElements(env, pcmData, data, 0);
-	*/
     return jarray;
 }
 
