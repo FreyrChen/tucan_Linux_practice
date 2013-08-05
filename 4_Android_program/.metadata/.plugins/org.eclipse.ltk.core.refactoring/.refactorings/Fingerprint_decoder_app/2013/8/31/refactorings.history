@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;Fingerprint_decoder_app&apos;&#x0A;- Original project: &apos;Fingerprint_decoder_app&apos;&#x0A;- Original element: &apos;Fingerprint_decoder_app/src/com.example.fingerprint_decoder_app&apos;" description="Delete element" element1="/src&lt;com.example.fingerprint_decoder_app" element2="/src&lt;com.example" element3="/src&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1375412776415" subPackages="false" version="1.0"/>
+</session>

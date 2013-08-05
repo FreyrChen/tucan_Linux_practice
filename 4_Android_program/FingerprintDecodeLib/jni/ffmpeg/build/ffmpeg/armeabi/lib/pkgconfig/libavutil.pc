@@ -1,0 +1,14 @@
+prefix=/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/ffmpeg-jni/trunk/jni/ffmpeg/build/ffmpeg/armeabi
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 51.54.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavutil 
+Libs.private: -lm
+Cflags: -I${includedir}

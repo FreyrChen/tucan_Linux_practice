@@ -1,0 +1,91 @@
+install prefix            /home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/ffmpeg-jni/trunk/jni/ffmpeg/build/ffmpeg/armeabi-v7a
+source path               .
+C compiler                arm-linux-androideabi-gcc
+ARCH                      arm (generic)
+big-endian                no
+runtime cpu detection     no
+ARMv5TE enabled           yes
+ARMv6 enabled             yes
+ARMv6T2 enabled           yes
+ARM VFP enabled           yes
+NEON enabled              no
+debug symbols             yes
+strip symbols             yes
+optimize for size         yes
+optimizations             yes
+static                    yes
+shared                    yes
+postprocessing support    no
+new filter support        yes
+network support           yes
+threading support         pthreads
+safe bitstream reader     yes
+SDL support               no
+libdxva2 enabled          no
+libva enabled             no
+libvdpau enabled          no
+AVISynth enabled          no
+frei0r enabled            no
+gnutls enabled            no
+libaacplus enabled        no
+libass enabled            no
+libcdio support           no
+libcelt enabled           no
+libdc1394 support         no
+libfaac enabled           no
+libgsm enabled            no
+libmodplug enabled        no
+libmp3lame enabled        no
+libnut enabled            no
+libopencore-amrnb support no
+libopencore-amrwb support no
+libopencv support         no
+libopenjpeg enabled       no
+libpulse enabled          no
+librtmp enabled           no
+libschroedinger enabled   no
+libspeex enabled          no
+libstagefright-h264 enabled    no
+libtheora enabled         no
+libutvideo enabled        no
+libv4l2 enabled           no
+libvo-aacenc support      no
+libvo-amrwbenc support    no
+libvorbis enabled         no
+libvpx enabled            no
+libx264 enabled           no
+libxavs enabled           no
+libxvid enabled           no
+openal enabled            no
+openssl enabled           no
+zlib enabled              no
+bzlib enabled             no
+
+Enabled decoders:
+
+Enabled encoders:
+mpeg2video		nellymoser
+
+Enabled hwaccels:
+
+Enabled parsers:
+
+Enabled demuxers:
+
+Enabled muxers:
+
+Enabled protocols:
+
+Enabled filters:
+aformat			buffersink		format
+
+Enabled bsfs:
+
+Enabled indevs:
+
+Enabled outdevs:
+
+License: LGPL version 2.1 or later
+Creating config.mak and config.h...
+
+WARNING: arm-linux-androideabi-pkg-config not found, library detection may fail.

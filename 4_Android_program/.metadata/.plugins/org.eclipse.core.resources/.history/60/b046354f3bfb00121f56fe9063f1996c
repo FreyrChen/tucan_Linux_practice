@@ -1,0 +1,14 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := fingerprint_decoder_jni
+LOCAL_CFLAGS := 
+LOCAL_SRC_FILES := cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+#	mediametadataretriever.cpp 
+LOCAL_SHARED_LIBRARIES := libavcodec libavformat libavutil 
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../ffmpeg/build/ffmpeg/$(TARGET_ARCH_ABI)/include /
+				cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.h
+LOCAL_LDLIBS := -llog -lm -lz
+
+include $(BUILD_SHARED_LIBRARY)

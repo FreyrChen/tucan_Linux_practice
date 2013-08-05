@@ -35,4 +35,6 @@
 		<item value="374" key="DIALOG_HEIGHT"/>
 		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
+	<section name="NewWizardAction">
+	</section>
 </section>

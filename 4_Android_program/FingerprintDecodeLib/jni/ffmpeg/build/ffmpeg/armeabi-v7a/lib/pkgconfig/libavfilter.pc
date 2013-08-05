@@ -1,0 +1,14 @@
+prefix=/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/ffmpeg-jni/trunk/jni/ffmpeg/build/ffmpeg/armeabi-v7a
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavfilter
+Description: FFmpeg video filtering library
+Version: 2.77.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavfilter 
+Libs.private: -lm -lz
+Cflags: -I${includedir}

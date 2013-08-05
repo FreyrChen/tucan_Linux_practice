@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FingerprintWraper.java&apos; to &apos;Fingerprint_decoder_jni/src&apos;&#x0A;- Original project: &apos;FingerprintJni&apos;&#x0A;- Destination element: &apos;Fingerprint_decoder_jni/src&apos;&#x0A;- Original element: &apos;cc.omusic.fingerprintjni.FingerprintWraper.java&apos;" description="Copy compilation unit" destination="=Fingerprint_decoder_jni/src" element1="/src&lt;cc.omusic.fingerprintjni{FingerprintWraper.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1375351967682" units="1" version="1.0"/>
+</session>

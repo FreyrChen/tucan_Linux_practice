@@ -6368,3 +6368,2106 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SESSION 2013-07-18 16:24:37.371 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-18 16:42:38.326
+!MESSAGE New Project Wizard failed
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:642)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:175)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:53)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:287)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:269)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:689)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	... 6 more
+Root exception:
+org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:175)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:53)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:287)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:269)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:689)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: OK
+Contains: /home/tusion/code/4_Android_program/MainActivity overlaps the location of another project: 'MainActivity'
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-18 16:45:43.706
+!MESSAGE Exception occurred while saving project preferences: /MainActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:441)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-18 16:45:43.707
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-18 16:45:43.708
+!MESSAGE Exception occurred while saving project preferences: /MainActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:443)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-18 16:45:43.708
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-18 16:45:43.709
+!MESSAGE Exception occurred while saving project preferences: /MainActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:445)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-18 16:45:43.710
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/AndroidFFmpeg/FFmpegExample/.settings'.
+!SESSION 2013-07-26 13:59:32.160 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.core.resources 4 567 2013-07-26 13:59:38.590
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.590
+!MESSAGE Could not read metadata for 'FFmpegLibrary'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'FFmpegLibrary' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.593
+!MESSAGE The project description file (.project) for 'FFmpegLibrary' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.594
+!MESSAGE Could not read metadata for 'FakeActivity'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'FakeActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.595
+!MESSAGE The project description file (.project) for 'FakeActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.595
+!MESSAGE Could not read metadata for 'MainActivity'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'MainActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2013-07-26 13:59:38.596
+!MESSAGE The project description file (.project) for 'MainActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-26 14:28:19.487
+!MESSAGE Exception occurred while saving project preferences: /Main/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:441)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-26 14:28:19.487
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-26 14:28:19.495
+!MESSAGE Exception occurred while saving project preferences: /Main/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:443)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-26 14:28:19.495
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-26 14:28:19.496
+!MESSAGE Exception occurred while saving project preferences: /Main/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:445)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-26 14:28:19.496
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/JwZhangJie/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 567 2013-07-26 14:28:26.109
+!MESSAGE The project description file (.project) for 'MainActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.resources 2 2 2013-07-26 14:33:39.570
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2013-07-26 14:33:39.570
+!MESSAGE The project description file (.project) for 'Main' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SESSION 2013-07-29 15:29:00.892 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-07-29 15:29:07.111
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:29:22.890
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:29:30.405
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:19.878
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:19.880
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:19.883
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:19.887
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:24.360
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-29 15:30:24.364
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY org.eclipse.core.resources 4 567 2013-07-29 15:31:41.946
+!MESSAGE The project description file (.project) for 'FakeActivity' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-29 15:32:37.425
+!MESSAGE Exception occurred while saving project preferences: /FakeActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:441)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-29 15:32:37.426
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-29 15:32:37.427
+!MESSAGE Exception occurred while saving project preferences: /FakeActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:443)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-29 15:32:37.427
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2013-07-29 15:32:37.428
+!MESSAGE Exception occurred while saving project preferences: /FakeActivity/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2951)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:445)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:350)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:268)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:790)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:626)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:559)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$2.execute(NewProjectCreator.java:371)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2013-07-29 15:32:37.428
+!MESSAGE A resource already exists on disk '/home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/android-ffmpeg_2_0/.settings'.
+!SESSION 2013-07-31 09:41:11.758 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-31 09:41:29.774
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-31 09:41:36.723
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-31 09:41:53.501
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2013-08-01 11:01:16.671 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-01 11:01:34.339
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-01 11:01:41.474
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-01 11:01:43.349
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-01 18:09:38.586
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+!SESSION 2013-08-02 10:52:02.344 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 10:52:26.119
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 10:52:33.643
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 10:52:36.039
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 11:00:56.848
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_app'
+
+!ENTRY org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+I:
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.indent,Correct Indentation,
+		Corrects the indentation of the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@142d6b6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.active.elements,Format Active Elements,
+		Format active elements,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ef4491,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@11e737b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,Format,
+		Format selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@be1499,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_DOWN:
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.next.member,Go to Next Member,
+		Move the caret to the next member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@2fc41a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.nextSibling,Next Sibling,
+		Go to Next Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1afed4b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_LEFT:
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1f3a0b3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@69c671,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_UP:
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1bb77f5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@176b42,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket,Go to Matching Bracket,
+		Moves the cursor to the matching bracket,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@c0892d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,Matching Bracket,
+		Go to Matching Bracket,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@73591c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+/:
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.add.block.comment,Add Block Comment,
+		Enclose the selection with a block comment,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@6e0570,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.add.block.comment,Add Block Comment,
+		Add Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3780b4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.show.outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@127099e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e87b3a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_UP:
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.previous.member,Go to Previous Member,
+		Move the caret to the previous member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1f24d00,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.previousSibling,Previous Sibling,
+		Go to Previous Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@127a21a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_DOWN:
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@9d60ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@18e08ce,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.toggle.comment,Toggle Comment,
+		Toggle comment the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@4689c5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@16b4262,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.821
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_RIGHT:
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@ff1b05,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@9746cf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-02 11:03:56.822
+!MESSAGE A conflict occurred for CTRL+SHIFT+\:
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.remove.block.comment,Remove Block Comment,
+		Remove the block comment enclosing the selection,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@47048c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.remove.block.comment,Remove Block Comment,
+		Remove Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@15d2b0b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 11:08:32.281
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_app'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 11:08:32.288
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_app'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 11:15:13.756
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 11:15:25.075
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY org.eclipse.ui 4 0 2013-08-02 11:16:51.508
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Argument cannot be null
+	at org.eclipse.swt.SWT.error(SWT.java:4342)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Control.removeMouseMoveListener(Control.java:1989)
+	at org.eclipse.jface.text.AbstractInformationControl$5.mouseUp(AbstractInformationControl.java:403)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3554)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3179)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2013-08-02 13:54:24.001
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Widget has the wrong parent
+	at org.eclipse.swt.SWT.error(SWT.java:4342)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Control.setMenu(Control.java:4150)
+	at com.android.ddmuilib.logcat.LogCatPanel$20.handleEvent(LogCatPanel.java:1021)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Control.showMenu(Control.java:4598)
+	at org.eclipse.swt.widgets.Control.showMenu(Control.java:4590)
+	at org.eclipse.swt.widgets.Control.gtk_event_after(Control.java:2934)
+	at org.eclipse.swt.widgets.Table.gtk_event_after(Table.java:1909)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1753)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Table.windowProc(Table.java:3604)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2013-08-02 15:36:09.841
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.IllegalArgumentException: Widget has the wrong parent
+	at org.eclipse.swt.SWT.error(SWT.java:4342)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Control.setMenu(Control.java:4150)
+	at com.android.ddmuilib.logcat.LogCatPanel$20.handleEvent(LogCatPanel.java:1021)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Control.showMenu(Control.java:4598)
+	at org.eclipse.swt.widgets.Control.showMenu(Control.java:4590)
+	at org.eclipse.swt.widgets.Control.gtk_event_after(Control.java:2934)
+	at org.eclipse.swt.widgets.Table.gtk_event_after(Table.java:1909)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1753)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Table.windowProc(Table.java:3604)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 16:04:42.397
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 16:04:42.398
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Fingerprint_decoder_jni/jni/fingerprint, does not match outer scope rule: L/Fingerprint_decoder_jni/jni/cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 16:04:48.107
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 16:04:48.107
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Fingerprint_decoder_jni/jni/fingerprint, does not match outer scope rule: L/Fingerprint_decoder_jni/jni/cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 16:05:12.819
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 16:05:12.820
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Fingerprint_decoder_jni/jni/fingerprint, does not match outer scope rule: L/Fingerprint_decoder_jni/jni/cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 16:05:26.189
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 16:05:26.190
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Fingerprint_decoder_jni/jni/fingerprint, does not match outer scope rule: L/Fingerprint_decoder_jni/jni/cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3554)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3179)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 16:08:23.561
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 16:08:23.561
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/Fingerprint_decoder_jni/jni/fingerprint, does not match outer scope rule: L/Fingerprint_decoder_jni/jni/cc_omusic_Fingerprint_decoder_jni_FingerprintWraper.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveAllEditors(WorkbenchPage.java:3431)
+	at org.eclipse.ui.internal.Workbench.saveAllEditors(Workbench.java:1141)
+	at org.eclipse.ui.internal.Workbench.saveAllEditors(Workbench.java:1134)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.saveAllEditors(DebugUIPlugin.java:819)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.preLaunchSave(DebugUIPlugin.java:1027)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:205)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter$1.run(Prompter.java:70)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:164)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:158)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3529)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3182)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:23:59.371
+!MESSAGE Failed to load properties file for project 'FingerprintDecodeLib'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:33:51.587
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:34:26.647
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 17:49:08.854
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 17:49:08.854
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/FingerprintDecodeLib/jni, does not match outer scope rule: L/FingerprintDecodeLib/jni/fingerprint/test.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 17:49:55.099
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 17:49:55.100
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/FingerprintDecodeLib/jni, does not match outer scope rule: L/FingerprintDecodeLib/jni/fingerprint/test.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 17:50:18.384
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 17:50:18.386
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/FingerprintDecodeLib/jni, does not match outer scope rule: L/FingerprintDecodeLib/jni/fingerprint/test.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.doSave(CompatibilityPart.java:404)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:199)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1179)
+	at org.eclipse.ui.internal.WorkbenchPage.saveSaveable(WorkbenchPage.java:3469)
+	at org.eclipse.ui.internal.WorkbenchPage.saveEditor(WorkbenchPage.java:3487)
+	at org.eclipse.ui.internal.SaveAction.run(SaveAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:76)
+	at sun.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:210)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:131)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:171)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:276)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:494)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:545)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:366)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.access$0(KeyBindingDispatcher.java:313)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:82)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1483)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1275)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1312)
+	at org.eclipse.swt.widgets.Widget.gtk_key_press_event(Widget.java:748)
+	at org.eclipse.swt.widgets.Control.gtk_key_press_event(Control.java:3050)
+	at org.eclipse.swt.widgets.Composite.gtk_key_press_event(Composite.java:741)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1758)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 4 2013-08-02 17:50:26.003
+!MESSAGE Save Failed
+
+!ENTRY org.eclipse.ui 2 0 2013-08-02 17:50:26.003
+!MESSAGE Save Failed
+!STACK 0
+java.lang.IllegalArgumentException: Attempted to beginRule: F/FingerprintDecodeLib/jni, does not match outer scope rule: L/FingerprintDecodeLib/jni/fingerprint/test.c
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.jobs.ThreadJob.illegalPush(ThreadJob.java:134)
+	at org.eclipse.core.internal.jobs.ThreadJob.push(ThreadJob.java:333)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:63)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.core.filebuffers.manipulation.ContainerCreator.createContainer(ContainerCreator.java:124)
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.commitFileBufferContent(ResourceTextFileBuffer.java:412)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.commit(ResourceFileBuffer.java:325)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileFromDocument(TextFileDocumentProvider.java:892)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.commitWorkingCopy(CDocumentProvider.java:966)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider$2.execute(CDocumentProvider.java:1011)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider$DocumentProviderOperation.run(TextFileDocumentProvider.java:132)
+	at org.eclipse.ui.actions.WorkspaceModifyDelegatingOperation.execute(WorkspaceModifyDelegatingOperation.java:69)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:75)
+	at org.eclipse.ui.internal.editors.text.WorkspaceOperationRunner.run(WorkspaceOperationRunner.java:65)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.executeOperation(TextFileDocumentProvider.java:456)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.saveDocument(TextFileDocumentProvider.java:772)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.performSave(AbstractTextEditor.java:5066)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSave(AbstractTextEditor.java:4855)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.doSave(AbstractTextEditor.java:7198)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:346)
+	at org.eclipse.ui.internal.SaveableHelper$3.run(SaveableHelper.java:193)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:274)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.ui.internal.WorkbenchWindow$13.run(WorkbenchWindow.java:1675)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:1672)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:282)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:261)
+	at org.eclipse.ui.internal.SaveableHelper.saveModels(SaveableHelper.java:204)
+	at org.eclipse.ui.internal.SaveableHelper.savePart(SaveableHelper.java:144)
+	at org.eclipse.ui.internal.WorkbenchWindow$7.promptToSave(WorkbenchWindow.java:459)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.savePart(PartServiceImpl.java:1167)
+	at org.eclipse.ui.internal.WorkbenchPage.saveAllEditors(WorkbenchPage.java:3411)
+	at org.eclipse.ui.internal.Workbench.saveAllEditors(Workbench.java:1141)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1017)
+	at org.eclipse.ui.internal.Workbench.access$16(Workbench.java:1001)
+	at org.eclipse.ui.internal.Workbench$17.run(Workbench.java:1182)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1180)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1153)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1164)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$14(WorkbenchWindow.java:1137)
+	at org.eclipse.ui.internal.WorkbenchWindow$10.run(WorkbenchWindow.java:1193)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1191)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1203)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:446)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$11.shellClosed(WBWRenderer.java:575)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1191)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1750)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8307)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SESSION 2013-08-02 17:50:55.405 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:51:13.876
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:51:21.275
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-02 17:51:22.674
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2013-08-02 18:13:41.370
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl main.c
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:417)
+	at org.eclipse.swt.widgets.Control.getVisible(Control.java:2786)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1378)
+	at org.eclipse.swt.widgets.Composite.setFocus(Composite.java:1378)
+	at org.eclipse.ui.texteditor.StatusTextEditor.setFocus(StatusTextEditor.java:120)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:178)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:229)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:235)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:206)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:106)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$2.setFocus(ContributedPartRenderer.java:101)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$9.mouseUp(StackRenderer.java:941)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:220)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3554)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3179)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1029)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:923)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:86)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:588)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:543)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SESSION 2013-08-05 10:16:12.654 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 10:16:34.360
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 10:16:43.065
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 10:16:46.390
+!MESSAGE Failed to load properties file for project 'Main'
