@@ -1,4 +1,4 @@
-install prefix            /home/tusion/music_fp/decoder/ffmpeg/ffmpeg_android/ffmpeg-jni/trunk/jni/ffmpeg/build/ffmpeg/armeabi
+install prefix            /home/tusion/code/4_Android_program/FingerprintDecodeLib/jni/ffmpeg/build/ffmpeg/armeabi
 source path               .
 C compiler                arm-linux-androideabi-gcc
 ARCH                      arm (generic)
@@ -16,8 +16,8 @@ optimizations             yes
 static                    yes
 shared                    yes
 postprocessing support    no
-new filter support        yes
-network support           yes
+new filter support        no
+network support           no
 threading support         pthreads
 safe bitstream reader     yes
 SDL support               no
@@ -62,22 +62,27 @@ zlib enabled              no
 bzlib enabled             no
 
 Enabled decoders:
+aac			mp3			wmav1
+aac_latm		wmalossless		wmav2
+mp2			wmapro			wmavoice
 
 Enabled encoders:
-mpeg2video		nellymoser
 
 Enabled hwaccels:
 
 Enabled parsers:
+aac			aac_latm		mpegaudio
 
 Enabled demuxers:
+aac			flv			ogg
+asf			mp3			xwma
 
 Enabled muxers:
 
 Enabled protocols:
+file
 
 Enabled filters:
-aformat			buffersink		format
 
 Enabled bsfs:
 

@@ -13,8 +13,10 @@ int main(char arg,char *argv[])
 
 	printf(" this ffmpeg version: %d \n", avcodec_version() );
 
-/*
+
 	av_register_all();	//注册所有可解码类型
+	printf(" av_register run success!\n" );
+/*	
 	AVFormatContext *pInFmtCtx=NULL;	//文件格式
 	AVCodecContext *pInCodecCtx=NULL;	//编码格式 
 	if (av_open_input_file(&pInFmtCtx, filename, NULL, 0, NULL)!=0)	//获取文件格式

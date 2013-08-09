@@ -1,0 +1,14 @@
+prefix=/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/ffmpeg-0-11-1/ffmpeg
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 51.54.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavutil -lm
+Libs.private: 
+Cflags: -I${includedir}

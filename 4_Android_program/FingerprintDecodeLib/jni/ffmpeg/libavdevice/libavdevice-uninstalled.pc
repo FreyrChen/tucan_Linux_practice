@@ -6,7 +6,7 @@ includedir=.
 Name: libavdevice
 Description: FFmpeg device handling library
 Version: 54.0.100
-Requires: libavfilter = 2.77.100, libavformat = 54.6.100
+Requires: libavformat = 54.6.100
 Conflicts:
-Libs: ${libdir}/libavdevice.a -ldl -lva -lasound -lSDL -lm -pthread -lbz2 -lz -lrt 
+Libs: ${libdir}/libavdevice.a -lm -lz 
 Cflags: -I${includedir}

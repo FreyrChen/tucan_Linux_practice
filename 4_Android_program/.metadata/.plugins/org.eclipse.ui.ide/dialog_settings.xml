@@ -5,17 +5,17 @@
 		<item value="406" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
-		<item value="/home/tusion/code/9_JavaApp/LAN" key="OUTSIDE_LOCATION"/>
+		<item value="/home/tusion/code/4_Android_program" key="OUTSIDE_LOCATION"/>
 	</section>
 	<section name="BasicNewProjectResourceWizard">
-	</section>
-	<section name="WORKBENCH_SETTINGS">
-		<list key="ENABLED_TRANSFERS">
-		</list>
 	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
 	</section>
 	<section name="ResourceNavigator">
 		<item value="" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
@@ -24,17 +24,17 @@
 	<section name="SaveAsDialogSettings">
 		<item value="613" key="DIALOG_WIDTH"/>
 		<item value="54" key="DIALOG_Y_ORIGIN"/>
-		<item value="415" key="DIALOG_X_ORIGIN"/>
 		<item value="597" key="DIALOG_HEIGHT"/>
+		<item value="415" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 	<section name="CleanDialogSettings">
 		<item value="565" key="DIALOG_WIDTH"/>
 		<item value="161" key="DIALOG_Y_ORIGIN"/>
-		<item value="231" key="DIALOG_X_ORIGIN"/>
 		<item value="374" key="DIALOG_HEIGHT"/>
+		<item value="231" key="DIALOG_X_ORIGIN"/>
 		<item value="true" key="TOGGLE_SELECTED"/>
-	</section>
-	<section name="NewWizardAction">
 	</section>
 </section>

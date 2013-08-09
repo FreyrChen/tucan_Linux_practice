@@ -1,4 +1,4 @@
-prefix=/usr/local
+prefix=/home/tusion/code/4_Android_program/FingerprintDecodeLib/jni/ffmpeg/build/ffmpeg/armeabi-v7a
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -9,6 +9,6 @@ Version: 51.54.100
 Requires: 
 Requires.private: 
 Conflicts:
-Libs: -L${libdir} -lavutil -lm
-Libs.private: 
+Libs: -L${libdir} -lavutil 
+Libs.private: -lm
 Cflags: -I${includedir}

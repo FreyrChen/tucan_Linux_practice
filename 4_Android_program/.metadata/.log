@@ -8471,3 +8471,1566 @@ java.lang.IllegalArgumentException: Path must include project and resource name:
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 10:16:46.390
 !MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:44.282
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:44.282
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:44.282
+!MESSAGE Failed to call IFileListener.fileChanged
+!STACK 0
+java.lang.NullPointerException
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$2.fileChanged(Sdk.java:1051)
+	at com.android.ide.eclipse.adt.internal.resources.manager.GlobalProjectMonitor$DeltaVisitor.visit(GlobalProjectMonitor.java:233)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.android.ide.eclipse.adt.internal.resources.manager.GlobalProjectMonitor$1.resourceChanged(GlobalProjectMonitor.java:537)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:395)
+	at org.eclipse.core.internal.resources.Workspace.checkpoint(Workspace.java:557)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:263)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2013-08-05 16:57:44.355
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:816)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Could not delete '/Fingerprint_decoder_jni/jni'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:387)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1981)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:803)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/configuration.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.23.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.15.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.1.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.6.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.77.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.0.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.54.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavformat.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavdevice.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswscale.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavfilter.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswresample.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavcodec.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavutil.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/info.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffmpeg.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffprobe.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod640.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/ffprobe.xsd.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-360p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_audio.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/muxing.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/decoding_encoding.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/metadata.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_video.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/Makefile.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod320.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample/swresample.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/asrc_abuffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersrc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfilter.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfiltergraph.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersink.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/vsrc_buffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/common.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/opt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audio_fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixdesc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/md5.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/dict.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/sha.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mathematics.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timestamp.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat_readwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/imgutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/rational.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avassert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/aes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/adler32.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avutil.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mem.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timecode.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/base64.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/error.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/attributes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/crc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/log.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/parseutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lfg.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avstring.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/samplefmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/cpu.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/random_seed.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intreadwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/file.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/eval.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audioconvert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bswap.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lzo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bprint.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixfmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avconfig.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice/avdevice.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale/swscale.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avformat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avio.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vda.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avfft.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/xvmc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vaapi.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/dxva2.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vdpau.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffprobe.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/configuration.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.23.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.15.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.1.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.6.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.77.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.0.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.54.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavformat.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavdevice.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswscale.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavfilter.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswresample.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavcodec.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavutil.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/info.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffmpeg.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffprobe.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod640.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/ffprobe.xsd.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-360p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_audio.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/muxing.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/decoding_encoding.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/metadata.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_video.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/Makefile.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod320.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample/swresample.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/asrc_abuffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersrc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfilter.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfiltergraph.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersink.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/vsrc_buffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/common.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/opt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audio_fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixdesc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/md5.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/dict.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/sha.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mathematics.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timestamp.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat_readwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/imgutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/rational.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avassert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/aes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/adler32.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avutil.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mem.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timecode.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/base64.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/error.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/attributes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/crc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/log.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/parseutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lfg.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avstring.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/samplefmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/cpu.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/random_seed.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intreadwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/file.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/eval.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audioconvert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bswap.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lzo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bprint.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixfmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avconfig.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice/avdevice.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale/swscale.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avformat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avio.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vda.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avfft.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/xvmc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vaapi.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/dxva2.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vdpau.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffprobe.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni.
+Contains: Could not delete '/home/tusion/code/4_Android_program/Fingerprint_decoder_jni'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2013-08-05 16:57:44.360
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-08-05 16:57:44.360
+!MESSAGE Could not delete '/Fingerprint_decoder_jni/jni'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:387)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1981)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:803)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/configuration.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.23.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.15.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.1.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.6.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.77.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.0.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.54.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavformat.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavdevice.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswscale.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavfilter.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswresample.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavcodec.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavutil.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/info.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffmpeg.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffprobe.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod640.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/ffprobe.xsd.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-360p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_audio.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/muxing.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/decoding_encoding.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/metadata.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_video.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/Makefile.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod320.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample/swresample.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/asrc_abuffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersrc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfilter.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfiltergraph.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersink.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/vsrc_buffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/common.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/opt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audio_fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixdesc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/md5.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/dict.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/sha.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mathematics.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timestamp.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat_readwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/imgutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/rational.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avassert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/aes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/adler32.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avutil.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mem.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timecode.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/base64.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/error.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/attributes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/crc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/log.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/parseutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lfg.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avstring.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/samplefmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/cpu.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/random_seed.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intreadwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/file.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/eval.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audioconvert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bswap.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lzo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bprint.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixfmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avconfig.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice/avdevice.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale/swscale.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avformat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avio.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vda.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avfft.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/xvmc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vaapi.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/dxva2.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vdpau.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffprobe.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/configuration.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.23.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.15.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.1.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.6.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.77.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.a.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.0.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.54.100.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavformat.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavdevice.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswscale.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavfilter.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswresample.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavcodec.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavutil.pc.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/info.txt.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffmpeg.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffprobe.1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod640.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/ffprobe.xsd.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-360p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_audio.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/muxing.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/decoding_encoding.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/metadata.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_video.c.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/Makefile.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod320.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p.ffpreset.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample/swresample.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/asrc_abuffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersrc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfilter.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfiltergraph.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersink.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/vsrc_buffer.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/common.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/opt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audio_fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixdesc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/md5.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/dict.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/sha.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mathematics.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timestamp.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat_readwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/imgutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/rational.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avassert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/aes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/adler32.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avutil.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mem.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timecode.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/base64.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/error.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/attributes.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/crc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/log.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/parseutils.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lfg.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/fifo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avstring.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/samplefmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/cpu.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/random_seed.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intreadwrite.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/file.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/eval.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audioconvert.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bswap.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lzo.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bprint.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixfmt.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avconfig.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice/avdevice.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale/swscale.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avformat.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avio.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vda.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avfft.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/version.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/xvmc.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vaapi.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/dxva2.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vdpau.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avcodec.h.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffprobe.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg.
+Contains: Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2013-08-05 16:57:44.363
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.363
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.363
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/configuration.txt.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.363
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.363
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.23.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswresample.so.0.15.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.364
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.2.1.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.6.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.2.77.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libswscale.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavcodec.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavfilter.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.365
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavdevice.so.54.0.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavutil.so.51.54.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/libavformat.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavformat.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavdevice.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswscale.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavfilter.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libswresample.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavcodec.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig/libavutil.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib/pkgconfig.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/lib.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.366
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/info.txt.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffmpeg.1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1/ffprobe.1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man/man1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/man.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod640.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/ffprobe.xsd.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-360p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_audio.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/muxing.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/decoding_encoding.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/metadata.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/filtering_video.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.367
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples/Makefile.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/examples.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p50_60.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libx264-ipod320.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-720p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg/libvpx-1080p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/share.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample/swresample.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.368
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswresample.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/asrc_abuffer.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersrc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfilter.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avfiltergraph.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/buffersink.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/avcodec.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter/vsrc_buffer.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavfilter.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/common.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/opt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audio_fifo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixdesc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/md5.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/dict.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/sha.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mathematics.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timestamp.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat_readwrite.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intfloat.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.369
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/imgutils.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/rational.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avassert.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/aes.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/adler32.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avutil.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/mem.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/timecode.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/base64.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/error.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/attributes.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/crc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/log.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/parseutils.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lfg.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/fifo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avstring.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.370
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/samplefmt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/cpu.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/random_seed.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/intreadwrite.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/file.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/eval.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/audioconvert.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bswap.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/lzo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/bprint.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/pixfmt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil/avconfig.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavutil.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice/avdevice.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavdevice.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale/swscale.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libswscale.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avformat.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/avio.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavformat.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vda.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avfft.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.371
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/xvmc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vaapi.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/dxva2.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/vdpau.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec/avcodec.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include/libavcodec.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/include.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin/ffprobe.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a/bin.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi-v7a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/configuration.txt.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.23.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.372
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswresample.so.0.15.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.2.1.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.6.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.2.77.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.54.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libswscale.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavcodec.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavfilter.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.a.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavdevice.so.54.0.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavutil.so.51.54.100.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/libavformat.so.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavformat.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavdevice.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswscale.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavfilter.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libswresample.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.373
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavcodec.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig/libavutil.pc.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib/pkgconfig.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/lib.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/info.txt.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffmpeg.1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1/ffprobe.1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man/man1.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/man.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod640.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/ffprobe.xsd.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-360p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_audio.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/muxing.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/decoding_encoding.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/metadata.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/filtering_video.c.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples/Makefile.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/examples.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p50_60.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libx264-ipod320.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.374
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-720p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p50_60.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg/libvpx-1080p.ffpreset.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/share.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample/swresample.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswresample.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/asrc_abuffer.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersrc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfilter.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avfiltergraph.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/buffersink.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/avcodec.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter/vsrc_buffer.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavfilter.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/common.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.375
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/opt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audio_fifo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixdesc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/md5.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/dict.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/sha.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mathematics.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timestamp.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat_readwrite.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intfloat.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/imgutils.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/rational.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avassert.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/aes.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/adler32.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avutil.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/mem.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/timecode.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/base64.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/error.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/attributes.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/crc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/log.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/parseutils.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lfg.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/fifo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avstring.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.376
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/samplefmt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/cpu.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/random_seed.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/intreadwrite.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/file.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/eval.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/audioconvert.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bswap.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/lzo.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/bprint.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/pixfmt.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil/avconfig.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavutil.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice/avdevice.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavdevice.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale/swscale.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libswscale.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avformat.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/avio.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavformat.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vda.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avfft.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/version.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/xvmc.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vaapi.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.377
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/dxva2.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/vdpau.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec/avcodec.h.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include/libavcodec.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/include.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin/ffprobe.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi/bin.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg/armeabi.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg/build.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni/ffmpeg.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete: /home/tusion/code/4_Android_program/Fingerprint_decoder_jni/jni.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-08-05 16:57:44.378
+!MESSAGE Could not delete '/home/tusion/code/4_Android_program/Fingerprint_decoder_jni'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:54.580
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:54.582
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:55.515
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:56.559
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-05 16:57:56.561
+!MESSAGE Failed to load properties file for project 'Fingerprint_decoder_jni'
+!SESSION 2013-08-07 09:57:07.209 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-07 09:57:26.421
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-07 09:57:33.566
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-07 09:57:34.402
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-07 10:43:55.431
+!MESSAGE Failed to load properties file for project 'demo'
+
+!ENTRY org.eclipse.jface 2 0 2013-08-07 11:08:59.193
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.193
+!MESSAGE A conflict occurred for CTRL+I:
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.indent,Correct Indentation,
+		Corrects the indentation of the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@6cf3d1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.active.elements,Format Active Elements,
+		Format active elements,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@83b7b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.193
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@fb5c1b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,Format,
+		Format selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@134de68,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.193
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_DOWN:
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.next.member,Go to Next Member,
+		Move the caret to the next member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@5c0dd6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.nextSibling,Next Sibling,
+		Go to Next Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1e09e60,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.193
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_LEFT:
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1909d69,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@c91202,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_UP:
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@14e8047,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1323815,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket,Go to Matching Bracket,
+		Moves the cursor to the matching bracket,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@c7df04,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,Matching Bracket,
+		Go to Matching Bracket,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1494470,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+SHIFT+/:
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.add.block.comment,Add Block Comment,
+		Enclose the selection with a block comment,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@2bd8f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.add.block.comment,Add Block Comment,
+		Add Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@fa5a0e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.show.outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1eafc6b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@61f281,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_UP:
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.previous.member,Go to Previous Member,
+		Move the caret to the previous member of the compilation unit,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@782dd1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.previousSibling,Previous Sibling,
+		Go to Previous Sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1efad77,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_DOWN:
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@8342e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@dcea09,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.toggle.comment,Toggle Comment,
+		Toggle comment the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@99d3b8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@bad74f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_RIGHT:
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@11b006c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3cc8b1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-07 11:08:59.194
+!MESSAGE A conflict occurred for CTRL+SHIFT+\:
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.remove.block.comment,Remove Block Comment,
+		Remove the block comment enclosing the selection,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1b8d2d2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.remove.block.comment,Remove Block Comment,
+		Remove Block Comment,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@107a59f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-07 16:19:46.931
+!MESSAGE Failed to load properties file for project 'Main'
+!SESSION 2013-08-08 10:03:55.170 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-08 10:04:30.042
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-08 10:04:39.274
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-08 10:04:40.369
+!MESSAGE Failed to load properties file for project 'Main'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-08 10:08:59.360
+!MESSAGE Failed to load properties file for project 'Main'
+!SESSION 2013-08-09 10:33:02.963 -----------------------------------------------
+eclipse.buildId=v21.0.0-531062
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-09 10:33:21.764
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project Main
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-09 10:33:29.354
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /Main
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:349)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:96)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:112)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:82)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:778)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-08-09 10:33:30.827
+!MESSAGE Failed to load properties file for project 'Main'

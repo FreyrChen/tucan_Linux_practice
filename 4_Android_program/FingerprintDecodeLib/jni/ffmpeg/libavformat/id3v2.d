@@ -1,9 +1,10 @@
 libavformat/id3v2.o: libavformat/id3v2.c config.h libavformat/id3v2.h \
  libavformat/avformat.h libavcodec/avcodec.h libavutil/samplefmt.h \
  libavutil/avutil.h libavutil/common.h libavutil/attributes.h \
- libavutil/avconfig.h libavutil/intmath.h libavutil/x86/intmath.h \
- libavutil/mem.h libavutil/error.h libavutil/internal.h libavutil/timer.h \
- libavutil/x86/timer.h libavutil/cpu.h libavutil/dict.h libavutil/libm.h \
+ libavutil/avconfig.h libavutil/intmath.h libavutil/arm/intmath.h \
+ libavutil/attributes.h libavutil/mem.h libavutil/error.h \
+ libavutil/internal.h libavutil/timer.h libavutil/arm/timer.h \
+ libavutil/cpu.h libavutil/dict.h libavutil/libm.h \
  libavutil/mathematics.h libavutil/rational.h \
  libavutil/intfloat_readwrite.h libavutil/log.h libavutil/pixfmt.h \
  libavutil/avutil.h libavutil/cpu.h libavutil/dict.h libavutil/log.h \
@@ -11,6 +12,5 @@ libavformat/id3v2.o: libavformat/id3v2.c config.h libavformat/id3v2.h \
  libavcodec/version.h libavformat/avio.h libavutil/common.h \
  libavformat/version.h libavformat/internal.h libavformat/metadata.h \
  libavformat/id3v1.h libavutil/avstring.h libavutil/intreadwrite.h \
- libavutil/bswap.h libavutil/x86/bswap.h libavutil/attributes.h \
- libavutil/x86/intreadwrite.h libavformat/avio_internal.h \
- libavformat/url.h
+ libavutil/bswap.h libavutil/arm/bswap.h libavutil/arm/intreadwrite.h \
+ libavformat/avio_internal.h libavformat/url.h

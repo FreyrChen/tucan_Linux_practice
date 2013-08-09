@@ -1,4 +1,4 @@
-prefix=/usr/local
+prefix=/home/tusion/code/4_Android_program/FingerprintDecodeLib/jni/ffmpeg/build/ffmpeg/armeabi-v7a
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -6,9 +6,9 @@ includedir=${prefix}/include
 Name: libavcodec
 Description: FFmpeg codec library
 Version: 54.23.100
-Requires: libavutil = 51.54.100
-Requires.private: 
+Requires: 
+Requires.private: libavutil = 51.54.100
 Conflicts:
-Libs: -L${libdir} -lavcodec -ldl -lva -lasound -lSDL -lm -pthread -lbz2 -lz -lrt
-Libs.private: 
+Libs: -L${libdir} -lavcodec 
+Libs.private: -lm -lz
 Cflags: -I${includedir}

@@ -1,4 +1,4 @@
-prefix=/usr/local
+prefix=/home/tusion/code/4_Android_program/FingerprintDecodeLib/jni/ffmpeg/build/ffmpeg/armeabi-v7a
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include
@@ -6,9 +6,9 @@ includedir=${prefix}/include
 Name: libswresample
 Description: FFmpeg audio rescaling library
 Version: 0.15.100
-Requires: libavutil = 51.54.100
-Requires.private: 
+Requires: 
+Requires.private: libavutil = 51.54.100
 Conflicts:
-Libs: -L${libdir} -lswresample -lm
-Libs.private: 
+Libs: -L${libdir} -lswresample 
+Libs.private: -lm
 Cflags: -I${includedir}
