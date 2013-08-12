@@ -1,18 +1,31 @@
+
+ /**
+ * decode a input audio file, return the file's fingerprint
+ *
+ **/
+
 #include <stdlib.h>  
-#include <time.h>  
+//#include <time.h>  
   
 #include <libavcodec/avcodec.h>  
 #include <libavformat/avformat.h>  
+#include <libavutil/fifo.h>
   
-  
-uint8_t inbuf[AVCODEC_MAX_AUDIO_FRAME_SIZE * 100];  
-  
+ 
+//uint8_t inbuf[AVCODEC_MAX_AUDIO_FRAME_SIZE * 100];  
+ /**
+ * retrun:
+ *		-1 : error. could not decode or generate fingerprint.
+ *
+ **/
 int main( int argc, char *argv[])  
 {  
-	
 	char * filename = NULL; 
-	if( argc != 2)
+
+	//check input parameters	
+	if( argc < 1)
 	{
+		printf("argc = %d \n", argc );
 		printf("[useage:] %s ***.mp3 \n", argv[0] );
 		return 0;
 	}
@@ -21,18 +34,16 @@ int main( int argc, char *argv[])
 		filename = argv[1]; 
 	}
 
-
-
-    // 注册编解码器  
+	//register encoders&decoders
     av_register_all();  
   
-    AVFormatContext * pFormatCtx = avformat_alloc_context();   // 文件容器上下文  
+    AVFormatContext * pFormatCtx = avformat_alloc_context();   // file's continer of contex. 
    	 
-      
-    // 打开输入文件  
+     // 
+	//open input file
     if (avformat_open_input(&pFormatCtx, filename, 0, NULL) != 0)  
     {  
-        printf("can't open file");  
+        printf("could not open file");  
         return -1;  
     }  
     if (av_find_stream_info(pFormatCtx) < 0) // 检查在文件中的流的信息  
@@ -43,11 +54,9 @@ int main( int argc, char *argv[])
 
     av_dump_format(pFormatCtx, 0, filename, 0); // 显示pfmtctx->streams里的信息  
       
-    int i, audioStream;  
-    AVCodecContext * pCodecCtx;  
 
-    // 找到第一个音频流  
-    audioStream = -1;  
+	// find the first audio stream
+    int audioStream = -1;  
     for (int i = 0; i < pFormatCtx->nb_streams; ++i)  //找到音频、视频对应的stream  
     {  
         if (pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO)  
@@ -56,16 +65,17 @@ int main( int argc, char *argv[])
             break;  
         }  
     }  
-    if (audioStream == -1) // 有音频  
+    if (audioStream == -1) //if could not find any audio. 
     {  
-        printf("input file has no audio stream\n");  
+        printf("could not find any  audio stream in input file\n");  
         return -1;  
     }  
       
-    // 获得音频流的解码器上下文  
-    pCodecCtx = pFormatCtx->streams[audioStream]->codec;   
+	// get audio decoder's context.
+    AVCodecContext * pCodecCtx = NULL;
+	pCodecCtx= pFormatCtx->streams[audioStream]->codec;   
       
-    // 根据解码器上下文找到解码器  
+	// find correct decoder base on the context.
     AVCodec * pCodec = NULL ;  
     pCodec = avcodec_find_decoder(pCodecCtx->codec_id);    
     if (pCodec == NULL)  
@@ -99,59 +109,86 @@ int main( int argc, char *argv[])
     // codecs  
     FILE * fp = fopen("out.pcm", "wb");  
   
-    //AVFrame * pFrame;  
-    //pFrame = avcodec_alloc_frame();  
-    //   
-    AVPacket packet;  
-    uint8_t * pktdata;  
-    int pktsize;  
-    int out_size = AVCODEC_MAX_AUDIO_FRAME_SIZE * 100;  
-  
-  	printf(" before decode, out_size=%d, MAX_FRAME_SIZE=%d\n", out_size, AVCODEC_MAX_AUDIO_FRAME_SIZE);
-    long start = clock(); //开始解码时间  
-       
+    
+    AVPacket packet; 
+	AVPacketList *first_pkt;
+   	AVFrame * pFrame = NULL;  
+	int frame_num = pCodecCtx->sample_rate * pCodecCtx->channels ;
+	uint8_t inbuf [frame_num];
+    //uint8_t * pktdata;  
+    //int pktsize;  
+	int count =0;
+	int gotFrame = 0;
+    int out_size = AVCODEC_MAX_AUDIO_FRAME_SIZE; 
+	//int buf_size = AVCODEC_MAX_AUDIO_FRAME_SIZE;
+	AVFifoBuffer *fifo;
+	fifo = av_fifo_alloc( AVCODEC_MAX_AUDIO_FRAME_SIZE * 2);
+	av_init_packet( &packet );
+
+  	printf(" before decode, out_size=%d,frame_num=%d,  MAX_FRAME_SIZE=%d\n",\
+			out_size, frame_num, AVCODEC_MAX_AUDIO_FRAME_SIZE);
+
+    //long start = clock(); //开始解码时间  
+
 	/**
 	* test a mp3 file,
-	* while loop: 14572
 	*/
-	int count =0;
+	if( !pFrame )
+	{
+		if( ! ( pFrame = avcodec_alloc_frame() ) )
+			{
+				fprintf(stderr, "while allocate memory for Frame.\n");  
+               	exit(1);  
+			}
+	} //avcodec_get_frame_defaults(pFrame ); //alredy add in avcodec_alloc_frame()
+
     while(av_read_frame(pFormatCtx, &packet) >= 0) //pFormatCtx中调用对应格式的packet获取函数  
     {  
         if (packet.stream_index == audioStream) //Detect read packet is audio stream? 
         {  
-            pktdata = packet.data;  
-            pktsize = packet.size;  
-            while (pktsize > 0)  
-            {  
-                out_size = AVCODEC_MAX_AUDIO_FRAME_SIZE * 100;  
-                int len = avcodec_decode_audio3(pCodecCtx, (short *)inbuf, &out_size, &packet); // 解码  
-                if (len < 0)  
-                {  
-                    printf("error! while decoding files\n");  
-                    break;  
-                }  
-                if (out_size > 0)  
-                {  
-                    fwrite(inbuf, 1, out_size, fp);  //write pcm to file: ***.pcm
-					fflush( fp );
+        	out_size = AVCODEC_MAX_AUDIO_FRAME_SIZE ;
+            while ( packet.size > 0)  
+            {  	// decode audio
+               	//int len = avcodec_decode_audio3(pCodecCtx, (short *)inbuf, &out_size, &packet); 
+                int len = avcodec_decode_audio4(pCodecCtx, pFrame, &gotFrame, &packet);
+                if( len < 0 )
+				{
+					fprintf( stderr, "Error while decoding\n");
+					exit(1);
+				}
+               if ( gotFrame )  
+                {  //if a frame has been decoded, output it 
+					out_size = av_samples_get_buffer_size( NULL, pCodecCtx->channels,
+																pFrame->nb_samples,
+																pCodecCtx->sample_fmt, 1 );
+					av_fifo_generic_write( fifo, pFrame->data[0], out_size, NULL );
                 }  
 
-	
-				//printf(" decoding %d: len=%d, out_size=%d, pktsize=%d, pktdata=%d \n",\
-						count++, len, out_size, pktsize, *pktdata );
-                pktsize -= len;  
-                pktdata += len;  
+				while( av_fifo_size( fifo ) >= frame_num )
+				{
+					printf("----> [%d] write file, fifo_size=%d\n", count++, av_fifo_size(fifo) );
+					int num = av_fifo_generic_read( fifo, inbuf, frame_num, NULL );
+                    fwrite(inbuf, 1, frame_num, fp);  //write pcm to file: ***.pcm
+                    //fwrite(pFrame->data[0], 1, out_size, fp);  //write pcm to file: ***.pcm
+				}
+	//			printf("[%d]:  len=%d, out_size=%d, packet.size=%d, packet.data=%d\n", \
+						count++, len, out_size, packet.size, packet.data );
+				packet.size -= len; 
+				packet.data += len;
+				packet.dts = 
+				packet.pts = AV_NOPTS_VALUE;
             }  
-            av_free_packet(&packet);  
         }  
     } 
           
-    long end = clock();  
-    printf("cost time :%f\n",(double)(end-start)/(double)CLOCKS_PER_SEC);  
+    //long end = clock();  
+    //printf("cost time :%f\n",(double)(end-start)/(double)CLOCKS_PER_SEC);  
   
     fclose(fp);  
     avcodec_close(pCodecCtx);  
     avformat_close_input(&pFormatCtx);  
+    av_free_packet(&packet);  
+	av_free( pFrame );
   
     return 0;  
 }  
