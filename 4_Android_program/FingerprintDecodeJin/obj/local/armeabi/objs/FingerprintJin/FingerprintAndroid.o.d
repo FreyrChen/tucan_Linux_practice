@@ -22,7 +22,6 @@
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/alloca.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/strings.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/memory.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavcodec/avcodec.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/errno.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/errno.h \
@@ -69,8 +68,10 @@
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavformat/avio.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/common.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavformat/version.h \
+ /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/fifo.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/avutil.h \
- /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libswscale/swscale.h \
+ /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/stdio.h:
@@ -116,8 +117,6 @@
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/strings.h:
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/memory.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h:
 
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavcodec/avcodec.h:
 
@@ -211,8 +210,12 @@
 
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavformat/version.h:
 
+/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/fifo.h:
+
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/avutil.h:
 
-/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libswscale/swscale.h:
+/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h:
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h:

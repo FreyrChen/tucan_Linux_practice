@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
-		<item value="449" key="DIALOG_Y_ORIGIN"/>
+		<item value="40" key="DIALOG_Y_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
-		<item value="1374" key="DIALOG_X_ORIGIN"/>
+		<item value="556" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,26 +13,26 @@
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="samples_read" key="selection"/>
+		<item value="LOGE" key="selection"/>
 		<list key="findhistory">
+			<item value="fprintf"/>
+			<item value="./libfooid"/>
+			<item value="libfooid"/>
+			<item value="fingerprint_ver_1"/>
+			<item value="printf"/>
 			<item value="frames_read"/>
 			<item value="getWavMethod"/>
 			<item value="wavClass"/>
-			<item value="wavReaderObj"/>
-			<item value="DecoderObj"/>
-			<item value="openFile"/>
-			<item value="musicListClickListener"/>
-			<item value="file"/>
 		</list>
 		<list key="replacehistory">
+			<item value="LOGE"/>
+			<item value="libfooid"/>
+			<item value="./libfooid"/>
+			<item value="LOGD"/>
 			<item value="samples_read"/>
 			<item value="getPcmSamplesMethod"/>
 			<item value="PcmDecodeClass"/>
 			<item value="DecoderObj"/>
-			<item value="file"/>
-			<item value="timer_runnable"/>
-			<item value="Log.d"/>
-			<item value="read_size"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

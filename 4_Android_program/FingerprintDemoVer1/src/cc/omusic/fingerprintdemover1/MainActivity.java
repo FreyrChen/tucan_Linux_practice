@@ -143,10 +143,19 @@ public class MainActivity extends Activity {
 		if( fp_byte == null ){
 			infoText.setText( "fingerprint is null ");
 		}else{
+			/*
 			infoText.setText("file name: "+  music_file.getName()
 							+ " \nfingerprint : \n"
 							+ "cost time:"+ fingerprint_time + "ms \n"
 							+ "fingerprint: \n" + byteArrayToHexString( fp_byte ) );
+			 */
+			infoText.setText("file name: "+  music_file.getName()
+					+ " \nfingerprint : \n"
+					+ "cost time:"+ fingerprint_time + "ms \n"
+					+ "file name: " + music_file.getName() + "\n"
+					+ "fp_length: " + byteArray4ToInt(fp_byte, 2)+ "\n"
+					+ "fp_avg_fit: " + byteArray2ToShort(fp_byte,6 )+ "\n"
+					+ "fp_avg_dom: " + byteArray2ToShort(fp_byte,8 ) );
 			Log.d(TAG, "file name: " + music_file.getName());
 			Log.d(TAG,"fp_str: " + byteArrayToHexString(fp_byte));
 			
@@ -208,7 +217,8 @@ public class MainActivity extends Activity {
 									+ File.separator 
 									+ ( (CheckedTextView) arg1).getText());
 			infoText.setText(( (CheckedTextView) arg1).getText() );
-			Log.d(TAG,"select: " + ( (CheckedTextView) arg1).getText());
+			//Log.d(TAG,"select: " + ( (CheckedTextView) arg1).getText());
+			Log.d(TAG,"select: " + SelectedFile.toString());
 		}
 		
 	}

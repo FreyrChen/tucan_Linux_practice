@@ -32,11 +32,30 @@ LOCAL_EXPORT_CFLAGS := -Ilibswscale
 LOCAL_EXPORT_LDLIBS := -llog -lavutil
 include $(PREBUILT_STATIC_LIBRARY)
 
+
+
 include $(CLEAR_VARS)
 LOCAL_MODULE    := FingerprintJin         #注意该名称跟上面的一致
 LOCAL_C_INCLUDES += $(LOCAL_PATH) \
-    $(LOCAL_PATH)/include
-LOCAL_SRC_FILES := FingerprintAndroid.c
-LOCAL_LDLIBS    := -L$(LOCAL_PATH) -lm -lz
-LOCAL_STATIC_LIBRARIES := avformat avcodec avutil swscale
+					$(LOCAL_PATH)/include \
+					$(LOCAL_PATH)/libfooid \
+					$(LOCAL_PATH)/libfooid/libresample
+LOCAL_SRC_FILES := FingerprintAndroid.c \
+				libfooid/fingerprint.c \
+				libfooid/fooid.c \
+				libfooid/harmonics.c \
+				libfooid/regress.c \
+				libfooid/s_fft.c \
+				libfooid/spectrum.c \
+				libfooid/common.c \
+				libfooid/libresample/resample.c \
+				libfooid/libresample/resamplesubs.c\
+				libfooid/libresample/filterkit.c \
+
+LOCAL_LDLIBS    := -L$(LOCAL_PATH) -lm -lz  -L$(SYSROOT)/usr/lib -llog
+LOCAL_STATIC_LIBRARIES := avformat avcodec avutil swscale 
+LOCAL_CFLAGS 	+= -std=c99 -mfloat-abi=softfp 
+#LOCAL_CFLAGS 	+= -g -mfloat-abi=softfp -mfpu=neon -march=arm7-a -mtune=contex-a8
+#TARGET_ARCH_ABI := armeabi-v7a
 include $(BUILD_SHARED_LIBRARY)
+
