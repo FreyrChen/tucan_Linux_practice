@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <math.h>
 
 #include "./libavcodec/avcodec.h"
 #include "./libavformat/avformat.h"
@@ -9,6 +9,7 @@
 //#include "./libavutil/avutil.h"
 //#include "./libswscale/swscale.h"
 #include "./libfooid/fooid.h"
+#include "./libfooid/common.h"
 
 #include <jni.h>
 #include <android/log.h>
@@ -17,24 +18,50 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
+
 /*
  * Class:     cc_omusic_FingerprintDecodeJin_FingerprintWraper
  * Method:    getFingerprint
  * Signature: ()[B
  */
+
 //JNIEXPORT jbyteArray JNICALL Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 // (JNIEnv *, jobject);
 jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
-(JNIEnv *env, jobject thiz)
+(JNIEnv *env, jobject thiz, jstring filestring)
 {
-	LOGD("go into jni function\n");
+	LOGE("go into jni function version 13. \n");
+
+	/*
+	//jsize len = (*env)->GetStingLength( env,filestring );
+	//const jchar* java_string = (*env)->GetStingChars(env,  filestring, NULL);
+	//char *filename =  (char*) malloc(len*2 + 1);
+	*/
+
+	const char *filename=(*env)->GetStringUTFChars(env, filestring, 0);
+
 	//char * filename = "/storage/sdcard0/omusic/1490278.mp3";
 	//char * filename = "/storage/sdcard0/omusic/1490278.wav";
 
 	//char * filename = "/mnt/sdcard/omusic/test.mp3";
 	//char * filename = "/storage/sdcard0/omusic/test.mp3";
-	char * filename = "/storage/sdcard0/omusic/test.wav";
-	LOGD("open file: %s \n", filename );
+	//char * filename = "/storage/sdcard0/omusic/test.wav";
+	LOGD("JNI: %s \n", filename );
+
+	LOGE("size of float %d \n", sizeof(float));
+	LOGE("size of int %d \n", sizeof( int) );
+	LOGE("size of short %d \n", sizeof( short) );
+	float f = 1.333f;
+	short x = (short)( f );
+	LOGE("short(1.333f)=%d \n", x );
+	LOGE("1.0f/32768.0f = %f \n",  (1.0f/32768.0f -(1e-15) ) );
+	LOGE("fooid round(0.5)=%d, round(-0.5)=%d \n", round(0.5), round(-0.5) );
+	LOGE("fooid round(0.6)=%d, round(-0.6)=%d \n", round(0.6), round(-0.6) );
+	LOGE("fooid round(0.3)=%d, round(-0.3)=%d \n", round(0.3), round(-0.3) );
+
+	LOGE("fooid round(0.5)=%f, round(-0.5)=%f \n", round(0.5), round(-0.5) );
+	LOGE("fooid round(0.6)=%f, round(-0.6)=%f \n", round(0.6), round(-0.6) );
+	LOGE("fooid round(0.3)=%f, round(-0.3)=%f \n", round(0.3), round(-0.3) );
 	//register encoders&decoders
 	av_register_all();
 	AVFormatContext * pFormatCtx = avformat_alloc_context();   // file's continer of contex.
@@ -42,21 +69,23 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	//open input file
 	if (avformat_open_input(&pFormatCtx, filename, 0, NULL) != 0)
 	{
-		LOGD("could not open file");
+		LOGE("JNI: could not open file");
 		exit(1);
 	}
 	if (av_find_stream_info(pFormatCtx) < 0) // 检查在文件中的流的信息
 	{
-		LOGD("error! can not find the stream's info \n");
+		LOGE("JNI:error! can not find the stream's info \n");
 		exit(1);
 	}
+
 
 	av_dump_format(pFormatCtx, 0, filename, 0); // 显示pfmtctx->streams里的信息
 
 
 	// find the first audio stream
 	int audioStream = -1;
-	for (int i = 0; i < pFormatCtx->nb_streams; ++i)  //找到音频、视频对应的stream
+	int i = 0;
+	for (i = 0; i < pFormatCtx->nb_streams; ++i)  //找到音频、视频对应的stream
 	{
 		if (pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO)
 		{
@@ -69,6 +98,7 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 		LOGD("could not find any  audio stream in input file\n");
 		exit(1);
 	}
+
 
 	// get audio decoder's context.
 	AVCodecContext * pCodecCtx = NULL;
@@ -120,8 +150,8 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	//LOGD("size of short: %d, size of uint8_t:%d \n", sizeof(short), sizeof(uint8_t) );
 	AVFifoBuffer *fifo;
 //	fifo = av_fifo_alloc( AVCODEC_MAX_AUDIO_FRAME_SIZE * 2);
-//	fifo = av_fifo_alloc( frame_num * 2 );
-	fifo = av_fifo_alloc( frame_num );
+	fifo = av_fifo_alloc( frame_num * 2 );
+//	fifo = av_fifo_alloc( frame_num );
 	av_init_packet( &packet );
 
 	LOGD(" before decode, out_size=%d,frame_num=%d,  MAX_FRAME_SIZE=%d\n",\
@@ -129,7 +159,7 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 
 	// initial for fingerprint libfooid
 	t_fooid *fooid = fp_init( pCodecCtx->sample_rate, pCodecCtx->channels );
-	//LOGE("fooid address %0x \n", fooid);
+	LOGD("fooid lib ok! fooid address %0x \n", fooid);
 	int result = -1;
 
 	/**
@@ -143,11 +173,12 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 				exit(1);
 			}
 	} //avcodec_get_frame_defaults(pFrame ); //alredy add in avcodec_alloc_frame()
-
+	//LOGD("ok 1 \n");
 	while(av_read_frame(pFormatCtx, &packet) >= 0) //pFormatCtx中调用对应格式的packet获取函数
 	{
 		if (packet.stream_index == audioStream) //Detect read packet is audio stream?
 		{
+			//LOGD("ok 2 \n");
 			out_size = AVCODEC_MAX_AUDIO_FRAME_SIZE ;
 			while ( packet.size > 0)
 			{  	// decode audio
@@ -169,22 +200,28 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 				while( av_fifo_size( fifo ) >= frame_num )
 				{
 					read_seconds++ ;
-				//	LOGD("  seconds=%d, fifo_size=%d\n", read_seconds, av_fifo_size(fifo) );
+					//LOGD("  seconds=%d, fifo_size=%d\n", read_seconds, av_fifo_size(fifo) );
 
 					av_fifo_generic_read( fifo, inbuf, frame_num, NULL );
+					//LOGD("ok 3 \n");
 					//fwrite(inbuf, 1, frame_num, fp);  //write pcm to file: ***.pcm
 					result = fp_feed_short( fooid,(short * ) inbuf, (frame_num/2) );
+					//LOGD("ok 4 \n");
 					if( result < 0 )
 					{
 						LOGE(" error in calculate fingerprint process!\n" );
 					}
+
 				}
+
 				packet.size -= len;
 				packet.data += len;
 				packet.dts =
 				packet.pts = AV_NOPTS_VALUE;
 			}
+
 		}
+		//LOGD("read_seconds= %d\n", read_seconds);
 		if( read_seconds >= 100 )
 		{
 			break;
@@ -195,6 +232,8 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 //	fclose(fp);
 	avcodec_close(pCodecCtx);
 	avformat_close_input(&pFormatCtx);
+	//av_free_packet(&packet);
+	av_free(pFrame);
 
 	unsigned char * fingerprint = malloc( fp_getsize (fooid ) );
 	//result = fp_calculate( fooid, read_seconds*100, fingerprint );
@@ -203,12 +242,18 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	{
 		LOGE("error, failed to calculate fingerprint!\n" );
 	}
+	//debug fooid
+	//LOGD("zero pos = %d \n", fooid->debug_zero[0]);
+	//LOGD("zero len = %d \n", fooid->debug_zero[1]);
 
 	jbyte *by = (jbyte*)fingerprint;
 	jbyteArray jarray =  (*env)->NewByteArray(env,424);
 	(*env)->SetByteArrayRegion( env,jarray, 0, 424, (jbyte*)fingerprint );
 	free(fingerprint);
 	fp_free(fooid);
+
+
+	(*env)->ReleaseStringUTFChars( env, filestring, filename );
 
     return jarray;
 

@@ -5,13 +5,13 @@ import cc.omusic.decorder.*;
 
 import android.util.Log;
 
-
-
 public class FingerprintWraper {
 	
 	String TAG = "FingerprintWraper";
 	Decoder decoder = null;
 
+	
+	
 	/**
 	 * Invoke the fingerprint native library and generate the fingerprint code.<br>
 	 * Since echoprint requires the audio data to be an array of floats in the<br>

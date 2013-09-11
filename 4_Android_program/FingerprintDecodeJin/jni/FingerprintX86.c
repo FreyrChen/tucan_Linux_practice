@@ -5,7 +5,8 @@
  **/
 
 #include <stdlib.h>  
-  
+//#include <math.h>
+
 #include <libavcodec/avcodec.h>  
 #include <libavformat/avformat.h>  
 #include <libavutil/fifo.h>
@@ -33,6 +34,23 @@ int main( int argc, char *argv[])
 		filename = argv[1]; 
 	}
 
+	/*debug
+	**fingerprint calculate algrithom fooid is different in x86 and arm platform
+	*/
+	float a=( 1.0f/32768.0f - (1e-15));
+	printf("size of (float) = %d \n", sizeof( float ) );
+	printf("size of int = %d \n", sizeof( int ) );
+	printf("1.0f/32768.0f = %f \n ",  a );
+	float x1 = 0.5;
+	float x2 = -0.5;
+	printf(" fooid round(0.5)=%f, round(-0.5)=%f\n", round(x1), round(x2) );
+	x1 = 0.3;
+	x2 = -0.3;
+	printf(" fooid round(0.3)=%f, round(-0.3)=%f \n", round(x1), round(x2) );
+	x1 = 0.6;
+	x2 = -0.6;
+	printf(" fooid round(0.6)=%f, round(-0.6)=%f \n", round(x1), round(x2) );
+	printf("hahah\n");
 	//register encoders&decoders
     av_register_all();  
   
@@ -177,7 +195,7 @@ int main( int argc, char *argv[])
 				while( av_fifo_size( fifo ) >= frame_num )
 				{
 					read_seconds++ ;
-			//		printf("  seconds=%d, fifo_size=%d\n", read_seconds, av_fifo_size(fifo) );
+					//printf("  seconds=%d, fifo_size=%d\n", read_seconds, av_fifo_size(fifo) );
 
 				 	av_fifo_generic_read( fifo, inbuf, frame_num, NULL );
                     fwrite(inbuf, 1, frame_num, fp);  //write pcm to file: ***.pcm

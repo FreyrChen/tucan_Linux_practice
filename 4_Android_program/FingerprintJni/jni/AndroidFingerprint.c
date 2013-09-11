@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include "./fingerprint_ver_1/fooid.h"
 #include <jni.h>
+#include <math.h>
 #define  LOG_TAG    "AndroidFingerprint"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
@@ -21,6 +22,15 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 (JNIEnv *env, jobject thiz, jobject DecoderObj, jint sampleRate, jint numChannels)
 
 {	// jnit directly use in there
+
+	LOGE("size of float %d \n", sizeof(float));
+	LOGE("size of int %d \n", sizeof( int) );
+	LOGE("1.0f/32768.0f = %f \n ",  (1.0f/32768.0f -(1e-15) ) );
+
+	LOGE("fooid round(0.5)=%d, round(-0.5)=%d \n", round(0.5), round(-0.5) );
+	LOGE("fooid round(0.6)=%d, round(-0.6)=%d \n", round(0.6), round(-0.6) );
+
+
 
 	jclass  PcmDecodeClass = 0;
 	jmethodID getPcmSamplesMethod = 0;

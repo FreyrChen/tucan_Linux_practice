@@ -30,5 +30,6 @@ LOCAL_SRC_FILES := AndroidFingerprint.c\
 				fingerprint_ver_1/libresample/resamplesubs.c\
 				fingerprint_ver_1/libresample/filterkit.c
 LOCAL_LDLIBS    := -L$(SYSROOT)/usr/lib -llog	
+LOCAL_LDLIBS    += -L$(LOCAL_PATH) -lm 
 LOCAL_CFLAGS 	:= -std=c99 
 include $(BUILD_SHARED_LIBRARY)

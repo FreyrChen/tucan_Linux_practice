@@ -22,6 +22,14 @@
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/alloca.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/strings.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/memory.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/limits.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/limits.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/limits.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/internal_types.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h \
+ /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavcodec/avcodec.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/errno.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/errno.h \
@@ -33,14 +41,6 @@
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/common.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/ctype.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/inttypes.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/limits.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/limits.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/limits.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/internal_types.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h \
- /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/attributes.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/avconfig.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/mem.h \
@@ -70,6 +70,8 @@
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavformat/version.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/fifo.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/avutil.h \
+ /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h \
+ /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/common.h \
  /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h
@@ -118,6 +120,22 @@
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/memory.h:
 
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/limits.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/limits.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/limits.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/internal_types.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h:
+
+/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h:
+
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavcodec/avcodec.h:
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/errno.h:
@@ -139,22 +157,6 @@
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/ctype.h:
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/inttypes.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/limits.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/limits.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/linux/limits.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/internal_types.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/machine/limits.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/sys/syslimits.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/asm/page.h:
-
-/home/tusion/android-ndk/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/math.h:
 
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/libavutil/attributes.h:
 
@@ -213,6 +215,10 @@
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/fifo.h:
 
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libavutil/avutil.h:
+
+/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h:
+
+/home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/common.h:
 
 /home/tusion/code/4_Android_program/FingerprintDecodeJin/jni/./libfooid/fooid.h:
 

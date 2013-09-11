@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="312" key="DIALOG_WIDTH"/>
-		<item value="40" key="DIALOG_Y_ORIGIN"/>
+		<item value="236" key="DIALOG_Y_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
-		<item value="556" key="DIALOG_X_ORIGIN"/>
+		<item value="674" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,16 +13,16 @@
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
-		<item value="LOGE" key="selection"/>
+		<item value="fp" key="selection"/>
 		<list key="findhistory">
+			<item value="fp"/>
+			<item value="FingerprintWraper"/>
 			<item value="fprintf"/>
 			<item value="./libfooid"/>
 			<item value="libfooid"/>
 			<item value="fingerprint_ver_1"/>
 			<item value="printf"/>
 			<item value="frames_read"/>
-			<item value="getWavMethod"/>
-			<item value="wavClass"/>
 		</list>
 		<list key="replacehistory">
 			<item value="LOGE"/>
