@@ -20,8 +20,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-
-
 public class MainActivity extends Activity {
 	private ProgressBar  autoProgressBar;
 	private Button testButton;

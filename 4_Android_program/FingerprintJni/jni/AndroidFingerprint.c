@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "./fingerprint_ver_1/fooid.h"
+#include "./fingerprint_ver_1/common.h"
 #include <jni.h>
 #include <math.h>
 #define  LOG_TAG    "AndroidFingerprint"
@@ -25,6 +26,8 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 
 	LOGE("size of float %d \n", sizeof(float));
 	LOGE("size of int %d \n", sizeof( int) );
+	LOGE("size of short %d \n", sizeof( short) );
+	LOGE("size of char %d \n", sizeof( char) );
 	LOGE("1.0f/32768.0f = %f \n ",  (1.0f/32768.0f -(1e-15) ) );
 
 	LOGE("fooid round(0.5)=%d, round(-0.5)=%d \n", round(0.5), round(-0.5) );
@@ -98,6 +101,10 @@ jbyteArray Java_cc_omusic_fingerprintjni_FingerprintWraper_fingerprint
 	//fp_size == 424
 	unsigned char * fp =  malloc(fp_getsize(fooid));
 	result = fp_calculate(fooid, centiseconds, fp);
+
+
+	LOGE("avg_fit = %d \n", fooid->fp.avg_fit);
+	LOGE("avg_dom = %d \n", fooid->fp.avg_dom);
 
 	jbyte *by = (jbyte*)fp;
 	jbyteArray jarray =  (*env)->NewByteArray(env,424);

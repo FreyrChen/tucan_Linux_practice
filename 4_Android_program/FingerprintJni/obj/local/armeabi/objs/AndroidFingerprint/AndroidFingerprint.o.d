@@ -24,6 +24,8 @@
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/strings.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/memory.h \
  /home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/fooid.h \
+ /home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/common.h \
+ /home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/fooid.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/jni.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/math.h \
  /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/limits.h \
@@ -79,6 +81,10 @@
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/strings.h:
 
 /home/tusion/android-ndk/android-ndk-r8e/platforms/android-9/arch-arm/usr/include/memory.h:
+
+/home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/fooid.h:
+
+/home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/common.h:
 
 /home/tusion/code/4_Android_program/FingerprintJni/jni/./fingerprint_ver_1/fooid.h:
 

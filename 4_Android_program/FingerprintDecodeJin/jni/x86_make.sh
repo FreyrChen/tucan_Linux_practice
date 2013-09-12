@@ -21,7 +21,8 @@ echo '=========== run application ======== '
 #./FingerprintX86 ~/music_fp/test_music/311067.aac  || exit 1
 #./FingerprintX86 ~/music_fp/test_music/2755785.mp3  || exit 1
 
-./FingerprintX86 ~/music_fp/test_music/290228.wav  || exit 1
+#./FingerprintX86 ~/music_fp/test_music/290228.wav  || exit 1
+./FingerprintX86 ~/music_fp/test_music/290228.mp3  || exit 1
 #ls -hl ./
 
 #gcc -Wall -g FingerprintX86.c -o FingerprintX86 -lavformat -lavcodec  -lavutil -lva -lz -lavutil -lm -lpthread  -lbz2

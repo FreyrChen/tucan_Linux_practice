@@ -222,6 +222,10 @@ int main( int argc, char *argv[])
 		//*************************************
     } 
           
+
+	//------------------------- tusion -------------------------
+	//FILE * data_fp = fopen("x86.dat", "wb");
+
 	//************************************************************
 	unsigned char * fingerprint = malloc( fp_getsize (fooid ) );
 	//result = fp_calculate( fooid, read_seconds*100, fingerprint );

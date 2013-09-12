@@ -152,6 +152,7 @@ public class MainActivity extends Activity {
 							+ "fingerprint: \n" + byteArrayToHexString( fp_byte ) );
 			 */
 			
+			
 			infoText.setText("file name: "+  music_file.getName()
 					+ " \nfingerprint : \n"
 					+ "cost time:"+ fingerprint_time + "ms \n"
@@ -197,11 +198,15 @@ public class MainActivity extends Activity {
 	private  int byteArray2ToShort(byte[] byteValue, int index){   
         if(byteValue.length   <  2)   
                 return   0;   
+        /*
         short   shortValue   =   0;    
         shortValue   =   byteValue[index+ 1];   
         shortValue   =   (short) ( (shortValue << 8) + byteValue[index+0] );   
- 
-        return   shortValue;   
+ 		
+ 		return   shortValue;
+ 		*/
+        return (short)( (short)(byteValue[index+1] << 8 ) + (short) (byteValue[index+0]));
+        
 	} 
 	
 	
