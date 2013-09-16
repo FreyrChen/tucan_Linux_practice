@@ -57,7 +57,7 @@ LOCAL_LDLIBS    += -L$(SYSROOT)/usr/lib -llog
 LOCAL_STATIC_LIBRARIES := avformat avcodec avutil avfilter swscale swresample 
 LOCAL_CFLAGS 	+= -std=c99
 #LOCAL_CFLAGS 	+= -std=c99 -mfloat-abi=softfp -g -mfloat-abi=softfp -mfpu=neon -march=armv7-a
-#LOCAL_CFLAGS 	+= -g -mfloat-abi=softfp -mfpu=neon -march=armv7-a -mtune=contex-a8
+LOCAL_CFLAGS 	+=  -mfloat-abi=softfp -mfpu=neon -march=armv7-a 
 #TARGET_ARCH_ABI := armeabi-v7a
 include $(BUILD_SHARED_LIBRARY)
 

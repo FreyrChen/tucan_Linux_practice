@@ -154,9 +154,10 @@ public class MainActivity extends Activity {
 			Log.d(TAG,"fp_str: " + byteArrayToHexString(fp_byte));
 			
 			Log.d(TAG, "fp_version: " + byteArray2ToShort(fp_byte,0 ) );
-			Log.d(TAG, "fp_length: " + byteArray4ToInt(fp_byte, 2));
+			Log.d(TAG, "fp_length: "  + byteArray4ToInt(fp_byte, 2));
 			Log.d(TAG, "fp_avg_fit: " + byteArray2ToShort(fp_byte,6 ));
 			Log.d(TAG, "fp_avg_dom: " + byteArray2ToShort(fp_byte,8 ) );
+
 			
 			byte[] fp_fit = new byte[348];
 			for( int i=10; i<358; i++ ){
@@ -185,16 +186,11 @@ public class MainActivity extends Activity {
 	}   
 	
 	
-	private  int byteArray2ToShort(byte[] byteValue, int index){   
+	private  short byteArray2ToShort(byte[] byteValue, int index){   
         if(byteValue.length   <  2)   
                 return   0;   
-        short   shortValue   =   0;    
-        shortValue   =   byteValue[index+ 1];   
-        shortValue   =   (short) ( (shortValue << 8) + byteValue[index+0] );   
- 
-        return   shortValue;   
+        return (short)( (byteValue[index+ 1]<< 8) + ( byteValue[index+0] & 0xff) );
 	} 
-	
 	
 	
 	//select a music file from list

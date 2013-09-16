@@ -51,4 +51,5 @@ libavcodec/mpegaudiodec.o: libavcodec/mpegaudiodec.c \
  libavutil/bswap.h libavutil/avassert.h libavcodec/mathops.h \
  libavcodec/mpegaudiodsp.h libavcodec/dsputil.h libavcodec/mpegaudio.h \
  libavcodec/mpegaudiodecheader.h libavcodec/mpegaudiodata.h \
- libavcodec/mpegaudiodectab.h libavcodec/mpegaudio_tablegen.h
+ libavcodec/mpegaudiodectab.h libavcodec/mpegaudio_tablegen.h \
+ libavcodec/mpeg4audio.h libavcodec/put_bits.h libavutil/bswap.h

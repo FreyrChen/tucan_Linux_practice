@@ -47,7 +47,7 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	//char * filename = "/storage/sdcard0/omusic/test.mp3";
 	//char * filename = "/storage/sdcard0/omusic/test.wav";
 	LOGD("JNI: %s \n", filename );
-
+	/*
 	LOGE("size of float %d \n", sizeof(float));
 	LOGE("size of int %d \n", sizeof( int) );
 	LOGE("size of short %d \n", sizeof( short) );
@@ -62,6 +62,7 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	LOGE("fooid round(0.5)=%f, round(-0.5)=%f \n", round(0.5), round(-0.5) );
 	LOGE("fooid round(0.6)=%f, round(-0.6)=%f \n", round(0.6), round(-0.6) );
 	LOGE("fooid round(0.3)=%f, round(-0.3)=%f \n", round(0.3), round(-0.3) );
+	*/
 	//register encoders&decoders
 	av_register_all();
 	AVFormatContext * pFormatCtx = avformat_alloc_context();   // file's continer of contex.
@@ -246,6 +247,10 @@ jbyteArray Java_cc_omusic_FingerprintDecodeJin_FingerprintWraper_getFingerprint
 	//debug fooid
 	//LOGD("zero pos = %d \n", fooid->debug_zero[0]);
 	//LOGD("zero len = %d \n", fooid->debug_zero[1]);
+
+
+	LOGE("avg_fit = %d \n", fooid->fp.avg_fit);
+	LOGE("avg_dom = %d \n", fooid->fp.avg_dom);
 
 	jbyte *by = (jbyte*)fingerprint;
 	jbyteArray jarray =  (*env)->NewByteArray(env,424);

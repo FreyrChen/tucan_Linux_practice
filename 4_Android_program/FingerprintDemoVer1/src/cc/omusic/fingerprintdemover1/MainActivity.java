@@ -198,14 +198,14 @@ public class MainActivity extends Activity {
 	private  int byteArray2ToShort(byte[] byteValue, int index){   
         if(byteValue.length   <  2)   
                 return   0;   
-        /*
+        
         short   shortValue   =   0;    
         shortValue   =   byteValue[index+ 1];   
         shortValue   =   (short) ( (shortValue << 8) + byteValue[index+0] );   
- 		
+        //shortValue   =   (short) ( (shortValue << 8) | byteValue[index+0] ); 
  		return   shortValue;
- 		*/
-        return (short)( (short)(byteValue[index+1] << 8 ) + (short) (byteValue[index+0]));
+ 		
+       // return (short)( (short)(byteValue[index+1] << 8 ) + (short) (byteValue[index+0]));
         
 	} 
 	
