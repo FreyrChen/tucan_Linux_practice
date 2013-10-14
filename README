@@ -25,9 +25,19 @@ cantu
 
 // refresh file
 vim readme
-git commit -a
+git commit -a -m 'log messages'
 git push origin master
 
+
+// clone the repository 
+
+cd ~/.ssh
+ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/home/you/.ssh/id_rsa):
+ssh-add id_rsa
+git clone git@github.com:cantu/tucan_Linux_practice.git
 
 
 //view status and info
