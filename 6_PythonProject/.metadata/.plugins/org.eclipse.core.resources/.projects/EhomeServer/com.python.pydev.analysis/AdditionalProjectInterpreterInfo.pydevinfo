@@ -1,0 +1,22 @@
+-- VERSION_3
+-- START DISKCACHE
+/home/tusion/code/tucan_Linux_practice/6_PythonProject/.metadata/.plugins/org.eclipse.core.resources/.projects/EhomeServer/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+SerialCommunicate|0|/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src/SerialCommunicate.py
+LocalIP|0|/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src/LocalIP.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=SerialCommunicate
+1=LocalIP
+-- END DICTIONARY
+-- START TREE 1
+4
+get|1|get_ip_address!10@
+num|1|numOfLines!19@
+res|1|response!19@
+ser|1|ser!19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

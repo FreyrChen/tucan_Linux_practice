@@ -1,0 +1,30 @@
+-- VERSION_3
+-- START DISKCACHE
+/home/tusion/code/tucan_Linux_practice/6_PythonProject/.metadata/.plugins/org.eclipse.core.resources/.projects/house/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+HouseContract|0|/home/tusion/code/tucan_Linux_practice/6_PythonProject/house/HouseContract.py
+yahoo|0|/home/tusion/code/tucan_Linux_practice/6_PythonProject/house/yahoo.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=HouseContract
+1=yahoo
+-- END DICTIONARY
+-- START TREE 1
+12
+hea|1|head_reg!11@
+hre|1|href_reg!11@
+htm|2|html_src!19@html!11@
+i|1|i!11@
+ima|1|image_reg!11@
+res|1|result!19@
+sit|1|site!19@
+soc|1|socket!11@
+sou|1|soup!19@
+tag|1|tag!19@
+tim|3|time_begin!19@time_login!19@time_cost!19@
+url|1|URL!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
