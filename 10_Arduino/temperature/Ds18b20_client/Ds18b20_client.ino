@@ -89,7 +89,7 @@ void loop( void )
    float tempC = TempSensors.getTempC(TempSensorsAddress[0]);
    radio.write( &tempC, sizeof( float) );
  
-   delay(1000); 
+   //delay(1000); 
 }
   
   
