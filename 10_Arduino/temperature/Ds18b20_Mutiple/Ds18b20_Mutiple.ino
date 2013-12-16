@@ -12,18 +12,12 @@
 //wrap some founction of Ds18b20
 #include <DallasTemperature.h>
 
-/*wireless communication chip nRF24L01 connect on SPI */
-#include <SPI.h>
-#include "nRF24L01.h"
-#include "RF24.h"
+
 
 
 /* Pin connect assgiment */
 #define DS18B20_DATA_PIN   2
 #define LED_PIN            8
-//for nRF24L01 SPI
-#define CE_PIN             9
-#define CSN_PIN            10
 
 
 /* Some funtion varaibles */
@@ -45,11 +39,6 @@ int numberOfTempSensors;
 //arrays to hold device address 
 DeviceAddress TempSensorsAddress[NUM_TMERATURE_SENSORS];
 
-/* nRF24L01 Wireless communication initial something */
-RF24 radio( CE_PIN, CSN_PIN );
-//define transmit pipe, 
-//'LL' at the end is 'long long' type 
-const uint64_t pipe = 0xE8E8F0F0E1LL; 
 
 void setup( void )
 {
@@ -61,9 +50,7 @@ void setup( void )
   // Initail all DS18b20 on the 1-wire bus, print infomations.
   setupTemperatureSensors();
   
-  //initial RF chip
-  radio.begin();
-  radio.openWritingPipe(pipe);
+
   
 }
 
@@ -73,7 +60,7 @@ void loop( void )
   byte i;
   
   digitalWrite( LED_PIN, ~digitalRead(LED_PIN) );
-  Serial.println("Requeset temperatures ...");
+  Serial.print("Requeset temperatures ...");
   
   // sends command for all devices on the bus to perform
   // a temperature conversion
@@ -83,11 +70,6 @@ void loop( void )
     printTempraturues( TempSensorsAddress[i] );
   }
  
- 
-   /* transmit data through RF */
-   
-   float tempC = TempSensors.getTempC(TempSensorsAddress[0]);
-   radio.write( &tempC, sizeof( float) );
  
    delay(1000); 
 }
