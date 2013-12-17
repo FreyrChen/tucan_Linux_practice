@@ -11,63 +11,65 @@
 #include <OneWire.h>  
 //wrap some founction of Ds18b20
 #include <DallasTemperature.h>
-
 /*wireless communication chip nRF24L01 connect on SPI */
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-#include <RF24Network.h>
+//#include <RF24Network.h>
 
-
-/* Pin connect assgiment */
-
-// Toggle LED 
-//#define LED_PIN            0
-
-// temperature sensor Ds18b20 data pin connect to pin 7
-#define DS18B20_DATA_PIN   8
+//sensor node no.
+#define NODE_NO             1
+//#define DS18B20_ENABLE    
+#define PIR_ENABLE      
 
 // nRF24L01 connect on SPI bus
 #define CE_PIN             9
 #define CSN_PIN            10
 
-
-/* Some funtion varaibles */
-// numbers of Ds18b20 connected
-#define NUM_TMERATURE_SENSORS       1
-//Ds18b20 usual precision 9,10,11,12
-#define TEMPERATURE_PRECISION       12
 //serial port baudrate 9600(default)/ 19200 / 115200
 #define SERIAL_BAUDRATE             9600
-//RF24 channel
-#define NETWORK_CHANNEL              90
 
 
+/* Pin connect assgiment */
+// Toggle LED 
+//#define LED_PIN            0
+
+/********************************************************************
 /*  DallasTemperature liabrary initial something */
+/*******************************************************************/
+// temperature sensor Ds18b20 data pin connect to pin 7
+#define DS18B20_DATA_PIN   8
+// numbers of Ds18b20 connected
+#define NUM_TMERATURE_SENSORS     3
+//Ds18b20 usual precision 9,10,11,12
+#define TEMPERATURE_PRECISION       12
 // Setup a oneWire instance to communicate with any OneWire devices 
 // (not just Maxim/Dallas temperature ICs)
 OneWire oneWire( DS18B20_DATA_PIN );
 // Pass our oneWire reference to Dallas Temperature. 
 DallasTemperature TempSensors( &oneWire );
 // usually we use mutiple Ds18b20 one one wire bus.
-int numberOfTempSensors;
+int numOfFindTempSensors;
 //arrays to hold device address 
 DeviceAddress TempSensorsAddress[NUM_TMERATURE_SENSORS];
 //TempSensorsAddress[0] = {0x28, 0x17, 0x69, ox45, 0x05, ox00, 0x00, 0x76};
 //TempSensorsAddress[1] = {0x28, 0x6F, 0x07, 0x45, ox05, 0x00, 0x00, 0xFC};
 //NO.1 = 2817694505000076
 //NO.2 = 286F0745050000FC
-/* nRF24L01 Wireless communication initial something */
+// function to print a device address
+void printAddress(DeviceAddress deviceAddress);
+// function to print the temperature for a device
+void printTempraturues(DeviceAddress deviceAddress);
+// setup 
+void setupTemperatureSensors( void );
+
+/********************************************************************/
+// nRF24L01 Wireless communication initial something 
+/********************************************************************/
 RF24 radio( CE_PIN, CSN_PIN );
 
-// network use the radio
-RF24Network network( radio );
-
-//address of our node (server node)
-const uint16_t server_node = 0;
-
-//address of ohter node( client node )
-const uint16_t client_1_node = 1;
+const uint64_t pipes[2] = { 0xF0F0F0F0E1LL,
+                            0xF0F0F0F0D2LL  };
 
 //every message interval time
 const unsigned long interval = 1000; //ms
@@ -78,15 +80,27 @@ unsigned long num_of_mesg = 0;
 //when did client node send last message
 unsigned long last_sent = 0;
 
-
 //Struct of our payload
 struct payload_t
 {
-  unsigned long send_ms;
-  unsigned long back_ms;  
-  unsigned long counter;
-  float tempC;      //store temperature data.
+  unsigned long counter;    // Heat beat counter.
+  unsigned long send_ms;    // server start heart beat request time.
+  unsigned long last_delay_ms; //last message delay time.
+  uint8_t       Node_NO;    // message from node's NO
+  
+  uint8_t       switch_state;// state of switch.  
+  float         tempC[3];   // temperature sensor  less than 3.
+  float         humd;       // humandity sensor data
+  float         PIR;        // human move singal data   
+  
+  uint8_t        switch_control; //command to control switch
+  bool          alrm;          // control arlm beep.
+  
 };
+payload_t payload;
+
+// print payload data from RF24 communication
+void printMessage( payload_t payload );
 
 void setup( void )
 {
@@ -96,98 +110,111 @@ void setup( void )
   
   //start serial port
   Serial.begin( SERIAL_BAUDRATE );
-
- 
+  
   //initial RF chip
-  Serial.println("=== nrf24l01 TEST ===");
-  Serial.println("this is client, waitting to receive ...");
+  Serial.println("----------- initial RF24 -----------------");
+  Serial.println("This is client, waitting to receive ...");
   
   SPI.begin();
+  // setup and config rf radio
   radio.begin();
-  radio.printDetails();
-  network.begin( NETWORK_CHANNEL, client_1_node );
+  // open pipe 0 to write,  server <--- client.
+  // open pipe 1 to read.   server ---> client.
+  //we can have up to 5 pipes open for reading)
+  radio.openWritingPipe(pipes[0]);
+  radio.openReadingPipe(1,pipes[1]);
+  radio.startListening();
+  // Dump the configuration of the rf unit for debugging
+  //radio.printDetails();
   Serial.println("network ok");
   
-  
+  #ifdef DS18B20_ENABLE
   // Initail all DS18b20 on the 1-wire bus, print infomations.
-  //setupTemperatureSensors();
-  //start up DallasTemperature library
-//  TempSensors.begin();
-  //TempSensors.setResolution(  TempSensorsAddress[1], 12 ); 
-  Serial.println("Finish setup");
+  setupTemperatureSensors();
+  #endif
+  
+  Serial.println("============ Finish setup =================");
+
   
 }
-
-bool done = false;
-float temp = 0;
-payload_t payload;
 
 void loop( void ) 
 {
-  
- /* --------------- RF ------------------------------------*/  
-   //pump the network regularly
-  network.update();
-  //send a message at 1s interval
-  unsigned long now = millis();
-  
-  // if it's time to send message.
-  //if( now - last_sent >interval )
   //client always wait for server send heart beat at 1s interval.
-  while( network.available() )
-  {
+  if( radio.available() )
+  {      
+    //got a message at 1s interval
+    unsigned long now = millis();
     last_sent = now;
      unsigned long got_time;
-      //send to server node
-     RF24NetworkHeader rx_header;
+    bool done = false;
+
+
+    
+    // step1; receive server's hear beat signal
+     while( !done )
+     {
+       // get the message from serveR
+       done = radio.read(  &payload, sizeof(payload) );
+     }
      
-     // get the message from server
-     network.read( rx_header, &payload, sizeof(payload) );
-     Serial.print("got message: " );
-     //Serial.print( (uint16_t)rx_header );
-     Serial.print("server time: " );
-     Serial.print( payload.send_ms );
-     Serial.print("ms, num_of_mesg: ");
-     Serial.print( num_of_mesg);
-
-    
-     //do something,...
-     //now just delay
-     delay(20);
-
-     payload.counter = num_of_mesg ++;
-     Serial.print( ", send back ... ");
-     RF24NetworkHeader tx_header( server_node );
-     bool write_status = network.write( tx_header, 
-                                 &payload, sizeof(payload));
-     if( write_status )
-       Serial.println(" ok. ");
+     if( payload.Node_NO != NODE_NO )
+     {;
+     /*
+       Serial.print("Got a mesg to node: ");
+       Serial.print( payload.Node_NO  );
+       Serial.println(",Ignore!");
+       */
+     }
      else
-      {
-      Serial.println(" failed. ");
-      // if failed, this delay can display slow.
-      delay(100);
-      } 
-  }
-  
-    
-  /* ----------------- DS18b20 ---------------------------*/
-  /*
-  Serial.print("Requeset temperatures ...");
-  // sends command for all devices on the bus to perform
-  // a temperature conversion
-  TempSensors.requestTemperatures();
-  //temp  = TempSensors.getTempC(TempSensorsAddress[0]);
-  temp  = TempSensors.getTempCByIndex(0);
-  Serial.println( temp );
-   //delay(1000);
-   */
- 
- 
+     {
+       // stop listening so we can talk.
+       radio.stopListening();
+   
+       // step2: do something in loop: such as ds18b20
+       #ifdef DS18B20_ENABLE
+         TempSensors.requestTemperatures();
+         for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
+         {
+           payload.tempC[i] = TempSensors.getTempC(TempSensorsAddress[i]);
+         }
+       #endif
+       
+       #ifdef PIR_ENABLE  
+          payload.switch_state = 99;
+          payload.humd = 11;
+          payload.PIR = 22;
+         for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
+         {
+           payload.tempC[i] = 0;
+         }
+       #endif
+
+      // step3: send response back to server.
+       delay(20);//waitting for server.
+       bool write_status = radio.write( &payload, sizeof(payload));
+       if( write_status )
+       {
+         ;
+         //Serial.println("send back ok. ");
+       }
+       else
+       {
+        Serial.println("send back failed. ");
+        // if failed, this delay can display slow.
+        delay(100);
+       } 
+       printMessage();
+       Serial.println();
+       //
+       radio.startListening();
+     }
+   }
 
 }
   
-  
+
+
 
 // function to print a device address
 void printAddress(DeviceAddress deviceAddress)
@@ -216,32 +243,32 @@ void printTempraturues(DeviceAddress deviceAddress)
 //
 void setupTemperatureSensors( void )
 {
-  numberOfTempSensors = 0;
+  numOfFindTempSensors = 0;
   
-  Serial.println("=== Inital temperature sensors ===");
+  Serial.println("------------Inital temperature sensors --------");
   //start up DallasTemperature library
-  //TempSensors.begin();
+  TempSensors.begin();
   
   //get count of temperature sensor 
   Serial.println("Scan connect 1-wire devices ...");
-  numberOfTempSensors = TempSensors.getDeviceCount();
+  numOfFindTempSensors = TempSensors.getDeviceCount();
   Serial.print("Found devices number:         ");
-  Serial.println( numberOfTempSensors,DEC );
+  Serial.println( numOfFindTempSensors,DEC );
   Serial.print("Actual connect device number: ");
   Serial.println( NUM_TMERATURE_SENSORS,DEC );
-  if( numberOfTempSensors < NUM_TMERATURE_SENSORS )
+  if( numOfFindTempSensors < NUM_TMERATURE_SENSORS )
   {
     Serial.print("Warn: lost 1-wire devices number: ");
-    Serial.println((NUM_TMERATURE_SENSORS-numberOfTempSensors), DEC);
+    Serial.println((NUM_TMERATURE_SENSORS-numOfFindTempSensors), DEC);
   }
   else
   {
     Serial.println("OK,all 1-wire device are found !");
   }
-  Serial.println("");
   
+  Serial.println("Congfigure devices ... ");
   // scan all temperature sensors, print address and resolution
-  for(uint8_t i=0; i<numberOfTempSensors; i++ ) 
+  for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
   {
     if(!TempSensors.getAddress( TempSensorsAddress[i], i) )
     {
@@ -267,4 +294,35 @@ void setupTemperatureSensors( void )
   }         
   Serial.println("");
   Serial.println("------------------------------------------------");               
+}
+
+// print payload data from RF24 communication
+void printMessage( void)
+{
+ Serial.print("data{ ");
+ 
+ Serial.print(payload.counter);
+ Serial.print("; ");
+ Serial.print(payload.send_ms);
+ Serial.print("; "); 
+ Serial.print(payload.last_delay_ms);
+ Serial.print("; ");
+ Serial.print(payload.Node_NO);
+ Serial.print("; ");
+ Serial.print(payload.switch_state);
+ Serial.print("; ");
+ Serial.print(payload.tempC[0]);
+ Serial.print("; ");
+ Serial.print(payload.tempC[1]);
+ Serial.print("; ");
+ Serial.print(payload.tempC[2]);
+ Serial.print("; ");
+ Serial.print(payload.humd);
+ Serial.print("; ");
+ Serial.print(payload.PIR);
+ Serial.print("; ");
+ Serial.print(payload.switch_control);
+ Serial.print("; ");
+ Serial.print(payload.alrm);
+ Serial.print("} ");
 }

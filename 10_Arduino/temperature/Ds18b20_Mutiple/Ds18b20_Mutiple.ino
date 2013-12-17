@@ -16,8 +16,8 @@
 
 
 /* Pin connect assgiment */
-#define DS18B20_DATA_PIN   2
-#define LED_PIN            8
+#define DS18B20_DATA_PIN   8
+#define LED_PIN            1
 
 
 /* Some funtion varaibles */
