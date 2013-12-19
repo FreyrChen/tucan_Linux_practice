@@ -17,8 +17,9 @@
 #include <RF24.h>
 //#include <RF24Network.h>
 
-//sensor node no.
-#define NODE_NO             1
+#include <EEPROM.h>
+
+
 //#define DS18B20_ENABLE    
 #define PIR_ENABLE      
 
@@ -42,7 +43,7 @@
 // numbers of Ds18b20 connected
 #define NUM_TMERATURE_SENSORS     3
 //Ds18b20 usual precision 9,10,11,12
-#define TEMPERATURE_PRECISION       12
+#define TEMPERATURE_PRECISION       9
 // Setup a oneWire instance to communicate with any OneWire devices 
 // (not just Maxim/Dallas temperature ICs)
 OneWire oneWire( DS18B20_DATA_PIN );
@@ -66,13 +67,34 @@ void setupTemperatureSensors( void );
 /********************************************************************/
 // nRF24L01 Wireless communication initial something 
 /********************************************************************/
+//setup nRF23L01 radio on SPI bus plus pins 9 & 10.
 RF24 radio( CE_PIN, CSN_PIN );
 
-const uint64_t pipes[2] = { 0xF0F0F0F0E1LL,
-                            0xF0F0F0F0D2LL  };
+// server <-- nodes
+const uint64_t node_to_server_pipes[5] = {  0xF0F0F0F0D2LL,
+                                            0xF0F0F0F0C3LL,
+                                            0xF0F0F0F0B4LL,
+                                            0xF0F0F0F0A5LL,
+                                            0xF0F0F0F096LL };
+// server --> nodes                                    
+const uint64_t server_to_node_pipes[5]={   0x3A3A3A3AD2LL,
+                                           0x3A3A3A3AC3LL,
+                                           0x3A3A3A3AB4LL,
+                                           0x3A3A3A3AA5LL,
+                                           0x3A3A3A3A96LL };
+
+//role store in EEOPROM, 1:server, 2-6:nodes.
+typedef enum { role_invalid = 0, role_server, role_node } role_e;
+role_e  role;
+
+// role define at EEPROM addr 0
+const uint8_t address_at_eeprom = 0;
+
+//sensor node no.
+uint8_t node_NO;
 
 //every message interval time
-const unsigned long interval = 1000; //ms
+//const unsigned long interval = 1000; //ms
 
 //how many messages we send
 unsigned long num_of_mesg = 0;
@@ -80,27 +102,34 @@ unsigned long num_of_mesg = 0;
 //when did client node send last message
 unsigned long last_sent = 0;
 
+
+
 //Struct of our payload
-struct payload_t
+struct payload_com
 {
   unsigned long counter;    // Heat beat counter.
-  unsigned long send_ms;    // server start heart beat request time.
-  unsigned long last_delay_ms; //last message delay time.
-  uint8_t       Node_NO;    // message from node's NO
-  
-  uint8_t       switch_state;// state of switch.  
-  float         tempC[3];   // temperature sensor  less than 3.
-  float         humd;       // humandity sensor data
-  float         PIR;        // human move singal data   
-  
-  uint8_t        switch_control; //command to control switch
-  bool          alrm;          // control arlm beep.
-  
+  unsigned long timestamp;  // server start heart beat request time.
+  uint8_t       DesNode;    // destination to node's NO
+  bool          SwitchControl[8]; // every bit control a delay switch
+  bool          AlarmControl[8];  //every bit control a beep. 
 };
-payload_t payload;
+
+struct payload_monitor
+{
+  unsigned long counter;    // Heat beat counter.
+  unsigned long CostTime;    // complete all sensors cost at nods time.
+  uint8_t       FromNode;    // message from node's NO
+  float         TempC[3];   // temperature sensor  less than 3.
+  float         humd;       // humandity sensor data
+  bool          PIR;        // human move singal data   
+  bool          SwitchState[8]; // state of switch.  
+  bool          AlarmState[8];  //every bit control a beep. 
+};
+
+
 
 // print payload data from RF24 communication
-void printMessage( payload_t payload );
+//void printMessage( payload_t payload );
 
 void setup( void )
 {
@@ -111,27 +140,76 @@ void setup( void )
   //start serial port
   Serial.begin( SERIAL_BAUDRATE );
   
+  uint8_t reading = EEPROM.read( address_at_eeprom);
+  if( reading == 1 )
+  {
+     //sensor node
+    role = role_server;
+    node_NO = reading;
+  }
+  else if( reading >= 2 && reading <= 6 )
+  {
+    //sensor node
+    role = role_node;
+    node_NO = reading;
+  }
+  else 
+  {
+    node_NO = 0;
+    role = role_invalid;
+  }
+  Serial.print("Node NO: ");
+  Serial.print( node_NO );
+  Serial.println(" , (role store in EEOPROM, 1:server, 2-6:nodes.)");
+
   //initial RF chip
-  Serial.println("----------- initial RF24 -----------------");
-  Serial.println("This is client, waitting to receive ...");
+  Serial.print("Initial RF24 ...");
   
-  SPI.begin();
+  //SPI.begin();
   // setup and config rf radio
   radio.begin();
+  /*
   // open pipe 0 to write,  server <--- client.
   // open pipe 1 to read.   server ---> client.
   //we can have up to 5 pipes open for reading)
   radio.openWritingPipe(pipes[0]);
   radio.openReadingPipe(1,pipes[1]);
+  */
+  
+  //is not valid at there
+  if( role == role_server )
+  { 
+    Serial.println("This is server node ." );
+    for( uint8_t i=0; i<5; i++ )
+    {
+      radio.openReadingPipe( i+1, node_to_server_pipes[i] );
+      radio.openWritingPipe( server_to_node_pipes[i] );
+    }
+    //radio.openReadingPipe( 1, talking_pipes[0] );
+  }
+
+  if( role == role_node )
+  {
+    //sensor node at NO 2-6
+    Serial.println("This is sensor node ." );
+    radio.openWritingPipe( node_to_server_pipes[ node_NO-2 ] );
+    radio.openReadingPipe(1, server_to_node_pipes[ node_NO-2 ] );
+  }
+  
   radio.startListening();
   // Dump the configuration of the rf unit for debugging
   //radio.printDetails();
-  Serial.println("network ok");
+  Serial.println("RF ok !!!");
   
-  #ifdef DS18B20_ENABLE
+
+  
   // Initail all DS18b20 on the 1-wire bus, print infomations.
-  setupTemperatureSensors();
-  #endif
+  if( node_NO == 2 || node_NO == 4 )
+  {
+    Serial.println("Initial DS18b20 sensors...");
+    setupTemperatureSensors();
+  }
+
   
   Serial.println("============ Finish setup =================");
 
@@ -144,73 +222,131 @@ void loop( void )
   if( radio.available() )
   {      
     //got a message at 1s interval
-    unsigned long now = millis();
-    last_sent = now;
+    unsigned long receive_time = millis();
+    last_sent = receive_time;
      unsigned long got_time;
     bool done = false;
-
-
+    payload_com     commander_mesg;
+    payload_monitor monitor_mesg;
     
     // step1; receive server's hear beat signal
      while( !done )
      {
        // get the message from serveR
-       done = radio.read(  &payload, sizeof(payload) );
+       done = radio.read(  &commander_mesg, sizeof(commander_mesg) );
      }
+     Serial.print("got heartbeat: ");
+     Serial.print( commander_mesg.counter );
      
-     if( payload.Node_NO != NODE_NO )
-     {;
-     /*
-       Serial.print("Got a mesg to node: ");
-       Serial.print( payload.Node_NO  );
-       Serial.println(",Ignore!");
-       */
+     // stop listening so we can talk.
+     radio.stopListening();
+ 
+     // step2: do something in loop: such as ds18b20
+     monitor_mesg.counter = commander_mesg.counter;
+     monitor_mesg.FromNode = node_NO;
+     monitor_mesg.PIR = 0;
+     for( uint8_t j=0; j<8; j++ )
+      {
+        monitor_mesg.SwitchState[j] = false;
+        monitor_mesg.AlarmState[j] = false;
+      }
+     
+     // scan all 3 ds18b20 time cost:
+     // precesion  9: 140ms
+     // precesion 12: 800ms.
+     if( node_NO == 2 || node_NO == 4 )
+     {
+       TempSensors.requestTemperatures();
+       for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
+       {
+         monitor_mesg.TempC[i] = TempSensors.getTempC(TempSensorsAddress[i]);
+       }
+     }
+
+     
+     if( node_NO == 3 || node_NO == 5 )
+     {
+        if( (commander_mesg.counter % 2 ) == 1 )
+          monitor_mesg.TempC[0] = 1;
+        else
+          monitor_mesg.TempC[0] = 2; 
+        delay(100);
+     }
+    monitor_mesg.CostTime = millis()- receive_time;
+    Serial.print(", sensor cost time(ms): ");
+    Serial.print(monitor_mesg.CostTime );
+
+    
+    // step3: send response back to server.
+     bool write_status = radio.write( &monitor_mesg, sizeof(monitor_mesg));
+     if( write_status )
+     {
+       Serial.println(", send back to server ok. ");
+       //Serial.println("send back ok. ");
+       
+       
+          Serial.print("monitor { ");
+          Serial.print("counter: ");
+          Serial.print( monitor_mesg.counter );
+          Serial.print(", CostTime: ");
+          Serial.print( monitor_mesg.CostTime );
+          Serial.print(", FromNode: ");
+          Serial.print( monitor_mesg.FromNode );
+          Serial.print(", TempC1:");
+          Serial.print( monitor_mesg.TempC[0] );
+          Serial.print(", TempC2:");
+          Serial.print( monitor_mesg.TempC[1] );
+          Serial.print(", TempC3:");
+          Serial.print( monitor_mesg.TempC[2] );
+          Serial.print(", humd: ");
+          Serial.print( monitor_mesg.humd );
+          Serial.print(", PIR: ");
+          Serial.print( monitor_mesg.PIR );
+          Serial.print(", SwitchState: ");
+          for( uint8_t t=0; t<8; t++ )
+            Serial.print( monitor_mesg.SwitchState[t],BIN );
+          Serial.print(", AlarState: ");
+          for( uint8_t t=0; t<8; t++ )
+            Serial.print( monitor_mesg.AlarmState[t],BIN );
+          Serial.println(" } ");
      }
      else
      {
-       // stop listening so we can talk.
-       radio.stopListening();
-   
-       // step2: do something in loop: such as ds18b20
-       #ifdef DS18B20_ENABLE
-         TempSensors.requestTemperatures();
-         for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
-         {
-           payload.tempC[i] = TempSensors.getTempC(TempSensorsAddress[i]);
-         }
-       #endif
-       
-       #ifdef PIR_ENABLE  
-          payload.switch_state = 99;
-          payload.humd = 11;
-          payload.PIR = 22;
-         for(uint8_t i=0; i<numOfFindTempSensors; i++ ) 
-         {
-           payload.tempC[i] = 0;
-         }
-       #endif
-
-      // step3: send response back to server.
-       delay(20);//waitting for server.
-       bool write_status = radio.write( &payload, sizeof(payload));
-       if( write_status )
-       {
-         ;
-         //Serial.println("send back ok. ");
-       }
-       else
-       {
-        Serial.println("send back failed. ");
-        // if failed, this delay can display slow.
-        delay(100);
-       } 
-       printMessage();
-       Serial.println();
-       //
-       radio.startListening();
-     }
+      Serial.println(", send back failed. ");
+     } 
+     //printMessage();
+     
+     //Serial.println();
+     //
+     radio.startListening();
    }
 
+
+
+/*
+
+  //mannually write node no to eeprom.
+  if( Serial.available() )
+  {
+    char c = Serial.read();
+    if( c>='1' && c<='6' )
+    {
+      EEPROM.write( address_at_eeprom, c-'0' );
+      
+      Serial.print("manually write node noe to eeprom, node no:");
+      Serial.println(EEPROM.read( address_at_eeprom ) );
+      
+      Serial.println("Press reset to continue." );
+      
+      while(1) 
+      {
+        ;
+      }
+    }
+  }
+  
+  */
+  
 }
   
 
@@ -284,8 +420,7 @@ void setupTemperatureSensors( void )
     Serial.println();
     
     //set resolution of ds18b20
-    TempSensors.setResolution(TempSensorsAddress[i],
-                               TEMPERATURE_PRECISION );
+    TempSensors.setResolution(TempSensorsAddress[i],TEMPERATURE_PRECISION );
     //print resolution of ds18b20.
     Serial.print("Resolution of temprature sensor " );
     Serial.print( i, DEC);
@@ -295,12 +430,12 @@ void setupTemperatureSensors( void )
   Serial.println("");
   Serial.println("------------------------------------------------");               
 }
-
+ /*
 // print payload data from RF24 communication
 void printMessage( void)
 {
  Serial.print("data{ ");
- 
+
  Serial.print(payload.counter);
  Serial.print("; ");
  Serial.print(payload.send_ms);
@@ -325,4 +460,6 @@ void printMessage( void)
  Serial.print("; ");
  Serial.print(payload.alrm);
  Serial.print("} ");
+
 }
+ */
