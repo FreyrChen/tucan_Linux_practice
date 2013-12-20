@@ -13,6 +13,8 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 //#include <RF24Network.h>
+#include "MyCommon.h"
+
 
 #define  DEBUG
 //1-server, 2-UNO, 3-millis(),
@@ -55,7 +57,7 @@ uint8_t node_NO;
 
 //every message interval time
 const unsigned long interval = 1000; //ms
-const unsigned long timeout = 200; //ms
+const unsigned long timeout = 100; //ms
 
 //how many messages we send
 unsigned long num_of_mesg = 0;
@@ -65,31 +67,19 @@ unsigned long num_of_miss[8];
 //when did client node send last message
 unsigned long last_sent;
 
-//Struct of our payload
-struct payload_control
+// serial commader to server
+struct commder_t
 {
-  unsigned long counter;    // Heat beat counter.
-  unsigned long timestamp;  // server start heart beat request time.
-  uint8_t       DesNode;    // destination to node's NO
-  bool          SwitchControl[8]; // every bit control a delay switch
-  bool          AlarmControl[8];  //every bit control a beep. 
+  uint8_t     DesNode;  
 };
 
+payload_control     control_mesg;
+payload_monitor     monitor_mesg;
 
-struct payload_monitor
-{
-  unsigned long counter;    // Heat beat counter.
-  unsigned long CostTime;    // complete all sensors cost at nods time.
-  uint8_t       FromNode;    // message from node's NO
-  float         TempC[3];   // temperature sensor  less than 3.
-  float         humd;       // humandity sensor data
-  bool          PIR;        // human move singal data   
-  bool          SwitchState[8]; // state of switch.  
-  bool          AlarmState[8];  //every bit control a beep. 
-};
-
-
-
+void clearMonitorMesg( payload_monitor monitor_mesg);
+void clearControlMesg( payload_control control_mesg );
+void printMonitorMesg( payload_monitor monitor_mesg );
+void printControlMesg( payload_control control_mesg );
 
 void setup( void )
 {
@@ -164,7 +154,7 @@ void loop( void )
 {
  
   
-    //step 1: send heart beat signal to all nodes every 1s.
+//step 1: send heart beat signal to all nodes every 1s.
   unsigned long start_scan = millis();
   // heart beat send to all sensor nodes at 1s interveal
   if( start_scan - last_sent > interval )
@@ -178,63 +168,30 @@ void loop( void )
     //scan all nodes
     for( uint8_t to_node=2; to_node<(2+NUM_SENSOR_NODES); to_node++ )
     {
-      payload_control     commander_mesg;
+      
+      clearControlMesg( control_mesg );
       radio.openWritingPipe( server_to_node_pipes[to_node-2 ] );
      
       // assamble message packet
-      commander_mesg.timestamp = start_scan;
-      commander_mesg.counter = num_of_mesg;
-      commander_mesg.DesNode = to_node;
+      control_mesg.Timestamp = start_scan;
+      control_mesg.Counter = num_of_mesg;
+      control_mesg.DesNode = to_node;
       for( uint8_t j=0; j<8; j++ )
       {
-        commander_mesg.SwitchControl[j] = false;
-        commander_mesg.AlarmControl[j] = false;
+        control_mesg.SwitchControl[j] = false;
+        control_mesg.AlarmControl[j] = false;
       }
       
-      /*
-      Serial.print("scan node:");
-      Serial.print(commander_mesg.DesNode);
-      Serial.print(", " );
-      */
-      
-      bool write_status = radio.write(  &commander_mesg,
-      
-                                      sizeof(commander_mesg));
-      /*  
-      if( write_status )
-      {
-       Serial.println("ok. ");
-      }
-      else
-      {
-        Serial.println(" send heart beat failed. ");
-      } 
-      */
-      
-      
-      /*
-      Serial.print("control { ");
-      Serial.print("counter: ");
-      Serial.print( commander_mesg.counter );
-      Serial.print(", timestamp: ");
-      Serial.print( commander_mesg.timestamp );
-      Serial.print(", DestinationNode: ");
-      Serial.print( commander_mesg.DesNode );
-      Serial.print(", SwitchControl: ");
-      for( uint8_t t=0; t<8; t++ )
-        Serial.print( commander_mesg.SwitchControl[t] );
-      Serial.print(", AlarControl: ");
-      for( uint8_t t=0; t<8; t++ )
-        Serial.print( commander_mesg.AlarmControl[t] );
-      Serial.println(" } ");
-      */
-      
-      
+      bool write_status = radio.write(  &control_mesg,
+                                      sizeof(control_mesg));
+                                      
+      printControlMesg( control_mesg );
+ 
       
     }  
     
 
-    //step 2: wait for nodes response.
+//step 2: wait for nodes response.
     //scan all nodes
     radio.startListening();
     //wait for the busy node to measure the sensors.
@@ -244,7 +201,8 @@ void loop( void )
    
     for( uint8_t pipe_num=1; pipe_num<(NUM_SENSOR_NODES+1); pipe_num++ )
     {
-      payload_monitor monitor_mesg;
+
+      clearMonitorMesg( monitor_mesg );
       bool is_timeout = false;
       unsigned long start_time = millis();
       //wait for client backk message. 
@@ -260,6 +218,7 @@ void loop( void )
         Serial.print("Wait reponse from node: " );
         Serial.print( pipe_num+1);
         Serial.println(" time out, failed! ");
+        continue;
 
       }
       else
@@ -269,53 +228,134 @@ void loop( void )
         {
           done = radio.read( &monitor_mesg, sizeof(monitor_mesg) );
           unsigned long delay_ms = millis() - start_scan;   
-          // print payload data from RF24 communication
-          //printMessage(  );
-          /*
-          Serial.print(" response form node: ");
-          Serial.print( monitor_mesg.FromNode );
-          Serial.print(" node cost time(ms):");
-          Serial.print( monitor_mesg.CostTime );
-          Serial.print(", delay(ms): ");
-          Serial.println(delay_ms );
-          */
           
-          
-          Serial.print("monitor { ");
-          Serial.print("counter: ");
-          Serial.print( monitor_mesg.counter );
-          Serial.print(", CostTime: ");
-          Serial.print( monitor_mesg.CostTime );
-          Serial.print(", FromNode: ");
-          Serial.print( monitor_mesg.FromNode );
-          Serial.print(", TempC1:");
-          Serial.print( monitor_mesg.TempC[0] );
-          Serial.print(", TempC2:");
-          Serial.print( monitor_mesg.TempC[1] );
-          Serial.print(", TempC3:");
-          Serial.print( monitor_mesg.TempC[2] );
-          Serial.print(", humd: ");
-          Serial.print( monitor_mesg.humd );
-          Serial.print(", PIR: ");
-          Serial.print( monitor_mesg.PIR );
-          Serial.print(", SwitchState: ");
-          for( uint8_t t=0; t<8; t++ )
-            Serial.print( monitor_mesg.SwitchState[t],BIN );
-          Serial.print(", AlarState: ");
-          for( uint8_t t=0; t<8; t++ )
-            Serial.print( monitor_mesg.AlarmState[t], BIN );
-          Serial.println(" } ");
-          
-          
+          printMonitorMesg(monitor_mesg);
           //digitalWrite( LED_PIN, ~digitalRead(LED_PIN) );
         }
   
       }
-      //sdelay(1000);
+      //delay(1000);
     }
   }
 
  
+
+}
+ 
+
+void printControlMesg( payload_control control_mesg )
+{
+  Serial.print("{\"name\": \"control\"  ");
+  Serial.print(",\"Counter\": ");
+  Serial.print( control_mesg.Counter );
+  Serial.print(", \"Timestamp\": ");
+  Serial.print( control_mesg.Timestamp );
+  Serial.print(", \"DestinationNode\": ");
+  Serial.print( control_mesg.DesNode );
+  Serial.print(", \"SwitchControl\": ");
+  
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( control_mesg.SwitchControl[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.print("], \"AlarControl\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( control_mesg.AlarmControl[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.println("] } ");
+}
+
+
+
+void printMonitorMesg( payload_monitor monitor_mesg )
+{
+  Serial.print("{\"name\": \"monitor\"");
+  Serial.print(", \"Counter\": ");
+  Serial.print( monitor_mesg.Counter );
+  Serial.print(", \"CostTime\": ");
+  Serial.print( monitor_mesg.CostTime );
+  Serial.print(", \"FromNode\": ");
+  Serial.print( monitor_mesg.FromNode );
+  Serial.print(", \"TempC\":[");
+  Serial.print( monitor_mesg.TempC[0] );
+  Serial.print(", ");
+  Serial.print( monitor_mesg.TempC[1] );
+  Serial.print(",");
+  Serial.print( monitor_mesg.TempC[2] );
+  Serial.print("], \"Humd\": ");
+  Serial.print( monitor_mesg.Humd );
+  Serial.print(", \"PIR\": ");
+  Serial.print( monitor_mesg.PIR );
+  Serial.print(", \"SwitchState\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( monitor_mesg.SwitchState[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.print("], \"AlarState\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( monitor_mesg.AlarmState[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.println("] } ");
+}
+
+void clearMonitorMesg( payload_monitor monitor_mesg )
+{
+  monitor_mesg.Counter  = 0;
+  monitor_mesg.CostTime = 0;
+  monitor_mesg.FromNode = 0;
+  monitor_mesg.TempC[0] = 0;
+  monitor_mesg.TempC[1] = 0;
+  monitor_mesg.TempC[2] = 0;
+  monitor_mesg.Humd     = 0;
+  monitor_mesg.PIR      = false;
+  for( uint8_t x=0; x<8; x++ )
+  {
+    monitor_mesg.SwitchState[x] == false;
+    monitor_mesg.AlarmState[x] == false;
+  }
+}
+
+void clearControlMesg( payload_control control_mesg )
+{
+  control_mesg.Counter  = 0;
+  control_mesg.Timestamp = 0;
+  control_mesg.DesNode = 0;
+  for( uint8_t x=0; x<8; x++ )
+  {
+    control_mesg.SwitchControl[x] == false;
+    control_mesg.AlarmControl[x] == false;
+  }
+}
+
+
+
+
+
+
+
+
   /*
   //mannually write node no to eeprom.
   if( Serial.available() )
@@ -337,52 +377,3 @@ void loop( void )
     }
   }
    */ 
-}
- 
-/* 
-void printControlMesg( payload_control mesg )
-{
-  Serial.print("control { ");
-  Serial.print("counter: ");
-  Serial.print( mesg.counter );
-  Serial.print(", timestamp: ");
-  Serial.print( mesg.timestamp );
-  Serial.print(", DestinationNode: ");
-  Serial.print( mesg.DesNode );
-  Serial.print(", SwitchControl: ");
-  for( uint8_t t=0; t<8; t++ )
-    Serial.print( mesg.SwitchControl[t] );
-  Serial.print(", AlarControl: ");
-  for( uint8_t t=0; t<8; t++ )
-    Serial.print( mesg.AlarmControl[t] );
-  Serial.println(" } ");
-}
-
-void printMonitorMesg( payload_monitor mesg )
-{
-  Serial.print("monitor { ");
-  Serial.print("counter: ");
-  Serial.print( mesg.counter );
-  Serial.print(", CostTime: ");
-  Serial.print( mesg.CostTime );
-  Serial.print(", FromNode: ");
-  Serial.print( mesg.FromNode );
-  Serial.print(", TempC1:");
-  Serial.print( mesg.TempC[0] );
-  Serial.print(", TempC2:");
-  Serial.print( mesg.TempC[1] );
-  Serial.print(", TempC3:");
-  Serial.print( mesg.TempC[2] );
-  Serial.print(", humd: ");
-  Serial.print( mesg.humd );
-  Serial.print(", PIR: ");
-  Serial.print( mesg.PIR );
-  Serial.print(", SwitchState: ");
-  for( uint8_t t=0; t<8; t++ )
-    Serial.print( mesg.SwitchControl[t] );
-  Serial.print(", AlarState: ");
-  for( uint8_t t=0; t<8; t++ )
-    Serial.print( mesg.AlarmControl[t] );
-  Serial.println(" } ");
-}
-   */

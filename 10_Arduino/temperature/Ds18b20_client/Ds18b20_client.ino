@@ -16,9 +16,8 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 //#include <RF24Network.h>
-
 #include <EEPROM.h>
-
+#include "MyCommon.h"
 
 //#define DS18B20_ENABLE    
 #define PIR_ENABLE      
@@ -29,7 +28,6 @@
 
 //serial port baudrate 9600(default)/ 19200 / 115200
 #define SERIAL_BAUDRATE             9600
-
 
 /* Pin connect assgiment */
 // Toggle LED 
@@ -43,7 +41,8 @@
 // numbers of Ds18b20 connected
 #define NUM_TMERATURE_SENSORS     3
 //Ds18b20 usual precision 9,10,11,12
-#define TEMPERATURE_PRECISION       9
+#define TEMPERATURE_PRECISION       12
+
 // Setup a oneWire instance to communicate with any OneWire devices 
 // (not just Maxim/Dallas temperature ICs)
 OneWire oneWire( DS18B20_DATA_PIN );
@@ -57,6 +56,8 @@ DeviceAddress TempSensorsAddress[NUM_TMERATURE_SENSORS];
 //TempSensorsAddress[1] = {0x28, 0x6F, 0x07, 0x45, ox05, 0x00, 0x00, 0xFC};
 //NO.1 = 2817694505000076
 //NO.2 = 286F0745050000FC
+
+
 // function to print a device address
 void printAddress(DeviceAddress deviceAddress);
 // function to print the temperature for a device
@@ -104,32 +105,16 @@ unsigned long last_sent = 0;
 
 
 
-//Struct of our payload
-struct payload_com
-{
-  unsigned long counter;    // Heat beat counter.
-  unsigned long timestamp;  // server start heart beat request time.
-  uint8_t       DesNode;    // destination to node's NO
-  bool          SwitchControl[8]; // every bit control a delay switch
-  bool          AlarmControl[8];  //every bit control a beep. 
-};
-
-struct payload_monitor
-{
-  unsigned long counter;    // Heat beat counter.
-  unsigned long CostTime;    // complete all sensors cost at nods time.
-  uint8_t       FromNode;    // message from node's NO
-  float         TempC[3];   // temperature sensor  less than 3.
-  float         humd;       // humandity sensor data
-  bool          PIR;        // human move singal data   
-  bool          SwitchState[8]; // state of switch.  
-  bool          AlarmState[8];  //every bit control a beep. 
-};
 
 
 
-// print payload data from RF24 communication
-//void printMessage( payload_t payload );
+
+
+payload_com     commander_mesg;
+payload_monitor monitor_mesg;
+
+void clearMonitorMesg( payload_monitor monitor_mesg);
+void printMonitorMesg( payload_monitor monitor_mesg );
 
 void setup( void )
 {
@@ -226,29 +211,29 @@ void loop( void )
     last_sent = receive_time;
      unsigned long got_time;
     bool done = false;
-    payload_com     commander_mesg;
-    payload_monitor monitor_mesg;
-    
+
+
     // step1; receive server's hear beat signal
      while( !done )
      {
        // get the message from serveR
        done = radio.read(  &commander_mesg, sizeof(commander_mesg) );
      }
-     Serial.print("got heartbeat: ");
-     Serial.print( commander_mesg.counter );
+     //Serial.print("got heartbeat: ");
+     //Serial.print( commander_mesg.Counter );
      
      // stop listening so we can talk.
      radio.stopListening();
  
      // step2: do something in loop: such as ds18b20
-     monitor_mesg.counter = commander_mesg.counter;
+     clearMonitorMesg( monitor_mesg );
+     monitor_mesg.Counter = commander_mesg.Counter;
      monitor_mesg.FromNode = node_NO;
      monitor_mesg.PIR = 0;
      for( uint8_t j=0; j<8; j++ )
       {
-        monitor_mesg.SwitchState[j] = false;
-        monitor_mesg.AlarmState[j] = false;
+        monitor_mesg.SwitchState[j] = commander_mesg.SwitchControl[j];
+        monitor_mesg.AlarmState[j] = commander_mesg.AlarmControl[j];
       }
      
      // scan all 3 ds18b20 time cost:
@@ -266,53 +251,29 @@ void loop( void )
      
      if( node_NO == 3 || node_NO == 5 )
      {
-        if( (commander_mesg.counter % 2 ) == 1 )
+        if( (commander_mesg.Counter % 2 ) == 1 )
           monitor_mesg.TempC[0] = 1;
         else
           monitor_mesg.TempC[0] = 2; 
-        delay(100);
+        //loop will cost time, this node is too fast
+        delay(300);
      }
     monitor_mesg.CostTime = millis()- receive_time;
-    Serial.print(", sensor cost time(ms): ");
-    Serial.print(monitor_mesg.CostTime );
+    //Serial.print(", sensor cost time(ms): ");
+    //Serial.print(monitor_mesg.CostTime );
 
     
     // step3: send response back to server.
      bool write_status = radio.write( &monitor_mesg, sizeof(monitor_mesg));
      if( write_status )
      {
-       Serial.println(", send back to server ok. ");
-       //Serial.println("send back ok. ");
+       //Serial.println(", send back to server ok. ");
+      printMonitorMesg( monitor_mesg );
        
-       
-          Serial.print("monitor { ");
-          Serial.print("counter: ");
-          Serial.print( monitor_mesg.counter );
-          Serial.print(", CostTime: ");
-          Serial.print( monitor_mesg.CostTime );
-          Serial.print(", FromNode: ");
-          Serial.print( monitor_mesg.FromNode );
-          Serial.print(", TempC1:");
-          Serial.print( monitor_mesg.TempC[0] );
-          Serial.print(", TempC2:");
-          Serial.print( monitor_mesg.TempC[1] );
-          Serial.print(", TempC3:");
-          Serial.print( monitor_mesg.TempC[2] );
-          Serial.print(", humd: ");
-          Serial.print( monitor_mesg.humd );
-          Serial.print(", PIR: ");
-          Serial.print( monitor_mesg.PIR );
-          Serial.print(", SwitchState: ");
-          for( uint8_t t=0; t<8; t++ )
-            Serial.print( monitor_mesg.SwitchState[t],BIN );
-          Serial.print(", AlarState: ");
-          for( uint8_t t=0; t<8; t++ )
-            Serial.print( monitor_mesg.AlarmState[t],BIN );
-          Serial.println(" } ");
      }
      else
      {
-      Serial.println(", send back failed. ");
+      Serial.println(" send back failed. ");
      } 
      //printMessage();
      
@@ -321,35 +282,71 @@ void loop( void )
      radio.startListening();
    }
 
-
-
-/*
-
-  //mannually write node no to eeprom.
-  if( Serial.available() )
-  {
-    char c = Serial.read();
-    if( c>='1' && c<='6' )
-    {
-      EEPROM.write( address_at_eeprom, c-'0' );
-      
-      Serial.print("manually write node noe to eeprom, node no:");
-      Serial.println(EEPROM.read( address_at_eeprom ) );
-      
-      Serial.println("Press reset to continue." );
-      
-      while(1) 
-      {
-        ;
-      }
-    }
-  }
-  
-  */
   
 }
-  
 
+
+
+
+
+void printMonitorMesg( payload_monitor monitor_mesg )
+{
+  Serial.print("{\"name\": \"monitor\"");
+  Serial.print(", \"Counter\": ");
+  Serial.print( monitor_mesg.Counter );
+  Serial.print(", \"CostTime\": ");
+  Serial.print( monitor_mesg.CostTime );
+  Serial.print(", \"FromNode\": ");
+  Serial.print( monitor_mesg.FromNode );
+  Serial.print(", \"TempC\":[");
+  Serial.print( monitor_mesg.TempC[0] );
+  Serial.print(", ");
+  Serial.print( monitor_mesg.TempC[1] );
+  Serial.print(",");
+  Serial.print( monitor_mesg.TempC[2] );
+  Serial.print("], \"Humd\": ");
+  Serial.print( monitor_mesg.Humd );
+  Serial.print(", \"PIR\": ");
+  Serial.print( monitor_mesg.PIR );
+  Serial.print(", \"SwitchState\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( monitor_mesg.SwitchState[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.print("], \"AlarState\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( monitor_mesg.AlarmState[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.println("] } ");
+}
+
+void clearMonitorMesg( payload_monitor monitor_mesg )
+{
+  monitor_mesg.Counter  = 0;
+  monitor_mesg.CostTime = 0;
+  monitor_mesg.FromNode = 0;
+  monitor_mesg.TempC[0] = 0;
+  monitor_mesg.TempC[1] = 0;
+  monitor_mesg.TempC[2] = 0;
+  monitor_mesg.Humd     = 0;
+  monitor_mesg.PIR      = false;
+  for( uint8_t x=0; x<8; x++ )
+  {
+    monitor_mesg.SwitchState[x] == false;
+    monitor_mesg.AlarmState[x] == false;
+  }
+}
 
 
 // function to print a device address
@@ -436,7 +433,7 @@ void printMessage( void)
 {
  Serial.print("data{ ");
 
- Serial.print(payload.counter);
+ Serial.print(payload.Counter);
  Serial.print("; ");
  Serial.print(payload.send_ms);
  Serial.print("; "); 
@@ -452,7 +449,7 @@ void printMessage( void)
  Serial.print("; ");
  Serial.print(payload.tempC[2]);
  Serial.print("; ");
- Serial.print(payload.humd);
+ Serial.print(payload.Humd);
  Serial.print("; ");
  Serial.print(payload.PIR);
  Serial.print("; ");
