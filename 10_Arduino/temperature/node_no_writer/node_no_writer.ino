@@ -5,7 +5,7 @@ const int addr = 0;
 // Toggle LED 
 #define LED_PIN           13
 
-//#define EEPROM_WRITE
+#define EEPROM_WRITE
 
 void setup()
 {
@@ -19,7 +19,7 @@ void setup()
   Serial.print("write node address in EEPROM, ");
   // server no = 1
   // node no = 2,3,4,5,6.
-  int NodeNO = 2;
+  int NodeNO = 3;
   EEPROM.write( addr, NodeNO );
   #endif
 
