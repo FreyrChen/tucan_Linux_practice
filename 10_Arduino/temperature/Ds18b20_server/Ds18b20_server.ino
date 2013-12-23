@@ -6,28 +6,31 @@
 * tusion@163.com 
 **/
 
-#include <EEPROM.h>
 
+/* The two liabrary should download to .../arduino/library/ */
+//Ds18b20 use one wire bus connect Arduino GPIO
+#include <OneWire.h>  
+//wrap some founction of Ds18b20
+#include <DallasTemperature.h>
 /*wireless communication chip nRF24L01 connect on SPI */
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 //#include <RF24Network.h>
+#include <EEPROM.h>
 #include "MyCommon.h"
 
 
 #define  DEBUG
 //1-server, 2-UNO, 3-millis(),
-#define NUM_SENSOR_NODES  2
+#define SUM_SENSOR_NODES  2
 
 #define SERIAL_BAUDRATE    9600
 #define LED_PIN            8
 
-
 //for nRF24L01 SPI
 #define CE_PIN             9
 #define CSN_PIN            10
-//#define NETWORK_CHANNEL    90
 
 /********************************************************************/
 // nRF24L01 Wireless communication initial something 
@@ -60,12 +63,12 @@ const unsigned long interval = 1000; //ms
 const unsigned long timeout = 100; //ms
 
 //how many messages we send
-unsigned long num_of_mesg = 0;
+unsigned long server_num_of_mesg = 0;
 //evry node missed response message no.
 unsigned long num_of_miss[8];
 
 //when did client node send last message
-unsigned long last_sent;
+unsigned long server_last_sent;
 
 // serial commader to server
 struct commder_t
@@ -116,7 +119,7 @@ void setup( void )
 
   //initial RF chip
   Serial.println(" initial RF24 ...");
-  SPI.begin();
+  //SPI.begin();
   radio.begin();
   if( role == role_server )
   {
@@ -137,13 +140,12 @@ void setup( void )
     radio.openReadingPipe(1, server_to_node_pipes[ node_NO-2 ] );
   }
  
-  
   radio.startListening();
   Serial.println(" RF OK");
   
-  last_sent = 0;
-  num_of_mesg = 0;
-  //payload.counter = 0;
+  server_last_sent = 0;
+  server_num_of_mesg = 0;
+
   
   Serial.println("============ Finish setup =================");
 }
@@ -154,27 +156,24 @@ void loop( void )
 {
  
   
-//step 1: send heart beat signal to all nodes every 1s.
+   //step 1: send heart beat signal to all nodes every 1s.
   unsigned long start_scan = millis();
   // heart beat send to all sensor nodes at 1s interveal
-  if( start_scan - last_sent > interval )
+  if( start_scan - server_last_sent > interval )
   {
-     //Serial.println("-------------------------------------------");
-    last_sent = start_scan;
-    num_of_mesg ++;
+    server_last_sent = start_scan;
+    server_num_of_mesg ++;
  
-
     radio.stopListening();
     //scan all nodes
-    for( uint8_t to_node=2; to_node<(2+NUM_SENSOR_NODES); to_node++ )
+    for( uint8_t to_node=2; to_node<(2+SUM_SENSOR_NODES); to_node++ )
     {
-      
       clearControlMesg( control_mesg );
       radio.openWritingPipe( server_to_node_pipes[to_node-2 ] );
      
       // assamble message packet
       control_mesg.Timestamp = start_scan;
-      control_mesg.Counter = num_of_mesg;
+      control_mesg.Counter = server_num_of_mesg;
       control_mesg.DesNode = to_node;
       for( uint8_t j=0; j<8; j++ )
       {
@@ -185,21 +184,27 @@ void loop( void )
       bool write_status = radio.write(  &control_mesg,
                                       sizeof(control_mesg));
                                       
-      printControlMesg( control_mesg );
+      if( write_status == true )
+        printControlMesg( control_mesg );
+      else
+      {
+        Serial.print("Send heartbeat to node: " );
+        Serial.print(to_node);
+        Serial.println(", falied.");
+        
+      }
  
       
     }  
     
 
-//step 2: wait for nodes response.
+    //step 2: wait for nodes response.
     //scan all nodes
     radio.startListening();
     //wait for the busy node to measure the sensors.
-    //Serial.println("wait for sensors ... " );
-    //Serial.println(" .............. ");
-    delay(1000);
+    delay(interval);
    
-    for( uint8_t pipe_num=1; pipe_num<(NUM_SENSOR_NODES+1); pipe_num++ )
+    for( uint8_t pipe_num=1; pipe_num<(SUM_SENSOR_NODES+1); pipe_num++ )
     {
 
       clearMonitorMesg( monitor_mesg );
@@ -218,8 +223,8 @@ void loop( void )
         Serial.print("Wait reponse from node: " );
         Serial.print( pipe_num+1);
         Serial.println(" time out, failed! ");
+        is_timeout = false;
         continue;
-
       }
       else
       {
@@ -232,9 +237,7 @@ void loop( void )
           printMonitorMesg(monitor_mesg);
           //digitalWrite( LED_PIN, ~digitalRead(LED_PIN) );
         }
-  
       }
-      //delay(1000);
     }
   }
 
@@ -307,7 +310,7 @@ void printMonitorMesg( payload_monitor monitor_mesg )
     if( t<7 )
       Serial.print(",");
   }
-  Serial.print("], \"AlarState\": [");
+  Serial.print("], \"AlarmState\": [");
   for( uint8_t t=0; t<8; t++ )
   {
     if( monitor_mesg.AlarmState[t] == true )

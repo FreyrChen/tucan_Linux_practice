@@ -15,7 +15,6 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-//#include <RF24Network.h>
 #include <EEPROM.h>
 #include "MyCommon.h"
 
@@ -24,10 +23,14 @@
 // config all 
 /********************************************************************/
 #define CONFIG_NODE_NO
-#define WRITE_NODE_NO    3 //server 1, client 2-6
+#define WRITE_NODE_NO    1 //server 1, client 2-6
+
+#define  DEBUG
+
+#define SUM_SENSOR_NODES  2
 
 //#define DS18B20_ENABLE    
-#define PIR_ENABLE      
+//#define PIR_ENABLE      
 
 // temperature sensor Ds18b20 data pin connect to pin 7
 #define DS18B20_DATA_PIN   7
@@ -83,6 +86,12 @@ const uint64_t server_to_node_pipes[5]={   0x3A3A3A3AD2LL,
 typedef enum { role_invalid = 0, role_server, role_node } role_e;
 role_e  role;
 
+// serial commader to server
+struct commder_t
+{
+  uint8_t     DesNode;  
+};
+
 
 // function to print a device address
 void printAddress(DeviceAddress deviceAddress);
@@ -90,11 +99,15 @@ void printAddress(DeviceAddress deviceAddress);
 void printTempraturues(DeviceAddress deviceAddress);
 // setup DS18b20
 void setupTemperatureSensors( void );
+//
 void clearMonitorMesg( payload_monitor monitor_mesg);
+void clearControlMesg( payload_control control_mesg );
 void printMonitorMesg( payload_monitor monitor_mesg );
+void printControlMesg( payload_control control_mesg );
 
-payload_control     commander_mesg;
-payload_monitor monitor_mesg;
+payload_control     control_mesg;
+payload_monitor     monitor_mesg;
+
 // role define at EEPROM addr 0
 const uint8_t address_at_eeprom = 0;
 //sensor node no.
@@ -104,13 +117,23 @@ unsigned long num_of_mesg = 0;
 //when did client node send last message
 unsigned long client_last_sent = 0;
 
+//server send every message interval time
+const unsigned long interval = 1000; //ms
+const unsigned long timeout = 100; //ms
+//how many messages we send
+unsigned long server_num_of_mesg = 0;
+//evry node missed response message no.
+unsigned long num_of_miss[8];
+//when did client node send last message
+unsigned long server_last_sent;
 
 void setup( void )
 {
   
   //start serial port
   Serial.begin( SERIAL_BAUDRATE );
-  
+  Serial.println("*************************************************");
+  Serial.println(" Initial and setup " );
   //------------- Node role detect -------------------------
   //config node number in the EEPROM at address 0
   #ifdef CONFIG_NODE_NO
@@ -178,23 +201,24 @@ void setup( void )
   }
   
   radio.startListening();
-  // Dump the configuration of the rf unit for debugging
-  //radio.printDetails();
   Serial.println(" RF ok !!!");
   
   // Initail all DS18b20 on the 1-wire bus, print infomations.
-  //if( node_NO == 2 || node_NO == 4 )
   Serial.println("3. Initial DS18b20 sensors...");
   setupTemperatureSensors();
 
+  server_last_sent = 0;
+  server_num_of_mesg = 0;
+
   Serial.println("============ Finish setup =================");
+  
 
   
 }
 
 void loop( void ) 
 {
-    // sensor client node.
+    // ------------------------ sensor client node. ------------------
    if( role == role_node )
    {
     //client always wait for server send heart beat at 1s interval.
@@ -210,20 +234,20 @@ void loop( void )
        while( !done )
        {
          // get the message from serveR
-         done = radio.read(  &commander_mesg, sizeof(commander_mesg) );
+         done = radio.read(  &control_mesg, sizeof(control_mesg) );
        }
        // stop listening so we can talk.
        radio.stopListening();
    
        // step2: do something in loop: such as ds18b20
        clearMonitorMesg( monitor_mesg );
-       monitor_mesg.Counter = commander_mesg.Counter;
+       monitor_mesg.Counter = control_mesg.Counter;
        monitor_mesg.FromNode = node_NO;
        monitor_mesg.PIR = 0;
        for( uint8_t j=0; j<8; j++ )
         {
-          monitor_mesg.SwitchState[j] = commander_mesg.SwitchControl[j];
-          monitor_mesg.AlarmState[j] = commander_mesg.AlarmControl[j];
+          monitor_mesg.SwitchState[j] = control_mesg.SwitchControl[j];
+          monitor_mesg.AlarmState[j] = control_mesg.AlarmControl[j];
         }
        
        // scan all 3 ds18b20 time cost:
@@ -247,13 +271,98 @@ void loop( void )
        {
         Serial.println(" send back failed. ");
        } 
+       clearControlMesg( control_mesg );
        radio.startListening();
      }
    }
+   //------------------ server ----------------------------
    else if(  role == role_server )
    {
-     ;//
+     //step 1: send heart beat signal to all nodes every 1s.
+    unsigned long start_scan = millis();
+    // heart beat send to all sensor nodes at 1s interveal
+    if( start_scan - server_last_sent > interval )
+    {
+      server_last_sent = start_scan;
+      server_num_of_mesg ++;
+   
+      radio.stopListening();
+      //scan all nodes
+      for( uint8_t to_node=2; to_node<(2+SUM_SENSOR_NODES); to_node++ )
+      {
+        clearControlMesg( control_mesg );
+        radio.openWritingPipe( server_to_node_pipes[to_node-2 ] );
+       
+        // assamble message packet
+        control_mesg.Timestamp = start_scan;
+        control_mesg.Counter = server_num_of_mesg;
+        control_mesg.DesNode = to_node;
+        for( uint8_t j=0; j<8; j++ )
+        {
+          control_mesg.SwitchControl[j] = false;
+          control_mesg.AlarmControl[j] = false;
+        }
+        
+        bool write_status = radio.write(  &control_mesg,
+                                        sizeof(control_mesg));
+                                        
+        if( write_status == true )
+          printControlMesg( control_mesg );
+        else
+        {
+          Serial.print("Send heartbeat to node: " );
+          Serial.print(to_node);
+          Serial.println(", falied.");
+          
+        }
+   
+        
+      }  
+      
+      //step 2: wait for nodes response.
+      //scan all nodes
+      radio.startListening();
+      //wait for the busy node to measure the sensors.
+      delay(interval);
+     
+      for( uint8_t pipe_num=1; pipe_num<(SUM_SENSOR_NODES+1); pipe_num++ )
+      {
+  
+        clearMonitorMesg( monitor_mesg );
+        bool is_timeout = false;
+        unsigned long start_time = millis();
+        //wait for client backk message. 
+        while( !radio.available(&pipe_num)  && !is_timeout)
+        {
+          // received back message time out less than 200ms
+          if( (millis() - start_time) > timeout )
+            is_timeout = true;
+        }
+        if( is_timeout )
+        {
+          
+          Serial.print("Wait reponse from node: " );
+          Serial.print( pipe_num+1);
+          Serial.println(" time out, failed! ");
+          is_timeout = false;
+          continue;
+        }
+        else
+        {
+          bool done = false;
+          while (!done)
+          {
+            done = radio.read( &monitor_mesg, sizeof(monitor_mesg) );
+            unsigned long delay_ms = millis() - start_scan;   
+            
+            printMonitorMesg(monitor_mesg);
+          }
+        }
+      }
+    }
+     
    }
+   //--------------- invalid node role --------------------------
    else
    {
      Serial.println("this node role is not invalid, pls check.");
@@ -264,9 +373,44 @@ void loop( void )
 }
 
 
+//=============================================================
+
+// print every element in contol struct
+void printControlMesg( payload_control control_mesg )
+{
+  Serial.print("{\"name\": \"control\"  ");
+  Serial.print(",\"Counter\": ");
+  Serial.print( control_mesg.Counter );
+  Serial.print(", \"Timestamp\": ");
+  Serial.print( control_mesg.Timestamp );
+  Serial.print(", \"DestinationNode\": ");
+  Serial.print( control_mesg.DesNode );
+  Serial.print(", \"SwitchControl\": ");
+  
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( control_mesg.SwitchControl[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.print("], \"AlarControl\": [");
+  for( uint8_t t=0; t<8; t++ )
+  {
+    if( control_mesg.AlarmControl[t] == true )
+      Serial.print( 1 );
+    else
+      Serial.print( 0 );
+    if( t<7 )
+      Serial.print(",");
+  }
+  Serial.println("] } ");
+}
 
 
-
+// print every element in monitor struct
 void printMonitorMesg( payload_monitor monitor_mesg )
 {
   Serial.print("{\"name\": \"monitor\"");
@@ -296,7 +440,7 @@ void printMonitorMesg( payload_monitor monitor_mesg )
     if( t<7 )
       Serial.print(",");
   }
-  Serial.print("], \"AlarState\": [");
+  Serial.print("], \"AlarmState\": [");
   for( uint8_t t=0; t<8; t++ )
   {
     if( monitor_mesg.AlarmState[t] == true )
@@ -309,6 +453,7 @@ void printMonitorMesg( payload_monitor monitor_mesg )
   Serial.println("] } ");
 }
 
+// clear every element in monitor struct
 void clearMonitorMesg( payload_monitor monitor_mesg )
 {
   monitor_mesg.Counter  = 0;
@@ -326,6 +471,18 @@ void clearMonitorMesg( payload_monitor monitor_mesg )
   }
 }
 
+// clear every element in control struct
+void clearControlMesg( payload_control control_mesg )
+{
+  control_mesg.Counter  = 0;
+  control_mesg.Timestamp = 0;
+  control_mesg.DesNode = 0;
+  for( uint8_t x=0; x<8; x++ )
+  {
+    control_mesg.SwitchControl[x] == false;
+    control_mesg.AlarmControl[x] == false;
+  }
+}
 
 // function to print a device address
 void printAddress(DeviceAddress deviceAddress)
