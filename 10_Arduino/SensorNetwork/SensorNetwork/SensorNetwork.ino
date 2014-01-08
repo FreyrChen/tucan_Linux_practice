@@ -3,6 +3,7 @@
 * 2013/12/10  DS18b20 : temprature measurement
 * 2013/12/11  nRF24L01: wireless communication
 * 2013/12/23  combainn server & client node in sigle project
+* 2013/12/29  HUR
 * tusion@163.com 
 **/
 
@@ -16,6 +17,7 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 #include <EEPROM.h>
+#include "DHT11.h"
 #include "MyCommon.h"
 
 
@@ -23,7 +25,7 @@
 // config all 
 /********************************************************************/
 #define CONFIG_NODE_NO
-#define WRITE_NODE_NO    1 //server 1, client 2-6
+#define WRITE_NODE_NO    1      //server 1, client 2-6
 
 #define  DEBUG
 
@@ -38,6 +40,8 @@
 #define NUM_TMERATURE_SENSORS     3
 //Ds18b20 usual precision 9,10,11,12
 #define TEMPERATURE_PRECISION       12
+
+#define DHT11PIN  5
 
 // nRF24L01 connect on SPI bus
 #define CE_PIN             9
@@ -62,6 +66,12 @@ int numOfFindTempSensors;
 DeviceAddress TempSensorsAddress[NUM_TMERATURE_SENSORS];
 //TempSensorsAddress[0] = {0x28, 0x17, 0x69, ox45, 0x05, ox00, 0x00, 0x76};
 //TempSensorsAddress[1] = {0x28, 0x6F, 0x07, 0x45, ox05, 0x00, 0x00, 0xFC};
+
+/********************************************************************
+/*  DHT11 */
+/*******************************************************************/
+dht11 DHT11;
+
 
 /********************************************************************/
 // nRF24L01 Wireless communication initial something 
@@ -161,7 +171,7 @@ void setup( void )
     role = role_server;
     node_NO = reading;
   }
-  else if( reading >= 2 && reading <= 6 )
+  else if( reading >= 2 && reading <= SUM_SENSOR_NODES )
   {
     //sensor node
     role = role_node;
@@ -169,8 +179,8 @@ void setup( void )
   }
   else 
   {
-    node_NO = 0;
     role = role_invalid;
+    node_NO = 0;
   }
   Serial.print(" Node NO: ");
   Serial.print( node_NO );
@@ -319,11 +329,37 @@ void loop( void )
         
       }  
       
-      //step 2: wait for nodes response.
+      //step 2: wait for nodes response and server node senor measure
       //scan all nodes
       radio.startListening();
+      // server node start humd sensor
+     unsigned long start_DHT11 = millis();
+     clearMonitorMesg( monitor_mesg );
+     monitor_mesg.Counter = server_num_of_mesg;
+     monitor_mesg.FromNode = node_NO;
+     monitor_mesg.PIR = 0;
+     for( uint8_t j=0; j<8; j++ )
+      {
+        monitor_mesg.SwitchState[j] = control_mesg.SwitchControl[j];
+        monitor_mesg.AlarmState[j] = control_mesg.AlarmControl[j];
+      }
+      
+      
+      //DS18b20 NO.1
+      TempSensorsAddress[0] = {0x28, 0x17, 0x69, 0x45, 0x05, 0x00, 0x00, 0x76};
+      TempSensors.requestTemperatures();
+      monitor_mesg.TempC[0] = TempSensors.getTempC(TempSensorsAddress[0]);
+      int result_DHT11 = DHT11.read( DHT11PIN );
+      if( result_DHT11 == DHTLIB_OK )
+      {
+        monitor_mesg.TempC[2] = (float)DHT11.temperature;
+        monitor_mesg.Humd = (float)DHT11.humidity;
+      }
+      monitor_mesg.CostTime = millis()- start_DHT11;
+      printMonitorMesg(monitor_mesg);
+ 
       //wait for the busy node to measure the sensors.
-      delay(interval);
+     // delay(interval);
      
       for( uint8_t pipe_num=1; pipe_num<(SUM_SENSOR_NODES+1); pipe_num++ )
       {
@@ -378,8 +414,8 @@ void loop( void )
 // print every element in contol struct
 void printControlMesg( payload_control control_mesg )
 {
-  Serial.print("{\"name\": \"control\"  ");
-  Serial.print(",\"Counter\": ");
+  Serial.print("{\"name\": \"control\" ");
+  Serial.print(", \"Counter\": ");
   Serial.print( control_mesg.Counter );
   Serial.print(", \"Timestamp\": ");
   Serial.print( control_mesg.Timestamp );
@@ -421,13 +457,13 @@ void printMonitorMesg( payload_monitor monitor_mesg )
   Serial.print(", \"FromNode\": ");
   Serial.print( monitor_mesg.FromNode );
   Serial.print(", \"TempC\":[");
-  Serial.print( monitor_mesg.TempC[0] );
+  Serial.print( monitor_mesg.TempC[0] , 2);
   Serial.print(", ");
-  Serial.print( monitor_mesg.TempC[1] );
+  Serial.print( monitor_mesg.TempC[1] , 2 );
   Serial.print(",");
-  Serial.print( monitor_mesg.TempC[2] );
+  Serial.print( monitor_mesg.TempC[2] , 2);
   Serial.print("], \"Humd\": ");
-  Serial.print( monitor_mesg.Humd );
+  Serial.print( monitor_mesg.Humd , 2);
   Serial.print(", \"PIR\": ");
   Serial.print( monitor_mesg.PIR );
   Serial.print(", \"SwitchState\": [");
