@@ -6,7 +6,7 @@ const int ButtonPin = 2;  //push buttion pin to input signal
 const int BuzzerPin = 3;  //alarm beeper
 const int AnalogInPinA0 = A0; //analog input pin
 const int AnalogInPinA1 = A1; //analog input pin
-const int DigitalInPin = 13; // digital input pin
+const int DigitalInPin = 8; // digital input pin
 const int LEDPin = 13;  //LED output pin
 
 void BuzzerBeep( int BuzzerPin, int volume,  int delay_ms );

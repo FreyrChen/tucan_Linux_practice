@@ -69,6 +69,11 @@ set shiftwidth=4
 set showmatch
 "show cluser's line status
 set ruler
+"solve chinese character show in Vim
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set encoding=prc
+
 
 "for linux source code fo through
 "set tags=/home/tusion/linux-source-3.2.0/tags
@@ -92,7 +97,4 @@ let Tlist_Show_Menu=1
 set cscopequickfix=s-,c-,d-,i-,e-
 cs add /home/tusion/linux-2.6.11.12/cscope.out /home/tusion/linux-2.6.11.12
 "cs add /home/tusion/linux-source-3.2.0/cscope.out /home/tusion/linux-source-3.2.0
-set fileencodings=utf-8,gb2312,gbk,gb18030
-set termencoding=utf-8
-set encoding=prc
 
