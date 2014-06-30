@@ -74,6 +74,8 @@ set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set encoding=prc
 
+"to slove copy code to vim auto incdent problem
+"set paste
 
 "for linux source code fo through
 "set tags=/home/tusion/linux-source-3.2.0/tags

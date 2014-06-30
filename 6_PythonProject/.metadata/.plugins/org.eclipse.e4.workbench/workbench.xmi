@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_2CFF4TVNEeOHZ-QW7kpMEw" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_2CFs8DVNEeOHZ-QW7kpMEw" bindingContexts="_2CFs8jVNEeOHZ-QW7kpMEw">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;SerialCommunicate.py&quot; tooltip=&quot;EhomeServer/src/SerialCommunicate.py&quot;>&#xA;&lt;persistable path=&quot;/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;LocalIP.py&quot; tooltip=&quot;EhomeServer/src/LocalIP.py&quot;>&#xA;&lt;persistable path=&quot;/EhomeServer/src/LocalIP.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;IP.py&quot; tooltip=&quot;Ehome/IP.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/IP.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;SerialCommunicate.py&quot; tooltip=&quot;Ehome/SerialCommunicate.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/SerialCommunicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;SerialCommunicate&quot; tooltip=&quot;Ehome/SerialCommunicate&quot;>&#xA;&lt;persistable path=&quot;/Ehome/SerialCommunicate&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;communicate.py&quot; tooltip=&quot;Ehome/communicate.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/communicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;serial.py&quot; tooltip=&quot;Ehome/serial.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/serial.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;serial.py&quot; tooltip=&quot;Ehome/serial/serial.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/serial/serial.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;HouseContract.py&quot; tooltip=&quot;house/HouseContract.py&quot;>&#xA;&lt;persistable path=&quot;/house/HouseContract.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;yahoo.py&quot; tooltip=&quot;house/yahoo.py&quot;>&#xA;&lt;persistable path=&quot;/house/yahoo.py&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;LocalIP.py&quot; tooltip=&quot;EhomeServer/src/LocalIP.py&quot;>&#xA;&lt;persistable path=&quot;/EhomeServer/src/LocalIP.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;SerialCommunicate.py&quot; tooltip=&quot;EhomeServer/src/SerialCommunicate.py&quot;>&#xA;&lt;persistable path=&quot;/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;IP.py&quot; tooltip=&quot;Ehome/IP.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/IP.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;SerialCommunicate.py&quot; tooltip=&quot;Ehome/SerialCommunicate.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/SerialCommunicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;SerialCommunicate&quot; tooltip=&quot;Ehome/SerialCommunicate&quot;>&#xA;&lt;persistable path=&quot;/Ehome/SerialCommunicate&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;communicate.py&quot; tooltip=&quot;Ehome/communicate.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/communicate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;serial.py&quot; tooltip=&quot;Ehome/serial.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/serial.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;serial.py&quot; tooltip=&quot;Ehome/serial/serial.py&quot;>&#xA;&lt;persistable path=&quot;/Ehome/serial/serial.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;HouseContract.py&quot; tooltip=&quot;house/HouseContract.py&quot;>&#xA;&lt;persistable path=&quot;/house/HouseContract.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;yahoo.py&quot; tooltip=&quot;house/yahoo.py&quot;>&#xA;&lt;persistable path=&quot;/house/yahoo.py&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_2CFs8DVNEeOHZ-QW7kpMEw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_2dfPgDVNEeOHZ-QW7kpMEw" label="%trimmedwindow.label.eclipseSDK" x="1" y="24" width="722" height="877">
@@ -137,12 +137,12 @@
           <tags>persp.showIn:org.eclipse.ui.views.ResourceNavigator</tags>
           <tags>persp.showIn:org.python.pydev.navigator.view</tags>
           <tags>persp.showIn:org.eclipse.ui.views.ContentOutline</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_q01ZQTVsEeOgEeW5D94yhQ" selectedElement="_q02AUTVsEeOgEeW5D94yhQ" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_q01ZQTVsEeOgEeW5D94yhQ" selectedElement="_q01ZQjVsEeOgEeW5D94yhQ" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_q01ZQjVsEeOgEeW5D94yhQ" elementId="topLeft" containerData="1706" selectedElement="_q02AUDVsEeOgEeW5D94yhQ">
               <tags>newtablook</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_q02AUDVsEeOgEeW5D94yhQ" elementId="org.python.pydev.navigator.view" ref="_q0vSoDVsEeOgEeW5D94yhQ"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_q02AUTVsEeOgEeW5D94yhQ" containerData="8294" selectedElement="_q02AUzVsEeOgEeW5D94yhQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_q02AUTVsEeOgEeW5D94yhQ" containerData="8294" selectedElement="_q02AUjVsEeOgEeW5D94yhQ">
               <children xsi:type="advanced:Placeholder" xmi:id="_q02AUjVsEeOgEeW5D94yhQ" elementId="org.eclipse.ui.editorss" containerData="5257" ref="_2r3pwDVNEeOHZ-QW7kpMEw"/>
               <children xsi:type="basic:PartStack" xmi:id="_q02AUzVsEeOgEeW5D94yhQ" elementId="bottom" containerData="2708" selectedElement="_q02nYDVsEeOgEeW5D94yhQ">
                 <tags>newtablook</tags>
@@ -181,12 +181,12 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_2r3pwDVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ui.editorss" selectedElement="_2r4Q0DVNEeOHZ-QW7kpMEw">
-      <children xsi:type="basic:PartStack" xmi:id="_2r4Q0DVNEeOHZ-QW7kpMEw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_EEBbgFs-EeONBOjvkktCEw">
+      <children xsi:type="basic:PartStack" xmi:id="_2r4Q0DVNEeOHZ-QW7kpMEw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Mi_y8Fs-EeONBOjvkktCEw">
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <children xsi:type="basic:Part" xmi:id="_AzoL0DVtEeOgEeW5D94yhQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="HouseContract" iconURI="platform:/plugin/org.python.pydev/icons/python_file.gif" tooltip="house/HouseContract.py" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/house/HouseContract.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1105&quot; selectionTopPixel=&quot;629&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/house/HouseContract.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1105&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.python.pydev.editor.PythonEditor</tags>
           <tags>removeOnHide</tags>
@@ -198,11 +198,10 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_EEBbgFs-EeONBOjvkktCEw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SerialCommunicate" iconURI="platform:/plugin/org.python.pydev/icons/python_file.gif" tooltip="EhomeServer/src/SerialCommunicate.py" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;935&quot; selectionTopPixel=&quot;401&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;118&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.python.pydev.editor.PythonEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Mi_y8Fs-EeONBOjvkktCEw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LocalIP" iconURI="platform:/plugin/org.python.pydev/icons/python_file.gif" tooltip="EhomeServer/src/LocalIP.py" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/EhomeServer/src/LocalIP.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;74&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
@@ -301,9 +300,10 @@
       <tags>categoryTag:Java</tags>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_q0vSoDVsEeOgEeW5D94yhQ" elementId="org.python.pydev.navigator.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="PyDev Package Explorer" iconURI="platform:/plugin/org.python.pydev/icons/pydev_package_explorer.gif" tooltip="Workspace" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1381809425969&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer&quot;/>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src&quot;/>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;selected IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src/SerialCommunicate.py&quot;/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1381809425969&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer&quot;/>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src&quot;/>&#xA;&lt;selected IMemento.internal.id=&quot;/home/tusion/code/tucan_Linux_practice/6_PythonProject/EhomeServer/src&quot;/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:PyDev</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_q15wQDVsEeOgEeW5D94yhQ" elementId="org.python.pydev.navigator.view">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -317,18 +317,18 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2gT6ADVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld2nAFvGEeOTKvMbtxSVpg" elementId="new.group"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld3OEFvGEeOTKvMbtxSVpg" elementId="newWizardDropDown"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld3OEVvGEeOTKvMbtxSVpg" elementId="new.ext" visible="false"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld31IFvGEeOTKvMbtxSVpg" elementId="save.group" visible="false"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld31IVvGEeOTKvMbtxSVpg" elementId="save"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld31IlvGEeOTKvMbtxSVpg" elementId="saveAll"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld4cMFvGEeOTKvMbtxSVpg" elementId="save.ext" visible="false"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Ld4cMVvGEeOTKvMbtxSVpg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.gif" tooltip="Print" command="_2DMgMTVNEeOHZ-QW7kpMEw"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld_J4FvGEeOTKvMbtxSVpg" elementId="print.ext" visible="false"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld_w8FvGEeOTKvMbtxSVpg" elementId="build.group"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Ld_w8VvGEeOTKvMbtxSVpg" elementId="build.ext" visible="false"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeAYAFvGEeOTKvMbtxSVpg" elementId="additions"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LBqMNwJEeOeEJfLOn2_aw" elementId="new.group"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LCRQNwJEeOeEJfLOn2_aw" elementId="newWizardDropDown"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LCRQdwJEeOeEJfLOn2_aw" elementId="new.ext" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LC4UNwJEeOeEJfLOn2_aw" elementId="save.group" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LC4UdwJEeOeEJfLOn2_aw" elementId="save"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LC4UtwJEeOeEJfLOn2_aw" elementId="saveAll"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LC4U9wJEeOeEJfLOn2_aw" elementId="save.ext" visible="false"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5LDfYNwJEeOeEJfLOn2_aw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.gif" tooltip="Print" enabled="false" command="_2DMgMTVNEeOHZ-QW7kpMEw"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LJmANwJEeOeEJfLOn2_aw" elementId="print.ext" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LKNENwJEeOeEJfLOn2_aw" elementId="build.group"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LKNEdwJEeOeEJfLOn2_aw" elementId="build.ext" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LKNEtwJEeOeEJfLOn2_aw" elementId="additions"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2gUhEDVNEeOHZ-QW7kpMEw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -336,8 +336,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_q1IUMDVsEeOgEeW5D94yhQ" elementId="com.python.pydev.navigate.actionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Lgg5cFvGEeOTKvMbtxSVpg" elementId="pyNavigateGroup"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_Lgg5cVvGEeOTKvMbtxSVpg" elementId="com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5Py1cNwJEeOeEJfLOn2_aw" elementId="pyNavigateGroup"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5PzcgNwJEeOeEJfLOn2_aw" elementId="com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Mk6UcDVgEeOgEeW5D94yhQ" elementId="org.eclipse.debug.ui.breakpointActionSet" visible="false">
         <tags>Draggable</tags>
@@ -346,10 +346,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_26Z1ADVNEeOHZ-QW7kpMEw" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LghggFvGEeOTKvMbtxSVpg" elementId="debug"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LghggVvGEeOTKvMbtxSVpg" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LghgglvGEeOTKvMbtxSVpg" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiHkFvGEeOTKvMbtxSVpg" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5PzcgdwJEeOeEJfLOn2_aw" elementId="debug"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5PzcgtwJEeOeEJfLOn2_aw" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0DkNwJEeOeEJfLOn2_aw" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0DkdwJEeOeEJfLOn2_aw" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_27RXsDVNEeOHZ-QW7kpMEw" elementId="org.eclipse.jdt.ui.JavaElementCreationActionSet" visible="false">
         <tags>Draggable</tags>
@@ -360,8 +360,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2691sDVNEeOHZ-QW7kpMEw" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiHkVvGEeOTKvMbtxSVpg" elementId="Search"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiHklvGEeOTKvMbtxSVpg" elementId="org.eclipse.search.OpenSearchDialogPage"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0DktwJEeOeEJfLOn2_aw" elementId="Search"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0qoNwJEeOeEJfLOn2_aw" elementId="org.eclipse.search.OpenSearchDialogPage"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ekLLUFs8EeOnU5lO89OlOw" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
         <tags>Draggable</tags>
@@ -376,15 +376,15 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2gVvMDVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeAYAVvGEeOTKvMbtxSVpg" elementId="history.group"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeAYAlvGEeOTKvMbtxSVpg" elementId="group.application" visible="false"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeA_EFvGEeOTKvMbtxSVpg" elementId="backardHistory"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeA_EVvGEeOTKvMbtxSVpg" elementId="forwardHistory"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeA_ElvGEeOTKvMbtxSVpg" elementId="pin.group"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_LeBmIFvGEeOTKvMbtxSVpg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.gif" tooltip="Pin Editor" enabled="false" command="_2C9PojVNEeOHZ-QW7kpMEw"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiuoFvGEeOTKvMbtxSVpg" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiuoVvGEeOTKvMbtxSVpg" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LgiuolvGEeOTKvMbtxSVpg" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LK0INwJEeOeEJfLOn2_aw" elementId="history.group"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LK0IdwJEeOeEJfLOn2_aw" elementId="group.application" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LK0ItwJEeOeEJfLOn2_aw" elementId="backardHistory"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LLbMNwJEeOeEJfLOn2_aw" elementId="forwardHistory"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LLbMdwJEeOeEJfLOn2_aw" elementId="pin.group"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_5LMCQNwJEeOeEJfLOn2_aw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.gif" tooltip="Pin Editor" enabled="false" command="_2C9PojVNEeOHZ-QW7kpMEw"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0qodwJEeOeEJfLOn2_aw" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0qotwJEeOeEJfLOn2_aw" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5P0qo9wJEeOeEJfLOn2_aw" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2gWWQDVNEeOHZ-QW7kpMEw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -396,8 +396,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_2gW9UDVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeCNMFvGEeOTKvMbtxSVpg" elementId="group.help"/>
-        <children xsi:type="menu:OpaqueToolItem" xmi:id="_LeC0QFvGEeOTKvMbtxSVpg" elementId="group.application" visible="false"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LMpUNwJEeOeEJfLOn2_aw" elementId="group.help"/>
+        <children xsi:type="menu:OpaqueToolItem" xmi:id="_5LNQYNwJEeOeEJfLOn2_aw" elementId="group.application" visible="false"/>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_2iLiQDVNEeOHZ-QW7kpMEw" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -435,8 +435,6 @@
     <bindings xmi:id="_2ESsYDVNEeOHZ-QW7kpMEw" keySequence="CTRL+A" command="_2DCILTVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EUhkzVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+I" command="_2C9PpTVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EWWwDVNEeOHZ-QW7kpMEw" keySequence="ALT+SHIFT+F1" command="_2C6zZTVNEeOHZ-QW7kpMEw"/>
-    <bindings xmi:id="_2EW90jVNEeOHZ-QW7kpMEw" keySequence="CTRL+SPACE" command="_2DEkazVNEeOHZ-QW7kpMEw"/>
-    <bindings xmi:id="_2EXk4TVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+SPACE" command="_2DQKkTVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EaBITVNEeOHZ-QW7kpMEw" keySequence="CTRL+V" command="_2C-d0TVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EaBIjVNEeOHZ-QW7kpMEw" keySequence="CTRL+X" command="_2DIOxzVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EaoMDVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+Z" command="_2DL5IzVNEeOHZ-QW7kpMEw">
@@ -456,6 +454,9 @@
     <bindings xmi:id="_2EzpwjVNEeOHZ-QW7kpMEw" keySequence="CTRL+C" command="_2DCvNTVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EzpwzVNEeOHZ-QW7kpMEw" keySequence="ALT+PAGE_UP" command="_2DEkZDVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2E0Q1DVNEeOHZ-QW7kpMEw" keySequence="ALT+PAGE_DOWN" command="_2DI11DVNEeOHZ-QW7kpMEw"/>
+    <bindings xmi:id="_4cRt0NwJEeOeEJfLOn2_aw" keySequence="ALT+/" command="_2DEkazVNEeOHZ-QW7kpMEw">
+      <tags>locale:zh</tags>
+    </bindings>
   </bindingTables>
   <bindingTables xmi:id="_2ENM0DVNEeOHZ-QW7kpMEw" elementId="org.eclipse.jdt.ui.javaEditorScope" bindingContext="_2DbJsjVNEeOHZ-QW7kpMEw">
     <bindings xmi:id="_2ENM0TVNEeOHZ-QW7kpMEw" keySequence="CTRL+I" command="_2DCvPzVNEeOHZ-QW7kpMEw"/>
@@ -613,6 +614,12 @@
     <bindings xmi:id="_2EzpxTVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+G" command="_2C-dzjVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2E034DVNEeOHZ-QW7kpMEw" keySequence="ALT+CTRL+H" command="_2C_E1jVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_MKZisDVgEeOgEeW5D94yhQ" keySequence="ALT+CTRL+R" command="_MJfjwDVgEeOgEeW5D94yhQ"/>
+    <bindings xmi:id="_4cFgkdwJEeOeEJfLOn2_aw" keySequence="ALT+SHIFT+?" command="_2DQKkTVNEeOHZ-QW7kpMEw">
+      <tags>locale:zh</tags>
+    </bindings>
+    <bindings xmi:id="_4cVYMNwJEeOeEJfLOn2_aw" keySequence="ALT+?" command="_2DQKkTVNEeOHZ-QW7kpMEw">
+      <tags>locale:zh</tags>
+    </bindings>
   </bindingTables>
   <bindingTables xmi:id="_2ENz4jVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ui.textEditorScope" bindingContext="_2DaiojVNEeOHZ-QW7kpMEw">
     <bindings xmi:id="_2ENz4zVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+NUMPAD_MULTIPLY" command="_2C9PrDVNEeOHZ-QW7kpMEw"/>
@@ -623,7 +630,6 @@
     <bindings xmi:id="_2EW90TVNEeOHZ-QW7kpMEw" keySequence="ALT+ARROW_DOWN" command="_2DIOyDVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EW90zVNEeOHZ-QW7kpMEw" keySequence="ALT+SHIFT+A" command="_2DGZkTVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EXk5DVNEeOHZ-QW7kpMEw" keySequence="CTRL+ARROW_DOWN" command="_2DL5ITVNEeOHZ-QW7kpMEw"/>
-    <bindings xmi:id="_2Egu0zVNEeOHZ-QW7kpMEw" keySequence="ALT+/" command="_2DVDFjVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2EhV4DVNEeOHZ-QW7kpMEw" keySequence="F2" command="_2C92tzVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2ElAQzVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+Q" command="_2DIOyzVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2ElARDVNEeOHZ-QW7kpMEw" keySequence="CTRL+NUMPAD_DIVIDE" command="_2DKrBzVNEeOHZ-QW7kpMEw"/>
@@ -658,6 +664,9 @@
     <bindings xmi:id="_2EzpxDVNEeOHZ-QW7kpMEw" keySequence="CTRL+ARROW_LEFT" command="_2C_r6DVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2E0Q0DVNEeOHZ-QW7kpMEw" keySequence="CTRL+ARROW_RIGHT" command="_2DO8cDVNEeOHZ-QW7kpMEw"/>
     <bindings xmi:id="_2E0Q0zVNEeOHZ-QW7kpMEw" keySequence="CTRL+D" command="_2DDWTzVNEeOHZ-QW7kpMEw"/>
+    <bindings xmi:id="_4cODcNwJEeOeEJfLOn2_aw" keySequence="ALT+CTRL+/" command="_2DVDFjVNEeOHZ-QW7kpMEw">
+      <tags>locale:zh</tags>
+    </bindings>
   </bindingTables>
   <bindingTables xmi:id="_2ET6gjVNEeOHZ-QW7kpMEw" elementId="org.eclipse.ant.ui.AntEditorScope" bindingContext="_2DaiozVNEeOHZ-QW7kpMEw">
     <bindings xmi:id="_2ET6gzVNEeOHZ-QW7kpMEw" keySequence="CTRL+SHIFT+F" command="_2DLSETVNEeOHZ-QW7kpMEw"/>
