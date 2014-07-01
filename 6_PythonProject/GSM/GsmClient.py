@@ -9,8 +9,13 @@ import socket
 import re,urllib2
 
 
-#SERVER_IP ="123.116.98.89" 
-SERVER_IP ="tusion.jios.org" 
+#SERVER_IP ="tusion.jios.org" 
+SERVER_IP   = "114.215.238.215" 
+SERVER_PORT = 6000
+
+today_str = time.strftime('%Y%m%d')
+now_str = time.strftime('%H%M%S')
+
 
 ########################################################
 
@@ -84,12 +89,13 @@ def connectToServer( address, port):
 #
 def createLogFile( file_name ):
 	if os.path.isfile(file_name) :
-		log_name = 'Gsm_log_' + str( datetime.datetime.now() )
-		log_file = open( log_name , 'w' )
-		print"Sorry,file %s is alredy exit, auto create a new file:%s"%(file_name, log_name )
+		#log_name = 'Gsm_log_' + str( datetime.datetime.now() )
+		new_file_name ='GsmLog' + '_' + today_str + '_' + now_str + '.txt'
+		log_file = open( new_file_name , 'w' )
+		print"Sorry,file %s is alredy exit, auto create a new file:%s"%(file_name, new_file_name )
 	else:
 		log_file = open( file_name,'w' )
-		print"create log file: ",log_file.name
+		print"create log file: ",file_name
 	return log_file
 
 ##################################################################################################
@@ -103,7 +109,8 @@ if __name__=='__main__':
 	TCP_PORT = 6000 #TCP connection port
 	success_num = 0
 
-	log = createLogFile("client_log.txt")
+	log_name ='GsmClientLog_' + today_str + '_' + now_str + '.txt'
+	log = createLogFile( log_name )
 	
 #	LocalIP = getLocalIP()
 	IP = getExternalIP( )
@@ -112,35 +119,35 @@ if __name__=='__main__':
 
 	line ="Client's external IP : %s"%IP
 	print line
-	log.write( line )
-	sock = connectToServer( SERVER_IP, 6000)
+	log.write( line + '\n')
+	sock = connectToServer( SERVER_IP, SERVER_PORT)
 
-	'''
-	welcome_mesg = sock.recv(1024)
-	line = "[Server]:%s"%welcome_mesg
-	print line
-	log.write(line)
-	log.flush()
-	'''
 
-	for i in range( 1,10 ): 
+	for i in range( 1,100 ): 
 		success_num += 1
-		send_mesg = "send mesg: client num %d"%success_num 
-		print send_mesg
-		log.write( send_mesg )
-		log.flush()
+
+		send_mesg = "client num %d"%success_num 
 		#sock.send(send_mesg )
 		sock.sendall(send_mesg )
 
-		time.sleep(1)
+		log_mesg = '[Send to %s:%s]: %s' %(SERVER_IP, SERVER_PORT, send_mesg)
+		log.write( log_mesg + '\n' )
+		log.flush()
+		print log_mesg
 
 		receive_data = sock.recv(1024)
-		line = "[Server %s:%s mesg:]%s"%(SERVER_IP, 6000, receive_data)
-		print line
+		log_mesg = "[Received]: %s"%( receive_data)
+		log.write( log_mesg + '\n' )
+		log.flush()
+		print log_mesg
+
+		time.sleep(1)
 	
+	sock.close()
+	log_mesg = "close socket connection to server."
+	log.write( log_mesg + '\n' )
 	log.flush()
 	log.close()
-	sock.close()
 
 
 

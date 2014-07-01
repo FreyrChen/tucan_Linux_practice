@@ -1,15 +1,24 @@
 #!/usr/bin/python
 # -*- coding=utf-8 -*-
-
+'''
+# this is for sever node, received all data from client node.
+# client node maybe a gsm device, network is not perfect
+'''
 import sys
 import os
-import datetime
+import time,datetime
 import socket
 
 import re,urllib2
 
 
 ########################################################
+
+TCP_PORT = 6000 #TCP connection pord
+RECEIVED_PACKET_SIZE = 2048  #define every tcp packet size, maybe large than 1024
+
+today_str = time.strftime('%Y%m%d')
+now_str = time.strftime('%H%M%S')
 
 ########################################################
 def getExternalIP():
@@ -53,7 +62,7 @@ def listenServer( port ):
 		print'Bind failed, Error code: ' + str(msg[0])+'Message:'+msg[1]
 		sys.exit()
 
-	sock.listen(2)		
+	sock.listen(10)		
 	print'server is listening ...'
 	return sock
 		
@@ -65,9 +74,8 @@ def listenServer( port ):
 #
 def createLogFile( file_name ):
 	if os.path.isfile(file_name) :
-		log_name = 'Gsm_log_' + str( datetime.datetime.now() )
-		log_file = open( log_name , 'w' )
-		print"Sorry,file %s is alredy exit, auto create a new file:%s"%(file_name, log_name )
+		log_file = open( file_name , 'w' )
+		print"Sorry,file %s is alredy exit, auto create a new file:%s"%(file_name, file_name)
 	else:
 		log_file = open( file_name,'w' )
 		print"create log file: ",log_file.name
@@ -81,10 +89,10 @@ if __name__=='__main__':
 	print'-'*80
 
 
-	TCP_PORT = 6000 #TCP connection port
 	success_num = 0
 
-	log = createLogFile("server_log.txt")
+	log_name = 'GsmServerLog_' + today_str + '_' + now_str + '.txt'
+	log = createLogFile(log_name)
 	
 #	LocalIP = getLocalIP()
 	IP = getExternalIP( )
@@ -115,21 +123,29 @@ if __name__=='__main__':
 
 		while True:
 			#received msg from client
-			recv_data = connection.recv(1024)
+			recv_data = connection.recv(RECEIVED_PACKET_SIZE)
+
 			if not recv_data:
-				connection.close()
 				break
 			else:
 				success_num += 1
-				line = "[%4d client %s:%s mesg]:%s"%(\
+				line = "[Reveived] %d (%s:%s):%s"%(\
 				success_num,address[0],address[1],recv_data)
 				print line
 				log.write( line+"\n" )
 				log.flush
 
-				print"Server call back, got it"
-				connection.sendall("Got it, next.")
+				send_data = "Server got it, next ..."
+				connection.sendall( send_data )
+				line = "[Send]%d: %s"%(success_num, send_data )
+				print line
+				log.write( line + '\n')
+				log.flush
+		connection.close()
 	sock.close()
+	line = "close socket connection to client "
+	print line
+	log.write( line + '\n')
 	log.flush()
 	log.close()
 
