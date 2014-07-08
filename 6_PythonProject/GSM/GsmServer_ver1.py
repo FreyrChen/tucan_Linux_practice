@@ -124,7 +124,7 @@ if __name__=='__main__':
 		while True:
 			#received msg from client
 			recv_data = connection.recv(RECEIVED_PACKET_SIZE)
-
+			#when a recv returns 0 bytes, it means the client side has closed the connection.
 			if not recv_data:
 				break
 			else:

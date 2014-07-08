@@ -5,19 +5,29 @@ import sys
 import os
 import time,datetime
 import socket
+import random
 
 import re,urllib2
+import threading
 
+
+MAX_THREAD_NUM = 100
+MAX_LOOP = 300
+LOOP_DELAY = 0.1 
 
 #SERVER_IP ="tusion.jios.org" 
 SERVER_IP   = "114.215.238.215" 
 SERVER_PORT = 6000
-
 today_str = time.strftime('%Y%m%d')
 now_str = time.strftime('%H%M%S')
 
+success_num = 0
+error_num = 0
+span_max = 0
+span_min = 9999
 
-########################################################
+
+
 
 ########################################################
 def getExternalIP():
@@ -54,6 +64,8 @@ def listenServer( port ):
 	sock = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
 
 	#bind orperatio may faild, this prot is in userd by other program.
+	# lsof -i:6000
+	# netstat -an | wc -l
 	# kill -9 'fuser -n tcp 6000'
 	sock.bind( ('', port) )
 	print"bind server's port:",port
@@ -98,59 +110,78 @@ def createLogFile( file_name ):
 		print"create log file: ",file_name
 	return log_file
 
+
+########################################################
+class testThread( threading.Thread ):
+		
+	global success_num 
+	global error_num 
+	global span_max
+	global span_min
+	
+	#constructor function
+	def __init__( self, thread_name, IP ):
+		threading.Thread.__init__(self)
+		self.test_count = 0
+		self.IP = IP
+
+	def run( self ):
+		
+		TCP_PORT = 6000 #TCP connection port
+		success_num = 0
+	
+		#log_name ='GsmClientLog_' + today_str + '_' + now_str + '.txt'
+		#log = createLogFile( log_name )
+		
+		
+		#getIPFromDNS("http://tusion.jios.org/")
+	
+		line ="Client's external IP : %s"%self.IP
+		print line
+		#log.write( line + '\n')
+		sock = connectToServer( SERVER_IP, SERVER_PORT)
+	
+	
+		for i in range( 1, MAX_LOOP ): 
+			send_int = random.randint(0,1000)
+			send_mesg = "%d"%send_int
+			start_time = time.time()
+			sock.sendall(send_mesg )
+	
+			#log_mesg = '[Send to %s:%s]: %s' %(SERVER_IP, SERVER_PORT, send_mesg)
+			#print log_mesg
+	
+			receive_data = sock.recv(1024)
+			if   send_int == int(receive_data) :
+				success_num += 1
+			else:
+				error_num += 1
+			'''
+			span_time = time.time() - start_time
+			if (span_time > span_max) :
+				span_max = span_time
+			if (span_time < span_min) :
+				span_min = span_time
+			'''
+			time.sleep(LOOP_DELAY)
+		
+		sock.close()
+	
 ##################################################################################################
 if __name__=='__main__':
 	print'-'*80
 	print"This script is to listen tcp port, is connet to GSm"
 	print"[Client Node]"
 	print'-'*80
-
-
-	TCP_PORT = 6000 #TCP connection port
-	success_num = 0
-
-	log_name ='GsmClientLog_' + today_str + '_' + now_str + '.txt'
-	log = createLogFile( log_name )
 	
-#	LocalIP = getLocalIP()
 	IP = getExternalIP( )
-	
-	#getIPFromDNS("http://tusion.jios.org/")
+	start_time = time.time()
+	i = 0
+	while i <= MAX_THREAD_NUM:
+		t = testThread( "Thread" + str(i), IP )
+		t.start()
+		i += 1
+	t = 0
 
-	line ="Client's external IP : %s"%IP
-	print line
-	log.write( line + '\n')
-	sock = connectToServer( SERVER_IP, SERVER_PORT)
-
-
-	for i in range( 1,30 ): 
-		success_num += 1
-
-		send_mesg = "client num %d"%success_num 
-		#sock.send(send_mesg )
-		sock.sendall(send_mesg )
-
-		log_mesg = '[Send to %s:%s]: %s' %(SERVER_IP, SERVER_PORT, send_mesg)
-		log.write( log_mesg + '\n' )
-		log.flush()
-		print log_mesg
-
-		receive_data = sock.recv(1024)
-		log_mesg = "[Received]: %s"%( receive_data)
-		log.write( log_mesg + '\n' )
-		log.flush()
-		print log_mesg
-
-		time.sleep(1)
-	
-	sock.close()
-	log_mesg = "close socket connection to server."
-	log.write( log_mesg + '\n' )
-	log.flush()
-	log.close()
-
-
-
-
-
-
+	print"response time min:%s, max:%s"%(span_min,span_max)
+	print"Total success_num:%s, error_num : %s"%(success_num, error_num)
