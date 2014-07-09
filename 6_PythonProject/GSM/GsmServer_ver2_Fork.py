@@ -8,6 +8,7 @@
 '''
 import sys
 import os
+import signal
 import time,datetime
 import socket
 import fcntl 	# fork process read or write same file's lock
@@ -71,35 +72,19 @@ def listenServer( port ):
 		
 
 ######################################################################
-'''
-def writeLastAccess( fd, ip ):
-	fntl.flock( fd,fcntl.Lock_EX)
+
+def writeLogfile( log_fd,log_fo, data ):
+	fcntl.flock( log_fd,fcntl.LOCK_EX)
 	records = []
 
 	try:
-		#read the exitsting record files
-		fd.seek(0)
-		for line in fd.readlines():
-			fileip = 0
-	
-'''
-###########################################
-# create log file
-def createLogFile( file_name ):
-	if os.path.isfile(file_name) :
-		log_file = open( file_name , 'w+' )
-		print"Sorry,file %s is alredy exit, auto create a new file:%s"%(file_name, file_name)
-	else:
-		log_file = open( file_name,'w+' )
-		print"create log file: ",log_file.name
-	return log_file
+		log_fo.write( data+"\n")
+		log_fo.flush()
+	finally:
+		#release the file lock
+		fcntl.flock( log_fd, fcntl.LOCK_UN)	
 
-'''
-	log_name = 'GsmServerLog_' + today_str + '_' + now_str + '.txt'
-	log = createLogFile(log_name)
-	log.write( line+'\n' )
-	log.flush()
-'''
+###########################################
 ########################################################
 def reap():
 	''' collect any waitting child process, (zombie process)'''
@@ -111,7 +96,21 @@ def reap():
 		except:
 			break
 		#print"Reaped child process pid %d",resuld[0]
+################################################################
+#parent kill alll zombin child proccess
+#signal.signal( signal.SIGCHLD, childHandler)
 
+# use system signal to process zombin child process
+def childHandler( signum, stackframe ):
+	''' run in parent process, called whenever a child terminates.'''
+	while True:
+		try:
+			result = os.waitpid( -1, os.WNOHANG)
+			if not result[0]: 	#if pid=0, then do nothing.
+				break
+		except:
+			break
+		print"reaped child proccess, pid=%d"%result[0]
 ##################################################################################################
 if __name__=='__main__':
 	print'-'*80
@@ -120,6 +119,18 @@ if __name__=='__main__':
 	print'-'*80
 
 	success_num = 0
+	
+	# create log file
+	log_name = 'Log_' + today_str + '_' + now_str + '.txt'
+	if os.path.isfile( log_name) :
+		log_name = log_name + "_new"
+	#Create or open the log file,get log file descripter 
+	log_fd = os.open( log_name, os.O_RDWR|os.O_CREAT)
+	#get log file object
+	log_fo = os.fdopen( log_fd,'w+' )
+	print"create log file: ",log_name
+	#log.write( line+'\n' )
+	#log.flush()
 
 	IP = getExternalIP( )
 	line ="Server's external IP : %s"%IP
@@ -141,8 +152,7 @@ if __name__=='__main__':
 			line="accept connection form client address:%s:%s"%address
 			#line="accept connection form client "
 			print line
-			#log.write( line+'\n' )
-			#log.flush
+			writeLogfile( log_fd, log_fo, line)
 		except KeyboardInterrupt:
 			raise
 		except:
@@ -150,6 +160,7 @@ if __name__=='__main__':
 			continue	#paren exit, wait for new connction.
 		
 		#clean up old children, maybe a zobime process
+		# once new clinet connect server, then clean up last in zombie child proccess.
 		reap()
 		#Fork new children process for this connection
 		try:
@@ -180,15 +191,19 @@ if __name__=='__main__':
 					if not recv_data:
 						break
 					else:
-						line = "[%s:%s],pid:%s, %s"%\
+						line = "[%s:%s], pid:%s, mesg:%s"%\
 						(address[0], address[1], child_pid, recv_data)
 						print line
-						connection.sendall( recv_data )
+						writeLogfile( log_fd, log_fo,line)
+						#sever echo received data to client, just for test
+						#connection.sendall( recv_data )
 
-						'''
-						log.write( line+"\n" )
-						log.flush
-						'''
+						command = "AT+SRGPS\r\n"
+						line = "Send command: %s"%command
+						writeLogfile( log_fd, log_fo, str(line))
+						connection.sendall( command )
+						
+
 			except( KeyboardInterrupt, SystemExit ):
 				raise
 			except:
@@ -196,13 +211,13 @@ if __name__=='__main__':
 
 			try:
 				connection.close()
+				#log_fo.close()
 			except KeyboardInterrupt:
 				raise
 			except:
 				traceback.print_exc()
 		
-
-		sys.exit(0)
+			sys.exit(0)
 '''
 	sock.close()
 	line = "close socket connection to client "

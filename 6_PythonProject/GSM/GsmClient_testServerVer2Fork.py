@@ -11,8 +11,8 @@ import re,urllib2
 import threading
 
 
-MAX_THREAD_NUM = 100
-MAX_LOOP = 300
+MAX_THREAD_NUM = 10
+MAX_LOOP = 30
 LOOP_DELAY = 0.1 
 
 #SERVER_IP ="tusion.jios.org" 
@@ -24,14 +24,14 @@ now_str = time.strftime('%H%M%S')
 success_num = 0
 error_num = 0
 span_max = 0
-span_min = 9999
+span_min = 65536
 
 
 
 
 ########################################################
 def getExternalIP():
-	print'-'*40
+	#print'-'*40
 	print"Get host external IP ..."
 	site_lsit = [ "http://www.whereismyip.com/",
 					"http://whatismyipaddress.com/"]
@@ -79,13 +79,13 @@ def listenServer( port ):
 # return client.
 #
 def connectToServer( address, port):
-	print '-'*40
-	print 'Initial to connect  server. '	
+	#print '-'*40
+	#print 'Initial to connect  server. '	
 	sock = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
 
 	#bind orperatio may faild, this prot is in userd by other program.
 	# kill -9 'fuser -n tcp 6000'
-	print"Connect server: %s, port:%d"%(address,port)
+	#print"Connect server: %s, port:%d"%(address,port)
 	sock.connect( (address, port ) )
 
 	return sock
@@ -114,10 +114,6 @@ def createLogFile( file_name ):
 ########################################################
 class testThread( threading.Thread ):
 		
-	global success_num 
-	global error_num 
-	global span_max
-	global span_min
 	
 	#constructor function
 	def __init__( self, thread_name, IP ):
@@ -127,6 +123,11 @@ class testThread( threading.Thread ):
 
 	def run( self ):
 		
+		global success_num 
+		global error_num
+		global span_max
+		global span_min
+
 		TCP_PORT = 6000 #TCP connection port
 		success_num = 0
 	
@@ -137,12 +138,12 @@ class testThread( threading.Thread ):
 		#getIPFromDNS("http://tusion.jios.org/")
 	
 		line ="Client's external IP : %s"%self.IP
-		print line
+		#print line
 		#log.write( line + '\n')
 		sock = connectToServer( SERVER_IP, SERVER_PORT)
 	
 	
-		for i in range( 1, MAX_LOOP ): 
+		for i in range(  MAX_LOOP ): 
 			send_int = random.randint(0,1000)
 			send_mesg = "%d"%send_int
 			start_time = time.time()
@@ -152,36 +153,53 @@ class testThread( threading.Thread ):
 			#print log_mesg
 	
 			receive_data = sock.recv(1024)
-			if   send_int == int(receive_data) :
+			span_time = time.time() - start_time
+
+			'''
+			# lock varaibles shared in some threads.
+			lock.acquire() 
+			if   send_int == (int)(receive_data) :
 				success_num += 1
 			else:
 				error_num += 1
-			'''
-			span_time = time.time() - start_time
+			
 			if (span_time > span_max) :
 				span_max = span_time
 			if (span_time < span_min) :
 				span_min = span_time
+			
+			lock.release()
 			'''
+
 			time.sleep(LOOP_DELAY)
 		
 		sock.close()
 	
 ##################################################################################################
 if __name__=='__main__':
-	print'-'*80
+	print'*'*80
 	print"This script is to listen tcp port, is connet to GSm"
 	print"[Client Node]"
-	print'-'*80
+	print''
 	
 	IP = getExternalIP( )
 	start_time = time.time()
-	i = 0
-	while i <= MAX_THREAD_NUM:
-		t = testThread( "Thread" + str(i), IP )
-		t.start()
-		i += 1
-	t = 0
 
+	lock = threading.RLock()
+	#store all thread object
+	thread_list = []
+	for x in xrange(0, MAX_THREAD_NUM ):
+		thread_list.append( testThread( "Thread" + str(x), IP ) )
+	
+	print"Start thread number: %d, sending ... "%len(thread_list)
+	for t in thread_list:
+		t.start()
+	
+	for t in thread_list:
+		t.join()
+
+
+	print "-"*80
 	print"response time min:%s, max:%s"%(span_min,span_max)
 	print"Total success_num:%s, error_num : %s"%(success_num, error_num)
+	print''
