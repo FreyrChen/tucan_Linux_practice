@@ -12,8 +12,8 @@ import threading
 
 
 MAX_THREAD_NUM = 10
-MAX_LOOP = 30
-LOOP_DELAY = 0.1 
+MAX_LOOP = 50
+LOOP_DELAY = 0.001
 
 #SERVER_IP ="tusion.jios.org" 
 SERVER_IP   = "114.215.238.215" 
@@ -155,7 +155,6 @@ class testThread( threading.Thread ):
 			receive_data = sock.recv(1024)
 			span_time = time.time() - start_time
 
-			'''
 			# lock varaibles shared in some threads.
 			lock.acquire() 
 			if   send_int == (int)(receive_data) :
@@ -169,7 +168,6 @@ class testThread( threading.Thread ):
 				span_min = span_time
 			
 			lock.release()
-			'''
 
 			time.sleep(LOOP_DELAY)
 		
