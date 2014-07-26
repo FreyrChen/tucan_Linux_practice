@@ -10,10 +10,11 @@ import random
 import re,urllib2
 import threading
 
+TEST_MSG = "$EST627, 0123456789ABC, 01, 301, 1,2014-04-14 17:17:48, $OBD-RT,13.5 "
 
-MAX_THREAD_NUM = 10
-MAX_LOOP = 50
-LOOP_DELAY = 0.001
+MAX_THREAD_NUM = 2
+MAX_LOOP = 10
+LOOP_DELAY = 0.1
 
 #SERVER_IP ="tusion.jios.org" 
 SERVER_IP   = "114.215.238.215" 
@@ -145,7 +146,8 @@ class testThread( threading.Thread ):
 	
 		for i in range(  MAX_LOOP ): 
 			send_int = random.randint(0,1000)
-			send_mesg = "%d"%send_int
+			#send_mesg = "%d"%send_int
+			send_mesg = TEST_MSG;
 			start_time = time.time()
 			sock.sendall(send_mesg )
 	
@@ -157,11 +159,12 @@ class testThread( threading.Thread ):
 
 			# lock varaibles shared in some threads.
 			lock.acquire() 
+			'''
 			if   send_int == (int)(receive_data) :
 				success_num += 1
 			else:
 				error_num += 1
-			
+			'''
 			if (span_time > span_max) :
 				span_max = span_time
 			if (span_time < span_min) :
