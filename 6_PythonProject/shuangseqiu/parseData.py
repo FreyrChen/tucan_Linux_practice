@@ -32,11 +32,9 @@ def getAllKjggURL( priods ):
 
 #--------------------------------------------------------------
 def getEveryKjggURL( html ):
-	if not html:
-		print'input html is empty, return'
-		return
+	pattern = re.compile(r'hello')
 	
-
+	
 
 #--------------------------------------------------------------
 #获取指定地址的网页HTML，对异常有处理
@@ -72,5 +70,5 @@ html = openWeb( URL_KJGG )
 print len(html)
 
 log = open( 'parse.log', 'w' )
-log.write( html )
+log.write( URL_KJGG )
 log.close()
